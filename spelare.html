@@ -113,6 +113,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
+    align-items: start;
   }
   .player-card {
     background: var(--white); border-radius: 12px;
@@ -208,6 +209,8 @@
     font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em;
   }
   .profile-value.gold { color: var(--gold); text-shadow: 0 0 12px rgba(245,197,24,0.3); }
+  .profile-row.stacked { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+  .profile-row.stacked .profile-value { font-size: 1rem; }
 
   /* ============ FOOTER ============ */
   footer {
@@ -336,12 +339,11 @@
 
   function renderProfileSection(profil) {
     const rows = [
-      { label: 'Högsta serie',  value: profil.hogsta_slagning_serie, gold: true },
-      { label: 'Högsta match',  value: profil.hogsta_slagning_match, gold: true },
-      { label: 'Favoritklot',   value: profil.favoritklot },
-      { label: 'Spelstyrka',    value: profil.spelstyrka },
+      { label: 'Högsta serie', value: profil.hogsta_slagning_serie, gold: true },
+      { label: 'Högsta match', value: profil.hogsta_slagning_match, gold: true },
+      { label: 'Favoritklot',  value: profil.favoritklot, stacked: true },
     ].map(r => `
-      <div class="profile-row">
+      <div class="profile-row${r.stacked ? ' stacked' : ''}">
         <span class="profile-label">${escapeHtml(r.label)}</span>
         <span class="profile-value${r.gold ? ' gold' : ''}">${escapeHtml(r.value)}</span>
       </div>`).join('');
@@ -372,8 +374,8 @@
               <div class="stat-label">Snitt</div>
             </div>
             <div class="stat">
-              <div class="stat-value">${escapeHtml(p.matcher)}</div>
-              <div class="stat-label">Matcher</div>
+              <div class="stat-value">${escapeHtml(p.profil ? p.profil.spelstyrka : p.matcher)}</div>
+              <div class="stat-label">${p.profil ? 'Spelstyrka' : 'Matcher'}</div>
             </div>
           </div>
         </div>
