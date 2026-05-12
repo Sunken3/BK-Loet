@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Våra spelare — BK Loet</title>
+<meta name="description" content="Möt spelarna som representerar BK Loet i Allsvenskan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1f4d;
+    --navy-deep: #061230;
+    --blue: #1d4fc4;
+    --blue-bright: #2563eb;
+    --gold: #f5c518;
+    --gold-soft: #fde68a;
+    --red: #dc2626;
+    --white: #ffffff;
+    --off-white: #fafaf9;
+    --gray-50: #f8f9fc;
+    --gray-100: #eef1f6;
+    --gray-300: #cbd2dc;
+    --gray-500: #6b7280;
+    --gray-700: #374151;
+    --gray-900: #111827;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--gray-900);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+
+  /* ============ NAVBAR ============ */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .nav-container {
+    max-width: 1280px; margin: 0 auto; padding: 1rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none; color: var(--navy);
+  }
+  .nav-logo-mark { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.05em; color: var(--navy);
+  }
+  .nav-logo-sub {
+    font-size: 0.65rem; color: var(--gray-500);
+    text-transform: uppercase; letter-spacing: 0.15em;
+    display: block; margin-top: -2px;
+  }
+  .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none; color: var(--gray-700);
+    font-weight: 500; font-size: 0.9rem; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-links a.active { color: var(--blue); }
+  .nav-cta {
+    background: var(--navy); color: var(--white) !important;
+    padding: 0.6rem 1.25rem; border-radius: 6px; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--blue) !important; color: var(--white) !important; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .nav-toggle span {
+    display: block; width: 24px; height: 2px;
+    background: var(--navy); margin: 5px 0; transition: all 0.3s;
+  }
+
+  /* ============ PAGE HEADER ============ */
+  .page-header {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 8rem 0 4rem;
+    text-align: center;
+  }
+  .page-header .section-eyebrow {
+    color: var(--gold); font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-bottom: 0.75rem; display: inline-block;
+  }
+  .page-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--white); line-height: 1;
+  }
+
+  /* ============ SECTION GENERAL ============ */
+  section { padding: 6rem 0; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+  .section-eyebrow {
+    color: var(--blue); font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-bottom: 0.75rem; display: inline-block;
+  }
+
+  /* ============ SPELARE ============ */
+  #spelare { background: var(--gray-50); }
+  .players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .player-card {
+    background: var(--white); border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(10, 31, 77, 0.06);
+    transition: all 0.3s;
+    border: 1px solid var(--gray-100);
+  }
+  .player-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10, 31, 77, 0.12);
+  }
+  .player-image {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    position: relative; display: flex;
+    align-items: center; justify-content: center;
+    color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; overflow: hidden;
+  }
+  .player-image::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at top right, rgba(245,197,24,0.2) 0%, transparent 60%);
+  }
+  .player-number {
+    position: absolute; top: 0.75rem; right: 1rem;
+    background: var(--gold); color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.25rem; padding: 0.15rem 0.65rem;
+    border-radius: 4px; letter-spacing: 0.05em;
+  }
+  .player-info { padding: 1.25rem 1.5rem 1.5rem; }
+  .player-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--navy);
+    letter-spacing: 0.02em; margin-bottom: 0.25rem;
+  }
+  .player-role {
+    color: var(--gray-500); font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .player-stats {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem; padding-top: 1rem;
+    border-top: 1px solid var(--gray-100);
+  }
+  .stat { text-align: center; }
+  .stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--blue); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem; color: var(--gray-500);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: #030814; color: rgba(255,255,255,0.7);
+    padding: 4rem 0 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+  .footer-brand {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
+  }
+  .footer-brand-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--white); letter-spacing: 0.05em;
+  }
+  .footer-tagline {
+    color: rgba(255,255,255,0.5); font-size: 0.9rem;
+    max-width: 320px; line-height: 1.6;
+  }
+  .footer-col h4 {
+    color: var(--white); font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1rem; font-weight: 600;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.5rem; }
+  .footer-col a {
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 2rem;
+    display: flex; justify-content: space-between;
+    align-items: center; color: rgba(255,255,255,0.4);
+    font-size: 0.85rem; flex-wrap: wrap; gap: 1rem;
+  }
+
+  /* ============ Loading state ============ */
+  .loading {
+    min-height: 100vh; display: flex;
+    align-items: center; justify-content: center;
+    color: var(--gray-500); font-size: 0.95rem;
+  }
+  .error-box {
+    max-width: 600px; margin: 6rem auto;
+    padding: 2rem; background: #fee2e2;
+    border-left: 4px solid var(--red);
+    border-radius: 8px; color: #7f1d1d;
+  }
+  .error-box h3 { margin-bottom: 0.5rem; }
+  .error-box code {
+    background: rgba(0,0,0,0.05); padding: 0.1rem 0.4rem;
+    border-radius: 3px; font-size: 0.9em;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 968px) {
+    .nav-links {
+      position: fixed; top: 73px; left: 0; right: 0;
+      background: var(--white); flex-direction: column;
+      padding: 2rem; gap: 1.5rem;
+      border-bottom: 1px solid var(--gray-100);
+      transform: translateY(-150%);
+      transition: transform 0.3s;
+    }
+    .nav-links.open { transform: translateY(0); }
+    .nav-toggle { display: block; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 4rem 0; }
+    .container, .nav-container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="loading">Laddar...</div>
+</div>
+
+<script>
+  function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function emblemSvg(extraClass = '') {
+    return `<img src="images/emblem.jpg" alt="BK Loet emblem" class="${extraClass}" style="width:100%;height:100%;object-fit:contain;">`;
+  }
+
+  function renderNavbar(data) {
+    return `
+      <nav class="navbar">
+        <div class="nav-container">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-mark">${emblemSvg()}</div>
+            <div>
+              <div class="nav-logo-text">${escapeHtml(data.klubb.namn)}</div>
+              <span class="nav-logo-sub">Bowlingklubb · ${escapeHtml(data.klubb.ort)}</span>
+            </div>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Meny">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="spelare.html" class="active">Våra spelare</a></li>
+            <li><a href="index.html#om-oss">Om oss</a></li>
+            <li><a href="index.html#sponsorer">Sponsorer</a></li>
+            <li><a href="index.html#tabell">Tabell</a></li>
+            <li><a href="index.html#medlem" class="nav-cta">Bli medlem</a></li>
+          </ul>
+        </div>
+      </nav>`;
+  }
+
+  function renderPlayer(p) {
+    return `
+      <div class="player-card">
+        <div class="player-image">
+          <span>${escapeHtml(p.initialer)}</span>
+          <span class="player-number">#${escapeHtml(p.nummer)}</span>
+        </div>
+        <div class="player-info">
+          <div class="player-name">${escapeHtml(p.namn)}</div>
+          <div class="player-role">${escapeHtml(p.roll)}</div>
+          <div class="player-stats">
+            <div class="stat">
+              <div class="stat-value">${escapeHtml(p.snitt)}</div>
+              <div class="stat-label">Snitt</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">${escapeHtml(p.matcher)}</div>
+              <div class="stat-label">Matcher</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  function renderFooter(data) {
+    return `
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div>
+              <div class="footer-brand">
+                <div style="width:36px;height:36px;">${emblemSvg()}</div>
+                <div class="footer-brand-text">${escapeHtml(data.klubb.namn)}</div>
+              </div>
+              <p class="footer-tagline">Bowlingklubb i ${escapeHtml(data.klubb.ort)} · ${escapeHtml(data.klubb.serie)} · Sikte på Elitserien. En klubb där gemenskap och prestation går hand i hand.</p>
+            </div>
+            <div class="footer-col">
+              <h4>Klubben</h4>
+              <ul>
+                <li><a href="index.html#om-oss">Om oss</a></li>
+                <li><a href="spelare.html">Spelare</a></li>
+                <li><a href="index.html#sponsorer">Sponsorer</a></li>
+                <li><a href="index.html#tabell">Tabell</a></li>
+                <li><a href="index.html#medlem">Bli medlem</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Kontakt</h4>
+              <ul>
+                <li><a href="mailto:${escapeHtml(data.kontakt.email)}">${escapeHtml(data.kontakt.email)}</a></li>
+                <li><a href="tel:${escapeHtml(data.kontakt.telefon_lank)}">${escapeHtml(data.kontakt.telefon)}</a></li>
+                <li>${escapeHtml(data.kontakt.hall)}</li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Följ oss</h4>
+              <ul>
+                <li><a href="${escapeHtml(data.kontakt.instagram)}">Instagram</a></li>
+                <li><a href="${escapeHtml(data.kontakt.facebook)}">Facebook</a></li>
+                <li><a href="${escapeHtml(data.kontakt.lulea_open)}">Luleå Open</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div>© ${new Date().getFullYear()} ${escapeHtml(data.klubb.namn)}. Alla rättigheter förbehållna.</div>
+            <div>Bowlingklubb · ${escapeHtml(data.klubb.ort)} · Norrbotten</div>
+          </div>
+        </div>
+      </footer>`;
+  }
+
+  function showError(message, details) {
+    document.getElementById('app').innerHTML = `
+      <div class="error-box">
+        <h3>Kunde inte ladda sidan</h3>
+        <p>${escapeHtml(message)}</p>
+        ${details ? `<p style="margin-top:1rem;font-size:0.9rem;"><code>${escapeHtml(details)}</code></p>` : ''}
+      </div>`;
+  }
+
+  async function init() {
+    try {
+      const res = await fetch('data.json?v=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+
+      document.title = `Våra spelare — ${data.klubb.namn}`;
+
+      document.getElementById('app').innerHTML =
+        renderNavbar(data) +
+        `<div class="page-header">
+          <span class="section-eyebrow">Truppen</span>
+          <h1>Våra spelare</h1>
+        </div>` +
+        `<section id="spelare">
+          <div class="container">
+            <div class="players-grid">
+              ${data.spelare.map(renderPlayer).join('')}
+            </div>
+          </div>
+        </section>` +
+        renderFooter(data);
+
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+      }
+    } catch (err) {
+      showError('Kontrollera att filen data.json finns och har giltigt JSON-format.', err.message);
+      console.error(err);
+    }
+  }
+
+  init();
+</script>
+</body>
+</html>
