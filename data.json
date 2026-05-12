@@ -52,7 +52,14 @@
   ],
 
   "spelare": [
-    { "namn": "Anton N.", "initialer": "AN", "nummer": 7, "roll": "Lagkapten", "snitt": 198, "matcher": 12 },
+    { "namn": "Anton Sandberg", "initialer": "AS", "nummer": 7, "roll": "Lagkapten", "snitt": 198, "matcher": 12,
+      "profil": {
+        "hogsta_slagning_serie": 300,
+        "hogsta_slagning_match": 1020,
+        "favoritklot": "Hammer Tour Effect",
+        "spelstyrka": 215
+      }
+    },
     { "namn": "Erik L.", "initialer": "EL", "nummer": 3, "roll": "Spelare", "snitt": 205, "matcher": 12 },
     { "namn": "Johan H.", "initialer": "JH", "nummer": 11, "roll": "Spelare", "snitt": 192, "matcher": 10 },
     { "namn": "Markus S.", "initialer": "MS", "nummer": 5, "roll": "Spelare", "snitt": 201, "matcher": 11 },

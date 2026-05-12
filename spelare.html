@@ -172,6 +172,43 @@
     margin-top: 0.25rem;
   }
 
+  /* ============ EXPANDERBAR PROFIL ============ */
+  .player-card.expandable { cursor: pointer; }
+  .profile-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--gray-100);
+    font-size: 0.8rem; font-weight: 600; color: var(--blue);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    user-select: none;
+  }
+  .profile-toggle-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-style: normal;
+  }
+  .player-card.open .profile-toggle-arrow { transform: rotate(180deg); }
+  .player-profile {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: var(--gray-50);
+  }
+  .player-card.open .player-profile { max-height: 300px; }
+  .player-profile-inner { padding: 1.25rem 1.5rem 1.5rem; }
+  .profile-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 0.9rem;
+  }
+  .profile-row:last-child { border-bottom: none; }
+  .profile-label { color: var(--gray-500); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .profile-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em;
+  }
+  .profile-value.gold { color: var(--gold); text-shadow: 0 0 12px rgba(245,197,24,0.3); }
+
   /* ============ FOOTER ============ */
   footer {
     background: #030814; color: rgba(255,255,255,0.7);
@@ -297,9 +334,31 @@
       </nav>`;
   }
 
-  function renderPlayer(p) {
+  function renderProfileSection(profil) {
+    const rows = [
+      { label: 'Högsta serie',  value: profil.hogsta_slagning_serie, gold: true },
+      { label: 'Högsta match',  value: profil.hogsta_slagning_match, gold: true },
+      { label: 'Favoritklot',   value: profil.favoritklot },
+      { label: 'Spelstyrka',    value: profil.spelstyrka },
+    ].map(r => `
+      <div class="profile-row">
+        <span class="profile-label">${escapeHtml(r.label)}</span>
+        <span class="profile-value${r.gold ? ' gold' : ''}">${escapeHtml(r.value)}</span>
+      </div>`).join('');
+
     return `
-      <div class="player-card">
+      <div class="profile-toggle">
+        Spelarprofil <i class="profile-toggle-arrow">▾</i>
+      </div>
+      <div class="player-profile">
+        <div class="player-profile-inner">${rows}</div>
+      </div>`;
+  }
+
+  function renderPlayer(p) {
+    const hasProfile = !!p.profil;
+    return `
+      <div class="player-card${hasProfile ? ' expandable' : ''}" ${hasProfile ? 'onclick="this.classList.toggle(\'open\')"' : ''}>
         <div class="player-image">
           <span>${escapeHtml(p.initialer)}</span>
           <span class="player-number">#${escapeHtml(p.nummer)}</span>
@@ -318,6 +377,7 @@
             </div>
           </div>
         </div>
+        ${hasProfile ? renderProfileSection(p.profil) : ''}
       </div>`;
   }
 
