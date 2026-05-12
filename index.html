@@ -894,6 +894,7 @@
           <td>${escapeHtml(lag.namn)}</td>
           <td>${escapeHtml(lag.matcher)}</td>
           <td>${escapeHtml(lag.vinster)}</td>
+          <td>${escapeHtml(lag.oavgjorda)}</td>
           <td>${escapeHtml(lag.forluster)}</td>
           <td>${escapeHtml(lag.skillnad)}</td>
           <td>${escapeHtml(lag.poang)}</td>
@@ -914,12 +915,12 @@
               <div class="table-season">${escapeHtml(data.tabell.saesong)}</div>
             </div>
             <table class="league-table">
-              <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
+              <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
               <tbody>${rows}</tbody>
             </table>
             <div class="table-legend">
               <div class="legend-item"><span class="legend-dot"></span><span>Kvalplats till Elitserien</span></div>
-              <div class="legend-item">M = Matcher · V = Vunna · F = Förlorade · P = Poäng</div>
+              <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
             </div>
           </div>
           <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)}</div>

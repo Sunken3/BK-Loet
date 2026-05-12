@@ -5,7 +5,7 @@
     "tagline": "Bowling med passion & precision",
     "lead": "BK Loet är Luleås bowlingklubb med sikte på Elitserien. Vi tränar hårt, tävlar tillsammans och välkomnar nya spelare på alla nivåer.",
     "saesong": "Säsong 2025/26",
-    "serie": "Allsvenskan"
+    "serie": "Nordallsvenskan"
   },
 
   "kontakt": {
@@ -26,8 +26,8 @@
     ],
     "nyckeltal": [
       { "varde": "12", "etikett": "Aktiva spelare" },
-      { "varde": "2018", "etikett": "Grundades" },
-      { "varde": "#3", "etikett": "I serien" }
+      { "varde": "1962", "etikett": "Grundades" },
+      { "varde": "#8", "etikett": "I serien" }
     ]
   },
 
@@ -145,19 +145,20 @@
   ],
 
   "tabell": {
-    "titel": "Allsvenskan Norra · Herrar",
+    "titel": "Nordallsvenskan",
     "saesong": "Säsong 2025/26",
-    "uppdaterad": "2026-05-01",
+    "uppdaterad": "2026-05-12",
     "kvalplatser": 2,
     "lag": [
-      { "namn": "BK Strike Norr",   "matcher": 12, "vinster": 10, "forluster": 2,  "skillnad": "+842",  "poang": 30 },
-      { "namn": "Piteå BK",         "matcher": 12, "vinster": 9,  "forluster": 3,  "skillnad": "+612",  "poang": 27 },
-      { "namn": "BK Loet",          "matcher": 12, "vinster": 8,  "forluster": 4,  "skillnad": "+478",  "poang": 24 },
-      { "namn": "Umeå Bowling",     "matcher": 12, "vinster": 7,  "forluster": 5,  "skillnad": "+201",  "poang": 21 },
-      { "namn": "Skellefteå BK",    "matcher": 12, "vinster": 6,  "forluster": 6,  "skillnad": "−45",   "poang": 18 },
-      { "namn": "BK Norrsken",      "matcher": 12, "vinster": 4,  "forluster": 8,  "skillnad": "−312",  "poang": 12 },
-      { "namn": "Boden BK",         "matcher": 12, "vinster": 3,  "forluster": 9,  "skillnad": "−498",  "poang": 9  },
-      { "namn": "Kiruna Bowling",   "matcher": 12, "vinster": 1,  "forluster": 11, "skillnad": "−1278", "poang": 3  }
+      { "namn": "BK Flash",      "matcher": 16, "vinster": 11, "oavgjorda": 2, "forluster": 3,  "skillnad": "+104", "poang": 24 },
+      { "namn": "BK Fjällräven", "matcher": 16, "vinster": 8,  "oavgjorda": 2, "forluster": 6,  "skillnad": "+2",   "poang": 18 },
+      { "namn": "Bodens BS F",   "matcher": 16, "vinster": 7,  "oavgjorda": 4, "forluster": 5,  "skillnad": "-5",   "poang": 18 },
+      { "namn": "BK Saiwa",      "matcher": 16, "vinster": 7,  "oavgjorda": 3, "forluster": 6,  "skillnad": "+21",  "poang": 17 },
+      { "namn": "Piteå BK",      "matcher": 16, "vinster": 7,  "oavgjorda": 2, "forluster": 7,  "skillnad": "-7",   "poang": 16 },
+      { "namn": "BK Prana",      "matcher": 16, "vinster": 8,  "oavgjorda": 0, "forluster": 8,  "skillnad": "-43",  "poang": 16 },
+      { "namn": "Jonsta BK",     "matcher": 16, "vinster": 5,  "oavgjorda": 5, "forluster": 6,  "skillnad": "-11",  "poang": 15 },
+      { "namn": "BK Loet",       "matcher": 16, "vinster": 5,  "oavgjorda": 3, "forluster": 8,  "skillnad": "-5",   "poang": 13 },
+      { "namn": "Umeå IK BF",    "matcher": 16, "vinster": 3,  "oavgjorda": 1, "forluster": 12, "skillnad": "-56",  "poang": 7  }
     ]
   }
 }
