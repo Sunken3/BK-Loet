@@ -1,0 +1,156 @@
+{
+  "klubb": {
+    "namn": "BK Loet",
+    "ort": "Luleå",
+    "tagline": "Bowling med passion & precision",
+    "lead": "BK Loet är Luleås bowlingklubb med sikte på Elitserien. Vi tränar hårt, tävlar tillsammans och välkomnar nya spelare på alla nivåer.",
+    "saesong": "Säsong 2025/26",
+    "serie": "Allsvenskan"
+  },
+
+  "kontakt": {
+    "email": "info@bkloet.se",
+    "telefon": "0920-00 00 00",
+    "telefon_lank": "+46920000000",
+    "hall": "Strike Bowl, Luleå",
+    "instagram": "#",
+    "facebook": "#",
+    "lulea_open": "#"
+  },
+
+  "om_oss": {
+    "rubrik": "En klubb. En målsättning.",
+    "stycken": [
+      "BK Loet är en bowlingklubb i Luleå med rötter i den norrbottniska tävlingstraditionen. Vi spelar i Allsvenskan och arbetar målmedvetet för att kvalificera oss till Elitserien.",
+      "Hos oss står gemenskapen och spelglädjen i centrum. Vi tränar tillsammans, reser tillsammans till bortamatcher, och firar tillsammans när det går vägen. Klubben arrangerar också Luleå Open — en av norra Sveriges mer ambitiösa bowlingtävlingar."
+    ],
+    "nyckeltal": [
+      { "varde": "12", "etikett": "Aktiva spelare" },
+      { "varde": "2018", "etikett": "Grundades" },
+      { "varde": "#3", "etikett": "I serien" }
+    ]
+  },
+
+  "bildspel": [
+    {
+      "rubrik": "Hela laget",
+      "underrubrik": "Säsong 2025/26",
+      "typ": "emblem"
+    },
+    {
+      "stor_text": "3",
+      "rubrik": "Strikar i rad",
+      "underrubrik": "Träning Strike Bowl Luleå",
+      "typ": "text"
+    },
+    {
+      "stor_text": "2 845",
+      "rubrik": "Lagserie",
+      "underrubrik": "Säsongens högsta",
+      "typ": "text"
+    }
+  ],
+
+  "spelare": [
+    { "namn": "Anton N.", "initialer": "AN", "nummer": 7, "roll": "Lagkapten", "snitt": 198, "matcher": 12 },
+    { "namn": "Erik L.", "initialer": "EL", "nummer": 3, "roll": "Spelare", "snitt": 205, "matcher": 12 },
+    { "namn": "Johan H.", "initialer": "JH", "nummer": 11, "roll": "Spelare", "snitt": 192, "matcher": 10 },
+    { "namn": "Markus S.", "initialer": "MS", "nummer": 5, "roll": "Spelare", "snitt": 201, "matcher": 11 },
+    { "namn": "Peter B.", "initialer": "PB", "nummer": 9, "roll": "Spelare", "snitt": 187, "matcher": 12 },
+    { "namn": "Oskar R.", "initialer": "OR", "nummer": 14, "roll": "Reserv", "snitt": 194, "matcher": 8 }
+  ],
+
+  "sponsorer": [
+    {
+      "namn": "Strike Bowl Luleå",
+      "niva": "Huvudsponsor",
+      "beskrivning": "Vår hemmahall och stolt huvudsponsor sedan klubbens start.",
+      "lank": "#"
+    },
+    {
+      "namn": "Norrbotten Sport AB",
+      "niva": "Guldsponsor",
+      "beskrivning": "Levererar utrustning och kläder till klubbens alla spelare.",
+      "lank": "#"
+    },
+    {
+      "namn": "Lulebygdens Sparbank",
+      "niva": "Guldsponsor",
+      "beskrivning": "Stödjer ungdomsverksamheten och Luleå Open.",
+      "lank": "#"
+    },
+    {
+      "namn": "Café Strike",
+      "niva": "Silversponsor",
+      "beskrivning": "Bjuder laget på fika efter varje hemmamatch.",
+      "lank": "#"
+    },
+    {
+      "namn": "Norrlands Bil",
+      "niva": "Silversponsor",
+      "beskrivning": "Tillhandahåller bortamatchstransport.",
+      "lank": "#"
+    },
+    {
+      "namn": "Polar Print",
+      "niva": "Bronssponsor",
+      "beskrivning": "Tryck av lagets matchtröjor och material.",
+      "lank": "#"
+    }
+  ],
+
+  "medlemskap": [
+    {
+      "titel": "Stödmedlem",
+      "pris": "300",
+      "period": "per år",
+      "featured": false,
+      "formaner": [
+        "Stödja klubbens verksamhet",
+        "Nyhetsbrev från klubben",
+        "Inbjudan till klubbevent"
+      ]
+    },
+    {
+      "titel": "Aktiv spelare",
+      "pris": "1 200",
+      "period": "per år",
+      "featured": true,
+      "formaner": [
+        "Allt i Stödmedlem",
+        "Träning med klubben varje vecka",
+        "Möjlighet att tävla för BK Loet",
+        "Tillgång till klubbens utrustning",
+        "Rabatt på Luleå Open-anmälan"
+      ]
+    },
+    {
+      "titel": "Ungdom",
+      "pris": "600",
+      "period": "per år (under 21)",
+      "featured": false,
+      "formaner": [
+        "Allt i Aktiv spelare",
+        "Ungdomsträning med ledare",
+        "Subventionerade tävlingsavgifter"
+      ]
+    }
+  ],
+
+  "tabell": {
+    "titel": "Allsvenskan Norra · Herrar",
+    "saesong": "Säsong 2025/26",
+    "uppdaterad": "2026-05-01",
+    "kvalplatser": 2,
+    "lag": [
+      { "namn": "BK Strike Norr",   "matcher": 12, "vinster": 10, "forluster": 2,  "skillnad": "+842",  "poang": 30 },
+      { "namn": "Piteå BK",         "matcher": 12, "vinster": 9,  "forluster": 3,  "skillnad": "+612",  "poang": 27 },
+      { "namn": "BK Loet",          "matcher": 12, "vinster": 8,  "forluster": 4,  "skillnad": "+478",  "poang": 24 },
+      { "namn": "Umeå Bowling",     "matcher": 12, "vinster": 7,  "forluster": 5,  "skillnad": "+201",  "poang": 21 },
+      { "namn": "Skellefteå BK",    "matcher": 12, "vinster": 6,  "forluster": 6,  "skillnad": "−45",   "poang": 18 },
+      { "namn": "BK Norrsken",      "matcher": 12, "vinster": 4,  "forluster": 8,  "skillnad": "−312",  "poang": 12 },
+      { "namn": "Boden BK",         "matcher": 12, "vinster": 3,  "forluster": 9,  "skillnad": "−498",  "poang": 9  },
+      { "namn": "Kiruna Bowling",   "matcher": 12, "vinster": 1,  "forluster": 11, "skillnad": "−1278", "poang": 3  }
+    ]
+  }
+}
