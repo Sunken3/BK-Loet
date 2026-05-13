@@ -331,7 +331,7 @@
   function renderProfileSection(profil) {
     const rows = [
       { label: 'Högsta serie', value: profil.hogsta_slagning_serie, gold: true },
-      { label: 'Högsta match', value: profil.hogsta_slagning_match, gold: true },
+      { label: 'Högsta matchslagning', value: profil.hogsta_slagning_match, gold: true },
       { label: 'Favoritklot',  value: profil.favoritklot, stacked: true },
     ].map(r => `
       <div class="profile-row${r.stacked ? ' stacked' : ''}">
