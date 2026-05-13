@@ -201,6 +201,11 @@
   .profile-value.gold { color: var(--gold); text-shadow: 0 0 12px rgba(245,197,24,0.3); }
   .profile-row.stacked { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
   .profile-row.stacked .profile-value { font-size: 1rem; }
+  .klot-row {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; gap: 0.75rem;
+  }
+  .klot-bild { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; }
 
   /* ============ FOOTER ============ */
   footer {
@@ -332,19 +337,30 @@
     const rows = [
       { label: 'Högsta serie', value: profil.hogsta_slagning_serie, gold: true },
       { label: 'Högsta matchslagning', value: profil.hogsta_slagning_match, gold: true },
-      { label: 'Favoritklot',  value: profil.favoritklot, stacked: true },
     ].map(r => `
-      <div class="profile-row${r.stacked ? ' stacked' : ''}">
+      <div class="profile-row">
         <span class="profile-label">${escapeHtml(r.label)}</span>
-        <span class="profile-value${r.gold ? ' gold' : ''}">${escapeHtml(r.value)}</span>
+        <span class="profile-value gold">${escapeHtml(r.value)}</span>
       </div>`).join('');
+
+    const klotBild = profil.favoritklot_bild
+      ? `<img src="${escapeHtml(profil.favoritklot_bild)}" alt="${escapeHtml(profil.favoritklot)}" class="klot-bild">`
+      : '';
+    const klotRow = `
+      <div class="profile-row stacked">
+        <span class="profile-label">Favoritklot</span>
+        <div class="klot-row">
+          <span class="profile-value">${escapeHtml(profil.favoritklot)}</span>
+          ${klotBild}
+        </div>
+      </div>`;
 
     return `
       <div class="profile-toggle">
         Spelarprofil <i class="profile-toggle-arrow">▾</i>
       </div>
       <div class="player-profile">
-        <div class="player-profile-inner">${rows}</div>
+        <div class="player-profile-inner">${rows}${klotRow}</div>
       </div>`;
   }
 
