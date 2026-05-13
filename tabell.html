@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Våra spelare — BK Loet</title>
-<meta name="description" content="Möt spelarna som representerar BK Loet i Allsvenskan.">
+<title>Tabell — BK Loet</title>
+<meta name="description" content="Serietabellen för BK Loet i Nordallsvenskan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
     --gold-soft: #fde68a;
     --red: #dc2626;
     --white: #ffffff;
-    --off-white: #fafaf9;
     --gray-50: #f8f9fc;
     --gray-100: #eef1f6;
     --gray-300: #cbd2dc;
@@ -36,7 +35,6 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
 
   /* ============ NAVBAR ============ */
   .navbar {
@@ -95,122 +93,75 @@
   .page-header h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--white); line-height: 1;
+    color: var(--white); line-height: 1; margin-bottom: 1rem;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 520px; margin: 0 auto;
   }
 
-  /* ============ SECTION GENERAL ============ */
+  /* ============ SECTION ============ */
   section { padding: 6rem 0; }
   .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
-  .section-eyebrow {
-    color: var(--blue); font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.2em;
-    margin-bottom: 0.75rem; display: inline-block;
-  }
 
-  /* ============ SPELARE ============ */
-  #spelare { background: var(--gray-50); }
-  .players-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    align-items: start;
+  /* ============ TABELL ============ */
+  #tabell { background: var(--navy-deep); color: var(--white); }
+  .table-wrapper {
+    max-width: 900px; margin: 0 auto;
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.08);
   }
-  .player-card {
-    background: var(--white); border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(10, 31, 77, 0.06);
-    transition: all 0.3s;
-    border: 1px solid var(--gray-100);
+  .table-header {
+    display: flex; justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .player-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(10, 31, 77, 0.12);
-  }
-  .player-image {
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    position: relative; display: flex;
-    align-items: center; justify-content: center;
-    color: var(--white);
+  .table-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem; overflow: hidden;
+    font-size: 1.25rem; letter-spacing: 0.05em;
   }
-  .player-image::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at top right, rgba(245,197,24,0.2) 0%, transparent 60%);
-  }
-  .player-number {
-    position: absolute; top: 0.75rem; right: 1rem;
-    background: var(--gold); color: var(--navy-deep);
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem; padding: 0.15rem 0.65rem;
-    border-radius: 4px; letter-spacing: 0.05em;
-  }
-  .player-info { padding: 1.25rem 1.5rem 1.5rem; }
-  .player-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--navy);
-    letter-spacing: 0.02em; margin-bottom: 0.25rem;
-  }
-  .player-role {
-    color: var(--gray-500); font-size: 0.85rem;
+  .table-season { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  .league-table { width: 100%; border-collapse: collapse; }
+  .league-table th {
+    text-align: left; padding: 1rem 1.5rem;
+    font-size: 0.75rem; font-weight: 600;
+    color: rgba(255,255,255,0.5);
     text-transform: uppercase; letter-spacing: 0.1em;
-    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .player-stats {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem; padding-top: 1rem;
-    border-top: 1px solid var(--gray-100);
+  .league-table th:not(:first-child):not(:nth-child(2)) { text-align: center; }
+  .league-table td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.95rem;
   }
-  .stat { text-align: center; }
-  .stat-value {
+  .league-table td:not(:first-child):not(:nth-child(2)) { text-align: center; }
+  .league-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+  .league-table tbody tr.our-team { background: rgba(245, 197, 24, 0.08); }
+  .league-table tbody tr.our-team td { font-weight: 600; color: var(--gold); }
+  .position-cell {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--blue); line-height: 1;
+    font-size: 1.25rem; color: var(--gold); width: 60px;
   }
-  .stat-label {
-    font-size: 0.7rem; color: var(--gray-500);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    margin-top: 0.25rem;
+  .promotion-indicator {
+    display: inline-block; width: 4px; height: 16px;
+    background: var(--gold); margin-right: 0.75rem;
+    vertical-align: middle; border-radius: 2px;
   }
-
-  /* ============ EXPANDERBAR PROFIL ============ */
-  .player-card.expandable { cursor: pointer; }
-  .profile-toggle {
-    display: flex; align-items: center; justify-content: center; gap: 0.4rem;
-    padding: 0.75rem 1.5rem;
-    border-top: 1px solid var(--gray-100);
-    font-size: 0.8rem; font-weight: 600; color: var(--blue);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    user-select: none;
+  .table-legend {
+    padding: 1.25rem 2rem;
+    background: rgba(0,0,0,0.2);
+    font-size: 0.8rem; color: rgba(255,255,255,0.6);
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
   }
-  .profile-toggle-arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    font-style: normal;
+  .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 2px; background: var(--gold); }
+  .table-disclaimer {
+    text-align: center; margin-top: 1.5rem;
+    color: rgba(255,255,255,0.5); font-size: 0.85rem;
   }
-  .player-card.open .profile-toggle-arrow { transform: rotate(180deg); }
-  .player-profile {
-    max-height: 0; overflow: hidden;
-    transition: max-height 0.35s ease;
-    background: var(--gray-50);
-  }
-  .player-card.open .player-profile { max-height: 300px; }
-  .player-profile-inner { padding: 1.25rem 1.5rem 1.5rem; }
-  .profile-row {
-    display: flex; justify-content: space-between; align-items: baseline;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--gray-100);
-    font-size: 0.9rem;
-  }
-  .profile-row:last-child { border-bottom: none; }
-  .profile-label { color: var(--gray-500); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
-  .profile-value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem; color: var(--navy); letter-spacing: 0.02em;
-  }
-  .profile-value.gold { color: var(--gold); text-shadow: 0 0 12px rgba(245,197,24,0.3); }
-  .profile-row.stacked { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
-  .profile-row.stacked .profile-value { font-size: 1rem; }
 
   /* ============ FOOTER ============ */
   footer {
@@ -221,17 +172,12 @@
     display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem; margin-bottom: 3rem;
   }
-  .footer-brand {
-    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;
-  }
+  .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
   .footer-brand-text {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5rem; color: var(--white); letter-spacing: 0.05em;
   }
-  .footer-tagline {
-    color: rgba(255,255,255,0.5); font-size: 0.9rem;
-    max-width: 320px; line-height: 1.6;
-  }
+  .footer-tagline { color: rgba(255,255,255,0.5); font-size: 0.9rem; max-width: 320px; line-height: 1.6; }
   .footer-col h4 {
     color: var(--white); font-size: 0.85rem;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -239,17 +185,12 @@
   }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 0.5rem; }
-  .footer-col a {
-    color: rgba(255,255,255,0.6); text-decoration: none;
-    font-size: 0.9rem; transition: color 0.2s;
-  }
+  .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
   .footer-col a:hover { color: var(--gold); }
   .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 2rem;
-    display: flex; justify-content: space-between;
-    align-items: center; color: rgba(255,255,255,0.4);
-    font-size: 0.85rem; flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    color: rgba(255,255,255,0.4); font-size: 0.85rem; flex-wrap: wrap; gap: 1rem;
   }
 
   /* ============ Loading state ============ */
@@ -259,15 +200,9 @@
     color: var(--gray-500); font-size: 0.95rem;
   }
   .error-box {
-    max-width: 600px; margin: 6rem auto;
-    padding: 2rem; background: #fee2e2;
-    border-left: 4px solid var(--red);
+    max-width: 600px; margin: 6rem auto; padding: 2rem;
+    background: #fee2e2; border-left: 4px solid var(--red);
     border-radius: 8px; color: #7f1d1d;
-  }
-  .error-box h3 { margin-bottom: 0.5rem; }
-  .error-box code {
-    background: rgba(0,0,0,0.05); padding: 0.1rem 0.4rem;
-    border-radius: 3px; font-size: 0.9em;
   }
 
   /* ============ MOBILE ============ */
@@ -277,8 +212,7 @@
       background: var(--white); flex-direction: column;
       padding: 2rem; gap: 1.5rem;
       border-bottom: 1px solid var(--gray-100);
-      transform: translateY(-150%);
-      transition: transform 0.3s;
+      transform: translateY(-150%); transition: transform 0.3s;
     }
     .nav-links.open { transform: translateY(0); }
     .nav-toggle { display: block; }
@@ -328,60 +262,14 @@
           </button>
           <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Startsida</a></li>
-            <li><a href="spelare.html" class="active">Våra spelare</a></li>
+            <li><a href="spelare.html">Våra spelare</a></li>
             <li><a href="index.html#om-oss">Om oss</a></li>
             <li><a href="sponsorer.html">Sponsorer</a></li>
-            <li><a href="tabell.html">Tabell</a></li>
+            <li><a href="tabell.html" class="active">Tabell</a></li>
             <li><a href="index.html#medlem" class="nav-cta">Bli medlem</a></li>
           </ul>
         </div>
       </nav>`;
-  }
-
-  function renderProfileSection(profil) {
-    const rows = [
-      { label: 'Högsta serie', value: profil.hogsta_slagning_serie, gold: true },
-      { label: 'Högsta match', value: profil.hogsta_slagning_match, gold: true },
-      { label: 'Favoritklot',  value: profil.favoritklot, stacked: true },
-    ].map(r => `
-      <div class="profile-row${r.stacked ? ' stacked' : ''}">
-        <span class="profile-label">${escapeHtml(r.label)}</span>
-        <span class="profile-value${r.gold ? ' gold' : ''}">${escapeHtml(r.value)}</span>
-      </div>`).join('');
-
-    return `
-      <div class="profile-toggle">
-        Spelarprofil <i class="profile-toggle-arrow">▾</i>
-      </div>
-      <div class="player-profile">
-        <div class="player-profile-inner">${rows}</div>
-      </div>`;
-  }
-
-  function renderPlayer(p) {
-    const hasProfile = !!p.profil;
-    return `
-      <div class="player-card${hasProfile ? ' expandable' : ''}" ${hasProfile ? 'onclick="this.classList.toggle(\'open\')"' : ''}>
-        <div class="player-image">
-          <span>${escapeHtml(p.initialer)}</span>
-          <span class="player-number">#${escapeHtml(p.nummer)}</span>
-        </div>
-        <div class="player-info">
-          <div class="player-name">${escapeHtml(p.namn)}</div>
-          <div class="player-role">${escapeHtml(p.roll)}</div>
-          <div class="player-stats">
-            <div class="stat">
-              <div class="stat-value">${escapeHtml(p.snitt)}</div>
-              <div class="stat-label">Snitt</div>
-            </div>
-            <div class="stat">
-              <div class="stat-value">${escapeHtml(p.profil ? p.profil.spelstyrka : p.matcher)}</div>
-              <div class="stat-label">${p.profil ? 'Spelstyrka' : 'Matcher'}</div>
-            </div>
-          </div>
-        </div>
-        ${hasProfile ? renderProfileSection(p.profil) : ''}
-      </div>`;
   }
 
   function renderFooter(data) {
@@ -394,14 +282,14 @@
                 <div style="width:36px;height:36px;">${emblemSvg()}</div>
                 <div class="footer-brand-text">${escapeHtml(data.klubb.namn)}</div>
               </div>
-              <p class="footer-tagline">Bowlingklubb i ${escapeHtml(data.klubb.ort)} · ${escapeHtml(data.klubb.serie)} · Sikte på Elitserien. En klubb där gemenskap och prestation går hand i hand.</p>
+              <p class="footer-tagline">Bowlingklubb i ${escapeHtml(data.klubb.ort)} · ${escapeHtml(data.klubb.serie)} · Sikte på Elitserien.</p>
             </div>
             <div class="footer-col">
               <h4>Klubben</h4>
               <ul>
                 <li><a href="index.html#om-oss">Om oss</a></li>
                 <li><a href="spelare.html">Spelare</a></li>
-                <li><a href="index.html#sponsorer">Sponsorer</a></li>
+                <li><a href="sponsorer.html">Sponsorer</a></li>
                 <li><a href="tabell.html">Tabell</a></li>
                 <li><a href="index.html#medlem">Bli medlem</a></li>
               </ul>
@@ -431,6 +319,47 @@
       </footer>`;
   }
 
+  function renderTable(data) {
+    const rows = data.tabell.lag.map((lag, i) => {
+      const pos = i + 1;
+      const isOurs = lag.namn === data.klubb.namn;
+      const inPromotion = pos <= data.tabell.kvalplatser;
+      const indicator = inPromotion ? '<span class="promotion-indicator"></span>' : '';
+      return `
+        <tr class="${isOurs ? 'our-team' : ''}">
+          <td class="position-cell">${indicator}${pos}</td>
+          <td>${escapeHtml(lag.namn)}</td>
+          <td>${lag.matcher}</td>
+          <td>${lag.vunna}</td>
+          <td>${lag.oavgjorda}</td>
+          <td>${lag.forlorade}</td>
+          <td>${lag.skillnad}</td>
+          <td>${lag.poang}</td>
+        </tr>`;
+    }).join('');
+
+    return `
+      <section id="tabell">
+        <div class="container">
+          <div class="table-wrapper">
+            <div class="table-header">
+              <div class="table-title">${escapeHtml(data.tabell.titel)}</div>
+              <div class="table-season">${escapeHtml(data.tabell.saesong)}</div>
+            </div>
+            <table class="league-table">
+              <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
+              <tbody>${rows}</tbody>
+            </table>
+            <div class="table-legend">
+              <div class="legend-item"><span class="legend-dot"></span> Kvalplats till Elitserien</div>
+              <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
+            </div>
+          </div>
+          <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)}</div>
+        </div>
+      </section>`;
+  }
+
   function showError(message, details) {
     document.getElementById('app').innerHTML = `
       <div class="error-box">
@@ -446,21 +375,16 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
 
-      document.title = `Våra spelare — ${data.klubb.namn}`;
+      document.title = `Tabell — ${data.klubb.namn}`;
 
       document.getElementById('app').innerHTML =
         renderNavbar(data) +
         `<div class="page-header">
-          <span class="section-eyebrow">Truppen</span>
-          <h1>Våra spelare</h1>
+          <span class="section-eyebrow">${escapeHtml(data.klubb.serie)}</span>
+          <h1>Tabellen</h1>
+          <p>Så här ligger det till i serien. ${escapeHtml(data.klubb.namn)} jagar topp ${data.tabell.kvalplatser} för kvalplats till Elitserien.</p>
         </div>` +
-        `<section id="spelare">
-          <div class="container">
-            <div class="players-grid">
-              ${data.spelare.map(renderPlayer).join('')}
-            </div>
-          </div>
-        </section>` +
+        renderTable(data) +
         renderFooter(data);
 
       const toggle = document.getElementById('navToggle');

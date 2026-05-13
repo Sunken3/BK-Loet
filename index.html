@@ -467,69 +467,6 @@
   }
   .form-submit:hover { background: var(--blue); }
 
-  /* ============ TABELL ============ */
-  #tabell { background: var(--navy-deep); color: var(--white); }
-  #tabell .section-title { color: var(--white); }
-  #tabell .section-subtitle { color: rgba(255,255,255,0.6); }
-  #tabell .section-eyebrow { color: var(--gold); }
-  .table-wrapper {
-    max-width: 900px; margin: 0 auto;
-    background: rgba(255,255,255,0.04);
-    border-radius: 16px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .table-header {
-    display: flex; justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .table-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem; letter-spacing: 0.05em;
-  }
-  .table-season { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
-  .league-table { width: 100%; border-collapse: collapse; }
-  .league-table th {
-    text-align: left; padding: 1rem 1.5rem;
-    font-size: 0.75rem; font-weight: 600;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase; letter-spacing: 0.1em;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .league-table th:not(:first-child):not(:nth-child(2)) { text-align: center; }
-  .league-table td {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 0.95rem;
-  }
-  .league-table td:not(:first-child):not(:nth-child(2)) { text-align: center; }
-  .league-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-  .league-table tbody tr.our-team { background: rgba(245, 197, 24, 0.08); }
-  .league-table tbody tr.our-team td { font-weight: 600; color: var(--gold); }
-  .position-cell {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem; color: var(--gold); width: 60px;
-  }
-  .promotion-indicator {
-    display: inline-block; width: 4px; height: 16px;
-    background: var(--gold); margin-right: 0.75rem;
-    vertical-align: middle; border-radius: 2px;
-  }
-  .table-legend {
-    padding: 1.25rem 2rem;
-    background: rgba(0,0,0,0.2);
-    font-size: 0.8rem; color: rgba(255,255,255,0.6);
-    display: flex; gap: 1.5rem; flex-wrap: wrap;
-  }
-  .legend-item { display: flex; align-items: center; gap: 0.5rem; }
-  .legend-dot { width: 8px; height: 8px; border-radius: 2px; background: var(--gold); }
-  .table-disclaimer {
-    text-align: center; margin-top: 1.5rem;
-    color: rgba(255,255,255,0.5); font-size: 0.85rem;
-  }
-
   /* ============ FOOTER ============ */
   footer {
     background: #030814; color: rgba(255,255,255,0.7);
@@ -683,7 +620,7 @@
             <li><a href="spelare.html">Våra spelare</a></li>
             <li><a href="#om-oss">Om oss</a></li>
             <li><a href="sponsorer.html">Sponsorer</a></li>
-            <li><a href="#tabell">Tabell</a></li>
+            <li><a href="tabell.html">Tabell</a></li>
             <li><a href="#medlem" class="nav-cta">Bli medlem</a></li>
           </ul>
         </div>
@@ -883,52 +820,6 @@
       </section>`;
   }
 
-  function renderTable(data) {
-    const rows = data.tabell.lag.map((lag, i) => {
-      const pos = i + 1;
-      const isOurs = lag.namn === data.klubb.namn;
-      const inPromotion = pos <= data.tabell.kvalplatser;
-      const indicator = inPromotion ? '<span class="promotion-indicator"></span>' : '';
-      return `
-        <tr class="${isOurs ? 'our-team' : ''}">
-          <td class="position-cell">${indicator}${pos}</td>
-          <td>${escapeHtml(lag.namn)}</td>
-          <td>${escapeHtml(lag.matcher)}</td>
-          <td>${escapeHtml(lag.vinster)}</td>
-          <td>${escapeHtml(lag.oavgjorda)}</td>
-          <td>${escapeHtml(lag.forluster)}</td>
-          <td>${escapeHtml(lag.skillnad)}</td>
-          <td>${escapeHtml(lag.poang)}</td>
-        </tr>`;
-    }).join('');
-
-    return `
-      <section id="tabell">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">${escapeHtml(data.klubb.serie)}</span>
-            <h2 class="section-title">Tabellen</h2>
-            <p class="section-subtitle">Så här ligger det till i serien. ${escapeHtml(data.klubb.namn)} jagar topp ${data.tabell.kvalplatser} för kvalplats till Elitserien.</p>
-          </div>
-          <div class="table-wrapper">
-            <div class="table-header">
-              <div class="table-title">${escapeHtml(data.tabell.titel)}</div>
-              <div class="table-season">${escapeHtml(data.tabell.saesong)}</div>
-            </div>
-            <table class="league-table">
-              <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
-              <tbody>${rows}</tbody>
-            </table>
-            <div class="table-legend">
-              <div class="legend-item"><span class="legend-dot"></span><span>Kvalplats till Elitserien</span></div>
-              <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
-            </div>
-          </div>
-          <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)}</div>
-        </div>
-      </section>`;
-  }
-
   function renderFooter(data) {
     return `
       <footer>
@@ -947,7 +838,7 @@
                 <li><a href="#om-oss">Om oss</a></li>
                 <li><a href="#spelare">Spelare</a></li>
                 <li><a href="#sponsorer">Sponsorer</a></li>
-                <li><a href="#tabell">Tabell</a></li>
+                <li><a href="tabell.html">Tabell</a></li>
                 <li><a href="#medlem">Bli medlem</a></li>
               </ul>
             </div>
@@ -1039,7 +930,6 @@
         renderHero(data) +
         renderAbout(data) +
         renderMembership(data) +
-        renderTable(data) +
         renderFooter(data);
 
       attachInteractivity();
