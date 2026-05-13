@@ -181,6 +181,106 @@
   }
   .sponsor-link:hover { color: var(--blue-bright); }
 
+  /* ============ SPONSOR CTA ============ */
+  .sponsor-cta {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 6rem 0; text-align: center;
+  }
+  .sponsor-cta .section-eyebrow {
+    color: var(--gold); font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-bottom: 0.75rem; display: inline-block;
+  }
+  .sponsor-cta h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--white); line-height: 1; margin-bottom: 1rem;
+  }
+  .sponsor-cta p {
+    color: rgba(255,255,255,0.7); font-size: 1.05rem;
+    max-width: 560px; margin: 0 auto 2rem;
+  }
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold); color: var(--navy-deep);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.1em;
+    padding: 0.9rem 2.5rem; border-radius: 6px;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
+
+  /* ============ SPONSOR PACKAGES ============ */
+  #sponsorpaket { background: var(--gray-50); padding: 6rem 0; }
+  .packages-header { text-align: center; margin-bottom: 3rem; }
+  .packages-header .section-eyebrow {
+    color: var(--blue); font-size: 0.75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.2em;
+    margin-bottom: 0.75rem; display: inline-block;
+  }
+  .packages-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--navy); line-height: 1; margin-bottom: 0.75rem;
+  }
+  .packages-header p { color: var(--gray-500); font-size: 1rem; }
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin-bottom: 3rem;
+  }
+  .package-card {
+    background: var(--white); border-radius: 12px;
+    border: 1px solid var(--gray-100);
+    box-shadow: 0 2px 12px rgba(10,31,77,0.06);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10,31,77,0.12);
+  }
+  .package-top { height: 4px; }
+  .package-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .package-tier-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; letter-spacing: 0.1em; margin-bottom: 0.5rem;
+  }
+  .package-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; color: var(--navy);
+    letter-spacing: 0.02em; margin-bottom: 1.25rem;
+  }
+  .package-features {
+    list-style: none; margin: 0 0 1.5rem; padding: 0; flex: 1;
+  }
+  .package-features li {
+    display: flex; align-items: flex-start; gap: 0.5rem;
+    font-size: 0.9rem; color: var(--gray-700);
+    padding: 0.4rem 0; border-bottom: 1px solid var(--gray-100); line-height: 1.4;
+  }
+  .package-features li:last-child { border-bottom: none; }
+  .package-features li::before {
+    content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .package-cta-btn {
+    display: block; width: 100%; box-sizing: border-box;
+    background: var(--navy); color: var(--white);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem; letter-spacing: 0.1em;
+    padding: 0.85rem; border-radius: 6px;
+    text-align: center; text-decoration: none; transition: background 0.2s;
+  }
+  .package-cta-btn:hover { background: var(--blue); }
+  .packages-note {
+    text-align: center; max-width: 600px; margin: 0 auto;
+    padding: 2rem 1.5rem; background: var(--white); border-radius: 12px;
+    border: 1px solid var(--gray-100); box-shadow: 0 2px 12px rgba(10,31,77,0.04);
+  }
+  .packages-note p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.7; }
+  .packages-note a { color: var(--blue); text-decoration: none; }
+  .packages-note a:hover { color: var(--blue-bright); }
+
   /* ============ FOOTER ============ */
   footer {
     background: #030814; color: rgba(255,255,255,0.7);
@@ -395,6 +495,68 @@
           <div class="container">
             <div class="sponsor-grid">
               ${renderSponsors(data)}
+            </div>
+          </div>
+        </section>` +
+        `<section class="sponsor-cta">
+          <div class="container">
+            <span class="section-eyebrow">BLI EN DEL AV OSS</span>
+            <h2>Vill du sponsra oss?</h2>
+            <p>Vi söker företag som vill växa tillsammans med Norrbottens stoltaste bowlingklubb. Se våra sponsorpaket nedan.</p>
+            <a class="btn-gold" href="#sponsorpaket">Se sponsorpaketen</a>
+          </div>
+        </section>` +
+        `<section id="sponsorpaket">
+          <div class="container">
+            <div class="packages-header">
+              <span class="section-eyebrow">VÅRA PAKET</span>
+              <h2>Sponsorpaket 2025/26</h2>
+              <p>Anpassade efter ert företags storlek och mål</p>
+            </div>
+            <div class="packages-grid">
+              <div class="package-card">
+                <div class="package-top" style="background:#f5c518;"></div>
+                <div class="package-body">
+                  <div class="package-tier-label" style="color:#b8860b;">GULD</div>
+                  <div class="package-price">Från 15 000 kr</div>
+                  <ul class="package-features">
+                    <li>Företagets logotyp på matchtröjan (stor)</li>
+                    <li>Första omnämnande i sociala medier</li>
+                    <li>20 % rabatt på bowling och restaurang (sep–apr)</li>
+                    <li>Företaget presenteras muntligt inför varje hemmamatch</li>
+                    <li>Exklusiv synlighet</li>
+                  </ul>
+                  <a class="package-cta-btn" href="mailto:info@bkloet.se?subject=Intresseanm%C3%A4lan%3A%20Guldpaket">Kontakta oss</a>
+                </div>
+              </div>
+              <div class="package-card">
+                <div class="package-top" style="background:#6b7280;"></div>
+                <div class="package-body">
+                  <div class="package-tier-label" style="color:#6b7280;">SILVER</div>
+                  <div class="package-price">10 000 kr</div>
+                  <ul class="package-features">
+                    <li>Företagets logotyp på matchtröjan (stor)</li>
+                    <li>Omnämnande i sociala medier</li>
+                    <li>10 % rabatt på bowling och restaurang (sep–apr)</li>
+                  </ul>
+                  <a class="package-cta-btn" href="mailto:info@bkloet.se?subject=Intresseanm%C3%A4lan%3A%20Silverpaket">Kontakta oss</a>
+                </div>
+              </div>
+              <div class="package-card">
+                <div class="package-top" style="background:#cd7f32;"></div>
+                <div class="package-body">
+                  <div class="package-tier-label" style="color:#cd7f32;">BRONS</div>
+                  <div class="package-price">5 000 kr</div>
+                  <ul class="package-features">
+                    <li>Logga på matchtröjor (mindre)</li>
+                    <li>Omnämnande i sociala medier</li>
+                  </ul>
+                  <a class="package-cta-btn" href="mailto:info@bkloet.se?subject=Intresseanm%C3%A4lan%3A%20Bronspaket">Kontakta oss</a>
+                </div>
+              </div>
+            </div>
+            <div class="packages-note">
+              <p>Har ni andra önskemål? Vi skräddarsyr gärna ett paket som passar just er. Kontakta vår sponsoransvarig på <a href="mailto:info@bkloet.se">info@bkloet.se</a> eller <a href="tel:+46920000000">0920-00 00 00</a>.</p>
             </div>
           </div>
         </section>` +
