@@ -109,13 +109,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
-    align-items: start;
   }
   .sponsor-card {
     background: var(--white); border-radius: 12px;
     border: 1px solid var(--gray-100); overflow: hidden;
     cursor: pointer; transition: all 0.3s;
     box-shadow: 0 2px 12px rgba(10,31,77,0.06);
+    display: flex; flex-direction: column;
   }
   .sponsor-card:hover {
     transform: translateY(-4px);
@@ -131,7 +131,7 @@
     max-width: 160px; max-height: 80px;
     object-fit: contain; display: block;
   }
-  .sponsor-info { padding: 1.25rem 1.5rem 0; }
+  .sponsor-info { padding: 1.25rem 1.5rem 0; flex: 1; }
   .sponsor-name {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.4rem; color: var(--navy);
