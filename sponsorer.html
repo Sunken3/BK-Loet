@@ -105,52 +105,75 @@
 
   /* ============ SPONSORER ============ */
   #sponsorer { background: var(--gray-50); }
-  .sponsor-tier { margin-bottom: 3rem; }
-  .sponsor-tier:last-child { margin-bottom: 0; }
-  .sponsor-tier-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--navy);
-    letter-spacing: 0.05em; margin-bottom: 1.5rem;
-    text-align: center;
-    display: flex; align-items: center; gap: 1rem;
-    justify-content: center;
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
   }
-  .sponsor-tier-title::before, .sponsor-tier-title::after {
-    content: ''; flex: 1; max-width: 80px;
-    height: 1px; background: var(--gray-300);
-  }
-  .sponsor-grid { display: grid; gap: 1.25rem; }
-  .sponsor-grid.huvud { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
-  .sponsor-grid.guld { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .sponsor-grid.silver { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .sponsor-grid.brons { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   .sponsor-card {
     background: var(--white); border-radius: 12px;
-    padding: 1.75rem; text-align: center;
-    border: 1px solid var(--gray-100);
-    transition: all 0.3s;
-    text-decoration: none; color: inherit;
-    display: block;
+    border: 1px solid var(--gray-100); overflow: hidden;
+    cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(10,31,77,0.06);
   }
   .sponsor-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--blue);
-    box-shadow: 0 8px 24px rgba(10, 31, 77, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10,31,77,0.12);
   }
-  .sponsor-card.huvud {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    color: var(--white); border: none;
-    padding: 2.5rem 2rem;
+  .sponsor-logo-area {
+    padding: 2.5rem 2rem; display: flex;
+    align-items: center; justify-content: center;
+    background: var(--white); min-height: 140px;
+    border-bottom: 1px solid var(--gray-100);
   }
-  .sponsor-card.huvud .sponsor-name { color: var(--gold); }
-  .sponsor-card.huvud .sponsor-desc { color: rgba(255,255,255,0.85); }
+  .sponsor-logo {
+    max-width: 160px; max-height: 80px;
+    object-fit: contain; display: block;
+  }
+  .sponsor-info { padding: 1.25rem 1.5rem 0; }
   .sponsor-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--navy);
-    letter-spacing: 0.03em; margin-bottom: 0.5rem;
+    font-size: 1.4rem; color: var(--navy);
+    letter-spacing: 0.02em; margin-bottom: 0.2rem;
   }
-  .sponsor-card.huvud .sponsor-name { font-size: 2rem; }
-  .sponsor-desc { color: var(--gray-500); font-size: 0.9rem; line-height: 1.5; }
+  .sponsor-bransch {
+    color: var(--gray-500); font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+  .sponsor-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--gray-100);
+    font-size: 0.8rem; font-weight: 600; color: var(--blue);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    user-select: none;
+  }
+  .sponsor-toggle-arrow {
+    display: inline-block; transition: transform 0.3s ease;
+  }
+  .sponsor-card.open .sponsor-toggle-arrow { transform: rotate(180deg); }
+  .sponsor-details {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: var(--gray-50);
+  }
+  .sponsor-card.open .sponsor-details { max-height: 220px; }
+  .sponsor-details-inner { padding: 1.25rem 1.5rem 1.5rem; }
+  .sponsor-detail-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.5rem 0; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem;
+  }
+  .sponsor-detail-row:last-child { border-bottom: none; }
+  .sponsor-detail-row.stacked { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+  .sponsor-detail-label { color: var(--gray-500); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .sponsor-detail-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem; color: var(--navy); letter-spacing: 0.02em;
+  }
+  .sponsor-detail-row.stacked .sponsor-detail-value {
+    font-family: inherit; font-size: 0.9rem; font-weight: 500; color: var(--gray-700); line-height: 1.5;
+  }
 
   /* ============ FOOTER ============ */
   footer {
@@ -261,33 +284,34 @@
       </nav>`;
   }
 
-  function renderSponsorTier(title, sponsors, tierClass) {
-    if (!sponsors.length) return '';
-    const cards = sponsors.map(s => `
-      <a class="sponsor-card ${tierClass}" href="${escapeHtml(s.lank || '#')}" ${s.lank && s.lank !== '#' ? 'target="_blank" rel="noopener"' : ''}>
-        <div class="sponsor-name">${escapeHtml(s.namn)}</div>
-        <div class="sponsor-desc">${escapeHtml(s.beskrivning)}</div>
-      </a>`).join('');
+  function renderSponsor(s) {
     return `
-      <div class="sponsor-tier">
-        <h3 class="sponsor-tier-title">${escapeHtml(title)}</h3>
-        <div class="sponsor-grid ${tierClass}">${cards}</div>
+      <div class="sponsor-card" onclick="this.classList.toggle('open')">
+        <div class="sponsor-logo-area">
+          <img class="sponsor-logo" src="${escapeHtml(s.logo)}" alt="${escapeHtml(s.namn)}">
+        </div>
+        <div class="sponsor-info">
+          <div class="sponsor-name">${escapeHtml(s.namn)}</div>
+          <div class="sponsor-bransch">${escapeHtml(s.profil.bransch)}</div>
+        </div>
+        <div class="sponsor-toggle">Mer info <span class="sponsor-toggle-arrow">▾</span></div>
+        <div class="sponsor-details">
+          <div class="sponsor-details-inner">
+            <div class="sponsor-detail-row stacked">
+              <span class="sponsor-detail-label">Om sponsorn</span>
+              <span class="sponsor-detail-value">${escapeHtml(s.profil.beskrivning)}</span>
+            </div>
+            <div class="sponsor-detail-row">
+              <span class="sponsor-detail-label">Webbplats</span>
+              <span class="sponsor-detail-value">${escapeHtml(s.profil.webbplats)}</span>
+            </div>
+          </div>
+        </div>
       </div>`;
   }
 
   function renderSponsors(data) {
-    const grupper = {
-      'Huvudsponsor': { lista: [], klass: 'huvud' },
-      'Guldsponsor':  { lista: [], klass: 'guld' },
-      'Silversponsor':{ lista: [], klass: 'silver' },
-      'Bronssponsor': { lista: [], klass: 'brons' }
-    };
-    data.sponsorer.forEach(s => {
-      if (grupper[s.niva]) grupper[s.niva].lista.push(s);
-    });
-    return Object.entries(grupper)
-      .map(([titel, g]) => renderSponsorTier(titel, g.lista, g.klass))
-      .join('');
+    return data.sponsorer.map(s => renderSponsor(s)).join('');
   }
 
   function renderFooter(data) {
@@ -363,7 +387,9 @@
         </div>` +
         `<section id="sponsorer">
           <div class="container">
-            ${renderSponsors(data)}
+            <div class="sponsor-grid">
+              ${renderSponsors(data)}
+            </div>
           </div>
         </section>` +
         renderFooter(data);
