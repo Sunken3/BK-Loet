@@ -80,7 +80,7 @@
     {
       "namn": "ICA Maxi Stormarknad",
       "logo": "images/ica-maxi-stormarknad-logo.svg",
-      "lank": "https://www.ica.se",
+      "lank": "https://www.ica.se/butiker/maxi/lulea/maxi-ica-stormarknad-lulea-1003382/",
       "profil": {
         "bransch": "Dagligvaruhandel",
         "beskrivning": "ICA Maxi i Luleå är en av stadens största matbutiker och en stolt partner till BK Loet.",
@@ -90,31 +90,31 @@
     {
       "namn": "Jetpak",
       "logo": "images/Jetpak_logo.svg",
-      "lank": "https://www.jetpak.se",
+      "lank": "https://jetpak.com/se/kontakt/har-finns-vi/jetpak-sverige/lulea/",
       "profil": {
         "bransch": "Logistik & Transport",
         "beskrivning": "Jetpak är Nordens ledande expressleverantör och en viktig samarbetspartner för BK Loet.",
-        "webbplats": "jetpak.se"
+        "webbplats": "jetpak.com"
       }
     },
     {
       "namn": "O'Learys",
       "logo": "images/Olearys_logo.svg",
-      "lank": "https://www.olearys.se",
+      "lank": "https://olearys.com/sv-se/luleaa/",
       "profil": {
         "bransch": "Restaurang & Sport",
         "beskrivning": "O'Learys är en sportsbar och restaurangkedja som engagerar sig i Luleås idrottsliv.",
-        "webbplats": "olearys.se"
+        "webbplats": "olearys.com"
       }
     },
     {
       "namn": "GLB",
       "logo": "images/GLB Sponsor.svg",
-      "lank": "#",
+      "lank": "https://www.glbbygg.se/",
       "profil": {
         "bransch": "Sponsor",
         "beskrivning": "GLB är en stolt sponsor som bidrar till att BK Loet kan fortsätta satsa på bowlingen.",
-        "webbplats": "-"
+        "webbplats": "glbbygg.se"
       }
     }
   ],
