@@ -52,7 +52,7 @@
   ],
 
   "spelare": [
-    { "namn": "Anton Sandberg", "initialer": "AS", "nummer": 7, "roll": "Lagkapten", "snitt": 198, "matcher": 12,
+    { "namn": "Anton Sandberg",         "bild": "images/spelare/anton-sandberg.jpg",         "roll": "Lagkapten", "snitt": "-", "matcher": "-",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
@@ -60,11 +60,20 @@
         "spelstyrka": 215
       }
     },
-    { "namn": "Erik L.", "initialer": "EL", "nummer": 3, "roll": "Spelare", "snitt": 205, "matcher": 12 },
-    { "namn": "Johan H.", "initialer": "JH", "nummer": 11, "roll": "Spelare", "snitt": 192, "matcher": 10 },
-    { "namn": "Markus S.", "initialer": "MS", "nummer": 5, "roll": "Spelare", "snitt": 201, "matcher": 11 },
-    { "namn": "Peter B.", "initialer": "PB", "nummer": 9, "roll": "Spelare", "snitt": 187, "matcher": 12 },
-    { "namn": "Oskar R.", "initialer": "OR", "nummer": 14, "roll": "Reserv", "snitt": 194, "matcher": 8 }
+    { "namn": "Arto Kuusela",           "bild": "images/spelare/arto-kuusela.jpg",           "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Daniel Tserni",          "bild": "images/spelare/daniel-tserni.jpg",          "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Fredrik Nilsson",        "bild": "images/spelare/fredrik-nilsson.jpg",        "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Jonatan Nilsson",        "bild": "images/spelare/jonatan-nilsson.jpg",        "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Magnus Fagerqvist",      "bild": "images/spelare/magnus-fagerqvist.jpg",      "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Patrik Sarri",           "bild": "images/spelare/patrik-sarri.jpg",           "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Peter Wiklund",          "bild": "images/spelare/peter-wiklund.jpg",          "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Rasmus Roos",            "bild": "images/spelare/rasmus-roos.jpg",            "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Rasmus Ovefalk",         "bild": "images/spelare/rasmus-ovefalk.jpg",         "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Rickard Ekman",          "bild": "images/spelare/rickard-ekman.jpg",          "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Robert Johansson",       "bild": "images/spelare/robert-johansson.jpg",       "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Sebastian Landin Olsson","bild": "images/spelare/sebastian-landin-olsson.jpg","roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Stefan Eklund",          "bild": "images/spelare/stefan-eklund.jpg",          "roll": "Spelare", "snitt": "-", "matcher": "-" },
+    { "namn": "Åke Tserni",             "bild": "images/spelare/ake-tserni.jpg",             "roll": "Spelare", "snitt": "-", "matcher": "-" }
   ],
 
   "sponsorer": [
