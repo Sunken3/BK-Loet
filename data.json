@@ -33,9 +33,9 @@
 
   "bildspel": [
     {
-      "rubrik": "Hela laget",
-      "underrubrik": "Säsong 2025/26",
-      "typ": "emblem"
+      "underrubrik": "Efter kvalsegern i Skellefteå 2025/2026",
+      "typ": "foto",
+      "src": "images/LagbildSkellefteå2026.jpg"
     },
     {
       "stor_text": "3",

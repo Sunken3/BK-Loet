@@ -173,6 +173,17 @@
     font-size: 0.85rem; color: rgba(255,255,255,0.7);
     text-transform: uppercase; letter-spacing: 0.2em; margin-top: 0.5rem;
   }
+  .slide-foto {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+  }
+  .slide-foto-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 1.5rem 1.75rem;
+    background: linear-gradient(to top, rgba(10,31,77,0.75) 0%, transparent 100%);
+    text-align: center;
+  }
+  .slide-foto-caption .slide-sublabel { margin-top: 0; }
   .slide-indicators {
     position: absolute; bottom: 1.5rem; left: 50%;
     transform: translateX(-50%);
@@ -629,6 +640,15 @@
 
   function renderSlide(slide, index, isActive) {
     const cls = `slide slide-${index + 1}${isActive ? ' active' : ''}`;
+    if (slide.typ === 'foto') {
+      return `
+        <div class="${cls}">
+          <img class="slide-foto" src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.underrubrik)}">
+          <div class="slide-foto-caption">
+            <div class="slide-sublabel">${escapeHtml(slide.underrubrik)}</div>
+          </div>
+        </div>`;
+    }
     if (slide.typ === 'emblem') {
       return `
         <div class="${cls}">
