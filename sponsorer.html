@@ -212,6 +212,36 @@
   }
   .btn-gold:hover { background: var(--gold-soft); transform: translateY(-2px); }
 
+  /* ============ JERSEY SHOWCASE ============ */
+  .jersey-section {
+    background: var(--white); padding: 5rem 0;
+  }
+  .jersey-inner {
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .jersey-images {
+    display: flex; gap: 2rem; align-items: flex-end; flex-shrink: 0;
+  }
+  .jersey-img {
+    height: 240px; width: auto; object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
+  }
+  .jersey-text {
+    max-width: 340px; text-align: center;
+    color: var(--gray-700); font-size: 1.05rem; line-height: 1.7;
+  }
+  .jersey-text strong {
+    display: block; font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; color: var(--navy); margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+  @media (max-width: 700px) {
+    .jersey-images { flex-direction: column; align-items: center; }
+    .jersey-img { height: 180px; }
+    .jersey-text { max-width: 100%; }
+  }
+
   /* ============ SPONSOR PACKAGES ============ */
   #sponsorpaket { background: var(--gray-50); padding: 6rem 0; }
   .packages-header { text-align: center; margin-bottom: 3rem; }
@@ -498,6 +528,20 @@
           <h1>Våra sponsorer</h1>
           <p>Företagen som gör det möjligt för oss att satsa fullt ut.</p>
         </div>` +
+        `<section class="jersey-section">
+          <div class="container">
+            <div class="jersey-inner">
+              <div class="jersey-images">
+                <img src="images/T_Shirt_Turtle_Neck_front.png" alt="BK Loet matchtröja framsida" class="jersey-img">
+                <img src="images/bk-loet-tshirt-back.png" alt="BK Loet matchtröja baksida" class="jersey-img">
+              </div>
+              <div class="jersey-text">
+                <strong>Syns på varje match</strong>
+                Som sponsor syns ditt företag på våra matchtröjor — vid varje seriematch och under Luleå Open.
+              </div>
+            </div>
+          </div>
+        </section>` +
         `<section id="sponsorer">
           <div class="container">
             <div class="sponsor-grid">
