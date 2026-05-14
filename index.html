@@ -411,9 +411,7 @@
   /* ============ BLI MEDLEM ============ */
   #medlem { background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%); }
   .membership-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem; margin-bottom: 3rem;
+    max-width: 480px; margin: 0 auto 3rem;
   }
   .membership-card {
     background: var(--white); border: 2px solid var(--gray-100);
@@ -425,14 +423,9 @@
     box-shadow: 0 20px 40px rgba(29, 79, 196, 0.15);
     transform: scale(1.02);
   }
-  .membership-card.featured::before {
-    content: 'Populärast';
-    position: absolute; top: -12px; left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold); color: var(--navy-deep);
-    padding: 0.3rem 1rem; border-radius: 100px;
-    font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
+  .membership-ingress {
+    color: var(--gray-500); font-size: 1rem;
+    margin-bottom: 1.5rem; font-style: italic;
   }
   .membership-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -835,13 +828,16 @@
   function renderMembership(data) {
     const cards = data.medlemskap.map(m => {
       const features = m.formaner.map(f => `<li><span class="check">✓</span> ${escapeHtml(f)}</li>`).join('');
+      const ingress = m.ingress ? `<div class="membership-ingress">${escapeHtml(m.ingress)}</div>` : '';
+      const btnLabel = m.featured ? 'Bli stödmedlem' : `Välj ${escapeHtml(m.titel)}`;
       return `
         <div class="membership-card${m.featured ? ' featured' : ''}">
           <div class="membership-title">${escapeHtml(m.titel)}</div>
           <div class="membership-price">${escapeHtml(m.pris)}<span> kr</span></div>
           <div class="membership-period">${escapeHtml(m.period)}</div>
+          ${ingress}
           <ul class="membership-features">${features}</ul>
-          <button class="membership-btn">Välj ${escapeHtml(m.titel)}</button>
+          <button class="membership-btn">${btnLabel}</button>
         </div>`;
     }).join('');
 
@@ -849,9 +845,9 @@
       <section id="medlem">
         <div class="container">
           <div class="section-header">
-            <span class="section-eyebrow">Gå med</span>
-            <h2 class="section-title">Bli medlem i ${escapeHtml(data.klubb.namn)}</h2>
-            <p class="section-subtitle">Välj det medlemskap som passar dig — alla nivåer är välkomna.</p>
+            <span class="section-eyebrow">Stöd oss</span>
+            <h2 class="section-title">Bli stödmedlem i ${escapeHtml(data.klubb.namn)}</h2>
+            <p class="section-subtitle">Stöd en klubb med historia — och få något tillbaka. Ditt bidrag håller bowlingen levande i Luleå.</p>
           </div>
           <div class="membership-grid">${cards}</div>
           <div class="contact-form">

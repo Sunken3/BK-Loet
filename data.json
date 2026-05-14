@@ -301,35 +301,14 @@
       "titel": "Stödmedlem",
       "pris": "300",
       "period": "per år",
-      "featured": false,
+      "featured": true,
+      "ingress": "Gör skillnad för bowlingen i Luleå",
       "formaner": [
-        "Stödja klubbens verksamhet",
+        "Exklusivt BK Loet-klistermärke skickat hem till dig",
+        "Ett personligt och snyggt digitalt diplom",
+        "Ditt namn listat på klubbens sponsorsida på webben",
         "Nyhetsbrev från klubben",
         "Inbjudan till klubbevent"
-      ]
-    },
-    {
-      "titel": "Aktiv spelare",
-      "pris": "1 200",
-      "period": "per år",
-      "featured": true,
-      "formaner": [
-        "Allt i Stödmedlem",
-        "Träning med klubben varje vecka",
-        "Möjlighet att tävla för BK Loet",
-        "Tillgång till klubbens utrustning",
-        "Rabatt på Luleå Open-anmälan"
-      ]
-    },
-    {
-      "titel": "Ungdom",
-      "pris": "600",
-      "period": "per år (under 21)",
-      "featured": false,
-      "formaner": [
-        "Allt i Aktiv spelare",
-        "Ungdomsträning med ledare",
-        "Subventionerade tävlingsavgifter"
       ]
     }
   ],
