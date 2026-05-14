@@ -7,7 +7,6 @@
     "saesong": "Säsong 2025/26",
     "serie": "Nordallsvenskan"
   },
-
   "kontakt": {
     "email": "info@bkloet.se",
     "telefon": "0920-00 00 00",
@@ -17,7 +16,6 @@
     "facebook": "#",
     "lulea_open": "#"
   },
-
   "om_oss": {
     "rubrik": "En klubb. En målsättning.",
     "stycken": [
@@ -25,12 +23,20 @@
       "Hos oss står gemenskapen och spelglädjen i centrum. Vi tränar tillsammans, reser tillsammans till bortamatcher, och firar tillsammans när det går vägen. Klubben arrangerar också Luleå Open — en av norra Sveriges mer ambitiösa bowlingtävlingar."
     ],
     "nyckeltal": [
-      { "varde": "12", "etikett": "Aktiva spelare" },
-      { "varde": "1962", "etikett": "Grundades" },
-      { "varde": "#8", "etikett": "I serien" }
+      {
+        "varde": "12",
+        "etikett": "Aktiva spelare"
+      },
+      {
+        "varde": "1962",
+        "etikett": "Grundades"
+      },
+      {
+        "varde": "#8",
+        "etikett": "I serien"
+      }
     ]
   },
-
   "bildspel": [
     {
       "underrubrik": "Efter kvalsegern i Skellefteå 2025/2026",
@@ -50,9 +56,13 @@
       "typ": "text"
     }
   ],
-
   "spelare": [
-    { "namn": "Anton Sandberg",         "bild": "images/spelare/anton-sandberg.jpg",         "roll": "Lagkapten", "snitt": "214,71", "spelstyrka": "221,90",
+    {
+      "namn": "Anton Sandberg",
+      "bild": "images/spelare/anton-sandberg.jpg",
+      "roll": "Lagkapten",
+      "snitt": "214,71",
+      "spelstyrka": "221,90",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
@@ -61,22 +71,105 @@
         "spelstyrka": "221,90"
       }
     },
-    { "namn": "Arto Kuusela",           "bild": "images/spelare/arto-kuusela.jpg",           "roll": "Spelare", "snitt": "202,16", "spelstyrka": "210,18" },
-    { "namn": "Daniel Tserni",          "bild": "images/spelare/daniel-tserni.jpg",          "roll": "Spelare", "snitt": "212,25", "spelstyrka": "220,69" },
-    { "namn": "Fredrik Nilsson",        "bild": "images/spelare/fredrik-nilsson.jpg",        "roll": "Spelare", "snitt": "161,24", "spelstyrka": "125,99" },
-    { "namn": "Jonatan Nilsson",        "bild": "images/spelare/jonatan-nilsson.jpg",        "roll": "Spelare", "snitt": "163,77", "spelstyrka": "148,02" },
-    { "namn": "Magnus Fagerqvist",      "bild": "images/spelare/magnus-fagerqvist.jpg",      "roll": "Spelare", "snitt": "207,00", "spelstyrka": "215,40" },
-    { "namn": "Patrik Sarri",           "bild": "images/spelare/patrik-sarri.jpg",           "roll": "Spelare", "snitt": "160,00", "spelstyrka": "160,00" },
-    { "namn": "Peter Wiklund",          "bild": "images/spelare/peter-wiklund.jpg",          "roll": "Spelare", "snitt": "195,04", "spelstyrka": "197,11" },
-    { "namn": "Rasmus Roos",            "bild": "images/spelare/rasmus-roos.jpg",            "roll": "Spelare", "snitt": "197,74", "spelstyrka": "209,15" },
-    { "namn": "Rasmus Ovefalk",         "bild": "images/spelare/rasmus-ovefalk.jpg",         "roll": "Spelare", "snitt": "180,98", "spelstyrka": "182,62" },
-    { "namn": "Rickard Ekman",          "bild": "images/spelare/rickard-ekman.jpg",          "roll": "Spelare", "snitt": "205,27", "spelstyrka": "210,73" },
-    { "namn": "Robert Johansson",       "bild": "images/spelare/robert-johansson.jpg",       "roll": "Spelare", "snitt": "175,44", "spelstyrka": "163,45" },
-    { "namn": "Sebastian Landin Olsson","bild": "images/spelare/sebastian-landin-olsson.jpg","roll": "Spelare", "snitt": "190,55", "spelstyrka": "199,76" },
-    { "namn": "Stefan Eklund",          "bild": "images/spelare/stefan-eklund.jpg",          "roll": "Spelare", "snitt": "186,99", "spelstyrka": "192,06" },
-    { "namn": "Åke Tserni",             "bild": "images/spelare/ake-tserni.jpg",             "roll": "Spelare", "snitt": "198,35", "spelstyrka": "206,78" }
+    {
+      "namn": "Daniel Tserni",
+      "bild": "images/spelare/daniel-tserni.jpg",
+      "roll": "Spelare",
+      "snitt": "212,25",
+      "spelstyrka": "220,69"
+    },
+    {
+      "namn": "Magnus Fagerqvist",
+      "bild": "images/spelare/magnus-fagerqvist.jpg",
+      "roll": "Spelare",
+      "snitt": "207,00",
+      "spelstyrka": "215,40"
+    },
+    {
+      "namn": "Rickard Ekman",
+      "bild": "images/spelare/rickard-ekman.jpg",
+      "roll": "Spelare",
+      "snitt": "205,27",
+      "spelstyrka": "210,73"
+    },
+    {
+      "namn": "Arto Kuusela",
+      "bild": "images/spelare/arto-kuusela.jpg",
+      "roll": "Spelare",
+      "snitt": "202,16",
+      "spelstyrka": "210,18"
+    },
+    {
+      "namn": "Rasmus Roos",
+      "bild": "images/spelare/rasmus-roos.jpg",
+      "roll": "Spelare",
+      "snitt": "197,74",
+      "spelstyrka": "209,15"
+    },
+    {
+      "namn": "Åke Tserni",
+      "bild": "images/spelare/ake-tserni.jpg",
+      "roll": "Spelare",
+      "snitt": "198,35",
+      "spelstyrka": "206,78"
+    },
+    {
+      "namn": "Sebastian Landin Olsson",
+      "bild": "images/spelare/sebastian-landin-olsson.jpg",
+      "roll": "Spelare",
+      "snitt": "190,55",
+      "spelstyrka": "199,76"
+    },
+    {
+      "namn": "Peter Wiklund",
+      "bild": "images/spelare/peter-wiklund.jpg",
+      "roll": "Spelare",
+      "snitt": "195,04",
+      "spelstyrka": "197,11"
+    },
+    {
+      "namn": "Stefan Eklund",
+      "bild": "images/spelare/stefan-eklund.jpg",
+      "roll": "Spelare",
+      "snitt": "186,99",
+      "spelstyrka": "192,06"
+    },
+    {
+      "namn": "Rasmus Ovefalk",
+      "bild": "images/spelare/rasmus-ovefalk.jpg",
+      "roll": "Spelare",
+      "snitt": "180,98",
+      "spelstyrka": "182,62"
+    },
+    {
+      "namn": "Robert Johansson",
+      "bild": "images/spelare/robert-johansson.jpg",
+      "roll": "Spelare",
+      "snitt": "175,44",
+      "spelstyrka": "163,45"
+    },
+    {
+      "namn": "Patrik Sarri",
+      "bild": "images/spelare/patrik-sarri.jpg",
+      "roll": "Spelare",
+      "snitt": "160,00",
+      "spelstyrka": "160,00"
+    },
+    {
+      "namn": "Jonatan Nilsson",
+      "bild": "images/spelare/jonatan-nilsson.jpg",
+      "roll": "Spelare",
+      "snitt": "163,77",
+      "spelstyrka": "148,02"
+    },
+    {
+      "namn": "Fredrik Nilsson",
+      "bild": "images/spelare/fredrik-nilsson.jpg",
+      "roll": "Spelare",
+      "snitt": "161,24",
+      "spelstyrka": "125,99"
+    }
   ],
-
   "sponsorer": [
     {
       "namn": "ICA Maxi Stormarknad",
@@ -119,7 +212,6 @@
       }
     }
   ],
-
   "medlemskap": [
     {
       "titel": "Stödmedlem",
@@ -157,22 +249,93 @@
       ]
     }
   ],
-
   "tabell": {
     "titel": "Nordallsvenskan",
     "saesong": "Säsong 2025/26",
     "uppdaterad": "2026-05-12",
     "kvalplatser": 2,
     "lag": [
-      { "namn": "BK Flash",      "matcher": 16, "vinster": 11, "oavgjorda": 2, "forluster": 3,  "skillnad": "+104", "poang": 24 },
-      { "namn": "BK Fjällräven", "matcher": 16, "vinster": 8,  "oavgjorda": 2, "forluster": 6,  "skillnad": "+2",   "poang": 18 },
-      { "namn": "Bodens BS F",   "matcher": 16, "vinster": 7,  "oavgjorda": 4, "forluster": 5,  "skillnad": "-5",   "poang": 18 },
-      { "namn": "BK Saiwa",      "matcher": 16, "vinster": 7,  "oavgjorda": 3, "forluster": 6,  "skillnad": "+21",  "poang": 17 },
-      { "namn": "Piteå BK",      "matcher": 16, "vinster": 7,  "oavgjorda": 2, "forluster": 7,  "skillnad": "-7",   "poang": 16 },
-      { "namn": "BK Prana",      "matcher": 16, "vinster": 8,  "oavgjorda": 0, "forluster": 8,  "skillnad": "-43",  "poang": 16 },
-      { "namn": "Jonsta BK",     "matcher": 16, "vinster": 5,  "oavgjorda": 5, "forluster": 6,  "skillnad": "-11",  "poang": 15 },
-      { "namn": "BK Loet",       "matcher": 16, "vinster": 5,  "oavgjorda": 3, "forluster": 8,  "skillnad": "-5",   "poang": 13 },
-      { "namn": "Umeå IK BF",    "matcher": 16, "vinster": 3,  "oavgjorda": 1, "forluster": 12, "skillnad": "-56",  "poang": 7  }
+      {
+        "namn": "BK Flash",
+        "matcher": 16,
+        "vinster": 11,
+        "oavgjorda": 2,
+        "forluster": 3,
+        "skillnad": "+104",
+        "poang": 24
+      },
+      {
+        "namn": "BK Fjällräven",
+        "matcher": 16,
+        "vinster": 8,
+        "oavgjorda": 2,
+        "forluster": 6,
+        "skillnad": "+2",
+        "poang": 18
+      },
+      {
+        "namn": "Bodens BS F",
+        "matcher": 16,
+        "vinster": 7,
+        "oavgjorda": 4,
+        "forluster": 5,
+        "skillnad": "-5",
+        "poang": 18
+      },
+      {
+        "namn": "BK Saiwa",
+        "matcher": 16,
+        "vinster": 7,
+        "oavgjorda": 3,
+        "forluster": 6,
+        "skillnad": "+21",
+        "poang": 17
+      },
+      {
+        "namn": "Piteå BK",
+        "matcher": 16,
+        "vinster": 7,
+        "oavgjorda": 2,
+        "forluster": 7,
+        "skillnad": "-7",
+        "poang": 16
+      },
+      {
+        "namn": "BK Prana",
+        "matcher": 16,
+        "vinster": 8,
+        "oavgjorda": 0,
+        "forluster": 8,
+        "skillnad": "-43",
+        "poang": 16
+      },
+      {
+        "namn": "Jonsta BK",
+        "matcher": 16,
+        "vinster": 5,
+        "oavgjorda": 5,
+        "forluster": 6,
+        "skillnad": "-11",
+        "poang": 15
+      },
+      {
+        "namn": "BK Loet",
+        "matcher": 16,
+        "vinster": 5,
+        "oavgjorda": 3,
+        "forluster": 8,
+        "skillnad": "-5",
+        "poang": 13
+      },
+      {
+        "namn": "Umeå IK BF",
+        "matcher": 16,
+        "vinster": 3,
+        "oavgjorda": 1,
+        "forluster": 12,
+        "skillnad": "-56",
+        "poang": 7
+      }
     ]
   }
 }
