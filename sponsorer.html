@@ -590,6 +590,11 @@
         toggle.addEventListener('click', () => links.classList.toggle('open'));
         links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
       }
+
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     } catch (err) {
       showError('Kontrollera att filen data.json finns och har giltigt JSON-format.', err.message);
       console.error(err);
