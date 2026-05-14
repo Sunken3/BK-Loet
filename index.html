@@ -459,10 +459,27 @@
   }
   .membership-features li:last-child { border-bottom: none; }
   .check { color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .membership-card.sponsor {
+    border-color: var(--gold);
+    box-shadow: 0 24px 60px rgba(245, 197, 24, 0.15), 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .sponsor-icon {
+    font-size: 2rem; margin-bottom: 0.75rem; display: block;
+  }
   .membership-sponsor-text {
     color: var(--gray-700); font-size: 0.95rem; line-height: 1.65;
-    margin-bottom: 0; flex: 1;
+    margin-bottom: 1.5rem;
   }
+  .membership-sponsor-features {
+    list-style: none; margin-bottom: 0; text-align: left; flex: 1;
+  }
+  .membership-sponsor-features li {
+    padding: 0.5rem 0; color: var(--gray-700);
+    font-size: 0.95rem; display: flex; align-items: start; gap: 0.6rem;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .membership-sponsor-features li:last-child { border-bottom: none; }
+  .check-gold { color: var(--gold); font-weight: 700; flex-shrink: 0; }
   .membership-btn {
     width: 100%; padding: 1rem;
     border-radius: 8px; border: 2px solid transparent;
@@ -476,18 +493,19 @@
     background: var(--navy); color: var(--white);
     box-shadow: 0 4px 14px rgba(10, 31, 77, 0.25);
   }
-  .membership-btn.outlined {
-    background: transparent; color: var(--blue);
-    border-color: var(--blue);
+  .membership-btn.gold {
+    background: var(--gold); color: var(--navy-deep);
+    border-color: var(--gold);
+    box-shadow: 0 4px 14px rgba(245, 197, 24, 0.3);
   }
   .membership-btn:hover { transform: translateY(-2px); }
   .membership-card.featured .membership-btn:hover {
     background: var(--blue);
     box-shadow: 0 6px 18px rgba(29, 79, 196, 0.35);
   }
-  .membership-btn.outlined:hover {
-    background: var(--blue); color: var(--white);
-    box-shadow: 0 6px 18px rgba(29, 79, 196, 0.2);
+  .membership-btn.gold:hover {
+    background: var(--gold-soft); color: var(--navy-deep);
+    box-shadow: 0 6px 18px rgba(245, 197, 24, 0.45);
   }
 
   .contact-form {
@@ -870,10 +888,17 @@
     }).join('');
 
     const sponsorCard = `
-      <div class="membership-card">
+      <div class="membership-card sponsor">
+        <span class="sponsor-icon">🤝</span>
         <div class="membership-title">Sponsra oss</div>
         <p class="membership-sponsor-text">Syns där det händer — på banan, på tröjan och på webben. Vi erbjuder sponsorpaket anpassade för både små och stora företag i Luleåregionen.</p>
-        <a href="#sponsorer" class="membership-btn outlined">Se våra sponsorpaket →</a>
+        <ul class="membership-sponsor-features">
+          <li><span class="check-gold">✓</span> Logga på klubbens hemsida</li>
+          <li><span class="check-gold">✓</span> Logga på klubbens spelkläder</li>
+          <li><span class="check-gold">✓</span> Omnämns i klubbens sociala medier</li>
+          <li><span class="check-gold">✓</span> Rabatt på AW med klubben</li>
+        </ul>
+        <a href="#sponsorer" class="membership-btn gold">Se våra sponsorpaket →</a>
       </div>`;
 
     return `
