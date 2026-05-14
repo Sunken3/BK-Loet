@@ -76,98 +76,182 @@
       "bild": "images/spelare/daniel-tserni.jpg",
       "roll": "Spelare",
       "snitt": "212,25",
-      "spelstyrka": "220,69"
+      "spelstyrka": "220,69",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Magnus Fagerqvist",
       "bild": "images/spelare/magnus-fagerqvist.jpg",
       "roll": "Spelare",
       "snitt": "207,00",
-      "spelstyrka": "215,40"
+      "spelstyrka": "215,40",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Rickard Ekman",
       "bild": "images/spelare/rickard-ekman.jpg",
       "roll": "Spelare",
       "snitt": "205,27",
-      "spelstyrka": "210,73"
+      "spelstyrka": "210,73",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Arto Kuusela",
       "bild": "images/spelare/arto-kuusela.jpg",
       "roll": "Spelare",
       "snitt": "202,16",
-      "spelstyrka": "210,18"
+      "spelstyrka": "210,18",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Rasmus Roos",
       "bild": "images/spelare/rasmus-roos.jpg",
       "roll": "Spelare",
       "snitt": "197,74",
-      "spelstyrka": "209,15"
+      "spelstyrka": "209,15",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Åke Tserni",
       "bild": "images/spelare/ake-tserni.jpg",
       "roll": "Spelare",
       "snitt": "198,35",
-      "spelstyrka": "206,78"
+      "spelstyrka": "206,78",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Sebastian Landin Olsson",
       "bild": "images/spelare/sebastian-landin-olsson.jpg",
       "roll": "Spelare",
       "snitt": "190,55",
-      "spelstyrka": "199,76"
+      "spelstyrka": "199,76",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Peter Wiklund",
       "bild": "images/spelare/peter-wiklund.jpg",
       "roll": "Spelare",
       "snitt": "195,04",
-      "spelstyrka": "197,11"
+      "spelstyrka": "197,11",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Stefan Eklund",
       "bild": "images/spelare/stefan-eklund.jpg",
       "roll": "Spelare",
       "snitt": "186,99",
-      "spelstyrka": "192,06"
+      "spelstyrka": "192,06",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Rasmus Ovefalk",
       "bild": "images/spelare/rasmus-ovefalk.jpg",
       "roll": "Spelare",
       "snitt": "180,98",
-      "spelstyrka": "182,62"
+      "spelstyrka": "182,62",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Robert Johansson",
       "bild": "images/spelare/robert-johansson.jpg",
       "roll": "Spelare",
       "snitt": "175,44",
-      "spelstyrka": "163,45"
+      "spelstyrka": "163,45",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Patrik Sarri",
       "bild": "images/spelare/patrik-sarri.jpg",
       "roll": "Spelare",
       "snitt": "160,00",
-      "spelstyrka": "160,00"
+      "spelstyrka": "160,00",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Jonatan Nilsson",
       "bild": "images/spelare/jonatan-nilsson.jpg",
       "roll": "Spelare",
       "snitt": "163,77",
-      "spelstyrka": "148,02"
+      "spelstyrka": "148,02",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     },
     {
       "namn": "Fredrik Nilsson",
       "bild": "images/spelare/fredrik-nilsson.jpg",
       "roll": "Spelare",
       "snitt": "161,24",
-      "spelstyrka": "125,99"
+      "spelstyrka": "125,99",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
     }
   ],
   "sponsorer": [
