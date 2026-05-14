@@ -414,13 +414,17 @@
     padding-top: 7rem; padding-bottom: 7rem;
   }
   .membership-grid {
-    max-width: 520px; margin: 0 auto 3rem;
+    display: flex; gap: 1.5rem;
+    justify-content: center; align-items: stretch;
+    flex-wrap: wrap; margin-bottom: 3rem;
   }
   .membership-card {
     background: var(--white); border: 2px solid var(--gray-100);
     border-radius: 20px; padding: 3rem 2.75rem;
     position: relative; transition: all 0.3s;
     text-align: center;
+    flex: 1 1 440px; max-width: 520px;
+    display: flex; flex-direction: column;
   }
   .membership-card.featured {
     border-color: var(--blue);
@@ -455,22 +459,35 @@
   }
   .membership-features li:last-child { border-bottom: none; }
   .check { color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .membership-sponsor-text {
+    color: var(--gray-700); font-size: 0.95rem; line-height: 1.65;
+    margin-bottom: 0; flex: 1;
+  }
   .membership-btn {
     width: 100%; padding: 1rem;
-    border-radius: 8px; border: none;
+    border-radius: 8px; border: 2px solid transparent;
     background: var(--gray-100); color: var(--navy);
     font-weight: 600; cursor: pointer;
     transition: all 0.2s; font-family: inherit; font-size: 1rem;
-    margin-top: 0.5rem;
+    margin-top: auto; padding-top: 1rem; text-decoration: none;
+    display: block; box-sizing: border-box;
   }
   .membership-card.featured .membership-btn {
     background: var(--navy); color: var(--white);
     box-shadow: 0 4px 14px rgba(10, 31, 77, 0.25);
   }
+  .membership-btn.outlined {
+    background: transparent; color: var(--blue);
+    border-color: var(--blue);
+  }
   .membership-btn:hover { transform: translateY(-2px); }
   .membership-card.featured .membership-btn:hover {
     background: var(--blue);
     box-shadow: 0 6px 18px rgba(29, 79, 196, 0.35);
+  }
+  .membership-btn.outlined:hover {
+    background: var(--blue); color: var(--white);
+    box-shadow: 0 6px 18px rgba(29, 79, 196, 0.2);
   }
 
   .contact-form {
@@ -852,6 +869,13 @@
         </div>`;
     }).join('');
 
+    const sponsorCard = `
+      <div class="membership-card">
+        <div class="membership-title">Sponsra oss</div>
+        <p class="membership-sponsor-text">Syns där det händer — på banan, på tröjan och på webben. Vi erbjuder sponsorpaket anpassade för både små och stora företag i Luleåregionen.</p>
+        <a href="#sponsorer" class="membership-btn outlined">Se våra sponsorpaket →</a>
+      </div>`;
+
     return `
       <section id="medlem">
         <div class="container">
@@ -860,7 +884,7 @@
             <h2 class="section-title">Bli stödmedlem i ${escapeHtml(data.klubb.namn)}</h2>
             <p class="section-subtitle">Stöd en klubb med historia — och få något tillbaka. Ditt bidrag håller bowlingen levande i Luleå.</p>
           </div>
-          <div class="membership-grid">${cards}</div>
+          <div class="membership-grid">${cards}${sponsorCard}</div>
           <div class="contact-form">
             <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.75rem; color: var(--navy); margin-bottom: 0.5rem;">Intresseanmälan</h3>
             <p style="color: var(--gray-500); margin-bottom: 1.5rem; font-size: 0.95rem;">Fyll i formuläret så hör vi av oss inom några dagar.</p>
