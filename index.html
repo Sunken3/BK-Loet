@@ -315,22 +315,29 @@
     color: var(--gray-700); margin-bottom: 1.25rem; font-size: 1.05rem;
   }
   .about-stats {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1rem; margin-top: 2.5rem;
+    margin-top: 2.5rem;
   }
   .about-stat {
-    background: var(--gray-50); padding: 1.5rem 1rem;
-    border-radius: 10px; text-align: center;
+    background: var(--gray-50); padding: 1.5rem 1.75rem;
+    border-radius: 10px;
     border-left: 3px solid var(--gold);
   }
-  .about-stat-value {
+  .about-stat-heading {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.25rem; color: var(--navy); line-height: 1;
+    font-size: 1.5rem; color: var(--navy);
+    letter-spacing: 0.04em; margin-bottom: 0.5rem;
   }
-  .about-stat-label {
-    font-size: 0.75rem; color: var(--gray-500);
-    text-transform: uppercase; letter-spacing: 0.12em; margin-top: 0.5rem;
+  .about-stat-body {
+    font-size: 0.9rem; color: var(--gray-700); margin-bottom: 1rem;
   }
+  .about-contact-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--navy); color: var(--white);
+    padding: 0.6rem 1.25rem; border-radius: 6px;
+    font-size: 0.9rem; font-weight: 600; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .about-contact-link:hover { background: var(--blue); }
   .about-visual {
     display: flex; align-items: center; justify-content: center;
     align-self: stretch;
@@ -760,11 +767,6 @@
 
   function renderAbout(data) {
     const stycken = data.om_oss.stycken.map(s => `<p>${escapeHtml(s)}</p>`).join('');
-    const nyckeltal = data.om_oss.nyckeltal.map(n => `
-      <div class="about-stat">
-        <div class="about-stat-value">${escapeHtml(n.varde)}</div>
-        <div class="about-stat-label">${escapeHtml(n.etikett)}</div>
-      </div>`).join('');
 
     return `
       <section id="om-oss">
@@ -774,7 +776,13 @@
               <span class="section-eyebrow">Om oss</span>
               <h2>${escapeHtml(data.om_oss.rubrik)}</h2>
               ${stycken}
-              <div class="about-stats">${nyckeltal}</div>
+              <div class="about-stats">
+                <div class="about-stat">
+                  <div class="about-stat-heading">Kontakta oss</div>
+                  <div class="about-stat-body">Intresserad av att bowla med oss? Hör av dig — de två första träningarna bjuder vi på.</div>
+                  <a href="#medlem" class="about-contact-link">Skicka intresseanmälan →</a>
+                </div>
+              </div>
             </div>
             <div class="about-visual"><img src="images/BK LOET EMBLEM_Modern.svg" alt="BK Loet emblem" class="about-emblem"></div>
           </div>
