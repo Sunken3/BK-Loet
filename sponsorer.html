@@ -259,7 +259,16 @@
   .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem; margin-bottom: 3rem;
+    gap: 1.5rem; margin-bottom: 2rem;
+  }
+  .banreklam-separator {
+    display: flex; align-items: center; gap: 1.25rem;
+    margin: 0.5rem 0 2rem; color: var(--gray-500); font-size: 0.85rem;
+  }
+  .banreklam-separator::before,
+  .banreklam-separator::after { content: ''; flex: 1; height: 1px; background: var(--gray-300); }
+  .banreklam-wrapper {
+    max-width: 320px; margin: 0 auto 3rem;
   }
   .package-card {
     background: var(--white); border-radius: 12px;
@@ -605,6 +614,11 @@
                   <a class="package-cta-btn" href="mailto:info@bkloet.se?subject=Intresseanm%C3%A4lan%3A%20Bronspaket">Kontakta oss</a>
                 </div>
               </div>
+            </div>
+            <div class="banreklam-separator">
+              <span>Också tillgängligt via O'Learys Luleå</span>
+            </div>
+            <div class="banreklam-wrapper">
               <div class="package-card">
                 <div class="package-top" style="background:#0d9488;"></div>
                 <div class="package-body">
