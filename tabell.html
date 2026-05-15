@@ -220,11 +220,20 @@
     .nav-links.open { transform: translateY(0); }
     .nav-toggle { display: block; }
   }
+  .table-scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   @media (max-width: 600px) {
     section { padding: 4rem 0; }
     .container, .nav-container { padding-left: 1.25rem; padding-right: 1.25rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
+    .league-table th, .league-table td { padding: 0.7rem 0.4rem; font-size: 0.78rem; }
+    .league-table td:nth-child(2), .league-table th:nth-child(2) {
+      max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .position-cell { width: 32px; font-size: 1rem; }
   }
 </style>
 </head>
@@ -344,7 +353,7 @@
     return `
       <section id="tabell">
         <div class="container">
-          <div class="table-wrapper">
+          <div class="table-scroll-wrapper"><div class="table-wrapper">
             <div class="table-header">
               <div class="table-title">${escapeHtml(data.tabell.titel)}</div>
               <div class="table-season">${escapeHtml(data.tabell.saesong)}</div>
@@ -357,7 +366,7 @@
               <div class="legend-item"><span class="legend-dot"></span> Kvalplats till Elitserien</div>
               <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
             </div>
-          </div>
+          </div></div>
           <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)}</div>
         </div>
       </section>`;
