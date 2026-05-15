@@ -104,47 +104,49 @@
   .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
   /* ============ TABELL ============ */
-  #tabell { background: var(--white); color: var(--gray-900); }
+  #tabell { background: #f3f4f6; color: #111827; }
   .table-wrapper {
     max-width: 900px; margin: 0 auto;
-    background: var(--navy-deep);
-    color: var(--white);
-    border-radius: 16px; overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #ffffff;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid #d1d5db;
   }
   .table-header {
     display: flex; justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: rgba(255,255,255,0.03);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: #f9fafb;
+    border-bottom: 2px solid #d1d5db;
   }
   .table-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.25rem; letter-spacing: 0.05em;
+    color: #111827;
   }
-  .table-season { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
+  .table-season { color: #6b7280; font-size: 0.85rem; }
   .league-table { width: 100%; border-collapse: collapse; }
   .league-table th {
     text-align: left; padding: 1rem 1.5rem;
-    font-size: 0.75rem; font-weight: 600;
-    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem; font-weight: 600;
+    color: #374151;
     text-transform: uppercase; letter-spacing: 0.1em;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 2px solid #d1d5db;
   }
   .league-table th:not(:first-child):not(:nth-child(2)) { text-align: center; }
   .league-table td {
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid #e5e7eb;
     font-size: 0.95rem;
+    color: #111827;
   }
   .league-table td:not(:first-child):not(:nth-child(2)) { text-align: center; }
-  .league-table tbody tr:hover { background: rgba(255,255,255,0.03); }
-  .league-table tbody tr.our-team { background: rgba(245, 197, 24, 0.08); }
-  .league-table tbody tr.our-team td { font-weight: 600; color: var(--gold); }
+  .league-table tbody tr:nth-child(even) { background: #f9fafb; }
+  .league-table tbody tr:hover { background: #f3f4f6; }
+  .league-table tbody tr.our-team { background: rgba(245, 197, 24, 0.12); }
+  .league-table tbody tr.our-team td { font-weight: 700; color: #92670a; }
   .position-cell {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.25rem; color: var(--gold); width: 60px;
+    font-size: 1.25rem; color: #374151; width: 60px;
   }
   .promotion-indicator {
     display: inline-block; width: 4px; height: 16px;
@@ -153,15 +155,16 @@
   }
   .table-legend {
     padding: 1.25rem 2rem;
-    background: rgba(0,0,0,0.2);
-    font-size: 0.8rem; color: rgba(255,255,255,0.6);
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.8rem; color: #6b7280;
     display: flex; gap: 1.5rem; flex-wrap: wrap;
   }
   .legend-item { display: flex; align-items: center; gap: 0.5rem; }
   .legend-dot { width: 8px; height: 8px; border-radius: 2px; background: var(--gold); }
   .table-disclaimer {
     text-align: center; margin-top: 1.5rem;
-    color: var(--gray-500); font-size: 0.85rem;
+    color: #6b7280; font-size: 0.85rem;
   }
 
   /* ============ FOOTER ============ */
