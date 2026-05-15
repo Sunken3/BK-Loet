@@ -400,5 +400,20 @@
         "poang": 7
       }
     ]
+  },
+  "kontaktsektion": {
+    "rubrik": "Hör av dig till oss",
+    "ingress": "Frågor om medlemskap, träning eller spel? Vi svarar så snart vi kan.",
+    "personer": [
+      { "roll": "Ordförande", "namn": "Daniel Tserni", "telefon": "072-548 04 06" },
+      { "roll": "Träningsansvarig", "namn": "Arto Kuusela", "telefon": "070-356 50 51" },
+      { "roll": "Sponsoransvarig", "namn": "Anton Sandberg", "telefon": "073-064 54 18" },
+      { "roll": "Sponsoransvarig", "namn": "Magnus Fagerqvist", "telefon": "073-582 50 32" }
+    ],
+    "email": "bkloetlulea@gmail.com",
+    "instagram_url": "https://www.instagram.com/bkloet_bowling/",
+    "facebook_url": "https://www.facebook.com/profile.php?id=100057611553208",
+    "hall": "O'Learys Luleå",
+    "traning": "Tisdagar kl. 19:00 — säsongen pågår september–april"
   }
 }
