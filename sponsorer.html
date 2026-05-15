@@ -263,12 +263,33 @@
   }
   .banreklam-separator {
     display: flex; align-items: center; gap: 1.25rem;
-    margin: 0.5rem 0 2rem; color: var(--gray-500); font-size: 0.85rem;
+    margin: 0.5rem 0 2rem; color: var(--gray-700); font-size: 0.9rem; font-weight: 600;
   }
   .banreklam-separator::before,
   .banreklam-separator::after { content: ''; flex: 1; height: 1px; background: var(--gray-300); }
-  .banreklam-wrapper {
-    max-width: 320px; margin: 0 auto 3rem;
+  .banreklam-wrapper { margin: 0 0 3rem; }
+  .banreklam-card {
+    background: var(--white); border-radius: 12px;
+    border: 1px solid var(--gray-100);
+    box-shadow: 0 2px 12px rgba(10,31,77,0.06);
+    overflow: hidden; display: grid;
+    grid-template-columns: 360px 1fr;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .banreklam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(10,31,77,0.12);
+  }
+  .banreklam-img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .banreklam-body {
+    padding: 2rem 2.5rem; display: flex; flex-direction: column;
+    border-top: 4px solid #0d9488;
+  }
+  @media (max-width: 768px) {
+    .banreklam-card { grid-template-columns: 1fr; }
+    .banreklam-img { height: 220px; }
   }
   .package-card {
     background: var(--white); border-radius: 12px;
@@ -616,12 +637,12 @@
               </div>
             </div>
             <div class="banreklam-separator">
-              <span>Också tillgängligt via O'Learys Luleå</span>
+              <span>Syns på varje bana — varje match</span>
             </div>
             <div class="banreklam-wrapper">
-              <div class="package-card">
-                <div class="package-top" style="background:#0d9488;"></div>
-                <div class="package-body">
+              <div class="banreklam-card">
+                <img class="banreklam-img" src="images/Bom.jpg" alt="Banreklam på bommen i O'Learys Luleå">
+                <div class="banreklam-body">
                   <div class="package-tier-label" style="color:#0d9488;">BANREKLAM</div>
                   <div class="package-price">12 000 kr<span>/bana &amp; år</span></div>
                   <ul class="package-features">
