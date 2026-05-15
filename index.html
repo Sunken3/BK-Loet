@@ -1147,6 +1147,14 @@
         renderFooter(data);
 
       attachInteractivity();
+
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          const top = target.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
     } catch (err) {
       showError('Kontrollera att filen data.json finns och har giltigt JSON-format.', err.message);
       console.error(err);
