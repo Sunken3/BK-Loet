@@ -47,7 +47,7 @@
   "spelare": [
     {
       "namn": "Anton Sandberg",
-      "bild": "images/spelare/anton-sandberg.jpg",
+      "bild": "images/spelare/Anton Sandberg.jpeg",
       "roll": "Lagkapten",
       "snitt": "214,71",
       "spelstyrka": "221,90",
@@ -61,7 +61,7 @@
     },
     {
       "namn": "Daniel Tserni",
-      "bild": "images/spelare/daniel-tserni.jpg",
+      "bild": "images/spelare/Daniel Tserni.jpeg",
       "roll": "Spelare",
       "snitt": "212,25",
       "spelstyrka": "220,69",
@@ -74,7 +74,7 @@
     },
     {
       "namn": "Magnus Fagerqvist",
-      "bild": "images/spelare/magnus-fagerqvist.jpg",
+      "bild": "images/spelare/Magnus Fagerqvist.jpeg",
       "roll": "Spelare",
       "snitt": "207,00",
       "spelstyrka": "215,40",
@@ -87,7 +87,7 @@
     },
     {
       "namn": "Rickard Ekman",
-      "bild": "images/spelare/rickard-ekman.jpg",
+      "bild": "images/spelare/Rickard Ekman.jpeg",
       "roll": "Spelare",
       "snitt": "205,27",
       "spelstyrka": "210,73",
@@ -204,7 +204,7 @@
     },
     {
       "namn": "Patrik Sarri",
-      "bild": "images/spelare/patrik-sarri.jpg",
+      "bild": "images/spelare/Patrik Sarri.jpeg",
       "roll": "Spelare",
       "snitt": "160,00",
       "spelstyrka": "160,00",
@@ -217,7 +217,7 @@
     },
     {
       "namn": "Jonatan Nilsson",
-      "bild": "images/spelare/jonatan-nilsson.jpg",
+      "bild": "images/spelare/Jonathan Nilsson.jpeg",
       "roll": "Spelare",
       "snitt": "163,77",
       "spelstyrka": "148,02",
@@ -230,7 +230,7 @@
     },
     {
       "namn": "Fredrik Nilsson",
-      "bild": "images/spelare/fredrik-nilsson.jpg",
+      "bild": "images/spelare/Fredrik Nilsson.jpeg",
       "roll": "Spelare",
       "snitt": "161,24",
       "spelstyrka": "125,99",
