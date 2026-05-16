@@ -92,10 +92,10 @@
       "snitt": "205,27",
       "spelstyrka": "210,73",
       "profil": {
-        "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_serie": 300,
+        "hogsta_slagning_match": 1025,
+        "favoritklot": "Storm Axiom",
+        "favoritklot_bild": "images/bowlingklot/Storm_Axiom.jpg"
       }
     },
     {
