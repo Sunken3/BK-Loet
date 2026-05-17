@@ -41,18 +41,18 @@
     {
       "underrubrik": "Efter kvalsegern i Skellefteå 2025/2026",
       "typ": "foto",
-      "src": "images/LagbildSkelleftea2026.jpg"
+      "src": "images/lagfoton/LagbildSkelleftea2026.jpg"
     },
     {
       "underrubrik": "Åke Tserni - Klubbmästare 2026!",
       "typ": "foto",
-      "src": "images/spelare/Åke_KM_2026.jpeg"
+      "src": "images/lagfoton/Åke_KM_2026.jpeg"
     }
   ],
   "spelare": [
     {
       "namn": "Anton Sandberg",
-      "bild": "images/spelare/Anton Sandberg.jpeg",
+      "bild": "images/spelare/Anton_Sandberg.png",
       "alder": "26",
       "snitt": "214,71",
       "spelstyrka": "221,90",
@@ -66,7 +66,7 @@
     },
     {
       "namn": "Daniel Tserni",
-      "bild": "images/spelare/Daniel Tserni.jpeg",
+      "bild": "images/spelare/Daniel_Tserni.png",
       "alder": "33",
       "snitt": "212,25",
       "spelstyrka": "220,69",
@@ -79,7 +79,7 @@
     },
     {
       "namn": "Magnus Fagerqvist",
-      "bild": "images/spelare/Magnus Fagerqvist.jpeg",
+      "bild": "images/spelare/Magnus_Fagerqvist.png",
       "alder": "51",
       "snitt": "207,00",
       "spelstyrka": "215,40",
@@ -92,7 +92,7 @@
     },
     {
       "namn": "Rickard Ekman",
-      "bild": "images/spelare/Rickard Ekman.jpeg",
+      "bild": "images/spelare/Rickard_Ekman.png",
       "alder": "25",
       "snitt": "205,27",
       "spelstyrka": "210,73",
@@ -105,7 +105,7 @@
     },
     {
       "namn": "Arto Kuusela",
-      "bild": "images/spelare/Arto_Kuusela-NB.png",
+      "bild": "images/spelare/Arto_Kuusela.png",
       "alder": "48",
       "snitt": "202,16",
       "spelstyrka": "210,18",
@@ -118,7 +118,7 @@
     },
     {
       "namn": "Rasmus Roos",
-      "bild": "images/spelare/Rasmus Roos.jpeg",
+      "bild": "images/spelare/Rasmus_Roos.png",
       "alder": "21",
       "snitt": "197,74",
       "spelstyrka": "209,15",
@@ -131,7 +131,7 @@
     },
     {
       "namn": "Åke Tserni",
-      "bild": "images/spelare/Åke Tserni.jpeg",
+      "bild": "images/spelare/Åke_Tserni.png",
       "alder": "63",
       "snitt": "198,35",
       "spelstyrka": "206,78",
@@ -157,7 +157,7 @@
     },
     {
       "namn": "Peter Wiklund",
-      "bild": "images/spelare/Peter Wiklund.jpeg",
+      "bild": "images/spelare/Peter_Wiklund.png",
       "alder": "40",
       "snitt": "195,04",
       "spelstyrka": "197,11",
@@ -183,7 +183,7 @@
     },
     {
       "namn": "Rasmus Ovefalk",
-      "bild": "images/spelare/Rasmus Ovefalk.jpeg",
+      "bild": "images/spelare/Rasmus_Ovefalk.png",
       "alder": "16",
       "snitt": "180,98",
       "spelstyrka": "182,62",
@@ -196,7 +196,7 @@
     },
     {
       "namn": "Robert Johansson",
-      "bild": "images/spelare/Robert Johansson.jpeg",
+      "bild": "images/spelare/Robert_Johansson.png",
       "alder": "28",
       "snitt": "175,44",
       "spelstyrka": "163,45",
@@ -209,7 +209,7 @@
     },
     {
       "namn": "Patrik Sarri",
-      "bild": "images/spelare/Patrik Sarri.jpeg",
+      "bild": "images/spelare/Patrik_Sarri.png",
       "alder": "18",
       "snitt": "160,00",
       "spelstyrka": "160,00",
@@ -222,7 +222,7 @@
     },
     {
       "namn": "Jonatan Nilsson",
-      "bild": "images/spelare/Jonathan Nilsson.jpeg",
+      "bild": "images/spelare/Jonatan_Nilsson.png",
       "alder": "38",
       "snitt": "163,77",
       "spelstyrka": "148,02",
@@ -235,7 +235,7 @@
     },
     {
       "namn": "Fredrik Nilsson",
-      "bild": "images/spelare/Fredrik Nilsson.jpeg",
+      "bild": "images/spelare/Fredrik_Nilsson.png",
       "alder": "38",
       "snitt": "161,24",
       "spelstyrka": "125,99",
@@ -250,7 +250,7 @@
   "sponsorer": [
     {
       "namn": "ICA Maxi Stormarknad",
-      "logo": "images/ica-maxi-stormarknad-logo.svg",
+      "logo": "images/logotyper/ica-maxi-stormarknad-logo.svg",
       "lank": "https://www.ica.se/butiker/maxi/lulea/maxi-ica-stormarknad-lulea-1003382/",
       "profil": {
         "bransch": "Dagligvaruhandel",
@@ -260,7 +260,7 @@
     },
     {
       "namn": "Jetpak",
-      "logo": "images/Jetpak_logo.svg",
+      "logo": "images/logotyper/Jetpak_logo.svg",
       "lank": "https://jetpak.com/se/kontakt/har-finns-vi/jetpak-sverige/lulea/",
       "profil": {
         "bransch": "Logistik & Transport",
@@ -270,7 +270,7 @@
     },
     {
       "namn": "O'Learys",
-      "logo": "images/Olearys_logo.svg",
+      "logo": "images/logotyper/Olearys_logo.svg",
       "lank": "https://olearys.com/sv-se/luleaa/",
       "profil": {
         "bransch": "Restaurang & Sport",
@@ -280,7 +280,7 @@
     },
     {
       "namn": "GLB Bygg",
-      "logo": "images/GLB Sponsor.svg",
+      "logo": "images/logotyper/GLB Sponsor.svg",
       "lank": "https://www.glbbygg.se/",
       "profil": {
         "bransch": "Din trygga byggpartner",
