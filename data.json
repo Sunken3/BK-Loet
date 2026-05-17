@@ -150,10 +150,10 @@
       "snitt": "190,55",
       "spelstyrka": "199,76",
       "profil": {
-        "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_serie": 279,
+        "hogsta_slagning_match": 881,
+        "favoritklot": "Motiv Tank",
+        "favoritklot_bild": "images/bowlingklot/Motiv_tank.jpg"
       }
     },
     {
