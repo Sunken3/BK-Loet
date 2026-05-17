@@ -144,7 +144,6 @@
   }
   .player-role {
     color: var(--gray-500); font-size: 0.85rem;
-    text-transform: uppercase; letter-spacing: 0.1em;
     margin-bottom: 1rem;
   }
   .player-stats {
@@ -372,7 +371,7 @@
         </div>
         <div class="player-info">
           <div class="player-name">${escapeHtml(p.namn)}</div>
-          <div class="player-role">${escapeHtml(p.roll)}</div>
+          <div class="player-role">${escapeHtml(p.alder)} år</div>
           <div class="player-stats">
             <div class="stat">
               <div class="stat-value">${escapeHtml(p.snitt)}</div>
