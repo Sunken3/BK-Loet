@@ -111,10 +111,10 @@
       "snitt": "202,16",
       "spelstyrka": "210,18",
       "profil": {
-        "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_serie": 300,
+        "hogsta_slagning_match": 989,
+        "favoritklot": "Track 811",
+        "favoritklot_bild": "images/bowlingklot/Track_811.png"
       }
     },
     {
