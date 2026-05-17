@@ -203,9 +203,9 @@
       "spelstyrka": "163,45",
       "profil": {
         "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_match": 787,
+        "favoritklot": "Storm Phase II",
+        "favoritklot_bild": "images/bowlingklot/Phase2.jpg"
       }
     },
     {
