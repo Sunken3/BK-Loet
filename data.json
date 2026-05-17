@@ -163,10 +163,10 @@
       "snitt": "195,04",
       "spelstyrka": "197,11",
       "profil": {
-        "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_serie": 300,
+        "hogsta_slagning_match": 1029,
+        "favoritklot": "Storm Phase II",
+        "favoritklot_bild": "images/bowlingklot/Phase2.jpg"
       }
     },
     {
