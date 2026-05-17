@@ -53,6 +53,7 @@
     {
       "namn": "Anton Sandberg",
       "bild": "images/spelare/Anton_Sandberg.png",
+      "bild_zoom": 1.08,
       "alder": "26",
       "snitt": "214,71",
       "spelstyrka": "221,90",

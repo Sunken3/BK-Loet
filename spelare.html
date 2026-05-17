@@ -131,10 +131,16 @@
     background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
     position: relative; overflow: hidden;
   }
+  .player-image::after {
+    content: ''; position: absolute; inset: 0;
+    box-shadow: inset 0 0 35px 6px rgba(10, 31, 77, 0.4);
+    pointer-events: none; z-index: 2;
+  }
   .player-photo {
     width: 100%; height: 100%;
     object-fit: cover; object-position: top center;
     display: block;
+    transform-origin: top center;
   }
   .player-info { padding: 1.25rem 1.5rem 1.5rem; }
   .player-name {
@@ -367,7 +373,7 @@
     return `
       <div class="player-card${hasProfile ? ' expandable' : ''}" ${hasProfile ? 'onclick="this.classList.toggle(\'open\')"' : ''}>
         <div class="player-image">
-          <img class="player-photo" src="${escapeHtml(p.bild)}" alt="${escapeHtml(p.namn)}">
+          <img class="player-photo" src="${escapeHtml(p.bild)}" alt="${escapeHtml(p.namn)}"${p.bild_zoom ? ` style="transform:scale(${p.bild_zoom})"` : ''}>
         </div>
         <div class="player-info">
           <div class="player-name">${escapeHtml(p.namn)}</div>
