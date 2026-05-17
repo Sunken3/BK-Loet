@@ -124,10 +124,10 @@
       "snitt": "197,74",
       "spelstyrka": "209,15",
       "profil": {
-        "hogsta_slagning_serie": null,
-        "hogsta_slagning_match": null,
-        "favoritklot": null,
-        "favoritklot_bild": null
+        "hogsta_slagning_serie": 290,
+        "hogsta_slagning_match": 925,
+        "favoritklot": "Purple Hammer",
+        "favoritklot_bild": "images/bowlingklot/PurpleHemmer.png"
       }
     },
     {
