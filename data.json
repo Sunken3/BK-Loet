@@ -397,7 +397,7 @@
   },
   "kontaktsektion": {
     "rubrik": "Hör av dig till oss",
-    "ingress": "Frågor om medlemskap, träning eller spel? Vi svarar så snart vi kan.",
+    "ingress": "Frågor om medlemskap, träning eller sponsring?",
     "personer": [
       { "roll": "Ordförande", "namn": "Daniel Tserni", "telefon": "072-548 04 06" },
       { "roll": "Träningsansvarig", "namn": "Arto Kuusela", "telefon": "070-356 50 51" },
