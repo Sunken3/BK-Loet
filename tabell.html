@@ -172,7 +172,7 @@
     padding: 4rem 0 2rem;
   }
   .footer-grid {
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
     gap: 3rem; margin-bottom: 3rem;
   }
   .footer-brand { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
@@ -302,15 +302,6 @@
                 <li><a href="sponsorer.html">Sponsorer</a></li>
                 <li><a href="tabell.html">Tabell</a></li>
                 <li><a href="index.html#kontakt">Kontakta oss</a></li>
-                <li><a href="index.html#medlem">Bli medlem</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Kontakt</h4>
-              <ul>
-                <li><a href="mailto:${escapeHtml(data.kontakt.email)}">${escapeHtml(data.kontakt.email)}</a></li>
-                <li><a href="tel:${escapeHtml(data.kontakt.telefon_lank)}">${escapeHtml(data.kontakt.telefon)}</a></li>
-                <li>${escapeHtml(data.kontakt.hall)}</li>
               </ul>
             </div>
             <div class="footer-col">
@@ -318,7 +309,6 @@
               <ul>
                 <li><a href="${escapeHtml(data.kontakt.instagram)}">Instagram</a></li>
                 <li><a href="${escapeHtml(data.kontakt.facebook)}">Facebook</a></li>
-                <li><a href="${escapeHtml(data.kontakt.lulea_open)}">Luleå Open</a></li>
               </ul>
             </div>
           </div>
