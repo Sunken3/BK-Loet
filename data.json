@@ -53,7 +53,7 @@
     {
       "namn": "Anton Sandberg",
       "bild": "images/spelare/Anton Sandberg.jpeg",
-      "alder": 26,
+      "alder": "26",
       "snitt": "214,71",
       "spelstyrka": "221,90",
       "profil": {
@@ -67,8 +67,7 @@
     {
       "namn": "Daniel Tserni",
       "bild": "images/spelare/Daniel Tserni.jpeg",
-      "alder": 33,
-
+      "alder": "33",
       "snitt": "212,25",
       "spelstyrka": "220,69",
       "profil": {
@@ -81,8 +80,7 @@
     {
       "namn": "Magnus Fagerqvist",
       "bild": "images/spelare/Magnus Fagerqvist.jpeg",
-      "alder": 51,
-
+      "alder": "51",
       "snitt": "207,00",
       "spelstyrka": "215,40",
       "profil": {
@@ -95,8 +93,7 @@
     {
       "namn": "Rickard Ekman",
       "bild": "images/spelare/Rickard Ekman.jpeg",
-      "alder": 25,
-
+      "alder": "25",
       "snitt": "205,27",
       "spelstyrka": "210,73",
       "profil": {
@@ -109,8 +106,7 @@
     {
       "namn": "Arto Kuusela",
       "bild": "images/spelare/Arto Kuusela.jpeg",
-      "alder": 48,
-
+      "alder": "48",
       "snitt": "202,16",
       "spelstyrka": "210,18",
       "profil": {
@@ -123,8 +119,7 @@
     {
       "namn": "Rasmus Roos",
       "bild": "images/spelare/Rasmus Roos.jpeg",
-      "alder": 21,
-
+      "alder": "21",
       "snitt": "197,74",
       "spelstyrka": "209,15",
       "profil": {
@@ -137,8 +132,7 @@
     {
       "namn": "Åke Tserni",
       "bild": "images/spelare/Åke Tserni.jpeg",
-      "alder": 63,
-
+      "alder": "63",
       "snitt": "198,35",
       "spelstyrka": "206,78",
       "profil": {
@@ -151,8 +145,7 @@
     {
       "namn": "Sebastian Landin Olsson",
       "bild": "images/spelare/sebastian-landin-olsson.jpg",
-      "alder": 25,
-
+      "alder": "25",
       "snitt": "190,55",
       "spelstyrka": "199,76",
       "profil": {
@@ -165,8 +158,7 @@
     {
       "namn": "Peter Wiklund",
       "bild": "images/spelare/Peter Wiklund.jpeg",
-      "alder": 40,
-
+      "alder": "40",
       "snitt": "195,04",
       "spelstyrka": "197,11",
       "profil": {
@@ -179,8 +171,7 @@
     {
       "namn": "Stefan Eklund",
       "bild": "images/spelare/stefan-eklund.jpg",
-      "alder": 45,
-
+      "alder": "45",
       "snitt": "186,99",
       "spelstyrka": "192,06",
       "profil": {
@@ -193,8 +184,7 @@
     {
       "namn": "Rasmus Ovefalk",
       "bild": "images/spelare/Rasmus Ovefalk.jpeg",
-      "alder": 16,
-
+      "alder": "16",
       "snitt": "180,98",
       "spelstyrka": "182,62",
       "profil": {
@@ -207,8 +197,7 @@
     {
       "namn": "Robert Johansson",
       "bild": "images/spelare/Robert Johansson.jpeg",
-      "alder": 28,
-
+      "alder": "28",
       "snitt": "175,44",
       "spelstyrka": "163,45",
       "profil": {
@@ -221,8 +210,7 @@
     {
       "namn": "Patrik Sarri",
       "bild": "images/spelare/Patrik Sarri.jpeg",
-      "alder": 18,
-
+      "alder": "18",
       "snitt": "160,00",
       "spelstyrka": "160,00",
       "profil": {
@@ -235,8 +223,7 @@
     {
       "namn": "Jonatan Nilsson",
       "bild": "images/spelare/Jonathan Nilsson.jpeg",
-      "alder": 38,
-
+      "alder": "38",
       "snitt": "163,77",
       "spelstyrka": "148,02",
       "profil": {
@@ -249,8 +236,7 @@
     {
       "namn": "Fredrik Nilsson",
       "bild": "images/spelare/Fredrik Nilsson.jpeg",
-      "alder": 38,
-
+      "alder": "38",
       "snitt": "161,24",
       "spelstyrka": "125,99",
       "profil": {
