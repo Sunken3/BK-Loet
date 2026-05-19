@@ -55,6 +55,7 @@
       "bild": "images/spelare/Anton_Sandberg.png",
       "bild_zoom": 1.08,
       "alder": "26",
+      "spelarstil": "1-hands H",
       "snitt": "214,71",
       "spelstyrka": "221,90",
       "profil": {
@@ -69,6 +70,7 @@
       "namn": "Daniel Tserni",
       "bild": "images/spelare/Daniel_Tserni.png",
       "alder": "33",
+      "spelarstil": "1-hands H",
       "snitt": "212,25",
       "spelstyrka": "220,69",
       "profil": {
@@ -82,6 +84,7 @@
       "namn": "Magnus Fagerqvist",
       "bild": "images/spelare/Magnus_Fagerqvist.png",
       "alder": "51",
+      "spelarstil": "1-hands H",
       "snitt": "207,00",
       "spelstyrka": "215,40",
       "profil": {
@@ -95,6 +98,7 @@
       "namn": "Rickard Ekman",
       "bild": "images/spelare/Rickard_Ekman.png",
       "alder": "25",
+      "spelarstil": "1-hands H",
       "snitt": "205,27",
       "spelstyrka": "210,73",
       "profil": {
@@ -108,6 +112,7 @@
       "namn": "Arto Kuusela",
       "bild": "images/spelare/Arto_Kuusela.png",
       "alder": "48",
+      "spelarstil": "1-hands H",
       "snitt": "202,16",
       "spelstyrka": "210,18",
       "profil": {
@@ -121,6 +126,7 @@
       "namn": "Rasmus Roos",
       "bild": "images/spelare/Rasmus_Roos.png",
       "alder": "21",
+      "spelarstil": "2-hands H",
       "snitt": "197,74",
       "spelstyrka": "209,15",
       "profil": {
@@ -134,6 +140,7 @@
       "namn": "Åke Tserni",
       "bild": "images/spelare/Åke_Tserni.png",
       "alder": "63",
+      "spelarstil": "1-hands H",
       "snitt": "198,35",
       "spelstyrka": "206,78",
       "profil": {
@@ -147,6 +154,7 @@
       "namn": "Sebastian Landin Olsson",
       "bild": "images/spelare/sebastian-landin-olsson.jpg",
       "alder": "25",
+      "spelarstil": "2-hands H",
       "snitt": "190,55",
       "spelstyrka": "199,76",
       "profil": {
@@ -160,6 +168,7 @@
       "namn": "Peter Wiklund",
       "bild": "images/spelare/Peter_Wiklund.png",
       "alder": "40",
+      "spelarstil": "1-hands H",
       "snitt": "195,04",
       "spelstyrka": "197,11",
       "profil": {
@@ -173,6 +182,7 @@
       "namn": "Stefan Eklund",
       "bild": "images/spelare/stefan-eklund.jpg",
       "alder": "45",
+      "spelarstil": "1-hands H",
       "snitt": "186,99",
       "spelstyrka": "192,06",
       "profil": {
@@ -186,6 +196,7 @@
       "namn": "Rasmus Ovefalk",
       "bild": "images/spelare/Rasmus_Ovefalk.png",
       "alder": "16",
+      "spelarstil": "2-hands H",
       "snitt": "180,98",
       "spelstyrka": "182,62",
       "profil": {
@@ -199,6 +210,7 @@
       "namn": "Robert Johansson",
       "bild": "images/spelare/Robert_Johansson.png",
       "alder": "28",
+      "spelarstil": "2-hands H",
       "snitt": "175,44",
       "spelstyrka": "163,45",
       "profil": {
@@ -212,6 +224,7 @@
       "namn": "Patrik Sarri",
       "bild": "images/spelare/Patrik_Sarri.png",
       "alder": "18",
+      "spelarstil": "2-hands H",
       "snitt": "160,00",
       "spelstyrka": "160,00",
       "profil": {
@@ -225,6 +238,7 @@
       "namn": "Jonatan Nilsson",
       "bild": "images/spelare/Jonatan_Nilsson.png",
       "alder": "38",
+      "spelarstil": "1-hands V",
       "snitt": "163,77",
       "spelstyrka": "148,02",
       "profil": {
@@ -238,6 +252,7 @@
       "namn": "Fredrik Nilsson",
       "bild": "images/spelare/Fredrik_Nilsson.png",
       "alder": "38",
+      "spelarstil": "1-hands H",
       "snitt": "161,24",
       "spelstyrka": "125,99",
       "profil": {

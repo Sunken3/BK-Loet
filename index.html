@@ -284,6 +284,10 @@
     color: var(--gray-500); font-size: 0.85rem;
     margin-bottom: 1rem;
   }
+  .player-style {
+    color: var(--navy); margin-left: 0.4rem;
+    font-weight: 600;
+  }
   .player-stats {
     display: grid; grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem; padding-top: 1rem;
@@ -824,7 +828,7 @@
         </div>
         <div class="player-info">
           <div class="player-name">${escapeHtml(p.namn)}</div>
-          <div class="player-role">${escapeHtml(p.alder)} år</div>
+          <div class="player-role">${escapeHtml(p.alder)} år${p.spelarstil ? ` <span class="player-style">${escapeHtml(p.spelarstil)}</span>` : ''}</div>
           <div class="player-stats">
             <div class="stat">
               <div class="stat-value">${escapeHtml(p.snitt)}</div>
