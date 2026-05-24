@@ -1,0 +1,5 @@
+# Local Claude Code config
+.claude/
+
+# Backup of pre-optimization image originals (large, kept locally only)
+images/_original/

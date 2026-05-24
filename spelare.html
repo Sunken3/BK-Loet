@@ -353,7 +353,7 @@
       </div>`).join('');
 
     const klotBild = profil.favoritklot_bild
-      ? `<img src="${escapeHtml(profil.favoritklot_bild)}" alt="${escapeHtml(profil.favoritklot)}" class="klot-bild">`
+      ? `<img src="${escapeHtml(profil.favoritklot_bild)}" alt="${escapeHtml(profil.favoritklot)}" class="klot-bild" loading="lazy" decoding="async" width="64" height="64">`
       : '';
     const klotRow = `
       <div class="profile-row stacked">
@@ -378,7 +378,7 @@
     return `
       <div class="player-card${hasProfile ? ' expandable' : ''}" ${hasProfile ? 'onclick="this.classList.toggle(\'open\')"' : ''}>
         <div class="player-image">
-          <img class="player-photo" src="${escapeHtml(p.bild)}" alt="${escapeHtml(p.namn)}"${p.bild_zoom ? ` style="transform:scale(${p.bild_zoom})"` : ''}>
+          <img class="player-photo" src="${escapeHtml(p.bild)}" alt="${escapeHtml(p.namn)}" loading="lazy" decoding="async" width="600" height="600"${p.bild_zoom ? ` style="transform:scale(${p.bild_zoom})"` : ''}>
         </div>
         <div class="player-info">
           <div class="player-name">${escapeHtml(p.namn)}</div>

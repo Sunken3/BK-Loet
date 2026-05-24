@@ -41,18 +41,18 @@
     {
       "underrubrik": "Efter kvalsegern i Skellefteå 2025/2026",
       "typ": "foto",
-      "src": "images/lagfoton/LagbildSkelleftea2026.jpg"
+      "src": "images/lagfoton/LagbildSkelleftea2026.webp"
     },
     {
       "underrubrik": "Åke Tserni - Klubbmästare 2026!",
       "typ": "foto",
-      "src": "images/lagfoton/Åke_KM_2026.jpeg"
+      "src": "images/lagfoton/Åke_KM_2026.webp"
     }
   ],
   "spelare": [
     {
       "namn": "Anton Sandberg",
-      "bild": "images/spelare/Anton_Sandberg.png",
+      "bild": "images/spelare/Anton_Sandberg.webp",
       "bild_zoom": 1.08,
       "alder": "26",
       "spelarstil": "1-hands H",
@@ -62,13 +62,13 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
         "favoritklot": "Hammer Tour Effect",
-        "favoritklot_bild": "images/bowlingklot/Hammer_Effect_Tour_1600x1600__92408.png",
+        "favoritklot_bild": "images/bowlingklot/Hammer_Effect_Tour_1600x1600__92408.webp",
         "spelstyrka": "221,90"
       }
     },
     {
       "namn": "Daniel Tserni",
-      "bild": "images/spelare/Daniel_Tserni.png",
+      "bild": "images/spelare/Daniel_Tserni.webp",
       "alder": "33",
       "spelarstil": "1-hands H",
       "snitt": "212,25",
@@ -77,12 +77,12 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 964,
         "favoritklot": "Purple Hammer",
-        "favoritklot_bild": "images/bowlingklot/PurpleHemmer.png"
+        "favoritklot_bild": "images/bowlingklot/PurpleHemmer.webp"
       }
     },
     {
       "namn": "Magnus Fagerqvist",
-      "bild": "images/spelare/Magnus_Fagerqvist.png",
+      "bild": "images/spelare/Magnus_Fagerqvist.webp",
       "alder": "51",
       "spelarstil": "1-hands H",
       "snitt": "207,00",
@@ -91,12 +91,12 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1003,
         "favoritklot": "X-calibur",
-        "favoritklot_bild": "images/bowlingklot/X-calibur_klot.jpg"
+        "favoritklot_bild": "images/bowlingklot/X-calibur_klot.webp"
       }
     },
     {
       "namn": "Rickard Ekman",
-      "bild": "images/spelare/Rickard_Ekman.png",
+      "bild": "images/spelare/Rickard_Ekman.webp",
       "alder": "25",
       "spelarstil": "1-hands H",
       "snitt": "205,27",
@@ -105,12 +105,12 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1025,
         "favoritklot": "Storm Axiom",
-        "favoritklot_bild": "images/bowlingklot/Storm_Axiom.jpg"
+        "favoritklot_bild": "images/bowlingklot/Storm_Axiom.webp"
       }
     },
     {
       "namn": "Arto Kuusela",
-      "bild": "images/spelare/Arto_Kuusela.png",
+      "bild": "images/spelare/Arto_Kuusela.webp",
       "alder": "48",
       "spelarstil": "1-hands H",
       "snitt": "202,16",
@@ -119,12 +119,12 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 989,
         "favoritklot": "Track 811",
-        "favoritklot_bild": "images/bowlingklot/Track_811.png"
+        "favoritklot_bild": "images/bowlingklot/Track_811.webp"
       }
     },
     {
       "namn": "Rasmus Roos",
-      "bild": "images/spelare/Rasmus_Roos.png",
+      "bild": "images/spelare/Rasmus_Roos.webp",
       "alder": "21",
       "spelarstil": "2-hands H",
       "snitt": "197,74",
@@ -133,12 +133,12 @@
         "hogsta_slagning_serie": 290,
         "hogsta_slagning_match": 925,
         "favoritklot": "Purple Hammer",
-        "favoritklot_bild": "images/bowlingklot/PurpleHemmer.png"
+        "favoritklot_bild": "images/bowlingklot/PurpleHemmer.webp"
       }
     },
     {
       "namn": "Åke Tserni",
-      "bild": "images/spelare/Åke_Tserni.png",
+      "bild": "images/spelare/Åke_Tserni.webp",
       "alder": "63",
       "spelarstil": "1-hands H",
       "snitt": "198,35",
@@ -152,7 +152,7 @@
     },
     {
       "namn": "Sebastian Landin Olsson",
-      "bild": "images/spelare/sebastian-landin-olsson.jpg",
+      "bild": "images/spelare/sebastian-landin-olsson.webp",
       "alder": "25",
       "spelarstil": "2-hands H",
       "snitt": "190,55",
@@ -161,12 +161,12 @@
         "hogsta_slagning_serie": 279,
         "hogsta_slagning_match": 881,
         "favoritklot": "Motiv Tank",
-        "favoritklot_bild": "images/bowlingklot/Motiv_tank.jpg"
+        "favoritklot_bild": "images/bowlingklot/Motiv_tank.webp"
       }
     },
     {
       "namn": "Peter Wiklund",
-      "bild": "images/spelare/Peter_Wiklund.png",
+      "bild": "images/spelare/Peter_Wiklund.webp",
       "alder": "40",
       "spelarstil": "1-hands H",
       "snitt": "195,04",
@@ -175,12 +175,12 @@
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1029,
         "favoritklot": "Storm Phase II",
-        "favoritklot_bild": "images/bowlingklot/Phase2.jpg"
+        "favoritklot_bild": "images/bowlingklot/Phase2.webp"
       }
     },
     {
       "namn": "Stefan Eklund",
-      "bild": "images/spelare/stefan-eklund.jpg",
+      "bild": "images/spelare/stefan-eklund.webp",
       "alder": "45",
       "spelarstil": "1-hands H",
       "snitt": "186,99",
@@ -194,7 +194,7 @@
     },
     {
       "namn": "Rasmus Ovefalk",
-      "bild": "images/spelare/Rasmus_Ovefalk.png",
+      "bild": "images/spelare/Rasmus_Ovefalk.webp",
       "alder": "16",
       "spelarstil": "2-hands H",
       "snitt": "180,98",
@@ -208,7 +208,7 @@
     },
     {
       "namn": "Robert Johansson",
-      "bild": "images/spelare/Robert_Johansson.png",
+      "bild": "images/spelare/Robert_Johansson.webp",
       "alder": "28",
       "spelarstil": "2-hands H",
       "snitt": "175,44",
@@ -217,12 +217,12 @@
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": 787,
         "favoritklot": "Storm Phase II",
-        "favoritklot_bild": "images/bowlingklot/Phase2.jpg"
+        "favoritklot_bild": "images/bowlingklot/Phase2.webp"
       }
     },
     {
       "namn": "Patrik Sarri",
-      "bild": "images/spelare/Patrik_Sarri.png",
+      "bild": "images/spelare/Patrik_Sarri.webp",
       "alder": "18",
       "spelarstil": "2-hands H",
       "snitt": "160,00",
@@ -236,7 +236,7 @@
     },
     {
       "namn": "Jonatan Nilsson",
-      "bild": "images/spelare/Jonatan_Nilsson.png",
+      "bild": "images/spelare/Jonatan_Nilsson.webp",
       "alder": "38",
       "spelarstil": "1-hands V",
       "snitt": "163,77",
@@ -250,7 +250,7 @@
     },
     {
       "namn": "Fredrik Nilsson",
-      "bild": "images/spelare/Fredrik_Nilsson.png",
+      "bild": "images/spelare/Fredrik_Nilsson.webp",
       "alder": "38",
       "spelarstil": "1-hands H",
       "snitt": "161,24",
