@@ -3,3 +3,10 @@
 
 # Backup of pre-optimization image originals (large, kept locally only)
 images/_original/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
