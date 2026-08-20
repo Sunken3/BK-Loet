@@ -1114,8 +1114,8 @@
 
           <div class="medlem-step" data-step="klar" hidden>
             <div class="medlem-klar-icon">✓</div>
-            <h3>Tack för ditt stöd!</h3>
-            <p class="medlem-modal-sub">Du är nu registrerad som stödmedlem i BK Loet.</p>
+            <h3 id="mTack">Tack för ditt stöd!</h3>
+            <p class="medlem-modal-sub">Du är nu registrerad som stödmedlem.</p>
             <div class="medlem-nummer"><span>Ditt medlemsnummer</span><strong id="mNummer">—</strong></div>
             <button class="medlem-swish-btn" type="button" data-close>Stäng</button>
           </div>
@@ -1284,6 +1284,7 @@
     const harSwishatBtn = modal.querySelector('#mHarSwishat');
     const errorBox = modal.querySelector('#mError');
     const nummerEl = modal.querySelector('#mNummer');
+    const tackEl = modal.querySelector('#mTack');
 
     function showStep(name) {
       Object.entries(steps).forEach(([k, el]) => { if (el) el.hidden = k !== name; });
@@ -1343,6 +1344,7 @@
         const out = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(out.error || ('HTTP ' + res.status));
         nummerEl.textContent = out.medlemsnummer || String(out.nummer);
+        tackEl.textContent = 'Tack ' + fornamn.value.trim() + ', för ditt stöd till BK Loet!';
         showStep('klar');
       } catch (err) {
         errorBox.textContent = 'Något gick fel: ' + err.message + ' Försök igen eller kontakta klubben.';
