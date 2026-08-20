@@ -1,0 +1,24 @@
+{
+  // Namnet MÅSTE vara "bkloet" — samma som i din nuvarande adress
+  // bkloet.anton-sandberg99.workers.dev — annars skapas en ny sajt.
+  "name": "bkloet",
+  "main": "worker/index.js",
+  "compatibility_date": "2024-11-06",
+
+  // Statiska filer (index.html, data.json, images/ ...) serveras från repo-roten.
+  // ASSETS-bindningen låter Workern falla tillbaka på filerna för vanliga sidor.
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+
+  // Databasen för stödmedlemmar. Klistra in din Database ID här efter att du
+  // skapat D1-databasen (se MEDLEMSKAP-SETUP.md, steg 1).
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "bkloet",
+      "database_id": "ded3749f-69b6-4de7-b005-fe4281519ec5"
+    }
+  ]
+}

@@ -319,6 +319,11 @@
       ]
     }
   ],
+  "swish": {
+    "belopp": "300",
+    "nummer": "",
+    "qr_bild": "images/swish-qr.png"
+  },
   "tabell": {
     "titel": "Nordallsvenskan",
     "saesong": "Säsong 2025/26",

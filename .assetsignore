@@ -1,0 +1,17 @@
+# Filer/mappar som INTE ska publiceras som statiska filer.
+# (gitignore-syntax) — håller källkod, git-historik och stora lokala filer
+# utanför det som laddas upp till Cloudflare.
+.git
+.github
+.claude
+.wrangler
+.wrangler-dryrun
+node_modules
+scripts
+images/_original
+worker
+wrangler.jsonc
+.assetsignore
+.gitignore
+schema.sql
+*.md

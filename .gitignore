@@ -3,3 +3,8 @@
 
 # Backup of pre-optimization image originals (large, kept locally only)
 images/_original/
+
+# Cloudflare Worker local dev artifacts
+.wrangler/
+.dev.vars
+node_modules/
