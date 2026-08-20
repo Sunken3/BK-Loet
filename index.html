@@ -1116,10 +1116,12 @@
 
           <div class="medlem-step" data-step="qr" hidden>
             <h3>Swisha ${belopp} kr</h3>
-            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app. Klicka sedan på knappen nedan när betalningen är klar.</p>
+            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app för att betala.</p>
             ${nummerRad}
             <div class="medlem-qr">${qrInner}</div>
-            <button class="medlem-swish-btn" type="button" id="mHarSwishat">Jag har swishat</button>
+            <!-- TILLFÄLLIGT BORTTAGEN för att förhindra abuse. Återställ genom att ta bort
+                 raden nedan och lägga tillbaka: <button class="medlem-swish-btn" type="button" id="mHarSwishat">Jag har swishat</button> -->
+            <p class="medlem-modal-sub" style="margin-top:1rem;">När du swishat är du klar — du behöver inte göra något mer här. Vi registrerar ditt stödmedlemskap manuellt.</p>
             <button class="medlem-back" type="button" data-back>← Tillbaka</button>
           </div>
 
@@ -1311,8 +1313,10 @@
       fornamn.value = ''; efternamn.value = ''; epost.value = ''; stad.value = '';
       visa.checked = false;
       validate();
-      harSwishatBtn.disabled = false;
-      harSwishatBtn.textContent = 'Jag har swishat';
+      if (harSwishatBtn) {
+        harSwishatBtn.disabled = false;
+        harSwishatBtn.textContent = 'Jag har swishat';
+      }
     }
     function open() {
       resetForm();
@@ -1338,7 +1342,7 @@
 
     swishaBtn.addEventListener('click', () => { if (!swishaBtn.disabled) showStep('qr'); });
 
-    harSwishatBtn.addEventListener('click', async () => {
+    if (harSwishatBtn) harSwishatBtn.addEventListener('click', async () => {
       errorBox.hidden = true;
       harSwishatBtn.disabled = true;
       harSwishatBtn.textContent = 'Sparar…';
