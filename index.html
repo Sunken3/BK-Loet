@@ -1344,7 +1344,9 @@
         const out = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(out.error || ('HTTP ' + res.status));
         nummerEl.textContent = out.medlemsnummer || String(out.nummer);
-        tackEl.textContent = 'Tack ' + fornamn.value.trim() + ', för ditt stöd till BK Loet!';
+        // Visa namnet som servern sparade; faller tillbaka på det inmatade värdet.
+        const visatNamn = (out.fornamn || fornamn.value.trim());
+        tackEl.textContent = 'Tack ' + visatNamn + ', för ditt stöd till BK Loet!';
         showStep('klar');
       } catch (err) {
         errorBox.textContent = 'Något gick fel: ' + err.message + ' Försök igen eller kontakta klubben.';

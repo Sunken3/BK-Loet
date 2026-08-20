@@ -65,7 +65,9 @@ async function handleMedlem(request, env) {
       .first();
 
     const nummer = row.nummer;
-    return json({ nummer, medlemsnummer: String(nummer).padStart(3, '0') });
+    // Skicka tillbaka det sparade förnamnet så att tack-rutan visar exakt
+    // det namn som lagrats (inte något som kunde ha ändrats i webbläsaren).
+    return json({ nummer, medlemsnummer: String(nummer).padStart(3, '0'), fornamn });
   } catch {
     return json({ error: 'Kunde inte spara just nu. Försök igen.' }, 500);
   }
