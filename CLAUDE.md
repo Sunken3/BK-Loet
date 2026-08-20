@@ -27,12 +27,14 @@ The site itself is a zero-dependency static site (no build step, no framework, n
 The "Bli stödmedlem" button opens a modal (`renderMedlemModal` / `attachMembershipModal` in `index.html`): förnamn, efternamn, e-post + a consent checkbox → "Swisha" (enabled only when name + valid e-post filled) → QR step → "Jag har swishat" posts to the backend.
 
 - **`worker/index.js`** — the whole Worker. Routes:
-  - `POST /api/medlem` — validates, inserts into D1, returns a sequential `medlemsnummer` (D1 `AUTOINCREMENT`; first member = 1, shown zero-padded as "001"). Payment is **not** verified — a row is saved when the user clicks "Jag har swishat".
-  - `GET /admin` — HTTP Basic Auth via the `ADMIN_PASSWORD` secret. Renders the member table; `?export=csv` downloads a CSV.
+  - `POST /api/medlem` — validates (fornamn, efternamn, epost, **stad** all required), inserts into D1, returns a sequential `medlemsnummer` (D1 `AUTOINCREMENT`; first member = 1, shown zero-padded as "001"). Payment is **not** verified — a row is saved when the user clicks "Jag har swishat".
+  - `GET /api/medlemmar` — **public** list used by the Sponsorer page. Returns only members who consented (`visa_pa_webben = 1`), and only `nummer`/`fornamn`/`efternamn`/`stad` — never e-post. `Cache-Control: no-store` so new members appear immediately.
+  - `GET /admin` — HTTP Basic Auth via the `ADMIN_PASSWORD` secret. Renders the member table (incl. Stad); `?export=csv` downloads a CSV.
   - everything else → `env.ASSETS.fetch(request)` (the static site).
+- **`sponsorer.html`** fetches `/api/medlemmar` on load and renders the "Våra stödmedlemmar" list (`renderStodmedlemmar`); tolerates the endpoint being absent (empty state).
 - **`wrangler.jsonc`** — Worker name (`bkloet`, must match the live subdomain), `main`, the `ASSETS` binding (`directory: "."`), and the `DB` D1 binding (paste the real `database_id`).
 - **`.assetsignore`** — keeps source/docs/`.git` out of the uploaded static assets.
-- **`schema.sql`** — the `medlemmar` table. Run once in the D1 console.
+- **`schema.sql`** — the `medlemmar` table (incl. `stad`). Run once in the D1 console. **`migration-add-stad.sql`** adds `stad` to a database created before that column existed — run it once on the live DB.
 - **`swish`** key in `data.json` — `belopp`, `nummer` (optional Swish number shown in the modal), `qr_bild` (path to the QR image, default `images/swish-qr.png`).
 - One-time Cloudflare setup (create D1, paste `database_id`, set `ADMIN_PASSWORD` secret) is documented in **`MEDLEMSKAP-SETUP.md`**.
 

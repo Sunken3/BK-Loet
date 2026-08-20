@@ -1103,9 +1103,13 @@
               <label for="mEpost">E-post *</label>
               <input id="mEpost" type="email" autocomplete="email" required>
             </div>
+            <div class="form-group">
+              <label for="mStad">Stad *</label>
+              <input id="mStad" type="text" autocomplete="address-level2" required>
+            </div>
             <label class="medlem-check">
               <input id="mVisa" type="checkbox">
-              <span>Jag godkänner att mitt namn syns på sponsorlistan på webben</span>
+              <span>Jag godkänner att mitt namn och min stad syns på stödmedlemslistan på webben</span>
             </label>
             <button class="medlem-swish-btn" type="button" id="mSwisha" disabled>Swisha ${belopp} kr</button>
           </div>
@@ -1286,6 +1290,7 @@
     const fornamn = modal.querySelector('#mFornamn');
     const efternamn = modal.querySelector('#mEfternamn');
     const epost = modal.querySelector('#mEpost');
+    const stad = modal.querySelector('#mStad');
     const visa = modal.querySelector('#mVisa');
     const swishaBtn = modal.querySelector('#mSwisha');
     const harSwishatBtn = modal.querySelector('#mHarSwishat');
@@ -1299,11 +1304,11 @@
     }
     function emailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
     function validate() {
-      const ok = fornamn.value.trim() && efternamn.value.trim() && emailValid(epost.value.trim());
+      const ok = fornamn.value.trim() && efternamn.value.trim() && emailValid(epost.value.trim()) && stad.value.trim();
       swishaBtn.disabled = !ok;
     }
     function resetForm() {
-      fornamn.value = ''; efternamn.value = ''; epost.value = '';
+      fornamn.value = ''; efternamn.value = ''; epost.value = ''; stad.value = '';
       visa.checked = false;
       validate();
       harSwishatBtn.disabled = false;
@@ -1323,7 +1328,7 @@
       document.body.style.overflow = '';
     }
 
-    [fornamn, efternamn, epost].forEach(el => el.addEventListener('input', validate));
+    [fornamn, efternamn, epost, stad].forEach(el => el.addEventListener('input', validate));
     document.querySelectorAll('.js-bli-stodmedlem').forEach(b => b.addEventListener('click', open));
     modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
     modal.querySelectorAll('[data-back]').forEach(el => el.addEventListener('click', () => showStep('form')));
@@ -1345,6 +1350,7 @@
             fornamn: fornamn.value.trim(),
             efternamn: efternamn.value.trim(),
             epost: epost.value.trim(),
+            stad: stad.value.trim(),
             visa_pa_webben: visa.checked
           })
         });

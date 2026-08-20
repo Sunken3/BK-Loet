@@ -1,0 +1,9 @@
+# Behandla binärfiler som binära så att radslut (CRLF/LF) aldrig konverteras.
+# Utan detta kan core.autocrlf=true förstöra binärfiler (t.ex. blåsa upp en PDF).
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.ico  binary

@@ -16,6 +16,11 @@ export default {
       return handleMedlem(request, env);
     }
 
+    if (url.pathname === '/api/medlemmar') {
+      if (request.method !== 'GET') return textResponse('Method Not Allowed', 405);
+      return handleMedlemmar(request, env);
+    }
+
     if (url.pathname === '/admin') {
       if (request.method !== 'GET') return textResponse('Method Not Allowed', 405);
       return handleAdmin(request, env, url);
@@ -43,25 +48,26 @@ async function handleMedlem(request, env) {
   const fornamn = String(body.fornamn || '').trim();
   const efternamn = String(body.efternamn || '').trim();
   const epost = String(body.epost || '').trim();
+  const stad = String(body.stad || '').trim();
   const visa = body.visa_pa_webben ? 1 : 0;
 
-  if (!fornamn || !efternamn || !epost) {
-    return json({ error: 'Förnamn, efternamn och e-post är obligatoriska.' }, 400);
+  if (!fornamn || !efternamn || !epost || !stad) {
+    return json({ error: 'Förnamn, efternamn, e-post och stad är obligatoriska.' }, 400);
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(epost)) {
     return json({ error: 'Ogiltig e-postadress.' }, 400);
   }
-  if (fornamn.length > 100 || efternamn.length > 100 || epost.length > 200) {
+  if (fornamn.length > 100 || efternamn.length > 100 || epost.length > 200 || stad.length > 100) {
     return json({ error: 'Ett fält är för långt.' }, 400);
   }
 
   try {
     const row = await env.DB
       .prepare(
-        'INSERT INTO medlemmar (fornamn, efternamn, epost, visa_pa_webben, skapad) ' +
-        'VALUES (?, ?, ?, ?, ?) RETURNING nummer'
+        'INSERT INTO medlemmar (fornamn, efternamn, epost, stad, visa_pa_webben, skapad) ' +
+        'VALUES (?, ?, ?, ?, ?, ?) RETURNING nummer'
       )
-      .bind(fornamn, efternamn, epost, visa, new Date().toISOString())
+      .bind(fornamn, efternamn, epost, stad, visa, new Date().toISOString())
       .first();
 
     const nummer = row.nummer;
@@ -70,6 +76,32 @@ async function handleMedlem(request, env) {
     return json({ nummer, medlemsnummer: String(nummer).padStart(3, '0'), fornamn });
   } catch {
     return json({ error: 'Kunde inte spara just nu. Försök igen.' }, 500);
+  }
+}
+
+/* ============ GET /api/medlemmar (publik) ============ */
+// Öppen lista som sponsorsidan hämtar. Returnerar ENDAST de medlemmar som
+// kryssat i att de vill synas — och bara namn, stad och nummer (aldrig e-post).
+
+async function handleMedlemmar(request, env) {
+  if (!env.DB) return jsonNoStore([]);
+  try {
+    const { results } = await env.DB
+      .prepare(
+        'SELECT nummer, fornamn, efternamn, stad FROM medlemmar ' +
+        'WHERE visa_pa_webben = 1 ORDER BY nummer ASC'
+      )
+      .all();
+    const list = (results || []).map(r => ({
+      nummer: r.nummer,
+      medlemsnummer: String(r.nummer).padStart(3, '0'),
+      fornamn: r.fornamn,
+      efternamn: r.efternamn,
+      stad: r.stad || ''
+    }));
+    return jsonNoStore(list);
+  } catch {
+    return jsonNoStore([]);
   }
 }
 
@@ -91,7 +123,7 @@ async function handleAdmin(request, env, url) {
   }
 
   const { results } = await env.DB
-    .prepare('SELECT nummer, fornamn, efternamn, epost, visa_pa_webben, skapad FROM medlemmar ORDER BY nummer ASC')
+    .prepare('SELECT nummer, fornamn, efternamn, epost, stad, visa_pa_webben, skapad FROM medlemmar ORDER BY nummer ASC')
     .all();
 
   if (url.searchParams.get('export') === 'csv') {
@@ -133,6 +165,17 @@ function json(obj, status = 200) {
   });
 }
 
+// Som json() men utan cachning, så nya stödmedlemmar syns direkt.
+function jsonNoStore(obj, status = 200) {
+  return new Response(JSON.stringify(obj), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store'
+    }
+  });
+}
+
 function textResponse(text, status = 200) {
   return new Response(text, {
     status,
@@ -141,13 +184,14 @@ function textResponse(text, status = 200) {
 }
 
 function csvResponse(rows) {
-  const head = ['Medlemsnummer', 'Förnamn', 'Efternamn', 'E-post', 'Visa på webben', 'Datum'];
+  const head = ['Medlemsnummer', 'Förnamn', 'Efternamn', 'Stad', 'E-post', 'Visa på webben', 'Datum'];
   const lines = [head.join(',')];
   for (const r of rows) {
     lines.push([
       nr(r.nummer),
       r.fornamn,
       r.efternamn,
+      r.stad,
       r.epost,
       r.visa_pa_webben ? 'Ja' : 'Nej',
       datum(r.skapad)
@@ -184,12 +228,13 @@ function htmlResponse(rows) {
         <tr>
           <td class="nr">${nr(r.nummer)}</td>
           <td>${esc(r.fornamn)} ${esc(r.efternamn)}</td>
+          <td>${esc(r.stad)}</td>
           <td><a href="mailto:${esc(r.epost)}">${esc(r.epost)}</a></td>
           <td class="mitt">${r.visa_pa_webben ? '<span class="ja">Ja</span>' : '<span class="nej">Nej</span>'}</td>
           <td class="mitt">${esc(datum(r.skapad))}</td>
         </tr>`).join('');
 
-  const tomt = `<tr><td colspan="5" class="tomt">Inga stödmedlemmar ännu.</td></tr>`;
+  const tomt = `<tr><td colspan="6" class="tomt">Inga stödmedlemmar ännu.</td></tr>`;
 
   const html = `<!DOCTYPE html>
 <html lang="sv">
@@ -239,7 +284,7 @@ function htmlResponse(rows) {
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Nr</th><th>Namn</th><th>E-post</th><th>Visa på webben</th><th>Datum</th></tr>
+          <tr><th>Nr</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Datum</th></tr>
         </thead>
         <tbody>${antal ? trs : tomt}</tbody>
       </table>

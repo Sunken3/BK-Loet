@@ -414,6 +414,34 @@
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
   }
+
+  /* ============ STÖDMEDLEMMAR ============ */
+  #stodmedlemmar { background: #f8fafc; }
+  .stodmedlem-lista {
+    max-width: 640px; margin: 0 auto; list-style: none; padding: 0.5rem;
+    background: var(--white); border: 1px solid var(--gray-100);
+    border-radius: 16px; max-height: 460px; overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(10, 31, 77, 0.05);
+  }
+  .stodmedlem-rad {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 0.85rem 1rem; border-bottom: 1px solid #f1f5f9;
+  }
+  .stodmedlem-rad:last-child { border-bottom: none; }
+  .stodmedlem-nr {
+    flex-shrink: 0; min-width: 3.2rem; text-align: center;
+    background: var(--navy); color: var(--gold);
+    font-weight: 700; font-variant-numeric: tabular-nums;
+    padding: 0.35rem 0.5rem; border-radius: 8px; font-size: 0.9rem;
+  }
+  .stodmedlem-namn { font-weight: 600; color: var(--navy); flex: 1; }
+  .stodmedlem-stad { color: var(--gray-500); font-size: 0.9rem; white-space: nowrap; }
+  .stodmedlem-tom {
+    max-width: 640px; margin: 0 auto; text-align: center; color: var(--gray-500);
+    background: var(--white); border: 1px dashed #d1d5db;
+    border-radius: 16px; padding: 2.5rem 1.5rem;
+  }
+  .stodmedlem-tom a { color: var(--navy); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -493,6 +521,29 @@
     return data.sponsorer.map(s => renderSponsor(s)).join('');
   }
 
+  function renderStodmedlemmar(medlemmar) {
+    const rader = medlemmar.map(m => `
+      <li class="stodmedlem-rad">
+        <span class="stodmedlem-nr">${escapeHtml(m.medlemsnummer || String(m.nummer))}</span>
+        <span class="stodmedlem-namn">${escapeHtml(m.fornamn)} ${escapeHtml(m.efternamn)}</span>
+        <span class="stodmedlem-stad">${escapeHtml(m.stad || '')}</span>
+      </li>`).join('');
+    const innehall = medlemmar.length
+      ? `<ul class="stodmedlem-lista">${rader}</ul>`
+      : `<p class="stodmedlem-tom">Var först att stödja bowlingen i Luleå — <a href="index.html#medlem">bli stödmedlem här</a>.</p>`;
+    return `
+      <section id="stodmedlemmar">
+        <div class="container">
+          <div class="packages-header">
+            <span class="section-eyebrow">Tack till er</span>
+            <h2>Våra stödmedlemmar</h2>
+            <p>Privatpersoner som stöttar bowlingen i Luleå.</p>
+          </div>
+          ${innehall}
+        </div>
+      </section>`;
+  }
+
   function renderFooter(data) {
     return `
       <footer>
@@ -545,6 +596,14 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
 
+      // Hämta stödmedlemmar (de som valt att synas). Tål att listan är tom
+      // eller att API:et inte finns (t.ex. vid lokal statisk körning).
+      let medlemmar = [];
+      try {
+        const mres = await fetch('/api/medlemmar?v=' + Date.now());
+        if (mres.ok) medlemmar = await mres.json();
+      } catch (e) { /* visa tom lista */ }
+
       document.title = `Sponsorer — ${data.klubb.namn}`;
 
       document.getElementById('app').innerHTML =
@@ -575,6 +634,7 @@
             </div>
           </div>
         </section>` +
+        renderStodmedlemmar(medlemmar) +
         `<section class="sponsor-cta">
           <div class="container">
             <span class="section-eyebrow">BLI EN DEL AV OSS</span>

@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS medlemmar (
   fornamn         TEXT    NOT NULL,
   efternamn       TEXT    NOT NULL,
   epost           TEXT    NOT NULL,
+  stad            TEXT    NOT NULL DEFAULT '',
   visa_pa_webben  INTEGER NOT NULL DEFAULT 0,
   skapad          TEXT    NOT NULL
 );

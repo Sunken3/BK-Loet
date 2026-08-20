@@ -17,6 +17,15 @@ på `.workers.dev`). Koden finns redan i repot:
 
 Gör stegen nedan i tur och ordning.
 
+> **⚠️ Har du redan skapat databasen tidigare (innan stad-fältet fanns)?**
+> Då saknar den kolumnen `stad`. Kör detta EN gång i D1-konsolen innan du
+> deployar, annars misslyckas nya registreringar:
+> ```sql
+> ALTER TABLE medlemmar ADD COLUMN stad TEXT NOT NULL DEFAULT '';
+> ```
+> (Samma sak finns i filen `migration-add-stad.sql`.) Hoppa över detta om du
+> skapar databasen först nu — `schema.sql` innehåller redan `stad`.
+
 ## 1. Skapa databasen och kopiera dess ID
 
 1. Logga in på <https://dash.cloudflare.com> → **Storage & Databases** → **D1 SQL Database**.
