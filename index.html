@@ -359,64 +359,6 @@
     height: auto; display: block;
   }
 
-  /* ============ SPONSORER ============ */
-  #sponsorer { background: var(--gray-50); }
-  .sponsor-tier {
-    margin-bottom: 3rem;
-  }
-  .sponsor-tier:last-child { margin-bottom: 0; }
-  .sponsor-tier-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--navy);
-    letter-spacing: 0.05em; margin-bottom: 1.5rem;
-    text-align: center;
-    display: flex; align-items: center; gap: 1rem;
-    justify-content: center;
-  }
-  .sponsor-tier-title::before, .sponsor-tier-title::after {
-    content: ''; flex: 1; max-width: 80px;
-    height: 1px; background: var(--gray-300);
-  }
-  .sponsor-grid {
-    display: grid; gap: 1.25rem;
-  }
-  .sponsor-grid.huvud { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
-  .sponsor-grid.guld { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .sponsor-grid.silver { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .sponsor-grid.brons { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-
-  .sponsor-card {
-    background: var(--white); border-radius: 12px;
-    padding: 1.75rem; text-align: center;
-    border: 1px solid var(--gray-100);
-    transition: all 0.3s;
-    text-decoration: none; color: inherit;
-    display: block;
-  }
-  .sponsor-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--blue);
-    box-shadow: 0 8px 24px rgba(10, 31, 77, 0.1);
-  }
-  .sponsor-card.huvud {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-    color: var(--white); border: none;
-    padding: 2.5rem 2rem;
-  }
-  .sponsor-card.huvud .sponsor-name { color: var(--gold); }
-  .sponsor-card.huvud .sponsor-desc { color: rgba(255,255,255,0.85); }
-
-  .sponsor-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem; color: var(--navy);
-    letter-spacing: 0.03em; margin-bottom: 0.5rem;
-  }
-  .sponsor-card.huvud .sponsor-name { font-size: 2rem; }
-  .sponsor-desc {
-    color: var(--gray-500); font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
   /* ============ BLI MEDLEM ============ */
   #medlem {
     background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
@@ -986,48 +928,6 @@
       </section>`;
   }
 
-  function renderSponsorTier(title, sponsors, tierClass) {
-    if (!sponsors.length) return '';
-    const cards = sponsors.map(s => `
-      <a class="sponsor-card ${tierClass}" href="${escapeHtml(s.lank || '#')}" ${s.lank && s.lank !== '#' ? 'target="_blank" rel="noopener"' : ''}>
-        <div class="sponsor-name">${escapeHtml(s.namn)}</div>
-        <div class="sponsor-desc">${escapeHtml(s.beskrivning)}</div>
-      </a>`).join('');
-    return `
-      <div class="sponsor-tier">
-        <h3 class="sponsor-tier-title">${escapeHtml(title)}</h3>
-        <div class="sponsor-grid ${tierClass}">${cards}</div>
-      </div>`;
-  }
-
-  function renderSponsors(data) {
-    const grupper = {
-      'Huvudsponsor': { lista: [], klass: 'huvud' },
-      'Guldsponsor':  { lista: [], klass: 'guld' },
-      'Silversponsor':{ lista: [], klass: 'silver' },
-      'Bronssponsor': { lista: [], klass: 'brons' }
-    };
-    data.sponsorer.forEach(s => {
-      if (grupper[s.niva]) grupper[s.niva].lista.push(s);
-    });
-
-    const tiers = Object.entries(grupper)
-      .map(([titel, g]) => renderSponsorTier(titel, g.lista, g.klass))
-      .join('');
-
-    return `
-      <section id="sponsorer">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">Partners</span>
-            <h2 class="section-title">Våra sponsorer</h2>
-            <p class="section-subtitle">Företagen som gör det möjligt för oss att satsa fullt ut.</p>
-          </div>
-          ${tiers}
-        </div>
-      </section>`;
-  }
-
   function renderMembership(data) {
     const cards = data.medlemskap.map(m => {
       const features = m.formaner.map(f => `<li><span class="check">✓</span> ${escapeHtml(f)}</li>`).join('');
@@ -1049,14 +949,14 @@
       <div class="membership-card sponsor">
         <div class="membership-title">Sponsra oss</div>
         <span class="sponsor-icon">🤝</span>
-        <p class="membership-sponsor-text">Syns där det händer — på banan, på tröjan och på webben. Vi erbjuder sponsorpaket anpassade för både små och stora företag i Norrland.</p>
+        <p class="membership-sponsor-text">Syns där det händer — på banan, på tröjan och på webben. Vi skräddarsyr ett upplägg som passar just ert företag.</p>
         <ul class="membership-sponsor-features">
           <li><span class="check-gold">✓</span> Logga på klubbens hemsida</li>
           <li><span class="check-gold">✓</span> Logga på klubbens spelkläder</li>
           <li><span class="check-gold">✓</span> Omnämns i klubbens sociala medier</li>
           <li><span class="check-gold">✓</span> Anpassat paket utifrån era behov</li>
         </ul>
-        <a href="sponsorer.html#sponsorpaket" class="membership-btn gold">Se våra sponsorpaket →</a>
+        <a href="sponsorer.html#sponsorpaket" class="membership-btn gold">Se vårt erbjudande →</a>
       </div>`;
 
     return `
