@@ -172,6 +172,131 @@
     color: #6b7280; font-size: 0.85rem;
   }
 
+  /* ============ MATCHER (modal) ============ */
+  .team-btn {
+    background: none; border: 0; padding: 0; margin: 0;
+    font: inherit; color: inherit; cursor: pointer;
+    text-align: left; text-decoration: underline;
+    text-decoration-color: rgba(29, 79, 196, 0.35);
+    text-underline-offset: 3px;
+  }
+  .team-btn:hover, .team-btn:focus-visible { color: var(--blue); }
+
+  .match-modal {
+    position: fixed; inset: 0; z-index: 200;
+    display: none; align-items: center; justify-content: center;
+    padding: 1.5rem;
+  }
+  .match-modal.open { display: flex; }
+  .match-modal-overlay {
+    position: absolute; inset: 0;
+    background: rgba(6, 18, 48, 0.6);
+  }
+  .match-modal-box {
+    position: relative;
+    background: var(--white); border-radius: 14px;
+    width: 100%; max-width: 760px;
+    max-height: 85vh; overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(6, 18, 48, 0.35);
+  }
+  .match-modal-head {
+    position: sticky; top: 0; z-index: 1;
+    background: var(--navy); color: var(--white);
+    padding: 1.25rem 3.25rem 1.25rem 1.5rem;
+    border-radius: 14px 14px 0 0;
+  }
+  .match-modal-head h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.5px; line-height: 1.1;
+  }
+  .match-modal-sub {
+    font-size: 0.85rem; color: var(--gold-soft); margin-top: 0.2rem;
+  }
+  .match-modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    width: 34px; height: 34px; border: 0; border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15); color: var(--white);
+    font-size: 1.4rem; line-height: 1; cursor: pointer;
+  }
+  .match-modal-close:hover { background: rgba(255, 255, 255, 0.28); }
+  .match-modal-body { padding: 1.5rem; }
+  .match-back {
+    background: none; border: 0; padding: 0; margin-bottom: 1rem;
+    color: var(--blue); font: inherit; font-size: 0.88rem; cursor: pointer;
+  }
+  .match-back:hover { text-decoration: underline; }
+
+  .match-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .match-row {
+    width: 100%; display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.8rem 1rem; border: 1px solid #e5e7eb; border-radius: 9px;
+    background: var(--white); font: inherit; text-align: left; cursor: pointer;
+  }
+  .match-row:hover, .match-row:focus-visible { border-color: var(--blue); background: #f8faff; }
+  .match-row[disabled] { cursor: default; color: var(--gray-500); background: #fbfbfd; }
+  .match-row[disabled]:hover { border-color: #e5e7eb; background: #fbfbfd; }
+  .match-row-date { font-size: 0.8rem; color: var(--gray-500); width: 68px; flex-shrink: 0; }
+  .match-row-teams { flex: 1; font-size: 0.92rem; }
+  .match-row-teams .mr-win { font-weight: 700; }
+  .match-row-score {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.15rem;
+    letter-spacing: 0.5px; color: var(--navy); flex-shrink: 0;
+  }
+  .match-group-title {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--gray-500); margin: 1.25rem 0 0.6rem;
+  }
+  .match-group-title:first-child { margin-top: 0; }
+
+  .match-score-head {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1.25rem; padding: 1rem 0 1.25rem; text-align: center;
+  }
+  .match-score-head .ms-team { flex: 1; font-size: 0.95rem; font-weight: 600; }
+  .match-score-head .ms-score {
+    font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem;
+    color: var(--navy); letter-spacing: 1px; white-space: nowrap;
+  }
+  .match-meta {
+    font-size: 0.82rem; color: var(--gray-500);
+    text-align: center; padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e5e7eb; margin-bottom: 1.25rem;
+  }
+  .match-sub-title {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
+    letter-spacing: 0.5px; color: var(--navy); margin: 1.5rem 0 0.6rem;
+  }
+  .match-sub-title:first-child { margin-top: 0; }
+  .match-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .match-table th {
+    text-align: center; padding: 0.5rem 0.4rem;
+    background: var(--gray-100); color: var(--gray-700);
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .match-table th:first-child, .match-table td:first-child { text-align: left; }
+  .match-table td {
+    padding: 0.5rem 0.4rem; text-align: center;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .match-table tbody tr:last-child td { border-bottom: 0; }
+  .match-table .mt-total { font-weight: 700; color: var(--navy); }
+  .match-table .mt-zero { color: var(--gray-300); }
+  .match-empty { color: var(--gray-500); font-size: 0.9rem; padding: 0.5rem 0; }
+
+  @media (max-width: 600px) {
+    .match-modal { padding: 0; }
+    .match-modal-box { max-width: none; max-height: 100vh; height: 100%; border-radius: 0; }
+    .match-modal-head { border-radius: 0; }
+    .match-modal-body { padding: 1.1rem; }
+    .match-row { padding: 0.7rem 0.75rem; gap: 0.5rem; }
+    .match-row-date { width: 56px; font-size: 0.74rem; }
+    .match-row-teams { font-size: 0.84rem; }
+    .match-score-head .ms-score { font-size: 1.8rem; }
+    .match-table { font-size: 0.78rem; }
+    .match-table th, .match-table td { padding: 0.45rem 0.25rem; }
+  }
+
   /* ============ FOOTER ============ */
   footer {
     background: #030814; color: rgba(255,255,255,0.7);
@@ -336,7 +461,8 @@
       return `
         <tr class="${isOurs ? 'our-team' : ''}">
           <td class="position-cell">${indicator}${pos}</td>
-          <td>${escapeHtml(lag.namn)}</td>
+          <td><button type="button" class="team-btn js-lag" data-lag="${escapeHtml(lag.namn)}"
+                aria-label="Visa matcher för ${escapeHtml(lag.namn)}">${escapeHtml(lag.namn)}</button></td>
           <td>${lag.matcher}</td>
           <td>${lag.vinster}</td>
           <td>${lag.oavgjorda}</td>
@@ -361,11 +487,225 @@
             <div class="table-legend">
               <div class="legend-item"><span class="legend-dot"></span> Kvalplats till Elitserien</div>
               <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
+              <div class="legend-item">Klicka på ett lag för att se deras matcher</div>
             </div>
           </div></div>
           <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)} · <a href="https://bits.swebowl.se/seriespel" target="_blank" rel="noopener" style="color:#6b7280;text-decoration:underline;">bits.swebowl.se</a></div>
         </div>
       </section>`;
+  }
+
+  function renderMatchModal() {
+    return `
+      <div class="match-modal" id="matchModal" aria-hidden="true">
+        <div class="match-modal-overlay" data-close></div>
+        <div class="match-modal-box" role="dialog" aria-modal="true" aria-labelledby="matchModalTitle">
+          <div class="match-modal-head">
+            <h3 id="matchModalTitle">Matcher</h3>
+            <div class="match-modal-sub" id="matchModalSub"></div>
+            <button class="match-modal-close" type="button" data-close aria-label="Stäng">&times;</button>
+          </div>
+          <div class="match-modal-body" id="matchModalBody"></div>
+        </div>
+      </div>`;
+  }
+
+  // "2026-09-26" -> "26/9"
+  function kortDatum(iso) {
+    const [, m, d] = (iso || '').split('-');
+    return m && d ? `${Number(d)}/${Number(m)}` : '';
+  }
+
+  function attachMatchModal() {
+    const modal = document.getElementById('matchModal');
+    if (!modal) return;
+
+    const titleEl = modal.querySelector('#matchModalTitle');
+    const subEl = modal.querySelector('#matchModalSub');
+    const bodyEl = modal.querySelector('#matchModalBody');
+
+    let matchData = null;      // matcher.json, hämtas vid första klicket
+    let laddar = null;         // pågående hämtning, så dubbelklick inte ger två anrop
+    let lastFocus = null;
+
+    function open() {
+      lastFocus = document.activeElement;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.match-modal-close').focus();
+    }
+    function close() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    function hamtaMatcher() {
+      if (matchData) return Promise.resolve(matchData);
+      if (!laddar) {
+        laddar = fetch('matcher.json?v=' + Date.now())
+          .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+          .then(json => { matchData = json; return json; })
+          .catch(err => { laddar = null; throw err; });
+      }
+      return laddar;
+    }
+
+    function visaLag(lagnamn) {
+      titleEl.textContent = lagnamn;
+      subEl.textContent = 'Matcher';
+      bodyEl.innerHTML = '<div class="match-empty">Laddar matcher…</div>';
+      open();
+
+      hamtaMatcher().then(data => {
+        const egna = data.matcher.filter(m => m.hemma === lagnamn || m.borta === lagnamn);
+        const spelade = egna.filter(m => m.spelad);
+        const kommande = egna.filter(m => !m.spelad);
+
+        if (egna.length === 0) {
+          bodyEl.innerHTML = '<div class="match-empty">Inga matcher hittades för det här laget.</div>';
+          return;
+        }
+
+        subEl.textContent =
+          `${spelade.length} spelade · ${kommande.length} kommande`;
+
+        const rad = (m) => {
+          const hemmaVann = m.spelad && m.hemmaPoang > m.bortaPoang;
+          const bortaVann = m.spelad && m.bortaPoang > m.hemmaPoang;
+          const teams =
+            `<span class="${hemmaVann ? 'mr-win' : ''}">${escapeHtml(m.hemma)}</span>` +
+            ` – ` +
+            `<span class="${bortaVann ? 'mr-win' : ''}">${escapeHtml(m.borta)}</span>`;
+          const score = m.spelad
+            ? `${m.hemmaPoang}–${m.bortaPoang}`
+            : (m.tid || '');
+          // Bara spelade matcher har matchfakta att visa.
+          const kanOppnas = m.spelad && m.spelare;
+          return `
+            <li>
+              <button type="button" class="match-row js-match" data-id="${m.id}" ${kanOppnas ? '' : 'disabled'}>
+                <span class="match-row-date">${kortDatum(m.datum)}</span>
+                <span class="match-row-teams">${teams}</span>
+                <span class="match-row-score">${escapeHtml(score)}</span>
+              </button>
+            </li>`;
+        };
+
+        let html = '';
+        if (spelade.length) {
+          html += `<div class="match-group-title">Spelade matcher</div>
+                   <ul class="match-list">${spelade.map(rad).join('')}</ul>`;
+        }
+        if (kommande.length) {
+          html += `<div class="match-group-title">Kommande matcher</div>
+                   <ul class="match-list">${kommande.map(rad).join('')}</ul>`;
+        }
+        bodyEl.innerHTML = html;
+      }).catch(() => {
+        bodyEl.innerHTML =
+          '<div class="match-empty">Kunde inte ladda matcherna just nu. Försök igen senare.</div>';
+      });
+    }
+
+    function spelarTabell(spelare) {
+      if (!spelare || !spelare.length) return '<div class="match-empty">Inga spelaruppgifter.</div>';
+      const rader = spelare.map(p => {
+        const serier = p.serier
+          .map(s => `<td class="${s ? '' : 'mt-zero'}">${s || '–'}</td>`)
+          .join('');
+        return `
+          <tr>
+            <td>${escapeHtml(p.namn)}</td>
+            ${serier}
+            <td class="mt-total">${p.total}</td>
+            <td>${p.banpoang}</td>
+          </tr>`;
+      }).join('');
+      return `
+        <table class="match-table">
+          <thead><tr><th>Spelare</th><th>S1</th><th>S2</th><th>S3</th><th>S4</th><th>Tot</th><th>BP</th></tr></thead>
+          <tbody>${rader}</tbody>
+        </table>`;
+    }
+
+    function visaMatch(id, tillbakaTillLag) {
+      const m = matchData && matchData.matcher.find(x => String(x.id) === String(id));
+      if (!m) return;
+
+      titleEl.textContent = `${m.hemma} – ${m.borta}`;
+      subEl.textContent = [kortDatum(m.datum), m.tid, m.hall].filter(Boolean).join(' · ');
+
+      const serieRader = (m.serier || []).map(s => `
+        <tr>
+          <td>Serie ${s.serie}</td>
+          <td>${s.hemmaKaglor}</td>
+          <td>${s.bortaKaglor}</td>
+          <td>${s.hemmaPoang}</td>
+          <td>${s.bortaPoang}</td>
+        </tr>`).join('');
+
+      bodyEl.innerHTML = `
+        <button type="button" class="match-back js-tillbaka">← Alla matcher för ${escapeHtml(tillbakaTillLag)}</button>
+
+        <div class="match-score-head">
+          <div class="ms-team">${escapeHtml(m.hemma)}</div>
+          <div class="ms-score">${m.hemmaPoang}–${m.bortaPoang}</div>
+          <div class="ms-team">${escapeHtml(m.borta)}</div>
+        </div>
+        <div class="match-meta">
+          ${m.hemmaKaglor} – ${m.bortaKaglor} käglor
+          ${m.oljeprofil ? ' · ' + escapeHtml(m.oljeprofil) : ''}
+          ${m.omgang ? ' · Omgång ' + m.omgang : ''}
+        </div>
+
+        ${serieRader ? `
+          <div class="match-sub-title">Serier</div>
+          <table class="match-table">
+            <thead><tr><th></th><th>Käglor H</th><th>Käglor B</th><th>Poäng H</th><th>Poäng B</th></tr></thead>
+            <tbody>${serieRader}</tbody>
+          </table>` : ''}
+
+        <div class="match-sub-title">${escapeHtml(m.hemma)}</div>
+        ${spelarTabell(m.spelare && m.spelare.hemma)}
+
+        <div class="match-sub-title">${escapeHtml(m.borta)}</div>
+        ${spelarTabell(m.spelare && m.spelare.borta)}
+
+        <div class="match-meta" style="border:0;margin:1.5rem 0 0;padding:0;">
+          <a href="https://bits.swebowl.se/match-detail?matchid=${m.id}" target="_blank" rel="noopener"
+             style="color:#6b7280;text-decoration:underline;">Matchfakta på bits.swebowl.se</a>
+        </div>`;
+
+      bodyEl.scrollTop = 0;
+      modal.querySelector('.match-modal-box').scrollTop = 0;
+    }
+
+    // Vilket lag modalen öppnades från — används av "tillbaka".
+    let aktivtLag = null;
+
+    document.querySelectorAll('.js-lag').forEach(btn => {
+      btn.addEventListener('click', () => {
+        aktivtLag = btn.dataset.lag;
+        visaLag(aktivtLag);
+      });
+    });
+
+    bodyEl.addEventListener('click', (e) => {
+      const matchBtn = e.target.closest('.js-match');
+      if (matchBtn && !matchBtn.disabled) {
+        visaMatch(matchBtn.dataset.id, aktivtLag);
+        return;
+      }
+      if (e.target.closest('.js-tillbaka')) visaLag(aktivtLag);
+    });
+
+    modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) close();
+    });
   }
 
   function showError(message, details) {
@@ -392,7 +732,10 @@
           <h1>Tabellen</h1>
         </div>` +
         renderTable(data) +
-        renderFooter(data);
+        renderFooter(data) +
+        renderMatchModal();
+
+      attachMatchModal();
 
       const toggle = document.getElementById('navToggle');
       const links = document.getElementById('navLinks');
