@@ -51,15 +51,19 @@ jobs:
         if: steps.tid.outputs.kor == 'ja'
         run: node scripts/update-matcher.js
 
+      - name: Hämta spelarnas snitt och spelstyrka
+        if: steps.tid.outputs.kor == 'ja'
+        run: node scripts/update-spelare.js
+
       - name: Committa om något ändrats
         if: steps.tid.outputs.kor == 'ja'
         run: |
           if git diff --quiet data.json matcher.json; then
-            echo "Tabellen oförändrad — ingen commit."
+            echo "Inget nytt från BITS — ingen commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data.json matcher.json
-          git commit -m "Uppdatera tabell och matcher från BITS"
+          git commit -m "Uppdatera tabell, matcher och spelarsiffror från BITS"
           git push

@@ -75,8 +75,35 @@ the workflow aborts whichever one isn't 18:00 in Sweden — that keeps the time 
 switch. Can also be run by hand: Actions tab → "Uppdatera tabell" → Run workflow. Requires the repo's
 *Settings → Actions → General → Workflow permissions* to be set to **Read and write permissions**.
 
-The same workflow also runs **`scripts/update-matcher.js`** (see below) and commits `data.json` and
-`matcher.json` together.
+The same workflow also runs **`scripts/update-matcher.js`** and **`scripts/update-spelare.js`** (both
+below) and commits `data.json` and `matcher.json` together.
+
+## Player stats update themselves
+
+`snitt` and `spelstyrka` on every player in `data.json` come from the BITS licence register via
+**`scripts/update-spelare.js`** — don't hand-edit those two fields. Everything else on a player card
+(photo, age, playing style, favourite ball, highest series/match) is maintained by hand and the script
+never touches it.
+
+- `node scripts/update-spelare.js --check` — print the changes, write nothing.
+- `node scripts/update-spelare.js` — writes `data.json`.
+- One POST to `GetAllPlayerSearch` with `search: "BK Loet"` returns the whole club — one request no
+  matter how many players are on the page. `licenceAverage` → `snitt`, `licenceSkillLevel` →
+  `spelstyrka`, formatted with a Swedish decimal comma.
+- Players are matched on `"firstName surName"` against `namn`. **The name in `data.json` must match
+  the licence register exactly** — a player BITS doesn't recognise is reported and left untouched, never
+  blanked.
+- Values are replaced in place in the raw text, not by re-serialising the player objects, so `bild`,
+  `bild_zoom`, `favoritklot` and the rest keep their exact formatting. A player carrying a duplicate
+  `spelstyrka` under `profil` gets both copies updated, so the two cannot drift apart.
+- The script refuses to write if the register returns no BK Loet players at all.
+- The register also carries licence numbers and dates of birth. Neither is read or stored.
+- Licensed players who aren't on the Spelare page are listed in the output but never added
+  automatically — a player card needs a photo, age and playing style that BITS does not have.
+
+Only `spelare.html` renders these two numbers. `renderPlayer`/`renderPlayers` in `index.html` is dead
+code — defined, never called, and referencing fields (`initialer`, `nummer`, `matcher`) that no longer
+exist in `data.json`.
 
 ## matcher.json — matches and match facts
 
