@@ -80,16 +80,16 @@ below) and commits `data.json` and `matcher.json` together.
 
 ## Player stats update themselves
 
-`snitt` and `spelstyrka` on every player in `data.json` come from the BITS licence register via
-**`scripts/update-spelare.js`** — don't hand-edit those two fields. Everything else on a player card
-(photo, age, playing style, favourite ball, highest series/match) is maintained by hand and the script
+`snitt`, `spelstyrka` and `alder` on every player in `data.json` come from the BITS licence register
+via **`scripts/update-spelare.js`** — don't hand-edit those three fields. Everything else on a player
+card (photo, playing style, favourite ball, highest series/match) is maintained by hand and the script
 never touches it.
 
 - `node scripts/update-spelare.js --check` — print the changes, write nothing.
 - `node scripts/update-spelare.js` — writes `data.json`.
 - One POST to `GetAllPlayerSearch` with `search: "BK Loet"` returns the whole club — one request no
   matter how many players are on the page. `licenceAverage` → `snitt`, `licenceSkillLevel` →
-  `spelstyrka`, formatted with a Swedish decimal comma.
+  `spelstyrka`, formatted with a Swedish decimal comma; `age` (a full date of birth) → `alder`.
 - Players are matched on `"firstName surName"` against `namn`. **The name in `data.json` must match
   the licence register exactly** — a player BITS doesn't recognise is reported and left untouched, never
   blanked.
@@ -97,11 +97,17 @@ never touches it.
   `bild_zoom`, `favoritklot` and the rest keep their exact formatting. A player carrying a duplicate
   `spelstyrka` under `profil` gets both copies updated, so the two cannot drift apart.
 - The script refuses to write if the register returns no BK Loet players at all.
-- The register also carries licence numbers and dates of birth. Neither is read or stored.
 - Licensed players who aren't on the Spelare page are listed in the output but never added
-  automatically — a player card needs a photo, age and playing style that BITS does not have.
+  automatically — a player card needs a photo and playing style that BITS does not have.
 
-Only `spelare.html` renders these two numbers. `renderPlayer`/`renderPlayers` in `index.html` is dead
+**Age and personal data.** `alder` is computed from the register's date of birth in Europe/Stockholm
+time, and **only the resulting number is stored** — never the date, and never the licence number. A
+date that won't parse, or that yields an age outside 5–110, leaves the existing `alder` alone and is
+reported. The licence number encodes the same birth date but with a two-digit year (`M250799ANT01` is
+25/07/99), which is ambiguous for young players — a 2015 birth year reads as `15` — so the date field
+is used instead. Because ages are recomputed weekly, birthdays take care of themselves.
+
+Only `spelare.html` renders these fields. `renderPlayer`/`renderPlayers` in `index.html` is dead
 code — defined, never called, and referencing fields (`initialer`, `nummer`, `matcher`) that no longer
 exist in `data.json`.
 

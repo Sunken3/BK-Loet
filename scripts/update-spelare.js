@@ -1,21 +1,24 @@
 #!/usr/bin/env node
 /**
- * Updates each player's snitt and spelstyrka in data.json from the BITS
+ * Updates each player's snitt, spelstyrka and alder in data.json from the BITS
  * licence register.
  *
  *   node scripts/update-spelare.js           update data.json
  *   node scripts/update-spelare.js --check   print the changes, write nothing
  *
  * One POST to GetAllPlayerSearch returns every licensed BK Loet player with
- * licenceAverage (snitt) and licenceSkillLevel (spelstyrka), so this costs a
- * single request no matter how many players are on the page.
+ * licenceAverage (snitt), licenceSkillLevel (spelstyrka) and a date of birth,
+ * so this costs a single request no matter how many players are on the page.
  *
  * Players are matched on "firstName surName" against the `namn` field in
  * data.json. A player BITS doesn't know is left untouched and reported — the
  * script never blanks a value it couldn't confirm.
  *
- * The register also carries licence numbers and dates of birth. Neither is
- * read or stored: only the name is used, and only the two numbers are written.
+ * The age is computed from the register's date of birth and only the resulting
+ * number is written — the date itself is never stored, nor is the licence
+ * number. (The licence number also encodes the birth date, but with a
+ * two-digit year: "M250799ANT01" is 25/07/99. That is ambiguous for young
+ * players — a 2015 birth year reads as 15 — so the date field is used instead.)
  *
  * Values are replaced in place in the raw text rather than by re-serialising
  * the player objects, so bild, bild_zoom, favoritklot and the rest keep their
@@ -32,6 +35,21 @@ const ENDPOINT = 'https://bits.swebowl.se/MiscFrontApiConnector/GetAllPlayerSear
 // 213.87 -> "213,87"
 function svNumber(n) {
   return Number(n).toFixed(2).replace('.', ',');
+}
+
+// Completed years between a date of birth and today, in Swedish local time so
+// a birthday flips on the right day here rather than in UTC.
+function ageFrom(birthIso, now = new Date()) {
+  const born = new Date(birthIso);
+  if (Number.isNaN(born.getTime())) return null;
+
+  const idag = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Stockholm' }));
+  let years = idag.getFullYear() - born.getFullYear();
+  const months = idag.getMonth() - born.getMonth();
+  if (months < 0 || (months === 0 && idag.getDate() < born.getDate())) years--;
+
+  // Anything outside this is a parsing problem, not a bowler.
+  return years >= 5 && years <= 110 ? years : null;
 }
 
 async function fetchRoster() {
@@ -106,6 +124,7 @@ async function main() {
 
   const andrade = [];
   const saknas = [];
+  const badAge = [];
   let oforandrade = 0;
 
   for (const p of spelare) {
@@ -117,12 +136,23 @@ async function main() {
 
     const nyttSnitt = svNumber(b.licenceAverage);
     const nyStyrka = svNumber(b.licenceSkillLevel);
-    if (nyttSnitt === p.snitt && nyStyrka === p.spelstyrka) {
+
+    // An unreadable date of birth keeps the existing age rather than wiping it.
+    const raknad = ageFrom(b.age);
+    if (raknad === null) badAge.push(p.namn);
+    const nyAlder = raknad === null ? p.alder : String(raknad);
+
+    if (nyttSnitt === p.snitt && nyStyrka === p.spelstyrka && nyAlder === p.alder) {
       oforandrade++;
       continue;
     }
 
-    andrade.push({ namn: p.namn, snitt: [p.snitt, nyttSnitt], styrka: [p.spelstyrka, nyStyrka] });
+    andrade.push({
+      namn: p.namn,
+      snitt: [p.snitt, nyttSnitt],
+      styrka: [p.spelstyrka, nyStyrka],
+      alder: [p.alder, nyAlder],
+    });
 
     // Locate this player's object by its exact namn value.
     const needle = `"namn": ${JSON.stringify(p.namn)}`;
@@ -133,13 +163,15 @@ async function main() {
     let block = text.slice(start, end);
     ({ block } = setField(block, 'snitt', nyttSnitt));
     ({ block } = setField(block, 'spelstyrka', nyStyrka));
+    ({ block } = setField(block, 'alder', nyAlder));
     text = text.slice(0, start) + block + text.slice(end);
   }
 
-  for (const { namn, snitt, styrka } of andrade) {
+  for (const { namn, snitt, styrka, alder } of andrade) {
     console.log(
       `  ${namn.padEnd(24)} snitt ${snitt[0].padStart(7)} -> ${snitt[1].padStart(7)}` +
-      `   spelstyrka ${styrka[0].padStart(7)} -> ${styrka[1].padStart(7)}`
+      `   spelstyrka ${styrka[0].padStart(7)} -> ${styrka[1].padStart(7)}` +
+      `   ålder ${alder[0].padStart(3)} -> ${alder[1].padStart(3)}`
     );
   }
   console.log(
@@ -149,6 +181,9 @@ async function main() {
 
   if (saknas.length) {
     console.warn(`  ! Ingen BITS-licens hittades för: ${saknas.join(', ')} (värdena lämnas orörda)`);
+  }
+  if (badAge.length) {
+    console.warn(`  ! Oläsbart födelsedatum för: ${badAge.join(', ')} (åldern lämnas orörd)`);
   }
 
   // Licensed players the site doesn't show — worth knowing, never added automatically
