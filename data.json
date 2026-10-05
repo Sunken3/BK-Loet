@@ -326,90 +326,90 @@
   },
   "tabell": {
     "titel": "Nordallsvenskan",
-    "saesong": "Säsong 2025/26",
-    "uppdaterad": "2026-05-12",
+    "saesong": "Säsong 2026/27",
+    "uppdaterad": "2026-10-05",
     "kvalplatser": 2,
     "lag": [
       {
-        "namn": "BK Flash",
-        "matcher": 16,
-        "vinster": 11,
-        "oavgjorda": 2,
-        "forluster": 3,
-        "skillnad": "+104",
-        "poang": 24
+        "namn": "BK Loet",
+        "matcher": 5,
+        "vinster": 3,
+        "oavgjorda": 1,
+        "forluster": 1,
+        "skillnad": "+16",
+        "poang": 7
       },
       {
-        "namn": "BK Fjällräven",
-        "matcher": 16,
-        "vinster": 8,
-        "oavgjorda": 2,
-        "forluster": 6,
-        "skillnad": "+2",
-        "poang": 18
-      },
-      {
-        "namn": "Bodens BS F",
-        "matcher": 16,
-        "vinster": 7,
-        "oavgjorda": 4,
-        "forluster": 5,
-        "skillnad": "-5",
-        "poang": 18
+        "namn": "Bodens BS",
+        "matcher": 4,
+        "vinster": 3,
+        "oavgjorda": 0,
+        "forluster": 1,
+        "skillnad": "+36",
+        "poang": 6
       },
       {
         "namn": "BK Saiwa",
-        "matcher": 16,
-        "vinster": 7,
-        "oavgjorda": 3,
-        "forluster": 6,
-        "skillnad": "+21",
-        "poang": 17
-      },
-      {
-        "namn": "Piteå BK",
-        "matcher": 16,
-        "vinster": 7,
-        "oavgjorda": 2,
-        "forluster": 7,
-        "skillnad": "-7",
-        "poang": 16
-      },
-      {
-        "namn": "BK Prana",
-        "matcher": 16,
-        "vinster": 8,
+        "matcher": 4,
+        "vinster": 3,
         "oavgjorda": 0,
-        "forluster": 8,
-        "skillnad": "-43",
-        "poang": 16
+        "forluster": 1,
+        "skillnad": "+12",
+        "poang": 6
+      },
+      {
+        "namn": "BK Flash",
+        "matcher": 5,
+        "vinster": 3,
+        "oavgjorda": 0,
+        "forluster": 2,
+        "skillnad": "+11",
+        "poang": 6
+      },
+      {
+        "namn": "BK Fjällräven",
+        "matcher": 6,
+        "vinster": 2,
+        "oavgjorda": 0,
+        "forluster": 4,
+        "skillnad": "-16",
+        "poang": 4
       },
       {
         "namn": "Jonsta BK",
-        "matcher": 16,
-        "vinster": 5,
-        "oavgjorda": 5,
-        "forluster": 6,
-        "skillnad": "-11",
-        "poang": 15
-      },
-      {
-        "namn": "BK Loet",
-        "matcher": 16,
-        "vinster": 5,
-        "oavgjorda": 3,
-        "forluster": 8,
-        "skillnad": "-5",
-        "poang": 13
-      },
-      {
-        "namn": "Umeå IK BF",
-        "matcher": 16,
-        "vinster": 3,
+        "matcher": 2,
+        "vinster": 1,
         "oavgjorda": 1,
-        "forluster": 12,
-        "skillnad": "-56",
-        "poang": 7
+        "forluster": 0,
+        "skillnad": "+2",
+        "poang": 3
+      },
+      {
+        "namn": "BK Prana",
+        "matcher": 1,
+        "vinster": 1,
+        "oavgjorda": 0,
+        "forluster": 0,
+        "skillnad": "+1",
+        "poang": 2
+      },
+      {
+        "namn": "Piteå BK",
+        "matcher": 3,
+        "vinster": 1,
+        "oavgjorda": 0,
+        "forluster": 2,
+        "skillnad": "-10",
+        "poang": 2
+      },
+      {
+        "namn": "Junsele BK",
+        "matcher": 6,
+        "vinster": 0,
+        "oavgjorda": 0,
+        "forluster": 6,
+        "skillnad": "-52",
+        "poang": 0
       }
     ]
   },

@@ -52,6 +52,29 @@ The "Bli stödmedlem" button opens a modal (`renderMedlemModal` / `attachMembers
 | `swish` | Stödmedlem payment: `belopp`, `nummer` (optional), `qr_bild` |
 | `tabell` | League standings — list teams in order (1st → last); set `kvalplatser` for promotion spots |
 
+## The standings table updates itself
+
+`tabell` in `data.json` is maintained by **`scripts/update-tabell.js`** — don't hand-edit it.
+
+The script reads `https://bits.swebowl.se/MiscFrontApiConnector/GetStandings?divisionId=2&seasonId=2026`,
+the endpoint the BITS frontend uses itself. It needs no API key and is not bot-protected — unlike the
+HTML page at `bits.swebowl.se/seriespel`, which blocks plain `fetch`/`curl` and can only be read
+through a real browser.
+
+- `node scripts/update-tabell.js --check` — print the table, write nothing.
+- `node scripts/update-tabell.js` — rewrites **only** the `tabell` block in `data.json` (brace
+  counting, not `JSON.stringify` of the whole file), so the rest keeps its formatting.
+- Writes nothing when the table is unchanged, so no empty commits.
+- **New season:** bump `SEASON_ID` at the top of the script (BITS counts `2026` = the 2026/2027
+  season). The script refuses to write if BITS returns an empty table. `kvalplatser` is set by hand —
+  BITS says nothing about it.
+
+**`.github/workflows/update-tabell.yml`** runs the script every Sunday at 18:00 Swedish time and
+commits the result. GitHub crons run in UTC, so two schedules (16:00 and 17:00 UTC) are registered and
+the workflow aborts whichever one isn't 18:00 in Sweden — that keeps the time right across the DST
+switch. Can also be run by hand: Actions tab → "Uppdatera tabell" → Run workflow. Requires the repo's
+*Settings → Actions → General → Workflow permissions* to be set to **Read and write permissions**.
+
 ## Deployment
 
 The site is published via **Cloudflare Pages** connected to the GitHub repo **Sunken3/BK-Loet**.  
