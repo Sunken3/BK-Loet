@@ -207,6 +207,19 @@
       }
     },
     {
+      "namn": "Erik Aitomäki",
+      "bild": "images/spelare/Erik_Aitomäki.webp",
+      "alder": "61",
+      "snitt": "177,79",
+      "spelstyrka": "174,83",
+      "profil": {
+        "hogsta_slagning_serie": null,
+        "hogsta_slagning_match": null,
+        "favoritklot": null,
+        "favoritklot_bild": null
+      }
+    },
+    {
       "namn": "Robert Johansson",
       "bild": "images/spelare/Robert_Johansson.webp",
       "alder": "28",
