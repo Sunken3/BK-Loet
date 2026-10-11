@@ -200,7 +200,7 @@
     transition: max-height 0.35s ease;
     background: var(--gray-50);
   }
-  .player-card.open .player-profile { max-height: 300px; }
+  .player-card.open .player-profile { max-height: 420px; }
   .player-profile-inner { padding: 1.25rem 1.5rem 1.5rem; }
   .profile-row {
     display: flex; justify-content: space-between; align-items: baseline;
@@ -221,6 +221,17 @@
     display: flex; align-items: center; justify-content: space-between;
     width: 100%; gap: 0.75rem;
   }
+  .bits-link {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    margin-top: 1rem; padding: 0.75rem 1rem;
+    background: var(--white); border: 1px solid var(--gray-100); border-radius: 8px;
+    text-decoration: none; color: var(--navy);
+    transition: border-color 0.2s ease;
+  }
+  .bits-link:hover { border-color: var(--blue); }
+  .bits-link-title { display: block; font-weight: 600; font-size: 0.9rem; }
+  .bits-link-sub { display: block; font-size: 0.78rem; color: var(--gray-500); margin-top: 0.1rem; }
+  .bits-link-arrow { color: var(--blue); font-size: 1.1rem; flex-shrink: 0; }
   .klot-bild { width: 64px; height: 64px; object-fit: contain; flex-shrink: 0; mix-blend-mode: multiply; }
 
   /* ============ FOOTER ============ */
@@ -349,7 +360,7 @@
       </nav>`;
   }
 
-  function renderProfileSection(profil) {
+  function renderProfileSection(profil, licens) {
     const rows = [
       { label: 'Högsta serie', value: profil.hogsta_slagning_serie, gold: true },
       { label: 'Högsta matchslagning', value: profil.hogsta_slagning_match, gold: true },
@@ -371,12 +382,22 @@
         </div>
       </div>`;
 
+    // stopPropagation: otherwise the click also folds the card shut.
+    const bitsLink = licens ? `
+      <a class="bits-link" href="https://bits.swebowl.se/player-detail?licenseNumber=${encodeURIComponent(licens)}&amp;queryTypeId=4" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <span>
+          <span class="bits-link-title">Statistik på BITS</span>
+          <span class="bits-link-sub">Alla matcher, serier och snittutveckling</span>
+        </span>
+        <span class="bits-link-arrow" aria-hidden="true">↗</span>
+      </a>` : '';
+
     return `
       <div class="profile-toggle">
         Spelarprofil <i class="profile-toggle-arrow">▾</i>
       </div>
       <div class="player-profile">
-        <div class="player-profile-inner">${rows}${klotRow}</div>
+        <div class="player-profile-inner">${rows}${klotRow}${bitsLink}</div>
       </div>`;
   }
 
@@ -401,7 +422,7 @@
             </div>
           </div>
         </div>
-        ${hasProfile ? renderProfileSection(p.profil) : ''}
+        ${hasProfile ? renderProfileSection(p.profil, p.licens) : ''}
       </div>`;
   }
 

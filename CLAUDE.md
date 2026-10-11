@@ -82,8 +82,10 @@ below) and commits `data.json` and `matcher.json` together.
 
 ## Player stats update themselves
 
-`snitt`, `spelstyrka` and `alder` on every player in `data.json` come from the BITS licence register
-via **`scripts/update-spelare.js`** — don't hand-edit those three fields. Everything else on a player
+`snitt`, `spelstyrka`, `alder` and `licens` on every player in `data.json` come from the BITS licence
+register via **`scripts/update-spelare.js`** — don't hand-edit those fields. `licens` is used only for
+the "Statistik på BITS" link at the bottom of the expanded Spelarprofil in `spelare.html`; the script
+adds it after `namn` the first time it sees a player. Everything else on a player
 card (photo, playing style, favourite ball, highest series/match) is maintained by hand and the script
 never touches it.
 
@@ -106,7 +108,8 @@ never touches it.
   automatically — a player card needs a photo and playing style that BITS does not have.
 
 **Age and personal data.** `alder` is computed from the register's date of birth in Europe/Stockholm
-time, and **only the resulting number is stored** — never the date, and never the licence number. A
+time, and **only the resulting number is stored** — never the date. (The licence number *is* stored,
+as `licens`, for the BITS link — BITS shows it publicly in that URL.) A
 date that won't parse, or that yields an age outside 5–110, leaves the existing `alder` alone and is
 reported. The licence number encodes the same birth date but with a two-digit year (`M250799ANT01` is
 25/07/99), which is ambiguous for young players — a 2015 birth year reads as `15` — so the date field

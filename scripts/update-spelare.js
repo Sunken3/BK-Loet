@@ -15,8 +15,9 @@
  * script never blanks a value it couldn't confirm.
  *
  * The age is computed from the register's date of birth and only the resulting
- * number is written — the date itself is never stored, nor is the licence
- * number. (The licence number also encodes the birth date, but with a
+ * number is written — the date itself is never stored. The licence number is
+ * stored as `licens`, only so spelare.html can link to the player's page on
+ * BITS, where it is shown publicly. (The licence number also encodes the birth date, but with a
  * two-digit year: "M250799ANT01" is 25/07/99. That is ambiguous for young
  * players — a 2015 birth year reads as 15 — so the date field is used instead.)
  *
@@ -151,7 +152,13 @@ async function main() {
     if (raknad === null) badAge.push(p.namn);
     const nyAlder = raknad === null ? p.alder : String(raknad);
 
-    if (nyttSnitt === p.snitt && nyStyrka === p.spelstyrka && nyAlder === p.alder) {
+    // Kept only to link the profile to the player's page on BITS.
+    const nyLicens = String(b.licNbr || '').trim() || p.licens;
+
+    if (
+      nyttSnitt === p.snitt && nyStyrka === p.spelstyrka &&
+      nyAlder === p.alder && nyLicens === p.licens
+    ) {
       oforandrade++;
       continue;
     }
@@ -173,6 +180,15 @@ async function main() {
     ({ block } = setField(block, 'snitt', nyttSnitt));
     ({ block } = setField(block, 'spelstyrka', nyStyrka));
     ({ block } = setField(block, 'alder', nyAlder));
+    if (nyLicens) {
+      let hits;
+      ({ block, hits } = setField(block, 'licens', nyLicens));
+      if (hits === 0) {
+        // First time: add it on its own line straight after "namn".
+        block = block.replace(/("namn"\s*:\s*"[^"]*",)(\r?\n)([ \t]*)/, (_, namn, nl, indent) =>
+          `${namn}${nl}${indent}"licens": ${JSON.stringify(nyLicens)},${nl}${indent}`);
+      }
+    }
     text = text.slice(0, start) + block + text.slice(end);
   }
 

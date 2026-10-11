@@ -52,6 +52,7 @@
   "spelare": [
     {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "bild": "images/spelare/Anton_Sandberg.webp",
       "bild_zoom": 1.08,
       "alder": "27",
@@ -68,6 +69,7 @@
     },
     {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "bild": "images/spelare/Daniel_Tserni.webp",
       "alder": "33",
       "spelarstil": "1-hands H",
@@ -82,6 +84,7 @@
     },
     {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "bild": "images/spelare/Magnus_Fagerqvist.webp",
       "alder": "51",
       "spelarstil": "1-hands H",
@@ -96,6 +99,7 @@
     },
     {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "bild": "images/spelare/Rickard_Ekman.webp",
       "alder": "25",
       "spelarstil": "1-hands H",
@@ -110,6 +114,7 @@
     },
     {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "bild": "images/spelare/Arto_Kuusela.webp",
       "alder": "49",
       "spelarstil": "1-hands H",
@@ -124,6 +129,7 @@
     },
     {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "bild": "images/spelare/Rasmus_Roos.webp",
       "alder": "21",
       "spelarstil": "2-hands H",
@@ -138,6 +144,7 @@
     },
     {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "bild": "images/spelare/Åke_Tserni.webp",
       "alder": "64",
       "spelarstil": "1-hands H",
@@ -152,6 +159,7 @@
     },
     {
       "namn": "Sebastian Landin Olsson",
+      "licens": "M270800SEB01",
       "bild": "images/spelare/Sebastian_Landin_Olsson.webp",
       "alder": "26",
       "spelarstil": "2-hands H",
@@ -166,6 +174,7 @@
     },
     {
       "namn": "Peter Wiklund",
+      "licens": "M171085PET01",
       "bild": "images/spelare/Peter_Wiklund.webp",
       "alder": "40",
       "spelarstil": "1-hands H",
@@ -180,6 +189,7 @@
     },
     {
       "namn": "Stefan Eklund",
+      "licens": "M161080STE01",
       "bild": "images/spelare/stefan-eklund.webp",
       "alder": "45",
       "spelarstil": "1-hands H",
@@ -194,6 +204,7 @@
     },
     {
       "namn": "Rasmus Ovefalk",
+      "licens": "M100909RAS01",
       "bild": "images/spelare/Rasmus_Ovefalk.webp",
       "alder": "17",
       "spelarstil": "2-hands H",
@@ -208,6 +219,7 @@
     },
     {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "bild": "images/spelare/Erik_Aitomäki.webp",
       "alder": "61",
       "snitt": "177,79",
@@ -221,6 +233,7 @@
     },
     {
       "namn": "Robert Johansson",
+      "licens": "M120298ROB01",
       "bild": "images/spelare/Robert_Johansson.webp",
       "alder": "28",
       "spelarstil": "2-hands H",
@@ -235,6 +248,7 @@
     },
     {
       "namn": "Patrik Sarri",
+      "licens": "M071107PAT01",
       "bild": "images/spelare/Patrik_Sarri.webp",
       "alder": "18",
       "spelarstil": "2-hands H",
@@ -249,6 +263,7 @@
     },
     {
       "namn": "Jonatan Nilsson",
+      "licens": "M300491JON01",
       "bild": "images/spelare/Jonatan_Nilsson.webp",
       "alder": "35",
       "spelarstil": "1-hands V",
@@ -263,6 +278,7 @@
     },
     {
       "namn": "Fredrik Nilsson",
+      "licens": "M060588FRE01",
       "bild": "images/spelare/Fredrik_Nilsson.webp",
       "alder": "38",
       "spelarstil": "1-hands H",
