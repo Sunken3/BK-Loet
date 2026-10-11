@@ -14,6 +14,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { bitsFetch } = require('./bits-fetch');
 
 const SEASON_ID = 2026;
 const DIVISION_ID = 2;
@@ -34,7 +35,7 @@ function today() {
 }
 
 async function fetchStandings() {
-  const res = await fetch(ENDPOINT, { headers: { Accept: 'application/json' } });
+  const res = await bitsFetch(ENDPOINT, { headers: { Accept: 'application/json' } });
   if (!res.ok) throw new Error(`BITS responded ${res.status} ${res.statusText}`);
 
   const rows = await res.json();

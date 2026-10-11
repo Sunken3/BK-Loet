@@ -71,8 +71,10 @@ through a real browser.
 
 **`.github/workflows/update-tabell.yml`** runs the script every Sunday at 18:00 Swedish time and
 commits the result. GitHub crons run in UTC, so two schedules (16:00 and 17:00 UTC) are registered and
-the workflow aborts whichever one isn't 18:00 in Sweden — that keeps the time right across the DST
-switch. Can also be run by hand: Actions tab → "Uppdatera tabell" → Run workflow. Requires the repo's
+the workflow skips any run that starts before 18:00 in Sweden — that keeps the time right across the DST
+switch. GitHub delays scheduled runs near the top of the hour, sometimes by over an hour, and can drop
+them entirely, so the guard is `>= 18` (not `== 18`) and a backup schedule runs at 19:23 UTC. Extra runs
+are harmless: the scripts write nothing when nothing changed. Can also be run by hand: Actions tab → "Uppdatera tabell" → Run workflow. Requires the repo's
 *Settings → Actions → General → Workflow permissions* to be set to **Read and write permissions**.
 
 The same workflow also runs **`scripts/update-matcher.js`** and **`scripts/update-spelare.js`** (both

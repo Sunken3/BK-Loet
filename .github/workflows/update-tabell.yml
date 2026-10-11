@@ -8,13 +8,21 @@ name: Uppdatera tabell
 on:
   schedule:
     # GitHub kör cron i UTC. 16:00 UTC = 18:00 sommartid, 17:00 UTC = 18:00
-    # vintertid. Båda körs; steget nedan avbryter den som inte är 18:00 i Sverige.
+    # vintertid. Steget nedan hoppar över körningar före 18:00 svensk tid.
+    # GitHub kan fördröja schemalagda körningar runt hel timme rejält, eller
+    # släppa dem helt, så det finns också en reservkörning senare på kvällen.
+    # Skripten skriver inget när inget ändrats, så extra körningar är ofarliga.
     - cron: '0 16 * * 0'
     - cron: '0 17 * * 0'
+    - cron: '23 19 * * 0'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: uppdatera-tabell
+  cancel-in-progress: false
 
 jobs:
   uppdatera:
@@ -27,11 +35,11 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "Manuell körning — kör oavsett klockslag (just nu $timme:00)."
             echo "kor=ja" >> "$GITHUB_OUTPUT"
-          elif [ "$timme" = "18" ]; then
+          elif [ "$timme" -ge 18 ]; then
             echo "Klockan är $timme i Sverige — kör."
             echo "kor=ja" >> "$GITHUB_OUTPUT"
           else
-            echo "Klockan är $timme i Sverige, inte 18 — hoppar över."
+            echo "Klockan är $timme i Sverige, före 18 — hoppar över."
             echo "kor=nej" >> "$GITHUB_OUTPUT"
           fi
 

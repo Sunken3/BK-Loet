@@ -21,6 +21,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { bitsFetch } = require('./bits-fetch');
 
 const SEASON_ID = 2026;
 const DIVISION_ID = 2;
@@ -34,7 +35,7 @@ const DELAY_MS = 250;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function getJson(url) {
-  const res = await fetch(url, { headers: { Accept: 'application/json' } });
+  const res = await bitsFetch(url, { headers: { Accept: 'application/json' } });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
   return res.json();
 }

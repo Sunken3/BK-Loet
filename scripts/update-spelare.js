@@ -27,6 +27,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { bitsFetch } = require('./bits-fetch');
 
 const CLUB = 'BK Loet';
 const DATA_FILE = path.join(__dirname, '..', 'data.json');
@@ -53,7 +54,7 @@ function ageFrom(birthIso, now = new Date()) {
 }
 
 async function fetchRoster() {
-  const res = await fetch(ENDPOINT, {
+  const res = await bitsFetch(ENDPOINT, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
