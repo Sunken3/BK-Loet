@@ -56,7 +56,15 @@ function ageFrom(birthIso, now = new Date()) {
 async function fetchRoster() {
   const res = await bitsFetch(ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    // Ser ut som ett anrop från BITS egen sida. Anropet har fått ECONNRESET
+    // från GitHubs servrar; det här är ett försök att undvika det.
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Origin: 'https://bits.swebowl.se',
+      Referer: 'https://bits.swebowl.se/',
+      'User-Agent': 'Mozilla/5.0 (compatible; BK-Loet-hemsida; +https://bkloet.anton-sandberg99.workers.dev)',
+    },
     body: JSON.stringify({
       search: CLUB,
       TakeOnlyActive: true,

@@ -59,8 +59,12 @@ jobs:
         if: steps.tid.outputs.kor == 'ja'
         run: node scripts/update-matcher.js
 
+      # Licensregistret (POST GetAllPlayerSearch) stänger ibland anslutningen
+      # från GitHubs servrar. Spelarsiffrorna får inte stoppa tabellen, så ett
+      # fel här markeras med en varning och commiten nedan körs ändå.
       - name: Hämta spelarnas snitt och spelstyrka
         if: steps.tid.outputs.kor == 'ja'
+        continue-on-error: true
         run: node scripts/update-spelare.js
 
       - name: Committa om något ändrats

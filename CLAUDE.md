@@ -99,6 +99,9 @@ never touches it.
   `bild_zoom`, `favoritklot` and the rest keep their exact formatting. A player carrying a duplicate
   `spelstyrka` under `profil` gets both copies updated, so the two cannot drift apart.
 - The script refuses to write if the register returns no BK Loet players at all.
+- `GetAllPlayerSearch` (the only POST) has failed with `ECONNRESET` from GitHub's runners while
+  working fine locally. The workflow step is `continue-on-error`, so a failure there still lets the
+  table and matches commit — if player stats look stale, run the script locally and push.
 - Licensed players who aren't on the Spelare page are listed in the output but never added
   automatically — a player card needs a photo and playing style that BITS does not have.
 
