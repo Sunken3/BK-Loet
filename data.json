@@ -56,14 +56,14 @@
       "bild_zoom": 1.08,
       "alder": "27",
       "spelarstil": "1-hands H",
-      "snitt": "213,87",
-      "spelstyrka": "221,34",
+      "snitt": "214,46",
+      "spelstyrka": "221,41",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
         "favoritklot": "Hammer Tour Effect",
         "favoritklot_bild": "images/bowlingklot/Hammer_Effect_Tour_1600x1600__92408.webp",
-        "spelstyrka": "221,34"
+        "spelstyrka": "221,41"
       }
     },
     {
@@ -71,8 +71,8 @@
       "bild": "images/spelare/Daniel_Tserni.webp",
       "alder": "33",
       "spelarstil": "1-hands H",
-      "snitt": "209,47",
-      "spelstyrka": "218,17",
+      "snitt": "210,13",
+      "spelstyrka": "218,42",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 964,
@@ -85,8 +85,8 @@
       "bild": "images/spelare/Magnus_Fagerqvist.webp",
       "alder": "51",
       "spelarstil": "1-hands H",
-      "snitt": "205,72",
-      "spelstyrka": "214,74",
+      "snitt": "205,84",
+      "spelstyrka": "214,98",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1003,
@@ -99,8 +99,8 @@
       "bild": "images/spelare/Rickard_Ekman.webp",
       "alder": "25",
       "spelarstil": "1-hands H",
-      "snitt": "205,58",
-      "spelstyrka": "211,55",
+      "snitt": "205,44",
+      "spelstyrka": "211,48",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1025,
@@ -114,7 +114,7 @@
       "alder": "49",
       "spelarstil": "1-hands H",
       "snitt": "202,85",
-      "spelstyrka": "210,92",
+      "spelstyrka": "210,96",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 989,
@@ -127,8 +127,8 @@
       "bild": "images/spelare/Rasmus_Roos.webp",
       "alder": "21",
       "spelarstil": "2-hands H",
-      "snitt": "196,51",
-      "spelstyrka": "207,53",
+      "snitt": "197,57",
+      "spelstyrka": "207,97",
       "profil": {
         "hogsta_slagning_serie": 290,
         "hogsta_slagning_match": 925,
@@ -141,8 +141,8 @@
       "bild": "images/spelare/Åke_Tserni.webp",
       "alder": "64",
       "spelarstil": "1-hands H",
-      "snitt": "198,43",
-      "spelstyrka": "206,90",
+      "snitt": "199,09",
+      "spelstyrka": "207,73",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -156,7 +156,7 @@
       "alder": "26",
       "spelarstil": "2-hands H",
       "snitt": "190,68",
-      "spelstyrka": "199,42",
+      "spelstyrka": "199,44",
       "profil": {
         "hogsta_slagning_serie": 279,
         "hogsta_slagning_match": 881,
@@ -170,7 +170,7 @@
       "alder": "40",
       "spelarstil": "1-hands H",
       "snitt": "195,04",
-      "spelstyrka": "196,87",
+      "spelstyrka": "196,89",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1029,
@@ -184,7 +184,7 @@
       "alder": "45",
       "spelarstil": "1-hands H",
       "snitt": "186,99",
-      "spelstyrka": "191,79",
+      "spelstyrka": "191,81",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -198,7 +198,7 @@
       "alder": "17",
       "spelarstil": "2-hands H",
       "snitt": "180,98",
-      "spelstyrka": "182,30",
+      "spelstyrka": "182,31",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -212,7 +212,7 @@
       "alder": "28",
       "spelarstil": "2-hands H",
       "snitt": "174,38",
-      "spelstyrka": "160,71",
+      "spelstyrka": "160,69",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": 787,
@@ -240,7 +240,7 @@
       "alder": "35",
       "spelarstil": "1-hands V",
       "snitt": "165,21",
-      "spelstyrka": "150,81",
+      "spelstyrka": "150,79",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -254,7 +254,7 @@
       "alder": "38",
       "spelarstil": "1-hands H",
       "snitt": "161,24",
-      "spelstyrka": "125,36",
+      "spelstyrka": "125,31",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -327,71 +327,62 @@
   "tabell": {
     "titel": "Nordallsvenskan",
     "saesong": "Säsong 2026/27",
-    "uppdaterad": "2026-10-05",
+    "uppdaterad": "2026-10-11",
     "kvalplatser": 2,
     "lag": [
       {
         "namn": "BK Loet",
-        "matcher": 5,
-        "vinster": 3,
+        "matcher": 6,
+        "vinster": 4,
         "oavgjorda": 1,
         "forluster": 1,
-        "skillnad": "+16",
-        "poang": 7
+        "skillnad": "+30",
+        "poang": 9
       },
       {
         "namn": "Bodens BS",
-        "matcher": 4,
-        "vinster": 3,
+        "matcher": 5,
+        "vinster": 4,
         "oavgjorda": 0,
         "forluster": 1,
-        "skillnad": "+36",
-        "poang": 6
-      },
-      {
-        "namn": "BK Saiwa",
-        "matcher": 4,
-        "vinster": 3,
-        "oavgjorda": 0,
-        "forluster": 1,
-        "skillnad": "+12",
-        "poang": 6
+        "skillnad": "+48",
+        "poang": 8
       },
       {
         "namn": "BK Flash",
-        "matcher": 5,
-        "vinster": 3,
+        "matcher": 6,
+        "vinster": 4,
         "oavgjorda": 0,
         "forluster": 2,
-        "skillnad": "+11",
-        "poang": 6
+        "skillnad": "+21",
+        "poang": 8
+      },
+      {
+        "namn": "BK Saiwa",
+        "matcher": 5,
+        "vinster": 4,
+        "oavgjorda": 0,
+        "forluster": 1,
+        "skillnad": "+16",
+        "poang": 8
       },
       {
         "namn": "BK Fjällräven",
-        "matcher": 6,
+        "matcher": 7,
         "vinster": 2,
         "oavgjorda": 0,
-        "forluster": 4,
-        "skillnad": "-16",
+        "forluster": 5,
+        "skillnad": "-20",
         "poang": 4
       },
       {
         "namn": "Jonsta BK",
-        "matcher": 2,
+        "matcher": 4,
         "vinster": 1,
         "oavgjorda": 1,
-        "forluster": 0,
-        "skillnad": "+2",
+        "forluster": 2,
+        "skillnad": "-14",
         "poang": 3
-      },
-      {
-        "namn": "BK Prana",
-        "matcher": 1,
-        "vinster": 1,
-        "oavgjorda": 0,
-        "forluster": 0,
-        "skillnad": "+1",
-        "poang": 2
       },
       {
         "namn": "Piteå BK",
@@ -403,13 +394,22 @@
         "poang": 2
       },
       {
+        "namn": "BK Prana",
+        "matcher": 3,
+        "vinster": 1,
+        "oavgjorda": 0,
+        "forluster": 2,
+        "skillnad": "-25",
+        "poang": 2
+      },
+      {
         "namn": "Junsele BK",
-        "matcher": 6,
-        "vinster": 0,
+        "matcher": 7,
+        "vinster": 1,
         "oavgjorda": 0,
         "forluster": 6,
-        "skillnad": "-52",
-        "poang": 0
+        "skillnad": "-46",
+        "poang": 2
       }
     ]
   },
