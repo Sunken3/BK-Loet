@@ -253,6 +253,10 @@
     gap: 1.25rem; padding: 1rem 0 1.25rem; text-align: center;
   }
   .match-score-head .ms-team { flex: 1; font-size: 0.95rem; font-weight: 600; }
+  .match-score-head .ms-pins {
+    display: block; margin-top: 0.2rem;
+    font-size: 0.82rem; font-weight: 400; color: var(--gray-500);
+  }
   .match-score-head .ms-score {
     font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem;
     color: var(--navy); letter-spacing: 1px; white-space: nowrap;
@@ -651,14 +655,12 @@
         <button type="button" class="match-back js-tillbaka">← Alla matcher för ${escapeHtml(tillbakaTillLag)}</button>
 
         <div class="match-score-head">
-          <div class="ms-team">${escapeHtml(m.hemma)}</div>
+          <div class="ms-team">${escapeHtml(m.hemma)}${m.hemmaKaglor != null ? `<span class="ms-pins">${m.hemmaKaglor} p</span>` : ''}</div>
           <div class="ms-score">${m.hemmaPoang}–${m.bortaPoang}</div>
-          <div class="ms-team">${escapeHtml(m.borta)}</div>
+          <div class="ms-team">${escapeHtml(m.borta)}${m.bortaKaglor != null ? `<span class="ms-pins">${m.bortaKaglor} p</span>` : ''}</div>
         </div>
         <div class="match-meta">
-          ${m.hemmaKaglor} – ${m.bortaKaglor} käglor
-          ${m.oljeprofil ? ' · ' + escapeHtml(m.oljeprofil) : ''}
-          ${m.omgang ? ' · Omgång ' + m.omgang : ''}
+          ${[m.oljeprofil && escapeHtml(m.oljeprofil), m.omgang && 'Omgång ' + m.omgang].filter(Boolean).join(' · ')}
         </div>
 
         ${serieRader ? `
