@@ -129,7 +129,9 @@ team. That keeps it off the critical path for every other page.
 - Match facts already in the file are reused, so a weekly run only requests matches played since the
   last one. A cold run fetches every played match (two requests each, 250 ms apart).
 - Writes nothing when the result is unchanged, so no empty commits.
-- Player licence numbers from BITS are stripped — only the name is stored.
+- Each player row keeps the BITS licence number as `licens`, used only to link the name to
+  `bits.swebowl.se/player-detail?licenseNumber=…&queryTypeId=4` (BITS shows it publicly there).
+  Cached match facts without `licens` are refetched once.
 - **New season:** bump `SEASON_ID`, same as in `update-tabell.js`. The script refuses to write if BITS
   returns no matches at all.
 
@@ -144,6 +146,7 @@ Endpoints used, all on the same unprotected host as the standings:
 **In `tabell.html`:** every team name is a button (`renderTable` → `.js-lag`). Clicking one opens a
 modal (`renderMatchModal` / `attachMatchModal`) listing that team's matches; clicking a played match
 swaps the modal to the match facts — score, pins, per-series totals and both teams' player tables.
+Each player name in those tables links to the player's page on BITS (new tab).
 `matcher.json` is fetched lazily on the first team click and cached for the rest of the visit.
 
 ## Deployment

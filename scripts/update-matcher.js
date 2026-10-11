@@ -45,9 +45,18 @@ function today() {
 }
 
 // "Kristoffer Svonni (M080486KRI01)" -> "Kristoffer Svonni"
-// The licence number is a personal identifier we have no use for.
 function cleanPlayerName(raw) {
   return String(raw || '').replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+// The licence number is kept only so tabell.html can link each player to
+// their page on BITS (player-detail?licenseNumber=...), where BITS shows it
+// publicly anyway. It comes as licNbr, and also in brackets after the name.
+function licenceOf(p) {
+  const fromField = String(p.licNbr || '').trim();
+  if (fromField) return fromField;
+  const m = String(p.player || '').match(/\(([^)]+)\)\s*$/);
+  return m ? m[1].trim() : null;
 }
 
 function listMatches(type, order) {
@@ -79,6 +88,7 @@ function trimMatch(m) {
 function trimPlayers(list) {
   return (list || []).map((p) => ({
     namn: cleanPlayerName(p.player),
+    licens: licenceOf(p),
     serier: [p.result1, p.result2, p.result3, p.result4].map((n) => Number(n) || 0),
     total: Number(p.totalResult) || 0,
     banpoang: Number(p.lanePoint) || 0,
@@ -124,8 +134,13 @@ async function main() {
       console.warn('Could not parse existing matcher.json — refetching everything.');
     }
   }
+  // Facts saved before licence numbers were kept are fetched again, once.
+  const hasLicences = (m) =>
+    [...m.spelare.hemma, ...m.spelare.borta].every((p) => 'licens' in p);
   const known = new Map(
-    (existing.matcher || []).filter((m) => m.spelare).map((m) => [m.id, m])
+    (existing.matcher || [])
+      .filter((m) => m.spelare && hasLicences(m))
+      .map((m) => [m.id, m])
   );
 
   const [played, upcoming] = await Promise.all([

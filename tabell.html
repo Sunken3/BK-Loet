@@ -266,6 +266,8 @@
     text-align: center; padding-bottom: 1.25rem;
     border-bottom: 1px solid #e5e7eb; margin-bottom: 1.25rem;
   }
+  .match-table .mt-player { color: var(--navy); text-decoration: none; }
+  .match-table .mt-player:hover { text-decoration: underline; }
   .match-sub-title {
     font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem;
     letter-spacing: 0.5px; color: var(--navy); margin: 1.5rem 0 0.6rem;
@@ -622,7 +624,9 @@
           .join('');
         return `
           <tr>
-            <td>${escapeHtml(p.namn)}</td>
+            <td>${p.licens
+              ? `<a class="mt-player" href="https://bits.swebowl.se/player-detail?licenseNumber=${encodeURIComponent(p.licens)}&amp;queryTypeId=4" target="_blank" rel="noopener">${escapeHtml(p.namn)}</a>`
+              : escapeHtml(p.namn)}</td>
             ${serier}
             <td class="mt-total">${p.total}</td>
             <td>${p.banpoang}</td>

@@ -50,6 +50,7 @@
     "hemma": [
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        218,
        181,
@@ -61,6 +62,7 @@
      },
      {
       "namn": "Lars Backlund",
+      "licens": "M170163LAR01",
       "serier": [
        224,
        193,
@@ -72,6 +74,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        186,
        199,
@@ -83,6 +86,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        194,
        252,
@@ -94,6 +98,7 @@
      },
      {
       "namn": "Magnus Melander",
+      "licens": "M020180MAG01",
       "serier": [
        194,
        229,
@@ -105,6 +110,7 @@
      },
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        216,
        162,
@@ -116,6 +122,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        204,
        182,
@@ -127,6 +134,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        193,
        180,
@@ -138,6 +146,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        0,
        0,
@@ -151,6 +160,7 @@
     "borta": [
      {
       "namn": "Max Østbergh",
+      "licens": "M011199MAX01",
       "serier": [
        200,
        207,
@@ -162,6 +172,7 @@
      },
      {
       "namn": "Anders Olofsson",
+      "licens": "M261085AND02",
       "serier": [
        196,
        183,
@@ -173,6 +184,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M220873MAT01",
       "serier": [
        221,
        188,
@@ -184,6 +196,7 @@
      },
      {
       "namn": "Aksel Sorsell-Nikolaisen",
+      "licens": "M291298AKS01",
       "serier": [
        170,
        176,
@@ -195,6 +208,7 @@
      },
      {
       "namn": "Torbjörn Westerlund",
+      "licens": "M051076TOR01",
       "serier": [
        204,
        197,
@@ -206,6 +220,7 @@
      },
      {
       "namn": "Göte Windelås",
+      "licens": "M151171GÖT01",
       "serier": [
        200,
        190,
@@ -217,6 +232,7 @@
      },
      {
       "namn": "Mikael Pallin",
+      "licens": "M011262MIK08",
       "serier": [
        172,
        190,
@@ -228,6 +244,7 @@
      },
      {
       "namn": "Isak Windelås",
+      "licens": "M061002ISA01",
       "serier": [
        140,
        164,
@@ -239,6 +256,7 @@
      },
      {
       "namn": "Jörgen Danielsson",
+      "licens": "M021266JÖR01",
       "serier": [
        200,
        161,
@@ -299,6 +317,7 @@
     "hemma": [
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        188,
        206,
@@ -310,6 +329,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        214,
        219,
@@ -321,6 +341,7 @@
      },
      {
       "namn": "Daniel Unander",
+      "licens": "M090283DAN01",
       "serier": [
        214,
        196,
@@ -332,6 +353,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        198,
        202,
@@ -343,6 +365,7 @@
      },
      {
       "namn": "Johlina Winkler",
+      "licens": "K250906JOH01",
       "serier": [
        136,
        212,
@@ -354,6 +377,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        199,
        189,
@@ -365,6 +389,7 @@
      },
      {
       "namn": "Tomas Gäderblom",
+      "licens": "M170662TOM01",
       "serier": [
        170,
        190,
@@ -376,6 +401,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        220,
        161,
@@ -387,6 +413,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        163,
        0,
@@ -400,6 +427,7 @@
     "borta": [
      {
       "namn": "Linus Hedman",
+      "licens": "M181109LIN01",
       "serier": [
        300,
        235,
@@ -411,6 +439,7 @@
      },
      {
       "namn": "Jesper Hansson",
+      "licens": "M110595JES02",
       "serier": [
        187,
        217,
@@ -422,6 +451,7 @@
      },
      {
       "namn": "Hannes Bergström",
+      "licens": "M140108HAN01",
       "serier": [
        188,
        194,
@@ -433,6 +463,7 @@
      },
      {
       "namn": "Kim Zetterberg",
+      "licens": "M060900KIM01",
       "serier": [
        184,
        203,
@@ -444,6 +475,7 @@
      },
      {
       "namn": "Victor Appelqvist",
+      "licens": "M260296VIC05",
       "serier": [
        162,
        204,
@@ -455,6 +487,7 @@
      },
      {
       "namn": "Oscar Hellström",
+      "licens": "M240309OSC01",
       "serier": [
        179,
        205,
@@ -466,6 +499,7 @@
      },
      {
       "namn": "Benny Linder",
+      "licens": "M220982BEN01",
       "serier": [
        161,
        165,
@@ -477,6 +511,7 @@
      },
      {
       "namn": "Sven Hedman",
+      "licens": "M230773SVE01",
       "serier": [
        184,
        139,
@@ -488,6 +523,7 @@
      },
      {
       "namn": "Lowe Nilsson",
+      "licens": "M010412LOW01",
       "serier": [
        193,
        129,
@@ -548,6 +584,7 @@
     "hemma": [
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        240,
        269,
@@ -559,6 +596,7 @@
      },
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        208,
        245,
@@ -570,6 +608,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        222,
        223,
@@ -581,6 +620,7 @@
      },
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        277,
        259,
@@ -592,6 +632,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        175,
        189,
@@ -603,6 +644,7 @@
      },
      {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "serier": [
        200,
        196,
@@ -614,6 +656,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        177,
        183,
@@ -625,6 +668,7 @@
      },
      {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "serier": [
        191,
        161,
@@ -636,6 +680,7 @@
      },
      {
       "namn": "Stefan Eklund",
+      "licens": "M161080STE01",
       "serier": [
        0,
        0,
@@ -649,6 +694,7 @@
     "borta": [
      {
       "namn": "Peter Forsgren",
+      "licens": "M190291PET02",
       "serier": [
        205,
        186,
@@ -660,6 +706,7 @@
      },
      {
       "namn": "Niklas Fjellström",
+      "licens": "M241084NIK01",
       "serier": [
        174,
        211,
@@ -671,6 +718,7 @@
      },
      {
       "namn": "Arne Boström",
+      "licens": "M060856ARN01",
       "serier": [
        181,
        157,
@@ -682,6 +730,7 @@
      },
      {
       "namn": "Sara Almqvist",
+      "licens": "K070994SAR01",
       "serier": [
        175,
        169,
@@ -693,6 +742,7 @@
      },
      {
       "namn": "Anders Wiklund",
+      "licens": "M280564AND01",
       "serier": [
        179,
        173,
@@ -704,6 +754,7 @@
      },
      {
       "namn": "Joakim Boström",
+      "licens": "M220590JOA01",
       "serier": [
        126,
        192,
@@ -715,6 +766,7 @@
      },
      {
       "namn": "Maja Öberg",
+      "licens": "K270996MAJ01",
       "serier": [
        198,
        150,
@@ -726,6 +778,7 @@
      },
      {
       "namn": "Mikael Lundström",
+      "licens": "M230470MIK01",
       "serier": [
        164,
        150,
@@ -786,6 +839,7 @@
     "hemma": [
      {
       "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
       "serier": [
        240,
        196,
@@ -797,6 +851,7 @@
      },
      {
       "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
       "serier": [
        235,
        232,
@@ -808,6 +863,7 @@
      },
      {
       "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
       "serier": [
        192,
        257,
@@ -819,6 +875,7 @@
      },
      {
       "namn": "Rickard Ryding",
+      "licens": "M120989RIC01",
       "serier": [
        239,
        217,
@@ -830,6 +887,7 @@
      },
      {
       "namn": "Jens Värnberg",
+      "licens": "M021097JEN01",
       "serier": [
        183,
        212,
@@ -841,6 +899,7 @@
      },
      {
       "namn": "Henrik Sundqvist",
+      "licens": "M010375HEN01",
       "serier": [
        228,
        205,
@@ -852,6 +911,7 @@
      },
      {
       "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
       "serier": [
        201,
        255,
@@ -863,6 +923,7 @@
      },
      {
       "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
       "serier": [
        171,
        171,
@@ -874,6 +935,7 @@
      },
      {
       "namn": "George Busuricu",
+      "licens": "M210181GEO01",
       "serier": [
        168,
        190,
@@ -887,6 +949,7 @@
     "borta": [
      {
       "namn": "Peter Forsgren",
+      "licens": "M190291PET02",
       "serier": [
        216,
        238,
@@ -898,6 +961,7 @@
      },
      {
       "namn": "Maja Öberg",
+      "licens": "K270996MAJ01",
       "serier": [
        218,
        173,
@@ -909,6 +973,7 @@
      },
      {
       "namn": "Sara Almqvist",
+      "licens": "K070994SAR01",
       "serier": [
        154,
        222,
@@ -920,6 +985,7 @@
      },
      {
       "namn": "Anders Wiklund",
+      "licens": "M280564AND01",
       "serier": [
        153,
        170,
@@ -931,6 +997,7 @@
      },
      {
       "namn": "Joakim Boström",
+      "licens": "M220590JOA01",
       "serier": [
        166,
        161,
@@ -942,6 +1009,7 @@
      },
      {
       "namn": "Mikael Lundström",
+      "licens": "M230470MIK01",
       "serier": [
        184,
        162,
@@ -953,6 +1021,7 @@
      },
      {
       "namn": "Niklas Fjellström",
+      "licens": "M241084NIK01",
       "serier": [
        138,
        159,
@@ -964,6 +1033,7 @@
      },
      {
       "namn": "Arne Boström",
+      "licens": "M060856ARN01",
       "serier": [
        149,
        148,
@@ -1024,6 +1094,7 @@
     "hemma": [
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        211,
        255,
@@ -1035,6 +1106,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        170,
        193,
@@ -1046,6 +1118,7 @@
      },
      {
       "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
       "serier": [
        201,
        192,
@@ -1057,6 +1130,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        192,
        224,
@@ -1068,6 +1142,7 @@
      },
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        216,
        175,
@@ -1079,6 +1154,7 @@
      },
      {
       "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
       "serier": [
        193,
        203,
@@ -1090,6 +1166,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        185,
        181,
@@ -1101,6 +1178,7 @@
      },
      {
       "namn": "John Åberg",
+      "licens": "M120172JOH03",
       "serier": [
        213,
        187,
@@ -1112,6 +1190,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        0,
        0,
@@ -1125,6 +1204,7 @@
     "borta": [
      {
       "namn": "Max Østbergh",
+      "licens": "M011199MAX01",
       "serier": [
        227,
        173,
@@ -1136,6 +1216,7 @@
      },
      {
       "namn": "Aksel Sorsell-Nikolaisen",
+      "licens": "M291298AKS01",
       "serier": [
        196,
        171,
@@ -1147,6 +1228,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M220873MAT01",
       "serier": [
        193,
        172,
@@ -1158,6 +1240,7 @@
      },
      {
       "namn": "Anders Olofsson",
+      "licens": "M261085AND02",
       "serier": [
        182,
        190,
@@ -1169,6 +1252,7 @@
      },
      {
       "namn": "Göte Windelås",
+      "licens": "M151171GÖT01",
       "serier": [
        179,
        171,
@@ -1180,6 +1264,7 @@
      },
      {
       "namn": "Jörgen Danielsson",
+      "licens": "M021266JÖR01",
       "serier": [
        204,
        180,
@@ -1191,6 +1276,7 @@
      },
      {
       "namn": "Mikael Pallin",
+      "licens": "M011262MIK08",
       "serier": [
        160,
        172,
@@ -1202,6 +1288,7 @@
      },
      {
       "namn": "Isak Windelås",
+      "licens": "M061002ISA01",
       "serier": [
        160,
        153,
@@ -1213,6 +1300,7 @@
      },
      {
       "namn": "Torbjörn Westerlund",
+      "licens": "M051076TOR01",
       "serier": [
        193,
        114,
@@ -1273,6 +1361,7 @@
     "hemma": [
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        265,
        228,
@@ -1284,6 +1373,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        237,
        184,
@@ -1295,6 +1385,7 @@
      },
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        168,
        227,
@@ -1306,6 +1397,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        184,
        209,
@@ -1317,6 +1409,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        193,
        204,
@@ -1328,6 +1421,7 @@
      },
      {
       "namn": "Jonatan Nilsson",
+      "licens": "M300491JON01",
       "serier": [
        177,
        166,
@@ -1339,6 +1433,7 @@
      },
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        237,
        177,
@@ -1350,6 +1445,7 @@
      },
      {
       "namn": "Sebastian Landin Olsson",
+      "licens": "M270800SEB01",
       "serier": [
        173,
        132,
@@ -1361,6 +1457,7 @@
      },
      {
       "namn": "Rasmus Ovefalk",
+      "licens": "M100909RAS01",
       "serier": [
        146,
        152,
@@ -1374,6 +1471,7 @@
     "borta": [
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        207,
        191,
@@ -1385,6 +1483,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        203,
        227,
@@ -1396,6 +1495,7 @@
      },
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        234,
        177,
@@ -1407,6 +1507,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        157,
        201,
@@ -1418,6 +1519,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        174,
        179,
@@ -1429,6 +1531,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        172,
        164,
@@ -1440,6 +1543,7 @@
      },
      {
       "namn": "Urban Johansson",
+      "licens": "M200361URB01",
       "serier": [
        177,
        192,
@@ -1451,6 +1555,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        138,
        151,
@@ -1511,6 +1616,7 @@
     "hemma": [
      {
       "namn": "Henrik Sundqvist",
+      "licens": "M010375HEN01",
       "serier": [
        204,
        247,
@@ -1522,6 +1628,7 @@
      },
      {
       "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
       "serier": [
        269,
        257,
@@ -1533,6 +1640,7 @@
      },
      {
       "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
       "serier": [
        244,
        211,
@@ -1544,6 +1652,7 @@
      },
      {
       "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
       "serier": [
        234,
        248,
@@ -1555,6 +1664,7 @@
      },
      {
       "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
       "serier": [
        172,
        236,
@@ -1566,6 +1676,7 @@
      },
      {
       "namn": "Tommy Söderström",
+      "licens": "M071068TOM01",
       "serier": [
        161,
        223,
@@ -1577,6 +1688,7 @@
      },
      {
       "namn": "George Busuricu",
+      "licens": "M210181GEO01",
       "serier": [
        166,
        234,
@@ -1588,6 +1700,7 @@
      },
      {
       "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
       "serier": [
        186,
        202,
@@ -1599,6 +1712,7 @@
      },
      {
       "namn": "Jens Värnberg",
+      "licens": "M021097JEN01",
       "serier": [
        160,
        157,
@@ -1612,6 +1726,7 @@
     "borta": [
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        179,
        213,
@@ -1623,6 +1738,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        164,
        193,
@@ -1634,6 +1750,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        158,
        186,
@@ -1645,6 +1762,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        144,
        211,
@@ -1656,6 +1774,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        158,
        141,
@@ -1667,6 +1786,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        170,
        175,
@@ -1678,6 +1798,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        147,
        131,
@@ -1689,6 +1810,7 @@
      },
      {
       "namn": "Urban Johansson",
+      "licens": "M200361URB01",
       "serier": [
        138,
        110,
@@ -1749,6 +1871,7 @@
     "hemma": [
      {
       "namn": "Ulf Pettersson",
+      "licens": "M301259ULF01",
       "serier": [
        202,
        236,
@@ -1760,6 +1883,7 @@
      },
      {
       "namn": "Filip Axheim",
+      "licens": "M060997FIL01",
       "serier": [
        190,
        217,
@@ -1771,6 +1895,7 @@
      },
      {
       "namn": "Linus Aldrin",
+      "licens": "M091202LIN01",
       "serier": [
        160,
        235,
@@ -1782,6 +1907,7 @@
      },
      {
       "namn": "Johnny Johansson",
+      "licens": "M220556JOH01",
       "serier": [
        211,
        213,
@@ -1793,6 +1919,7 @@
      },
      {
       "namn": "Stefan Snell",
+      "licens": "M110579STE01",
       "serier": [
        189,
        167,
@@ -1804,6 +1931,7 @@
      },
      {
       "namn": "Andreas Wikström",
+      "licens": "M221091AND01",
       "serier": [
        210,
        151,
@@ -1815,6 +1943,7 @@
      },
      {
       "namn": "Mattias Johansson",
+      "licens": "M210698MAT01",
       "serier": [
        194,
        208,
@@ -1826,6 +1955,7 @@
      },
      {
       "namn": "Mikael Trydvall",
+      "licens": "M081088MIK01",
       "serier": [
        168,
        194,
@@ -1837,6 +1967,7 @@
      },
      {
       "namn": "Carl Wikhede",
+      "licens": "M250368CAR01",
       "serier": [
        181,
        173,
@@ -1850,6 +1981,7 @@
     "borta": [
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        226,
        256,
@@ -1861,6 +1993,7 @@
      },
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        197,
        211,
@@ -1872,6 +2005,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        224,
        213,
@@ -1883,6 +2017,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        177,
        234,
@@ -1894,6 +2029,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        171,
        193,
@@ -1905,6 +2041,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        167,
        225,
@@ -1916,6 +2053,7 @@
      },
      {
       "namn": "Lars Backlund",
+      "licens": "M170163LAR01",
       "serier": [
        167,
        227,
@@ -1927,6 +2065,7 @@
      },
      {
       "namn": "Magnus Melander",
+      "licens": "M020180MAG01",
       "serier": [
        164,
        204,
@@ -1938,6 +2077,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        0,
        0,
@@ -1998,6 +2138,7 @@
     "hemma": [
      {
       "namn": "Johan Lundqvist",
+      "licens": "M260291JOH03",
       "serier": [
        185,
        244,
@@ -2009,6 +2150,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        244,
        266,
@@ -2020,6 +2162,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        170,
        196,
@@ -2031,6 +2174,7 @@
      },
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        192,
        240,
@@ -2042,6 +2186,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        162,
        204,
@@ -2053,6 +2198,7 @@
      },
      {
       "namn": "Tomas Gäderblom",
+      "licens": "M170662TOM01",
       "serier": [
        171,
        171,
@@ -2064,6 +2210,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        213,
        157,
@@ -2075,6 +2222,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        171,
        169,
@@ -2086,6 +2234,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        176,
        177,
@@ -2099,6 +2248,7 @@
     "borta": [
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        213,
        225,
@@ -2110,6 +2260,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        238,
        194,
@@ -2121,6 +2272,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        146,
        191,
@@ -2132,6 +2284,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        184,
        226,
@@ -2143,6 +2296,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        138,
        207,
@@ -2154,6 +2308,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        184,
        145,
@@ -2165,6 +2320,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        137,
        155,
@@ -2176,6 +2332,7 @@
      },
      {
       "namn": "Urban Johansson",
+      "licens": "M200361URB01",
       "serier": [
        148,
        139,
@@ -2236,6 +2393,7 @@
     "hemma": [
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        197,
        196,
@@ -2247,6 +2405,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        193,
        209,
@@ -2258,6 +2417,7 @@
      },
      {
       "namn": "Johan Lundqvist",
+      "licens": "M260291JOH03",
       "serier": [
        221,
        178,
@@ -2269,6 +2429,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        178,
        224,
@@ -2280,6 +2441,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        156,
        199,
@@ -2291,6 +2453,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        201,
        184,
@@ -2302,6 +2465,7 @@
      },
      {
       "namn": "Tomas Gäderblom",
+      "licens": "M170662TOM01",
       "serier": [
        189,
        135,
@@ -2313,6 +2477,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        174,
        147,
@@ -2324,6 +2489,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        190,
        146,
@@ -2337,6 +2503,7 @@
     "borta": [
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        237,
        211,
@@ -2348,6 +2515,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        192,
        255,
@@ -2359,6 +2527,7 @@
      },
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        164,
        199,
@@ -2370,6 +2539,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        186,
        182,
@@ -2381,6 +2551,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        203,
        175,
@@ -2392,6 +2563,7 @@
      },
      {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "serier": [
        164,
        190,
@@ -2403,6 +2575,7 @@
      },
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        232,
        165,
@@ -2414,6 +2587,7 @@
      },
      {
       "namn": "Jonatan Nilsson",
+      "licens": "M300491JON01",
       "serier": [
        168,
        188,
@@ -2425,6 +2599,7 @@
      },
      {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "serier": [
        150,
        0,
@@ -2485,6 +2660,7 @@
     "hemma": [
      {
       "namn": "Sara Almqvist",
+      "licens": "K070994SAR01",
       "serier": [
        235,
        212,
@@ -2496,6 +2672,7 @@
      },
      {
       "namn": "Peter Forsgren",
+      "licens": "M190291PET02",
       "serier": [
        187,
        222,
@@ -2507,6 +2684,7 @@
      },
      {
       "namn": "Maja Öberg",
+      "licens": "K270996MAJ01",
       "serier": [
        149,
        207,
@@ -2518,6 +2696,7 @@
      },
      {
       "namn": "Niklas Fjellström",
+      "licens": "M241084NIK01",
       "serier": [
        191,
        206,
@@ -2529,6 +2708,7 @@
      },
      {
       "namn": "Joakim Boström",
+      "licens": "M220590JOA01",
       "serier": [
        156,
        151,
@@ -2540,6 +2720,7 @@
      },
      {
       "namn": "Anders Wiklund",
+      "licens": "M280564AND01",
       "serier": [
        161,
        159,
@@ -2551,6 +2732,7 @@
      },
      {
       "namn": "Daniel Nyman",
+      "licens": "M230186DAN01",
       "serier": [
        225,
        182,
@@ -2562,6 +2744,7 @@
      },
      {
       "namn": "Gunnar Johansson",
+      "licens": "M291153GUN01",
       "serier": [
        181,
        194,
@@ -2573,6 +2756,7 @@
      },
      {
       "namn": "Mikael Lundström",
+      "licens": "M230470MIK01",
       "serier": [
        142,
        257,
@@ -2586,6 +2770,7 @@
     "borta": [
      {
       "namn": "Lars Backlund",
+      "licens": "M170163LAR01",
       "serier": [
        192,
        245,
@@ -2597,6 +2782,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        170,
        238,
@@ -2608,6 +2794,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        156,
        226,
@@ -2619,6 +2806,7 @@
      },
      {
       "namn": "Magnus Melander",
+      "licens": "M020180MAG01",
       "serier": [
        202,
        191,
@@ -2630,6 +2818,7 @@
      },
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        169,
        211,
@@ -2641,6 +2830,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        203,
        184,
@@ -2652,6 +2842,7 @@
      },
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        150,
        193,
@@ -2663,6 +2854,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        182,
        162,
@@ -2674,6 +2866,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        152,
        0,
@@ -2734,6 +2927,7 @@
     "hemma": [
      {
       "namn": "Torbjörn Westerlund",
+      "licens": "M051076TOR01",
       "serier": [
        207,
        214,
@@ -2745,6 +2939,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M220873MAT01",
       "serier": [
        197,
        190,
@@ -2756,6 +2951,7 @@
      },
      {
       "namn": "Isak Windelås",
+      "licens": "M061002ISA01",
       "serier": [
        192,
        213,
@@ -2767,6 +2963,7 @@
      },
      {
       "namn": "Göte Windelås",
+      "licens": "M151171GÖT01",
       "serier": [
        164,
        182,
@@ -2778,6 +2975,7 @@
      },
      {
       "namn": "Mauritz Ernefjäll",
+      "licens": "M080575MAU01",
       "serier": [
        190,
        190,
@@ -2789,6 +2987,7 @@
      },
      {
       "namn": "Mikael Pallin",
+      "licens": "M011262MIK08",
       "serier": [
        219,
        194,
@@ -2800,6 +2999,7 @@
      },
      {
       "namn": "Anders Olofsson",
+      "licens": "M261085AND02",
       "serier": [
        146,
        220,
@@ -2811,6 +3011,7 @@
      },
      {
       "namn": "Richard Spante",
+      "licens": "M241057RIC01",
       "serier": [
        152,
        188,
@@ -2822,6 +3023,7 @@
      },
      {
       "namn": "L-O. Åström",
+      "licens": "M160656LAR02",
       "serier": [
        174,
        155,
@@ -2835,6 +3037,7 @@
     "borta": [
      {
       "namn": "Daniel Unander",
+      "licens": "M090283DAN01",
       "serier": [
        198,
        212,
@@ -2846,6 +3049,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        189,
        177,
@@ -2857,6 +3061,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        224,
        132,
@@ -2868,6 +3073,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        201,
        168,
@@ -2879,6 +3085,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        160,
        197,
@@ -2890,6 +3097,7 @@
      },
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        197,
        128,
@@ -2901,6 +3109,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        199,
        123,
@@ -2912,6 +3121,7 @@
      },
      {
       "namn": "Johlina Winkler",
+      "licens": "K250906JOH01",
       "serier": [
        174,
        174,
@@ -2923,6 +3133,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        0,
        0,
@@ -2983,6 +3194,7 @@
     "hemma": [
      {
       "namn": "Hannes Bergström",
+      "licens": "M140108HAN01",
       "serier": [
        216,
        244,
@@ -2994,6 +3206,7 @@
      },
      {
       "namn": "Linus Hedman",
+      "licens": "M181109LIN01",
       "serier": [
        208,
        211,
@@ -3005,6 +3218,7 @@
      },
      {
       "namn": "Kim Zetterberg",
+      "licens": "M060900KIM01",
       "serier": [
        199,
        194,
@@ -3016,6 +3230,7 @@
      },
      {
       "namn": "Andreas Fjällström",
+      "licens": "M291272AND03",
       "serier": [
        164,
        223,
@@ -3027,6 +3242,7 @@
      },
      {
       "namn": "Jesper Hansson",
+      "licens": "M110595JES02",
       "serier": [
        167,
        189,
@@ -3038,6 +3254,7 @@
      },
      {
       "namn": "Oscar Hellström",
+      "licens": "M240309OSC01",
       "serier": [
        156,
        172,
@@ -3049,6 +3266,7 @@
      },
      {
       "namn": "Victor Appelqvist",
+      "licens": "M260296VIC05",
       "serier": [
        173,
        167,
@@ -3060,6 +3278,7 @@
      },
      {
       "namn": "Sven Hedman",
+      "licens": "M230773SVE01",
       "serier": [
        162,
        179,
@@ -3071,6 +3290,7 @@
      },
      {
       "namn": "Kevin Westberg",
+      "licens": "M130511KEV01",
       "serier": [
        146,
        0,
@@ -3084,6 +3304,7 @@
     "borta": [
      {
       "namn": "Daniel Unander",
+      "licens": "M090283DAN01",
       "serier": [
        264,
        184,
@@ -3095,6 +3316,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        215,
        197,
@@ -3106,6 +3328,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        194,
        237,
@@ -3117,6 +3340,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        167,
        213,
@@ -3128,6 +3352,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        175,
        198,
@@ -3139,6 +3364,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        203,
        123,
@@ -3150,6 +3376,7 @@
      },
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        151,
        223,
@@ -3161,6 +3388,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        190,
        149,
@@ -3172,6 +3400,7 @@
      },
      {
       "namn": "Johlina Winkler",
+      "licens": "K250906JOH01",
       "serier": [
        144,
        171,
@@ -3232,6 +3461,7 @@
     "hemma": [
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        211,
        246,
@@ -3243,6 +3473,7 @@
      },
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        194,
        203,
@@ -3254,6 +3485,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        245,
        135,
@@ -3265,6 +3497,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        193,
        205,
@@ -3276,6 +3509,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        173,
        194,
@@ -3287,6 +3521,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        189,
        211,
@@ -3298,6 +3533,7 @@
      },
      {
       "namn": "Robert Hernetaho",
+      "licens": "M200875ROB01",
       "serier": [
        202,
        177,
@@ -3309,6 +3545,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        202,
        164,
@@ -3320,6 +3557,7 @@
      },
      {
       "namn": "Glenn Iversen",
+      "licens": "M040957GLE02",
       "serier": [
        0,
        0,
@@ -3333,6 +3571,7 @@
     "borta": [
      {
       "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
       "serier": [
        207,
        195,
@@ -3344,6 +3583,7 @@
      },
      {
       "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
       "serier": [
        176,
        192,
@@ -3355,6 +3595,7 @@
      },
      {
       "namn": "Henrik Sundqvist",
+      "licens": "M010375HEN01",
       "serier": [
        183,
        157,
@@ -3366,6 +3607,7 @@
      },
      {
       "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
       "serier": [
        213,
        195,
@@ -3377,6 +3619,7 @@
      },
      {
       "namn": "Jens Värnberg",
+      "licens": "M021097JEN01",
       "serier": [
        180,
        194,
@@ -3388,6 +3631,7 @@
      },
      {
       "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
       "serier": [
        207,
        176,
@@ -3399,6 +3643,7 @@
      },
      {
       "namn": "George Busuricu",
+      "licens": "M210181GEO01",
       "serier": [
        177,
        158,
@@ -3410,6 +3655,7 @@
      },
      {
       "namn": "Axel Simonsson",
+      "licens": "M180991AXE01",
       "serier": [
        165,
        180,
@@ -3421,6 +3667,7 @@
      },
      {
       "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
       "serier": [
        135,
        0,
@@ -3481,6 +3728,7 @@
     "hemma": [
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        181,
        193,
@@ -3492,6 +3740,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        151,
        167,
@@ -3503,6 +3752,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        169,
        192,
@@ -3514,6 +3764,7 @@
      },
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        189,
        172,
@@ -3525,6 +3776,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        196,
        156,
@@ -3536,6 +3788,7 @@
      },
      {
       "namn": "Urban Johansson",
+      "licens": "M200361URB01",
       "serier": [
        153,
        159,
@@ -3547,6 +3800,7 @@
      },
      {
       "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
       "serier": [
        205,
        124,
@@ -3558,6 +3812,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        145,
        166,
@@ -3569,6 +3824,7 @@
      },
      {
       "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
       "serier": [
        141,
        124,
@@ -3582,6 +3838,7 @@
     "borta": [
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        219,
        193,
@@ -3593,6 +3850,7 @@
      },
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        176,
        196,
@@ -3604,6 +3862,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        193,
        156,
@@ -3615,6 +3874,7 @@
      },
      {
       "namn": "Daniel Unander",
+      "licens": "M090283DAN01",
       "serier": [
        179,
        290,
@@ -3626,6 +3886,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        169,
        190,
@@ -3637,6 +3898,7 @@
      },
      {
       "namn": "Johlina Winkler",
+      "licens": "K250906JOH01",
       "serier": [
        169,
        175,
@@ -3648,6 +3910,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        180,
        135,
@@ -3659,6 +3922,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        159,
        144,
@@ -3670,6 +3934,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        140,
        140,
@@ -3730,6 +3995,7 @@
     "hemma": [
      {
       "namn": "Hannes Bergström",
+      "licens": "M140108HAN01",
       "serier": [
        257,
        255,
@@ -3741,6 +4007,7 @@
      },
      {
       "namn": "Kim Zetterberg",
+      "licens": "M060900KIM01",
       "serier": [
        234,
        202,
@@ -3752,6 +4019,7 @@
      },
      {
       "namn": "Linus Hedman",
+      "licens": "M181109LIN01",
       "serier": [
        237,
        180,
@@ -3763,6 +4031,7 @@
      },
      {
       "namn": "Victor Appelqvist",
+      "licens": "M260296VIC05",
       "serier": [
        168,
        212,
@@ -3774,6 +4043,7 @@
      },
      {
       "namn": "Oscar Hellström",
+      "licens": "M240309OSC01",
       "serier": [
        164,
        181,
@@ -3785,6 +4055,7 @@
      },
      {
       "namn": "Jesper Hansson",
+      "licens": "M110595JES02",
       "serier": [
        202,
        159,
@@ -3796,6 +4067,7 @@
      },
      {
       "namn": "Sven Hedman",
+      "licens": "M230773SVE01",
       "serier": [
        215,
        180,
@@ -3807,6 +4079,7 @@
      },
      {
       "namn": "Andreas Fjällström",
+      "licens": "M291272AND03",
       "serier": [
        151,
        186,
@@ -3818,6 +4091,7 @@
      },
      {
       "namn": "Kevin Westberg",
+      "licens": "M130511KEV01",
       "serier": [
        180,
        0,
@@ -3831,6 +4105,7 @@
     "borta": [
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        167,
        224,
@@ -3842,6 +4117,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        197,
        195,
@@ -3853,6 +4129,7 @@
      },
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        248,
        148,
@@ -3864,6 +4141,7 @@
      },
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        176,
        226,
@@ -3875,6 +4153,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        157,
        161,
@@ -3886,6 +4165,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        147,
        179,
@@ -3897,6 +4177,7 @@
      },
      {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "serier": [
        147,
        153,
@@ -3908,6 +4189,7 @@
      },
      {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "serier": [
        140,
        192,
@@ -3919,6 +4201,7 @@
      },
      {
       "namn": "Robert Johansson",
+      "licens": "M120298ROB01",
       "serier": [
        142,
        0,
@@ -3979,6 +4262,7 @@
     "hemma": [
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        192,
        204,
@@ -3990,6 +4274,7 @@
      },
      {
       "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
       "serier": [
        183,
        195,
@@ -4001,6 +4286,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        150,
        180,
@@ -4012,6 +4298,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        157,
        181,
@@ -4023,6 +4310,7 @@
      },
      {
       "namn": "Peter Hellström",
+      "licens": "M240570PET76",
       "serier": [
        173,
        156,
@@ -4034,6 +4322,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        183,
        168,
@@ -4045,6 +4334,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        147,
        158,
@@ -4056,6 +4346,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        149,
        173,
@@ -4067,6 +4358,7 @@
      },
      {
       "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
       "serier": [
        138,
        0,
@@ -4080,6 +4372,7 @@
     "borta": [
      {
       "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
       "serier": [
        179,
        208,
@@ -4091,6 +4384,7 @@
      },
      {
       "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
       "serier": [
        246,
        183,
@@ -4102,6 +4396,7 @@
      },
      {
       "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
       "serier": [
        222,
        187,
@@ -4113,6 +4408,7 @@
      },
      {
       "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
       "serier": [
        199,
        187,
@@ -4124,6 +4420,7 @@
      },
      {
       "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
       "serier": [
        222,
        165,
@@ -4135,6 +4432,7 @@
      },
      {
       "namn": "Henrik Sundqvist",
+      "licens": "M010375HEN01",
       "serier": [
        191,
        144,
@@ -4146,6 +4444,7 @@
      },
      {
       "namn": "George Busuricu",
+      "licens": "M210181GEO01",
       "serier": [
        177,
        205,
@@ -4157,6 +4456,7 @@
      },
      {
       "namn": "Jens Värnberg",
+      "licens": "M021097JEN01",
       "serier": [
        153,
        152,
@@ -4168,6 +4468,7 @@
      },
      {
       "namn": "Axel Simonsson",
+      "licens": "M180991AXE01",
       "serier": [
        129,
        0,
@@ -4228,6 +4529,7 @@
     "hemma": [
      {
       "namn": "Göte Windelås",
+      "licens": "M151171GÖT01",
       "serier": [
        174,
        226,
@@ -4239,6 +4541,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M220873MAT01",
       "serier": [
        227,
        178,
@@ -4250,6 +4553,7 @@
      },
      {
       "namn": "Mauritz Ernefjäll",
+      "licens": "M080575MAU01",
       "serier": [
        185,
        203,
@@ -4261,6 +4565,7 @@
      },
      {
       "namn": "Torbjörn Westerlund",
+      "licens": "M051076TOR01",
       "serier": [
        197,
        199,
@@ -4272,6 +4577,7 @@
      },
      {
       "namn": "Jörgen Danielsson",
+      "licens": "M021266JÖR01",
       "serier": [
        247,
        177,
@@ -4283,6 +4589,7 @@
      },
      {
       "namn": "Anders Olofsson",
+      "licens": "M261085AND02",
       "serier": [
        178,
        171,
@@ -4294,6 +4601,7 @@
      },
      {
       "namn": "Mattias Eriksson",
+      "licens": "M020982MAT01",
       "serier": [
        172,
        170,
@@ -4305,6 +4613,7 @@
      },
      {
       "namn": "Mikael Pallin",
+      "licens": "M011262MIK08",
       "serier": [
        180,
        177,
@@ -4316,6 +4625,7 @@
      },
      {
       "namn": "Isak Windelås",
+      "licens": "M061002ISA01",
       "serier": [
        0,
        0,
@@ -4329,6 +4639,7 @@
     "borta": [
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        175,
        233,
@@ -4340,6 +4651,7 @@
      },
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        172,
        210,
@@ -4351,6 +4663,7 @@
      },
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        210,
        150,
@@ -4362,6 +4675,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        199,
        190,
@@ -4373,6 +4687,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        168,
        175,
@@ -4384,6 +4699,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        169,
        189,
@@ -4395,6 +4711,7 @@
      },
      {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "serier": [
        151,
        155,
@@ -4406,6 +4723,7 @@
      },
      {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "serier": [
        147,
        193,
@@ -4417,6 +4735,7 @@
      },
      {
       "namn": "Robert Johansson",
+      "licens": "M120298ROB01",
       "serier": [
        141,
        0,
@@ -4477,6 +4796,7 @@
     "hemma": [
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        203,
        180,
@@ -4488,6 +4808,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        205,
        211,
@@ -4499,6 +4820,7 @@
      },
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        186,
        204,
@@ -4510,6 +4832,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        183,
        186,
@@ -4521,6 +4844,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        155,
        192,
@@ -4532,6 +4856,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        157,
        203,
@@ -4543,6 +4868,7 @@
      },
      {
       "namn": "Robert Hernetaho",
+      "licens": "M200875ROB01",
       "serier": [
        187,
        160,
@@ -4554,6 +4880,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        178,
        203,
@@ -4565,6 +4892,7 @@
      },
      {
       "namn": "Glenn Iversen",
+      "licens": "M040957GLE02",
       "serier": [
        143,
        0,
@@ -4578,6 +4906,7 @@
     "borta": [
      {
       "namn": "Daniel Unander",
+      "licens": "M090283DAN01",
       "serier": [
        203,
        200,
@@ -4589,6 +4918,7 @@
      },
      {
       "namn": "Peter Gäderblom",
+      "licens": "M250168PET05",
       "serier": [
        192,
        193,
@@ -4600,6 +4930,7 @@
      },
      {
       "namn": "Tommy Petersén",
+      "licens": "M080663TOM01",
       "serier": [
        146,
        199,
@@ -4611,6 +4942,7 @@
      },
      {
       "namn": "Sebastian Keinström",
+      "licens": "M040998SEB01",
       "serier": [
        168,
        186,
@@ -4622,6 +4954,7 @@
      },
      {
       "namn": "Cecilia Lindmark",
+      "licens": "K040671CEC01",
       "serier": [
        138,
        195,
@@ -4633,6 +4966,7 @@
      },
      {
       "namn": "Kristoffer Svonni",
+      "licens": "M080486KRI01",
       "serier": [
        154,
        139,
@@ -4644,6 +4978,7 @@
      },
      {
       "namn": "Johlina Winkler",
+      "licens": "K250906JOH01",
       "serier": [
        183,
        174,
@@ -4655,6 +4990,7 @@
      },
      {
       "namn": "Niklas Wiklund",
+      "licens": "M171090NIK01",
       "serier": [
        120,
        167,
@@ -4666,6 +5002,7 @@
      },
      {
       "namn": "Daniel Erkki",
+      "licens": "M140990DAN01",
       "serier": [
        214,
        128,
@@ -4726,6 +5063,7 @@
     "hemma": [
      {
       "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
       "serier": [
        173,
        187,
@@ -4737,6 +5075,7 @@
      },
      {
       "namn": "Jessica Ström",
+      "licens": "K110975JES01",
       "serier": [
        212,
        169,
@@ -4748,6 +5087,7 @@
      },
      {
       "namn": "Urban Norman",
+      "licens": "M060764URB01",
       "serier": [
        201,
        154,
@@ -4759,6 +5099,7 @@
      },
      {
       "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
       "serier": [
        168,
        220,
@@ -4770,6 +5111,7 @@
      },
      {
       "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
       "serier": [
        165,
        173,
@@ -4781,6 +5123,7 @@
      },
      {
       "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
       "serier": [
        188,
        131,
@@ -4792,6 +5135,7 @@
      },
      {
       "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
       "serier": [
        172,
        167,
@@ -4803,6 +5147,7 @@
      },
      {
       "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
       "serier": [
        138,
        194,
@@ -4814,6 +5159,7 @@
      },
      {
       "namn": "Urban Johansson",
+      "licens": "M200361URB01",
       "serier": [
        186,
        131,
@@ -4827,6 +5173,7 @@
     "borta": [
      {
       "namn": "Hannes Bergström",
+      "licens": "M140108HAN01",
       "serier": [
        258,
        193,
@@ -4838,6 +5185,7 @@
      },
      {
       "namn": "Oscar Hellström",
+      "licens": "M240309OSC01",
       "serier": [
        205,
        215,
@@ -4849,6 +5197,7 @@
      },
      {
       "namn": "Jesper Hansson",
+      "licens": "M110595JES02",
       "serier": [
        158,
        183,
@@ -4860,6 +5209,7 @@
      },
      {
       "namn": "Linus Hedman",
+      "licens": "M181109LIN01",
       "serier": [
        136,
        177,
@@ -4871,6 +5221,7 @@
      },
      {
       "namn": "Kim Zetterberg",
+      "licens": "M060900KIM01",
       "serier": [
        148,
        220,
@@ -4882,6 +5233,7 @@
      },
      {
       "namn": "Sven Hedman",
+      "licens": "M230773SVE01",
       "serier": [
        166,
        176,
@@ -4893,6 +5245,7 @@
      },
      {
       "namn": "Rickard Eriksson",
+      "licens": "M250561RIC01",
       "serier": [
        146,
        161,
@@ -4904,6 +5257,7 @@
      },
      {
       "namn": "Benny Linder",
+      "licens": "M220982BEN01",
       "serier": [
        150,
        202,
@@ -4915,6 +5269,7 @@
      },
      {
       "namn": "Kevin Westberg",
+      "licens": "M130511KEV01",
       "serier": [
        133,
        157,
@@ -4975,6 +5330,7 @@
     "hemma": [
      {
       "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
       "serier": [
        258,
        246,
@@ -4986,6 +5342,7 @@
      },
      {
       "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
       "serier": [
        205,
        216,
@@ -4997,6 +5354,7 @@
      },
      {
       "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
       "serier": [
        255,
        235,
@@ -5008,6 +5366,7 @@
      },
      {
       "namn": "Jens Värnberg",
+      "licens": "M021097JEN01",
       "serier": [
        248,
        234,
@@ -5019,6 +5378,7 @@
      },
      {
       "namn": "Rickard Ryding",
+      "licens": "M120989RIC01",
       "serier": [
        185,
        215,
@@ -5030,6 +5390,7 @@
      },
      {
       "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
       "serier": [
        183,
        199,
@@ -5041,6 +5402,7 @@
      },
      {
       "namn": "Daniel Rönnbäck",
+      "licens": "M190580DAN01",
       "serier": [
        169,
        177,
@@ -5052,6 +5414,7 @@
      },
      {
       "namn": "Axel Simonsson",
+      "licens": "M180991AXE01",
       "serier": [
        163,
        192,
@@ -5063,6 +5426,7 @@
      },
      {
       "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
       "serier": [
        218,
        0,
@@ -5076,6 +5440,7 @@
     "borta": [
      {
       "namn": "Mattias Johansson",
+      "licens": "M210698MAT01",
       "serier": [
        190,
        226,
@@ -5087,6 +5452,7 @@
      },
      {
       "namn": "Andreas Wikström",
+      "licens": "M221091AND01",
       "serier": [
        194,
        268,
@@ -5098,6 +5464,7 @@
      },
      {
       "namn": "Linus Aldrin",
+      "licens": "M091202LIN01",
       "serier": [
        279,
        193,
@@ -5109,6 +5476,7 @@
      },
      {
       "namn": "Filip Axheim",
+      "licens": "M060997FIL01",
       "serier": [
        277,
        205,
@@ -5120,6 +5488,7 @@
      },
      {
       "namn": "Jörgen Iversen",
+      "licens": "M060771JÖR01",
       "serier": [
        172,
        180,
@@ -5131,6 +5500,7 @@
      },
      {
       "namn": "Carl Wikhede",
+      "licens": "M250368CAR01",
       "serier": [
        146,
        196,
@@ -5142,6 +5512,7 @@
      },
      {
       "namn": "Leif Sandberg",
+      "licens": "M281060LEI01",
       "serier": [
        146,
        159,
@@ -5153,6 +5524,7 @@
      },
      {
       "namn": "Michael Thuresson",
+      "licens": "M310578MIC01",
       "serier": [
        133,
        138,
@@ -5213,6 +5585,7 @@
     "hemma": [
      {
       "namn": "Magnus Melander",
+      "licens": "M020180MAG01",
       "serier": [
        170,
        206,
@@ -5224,6 +5597,7 @@
      },
      {
       "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
       "serier": [
        204,
        206,
@@ -5235,6 +5609,7 @@
      },
      {
       "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
       "serier": [
        199,
        190,
@@ -5246,6 +5621,7 @@
      },
      {
       "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
       "serier": [
        236,
        169,
@@ -5257,6 +5633,7 @@
      },
      {
       "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
       "serier": [
        185,
        211,
@@ -5268,6 +5645,7 @@
      },
      {
       "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
       "serier": [
        136,
        181,
@@ -5279,6 +5657,7 @@
      },
      {
       "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
       "serier": [
        176,
        200,
@@ -5290,6 +5669,7 @@
      },
      {
       "namn": "Torbjörn Jonsson",
+      "licens": "M180161TOR01",
       "serier": [
        192,
        155,
@@ -5301,6 +5681,7 @@
      },
      {
       "namn": "Robert Hernetaho",
+      "licens": "M200875ROB01",
       "serier": [
        163,
        158,
@@ -5314,6 +5695,7 @@
     "borta": [
      {
       "namn": "Hannes Bergström",
+      "licens": "M140108HAN01",
       "serier": [
        230,
        246,
@@ -5325,6 +5707,7 @@
      },
      {
       "namn": "Jesper Hansson",
+      "licens": "M110595JES02",
       "serier": [
        190,
        213,
@@ -5336,6 +5719,7 @@
      },
      {
       "namn": "Oscar Hellström",
+      "licens": "M240309OSC01",
       "serier": [
        199,
        169,
@@ -5347,6 +5731,7 @@
      },
      {
       "namn": "Kim Zetterberg",
+      "licens": "M060900KIM01",
       "serier": [
        207,
        175,
@@ -5358,6 +5743,7 @@
      },
      {
       "namn": "Linus Hedman",
+      "licens": "M181109LIN01",
       "serier": [
        206,
        179,
@@ -5369,6 +5755,7 @@
      },
      {
       "namn": "Kevin Westberg",
+      "licens": "M130511KEV01",
       "serier": [
        155,
        166,
@@ -5380,6 +5767,7 @@
      },
      {
       "namn": "Elmer Pettersson-Dahl",
+      "licens": "M050812ELM01",
       "serier": [
        187,
        165,
@@ -5391,6 +5779,7 @@
      },
      {
       "namn": "Benny Linder",
+      "licens": "M220982BEN01",
       "serier": [
        203,
        183,
@@ -5402,6 +5791,7 @@
      },
      {
       "namn": "Andreas Fjällström",
+      "licens": "M291272AND03",
       "serier": [
        207,
        0,
@@ -5462,6 +5852,7 @@
     "hemma": [
      {
       "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
       "serier": [
        191,
        243,
@@ -5473,6 +5864,7 @@
      },
      {
       "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
       "serier": [
        199,
        193,
@@ -5484,6 +5876,7 @@
      },
      {
       "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
       "serier": [
        220,
        201,
@@ -5495,6 +5888,7 @@
      },
      {
       "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
       "serier": [
        190,
        160,
@@ -5506,6 +5900,7 @@
      },
      {
       "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
       "serier": [
        223,
        141,
@@ -5517,6 +5912,7 @@
      },
      {
       "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
       "serier": [
        202,
        224,
@@ -5528,6 +5924,7 @@
      },
      {
       "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
       "serier": [
        182,
        197,
@@ -5539,6 +5936,7 @@
      },
      {
       "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
       "serier": [
        174,
        149,
@@ -5550,6 +5948,7 @@
      },
      {
       "namn": "Sebastian Landin Olsson",
+      "licens": "M270800SEB01",
       "serier": [
        129,
        156,
@@ -5563,6 +5962,7 @@
     "borta": [
      {
       "namn": "Linus Aldrin",
+      "licens": "M091202LIN01",
       "serier": [
        162,
        269,
@@ -5574,6 +5974,7 @@
      },
      {
       "namn": "Mattias Johansson",
+      "licens": "M210698MAT01",
       "serier": [
        212,
        203,
@@ -5585,6 +5986,7 @@
      },
      {
       "namn": "Filip Axheim",
+      "licens": "M060997FIL01",
       "serier": [
        181,
        180,
@@ -5596,6 +5998,7 @@
      },
      {
       "namn": "Andreas Wikström",
+      "licens": "M221091AND01",
       "serier": [
        159,
        224,
@@ -5607,6 +6010,7 @@
      },
      {
       "namn": "Carl Wikhede",
+      "licens": "M250368CAR01",
       "serier": [
        199,
        215,
@@ -5618,6 +6022,7 @@
      },
      {
       "namn": "Jörgen Iversen",
+      "licens": "M060771JÖR01",
       "serier": [
        172,
        218,
@@ -5629,6 +6034,7 @@
      },
      {
       "namn": "Michael Thuresson",
+      "licens": "M310578MIC01",
       "serier": [
        144,
        216,
@@ -5640,6 +6046,7 @@
      },
      {
       "namn": "Leif Sandberg",
+      "licens": "M281060LEI01",
       "serier": [
        152,
        188,
