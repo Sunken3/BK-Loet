@@ -74,6 +74,9 @@ function trimMatch(m) {
     tid: (m.matchDateTime || '').slice(11, 16),
     hemma: m.matchHomeTeamName,
     borta: m.matchAwayTeamName,
+    // For the club links (club-detail?clubId=...) in tabell.html.
+    hemmaKlubbId: m.homeTeamClubId || null,
+    bortaKlubbId: m.awayTeamClubId || null,
     hall: m.matchHallName ? m.matchHallName.trim() : '',
     oljeprofil: m.matchOilPatternName || '',
     spelad: !!m.matchHasBeenPlayed,
@@ -204,6 +207,7 @@ async function main() {
   const out = {
     uppdaterad: today(),
     saesong: `Säsong ${SEASON_ID}/${String((SEASON_ID + 1) % 100).padStart(2, '0')}`,
+    saesongId: SEASON_ID,
     matcher,
   };
 

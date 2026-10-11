@@ -253,6 +253,8 @@
     gap: 1.25rem; padding: 1rem 0 1.25rem; text-align: center;
   }
   .match-score-head .ms-team { flex: 1; font-size: 0.95rem; font-weight: 600; }
+  .match-score-head .ms-club { color: inherit; text-decoration: none; }
+  .match-score-head .ms-club:hover { color: var(--blue); text-decoration: underline; }
   .match-score-head .ms-pins {
     display: block; margin-top: 0.2rem;
     font-size: 0.82rem; font-weight: 400; color: var(--gray-500);
@@ -639,6 +641,14 @@
         </table>`;
     }
 
+    // The team name as a link to the club's page on BITS, when the club id is known.
+    function klubbLank(namn, klubbId) {
+      if (!klubbId || !matchData.saesongId) return escapeHtml(namn);
+      const url = `https://bits.swebowl.se/club-detail?seasonId=${encodeURIComponent(matchData.saesongId)}` +
+        `&amp;clubId=${encodeURIComponent(klubbId)}&amp;activeTabId=2`;
+      return `<a class="ms-club" href="${url}" target="_blank" rel="noopener">${escapeHtml(namn)}</a>`;
+    }
+
     function visaMatch(id, tillbakaTillLag) {
       const m = matchData && matchData.matcher.find(x => String(x.id) === String(id));
       if (!m) return;
@@ -659,9 +669,9 @@
         <button type="button" class="match-back js-tillbaka">← Alla matcher för ${escapeHtml(tillbakaTillLag)}</button>
 
         <div class="match-score-head">
-          <div class="ms-team">${escapeHtml(m.hemma)}${m.hemmaKaglor != null ? `<span class="ms-pins">${m.hemmaKaglor} p</span>` : ''}</div>
+          <div class="ms-team">${klubbLank(m.hemma, m.hemmaKlubbId)}${m.hemmaKaglor != null ? `<span class="ms-pins">${m.hemmaKaglor} p</span>` : ''}</div>
           <div class="ms-score">${m.hemmaPoang}–${m.bortaPoang}</div>
-          <div class="ms-team">${escapeHtml(m.borta)}${m.bortaKaglor != null ? `<span class="ms-pins">${m.bortaKaglor} p</span>` : ''}</div>
+          <div class="ms-team">${klubbLank(m.borta, m.bortaKlubbId)}${m.bortaKaglor != null ? `<span class="ms-pins">${m.bortaKaglor} p</span>` : ''}</div>
         </div>
         <div class="match-meta">
           ${[m.oljeprofil && escapeHtml(m.oljeprofil), m.omgang && 'Omgång ' + m.omgang].filter(Boolean).join(' · ')}

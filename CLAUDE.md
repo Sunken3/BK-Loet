@@ -149,7 +149,9 @@ Endpoints used, all on the same unprotected host as the standings:
 **In `tabell.html`:** every team name is a button (`renderTable` → `.js-lag`). Clicking one opens a
 modal (`renderMatchModal` / `attachMatchModal`) listing that team's matches; clicking a played match
 swaps the modal to the match facts — score, pins, per-series totals and both teams' player tables.
-Each player name in those tables links to the player's page on BITS (new tab).
+Each player name in those tables links to the player's page on BITS (new tab), and the two team names
+above the score link to the club's page (`club-detail?seasonId=…&clubId=…&activeTabId=2`, using
+`hemmaKlubbId`/`bortaKlubbId` and the top-level `saesongId` in `matcher.json`).
 `matcher.json` is fetched lazily on the first team click and cached for the rest of the visit.
 
 ## Deployment
