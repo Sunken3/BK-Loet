@@ -1,8 +1,779 @@
 {
- "uppdaterad": "2026-10-18",
+ "uppdaterad": "2026-10-25",
  "saesong": "Säsong 2026/27",
  "saesongId": 2026,
  "matcher": [
+  {
+   "id": 3304422,
+   "omgang": 7,
+   "datum": "2026-10-25",
+   "tid": "16:00",
+   "hemma": "BK Prana",
+   "borta": "Junsele BK",
+   "hemmaKlubbId": 7351,
+   "bortaKlubbId": 45724,
+   "hall": "Skellefteå Bowlingkompaniet",
+   "oljeprofil": "EA 42 2026",
+   "spelad": true,
+   "hemmaPoang": 16,
+   "bortaPoang": 4,
+   "hemmaKaglor": 6261,
+   "bortaKaglor": 5425,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1524,
+     "bortaKaglor": 1388,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1571,
+     "bortaKaglor": 1339,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1620,
+     "bortaKaglor": 1390,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1546,
+     "bortaKaglor": 1308,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Mikael Boström",
+      "licens": "M211088MIK01",
+      "serier": [
+       184,
+       213,
+       246,
+       214
+      ],
+      "total": 857,
+      "banpoang": 3
+     },
+     {
+      "namn": "Peter Forsgren",
+      "licens": "M190291PET02",
+      "serier": [
+       154,
+       227,
+       225,
+       213
+      ],
+      "total": 819,
+      "banpoang": 3
+     },
+     {
+      "namn": "Daniel Nyman",
+      "licens": "M230186DAN01",
+      "serier": [
+       198,
+       216,
+       185,
+       205
+      ],
+      "total": 804,
+      "banpoang": 3
+     },
+     {
+      "namn": "Mattias Ladås",
+      "licens": "M220670MAT01",
+      "serier": [
+       190,
+       156,
+       223,
+       222
+      ],
+      "total": 791,
+      "banpoang": 3
+     },
+     {
+      "namn": "Niklas Fjellström",
+      "licens": "M241084NIK01",
+      "serier": [
+       188,
+       192,
+       215,
+       170
+      ],
+      "total": 765,
+      "banpoang": 3
+     },
+     {
+      "namn": "Sara Almqvist",
+      "licens": "K070994SAR01",
+      "serier": [
+       232,
+       209,
+       156,
+       166
+      ],
+      "total": 763,
+      "banpoang": 3
+     },
+     {
+      "namn": "Joakim Boström",
+      "licens": "M220590JOA01",
+      "serier": [
+       180,
+       159,
+       193,
+       210
+      ],
+      "total": 742,
+      "banpoang": 3
+     },
+     {
+      "namn": "Mikael Lundström",
+      "licens": "M230470MIK01",
+      "serier": [
+       198,
+       199,
+       177,
+       146
+      ],
+      "total": 720,
+      "banpoang": 3
+     },
+     {
+      "namn": "Anders Wiklund",
+      "licens": "M280564AND01",
+      "serier": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "total": 0,
+      "banpoang": 0
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Urban Norman",
+      "licens": "M060764URB01",
+      "serier": [
+       176,
+       187,
+       200,
+       199
+      ],
+      "total": 762,
+      "banpoang": 4
+     },
+     {
+      "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
+      "serier": [
+       178,
+       192,
+       180,
+       186
+      ],
+      "total": 736,
+      "banpoang": 4
+     },
+     {
+      "namn": "Peter Hellström",
+      "licens": "M240570PET76",
+      "serier": [
+       182,
+       201,
+       192,
+       154
+      ],
+      "total": 729,
+      "banpoang": 0
+     },
+     {
+      "namn": "Jessica Ström",
+      "licens": "K110975JES01",
+      "serier": [
+       206,
+       158,
+       156,
+       187
+      ],
+      "total": 707,
+      "banpoang": 0
+     },
+     {
+      "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
+      "serier": [
+       165,
+       142,
+       192,
+       143
+      ],
+      "total": 642,
+      "banpoang": 0
+     },
+     {
+      "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
+      "serier": [
+       183,
+       157,
+       155,
+       139
+      ],
+      "total": 634,
+      "banpoang": 0
+     },
+     {
+      "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
+      "serier": [
+       158,
+       144,
+       180,
+       138
+      ],
+      "total": 620,
+      "banpoang": 0
+     },
+     {
+      "namn": "John Åberg",
+      "licens": "M120172JOH03",
+      "serier": [
+       140,
+       158,
+       135,
+       162
+      ],
+      "total": 595,
+      "banpoang": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": 3304421,
+   "omgang": 7,
+   "datum": "2026-10-25",
+   "tid": "11:40",
+   "hemma": "Piteå BK",
+   "borta": "Junsele BK",
+   "hemmaKlubbId": 6730,
+   "bortaKlubbId": 45724,
+   "hall": "Piteå Bowlinghall",
+   "oljeprofil": "EA 38 B 2025",
+   "spelad": true,
+   "hemmaPoang": 13,
+   "bortaPoang": 7,
+   "hemmaKaglor": 6288,
+   "bortaKaglor": 5947,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1525,
+     "bortaKaglor": 1439,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1511,
+     "bortaKaglor": 1519,
+     "hemmaPoang": 2,
+     "bortaPoang": 3
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1642,
+     "bortaKaglor": 1419,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1610,
+     "bortaKaglor": 1570,
+     "hemmaPoang": 3,
+     "bortaPoang": 2
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Filip Axheim",
+      "licens": "M060997FIL01",
+      "serier": [
+       270,
+       236,
+       206,
+       190
+      ],
+      "total": 902,
+      "banpoang": 4
+     },
+     {
+      "namn": "Stefan Snell",
+      "licens": "M110579STE01",
+      "serier": [
+       215,
+       177,
+       237,
+       209
+      ],
+      "total": 838,
+      "banpoang": 1
+     },
+     {
+      "namn": "Mattias Johansson",
+      "licens": "M210698MAT01",
+      "serier": [
+       200,
+       236,
+       197,
+       202
+      ],
+      "total": 835,
+      "banpoang": 4
+     },
+     {
+      "namn": "Linus Aldrin",
+      "licens": "M091202LIN01",
+      "serier": [
+       192,
+       195,
+       212,
+       213
+      ],
+      "total": 812,
+      "banpoang": 4
+     },
+     {
+      "namn": "Kurt Pettersson",
+      "licens": "M091258KUR01",
+      "serier": [
+       181,
+       195,
+       198,
+       192
+      ],
+      "total": 766,
+      "banpoang": 1
+     },
+     {
+      "namn": "Mikael Trydvall",
+      "licens": "M081088MIK01",
+      "serier": [
+       151,
+       168,
+       199,
+       215
+      ],
+      "total": 733,
+      "banpoang": 1
+     },
+     {
+      "namn": "Johnny Johansson",
+      "licens": "M220556JOH01",
+      "serier": [
+       172,
+       169,
+       203,
+       173
+      ],
+      "total": 717,
+      "banpoang": 1
+     },
+     {
+      "namn": "Sebastian Gabrielsson",
+      "licens": "M110994SEB01",
+      "serier": [
+       135,
+       190,
+       216,
+       0
+      ],
+      "total": 541,
+      "banpoang": 3
+     },
+     {
+      "namn": "Andreas Wikström",
+      "licens": "M221091AND01",
+      "serier": [
+       144,
+       0,
+       0,
+       0
+      ],
+      "total": 144,
+      "banpoang": 1
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Jessica Ström",
+      "licens": "K110975JES01",
+      "serier": [
+       213,
+       157,
+       221,
+       223
+      ],
+      "total": 814,
+      "banpoang": 2
+     },
+     {
+      "namn": "John Åberg",
+      "licens": "M120172JOH03",
+      "serier": [
+       171,
+       234,
+       224,
+       180
+      ],
+      "total": 809,
+      "banpoang": 2
+     },
+     {
+      "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
+      "serier": [
+       169,
+       184,
+       187,
+       229
+      ],
+      "total": 769,
+      "banpoang": 2
+     },
+     {
+      "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
+      "serier": [
+       181,
+       193,
+       188,
+       194
+      ],
+      "total": 756,
+      "banpoang": 1
+     },
+     {
+      "namn": "Urban Norman",
+      "licens": "M060764URB01",
+      "serier": [
+       194,
+       213,
+       123,
+       206
+      ],
+      "total": 736,
+      "banpoang": 2
+     },
+     {
+      "namn": "Peter Hellström",
+      "licens": "M240570PET76",
+      "serier": [
+       197,
+       194,
+       170,
+       148
+      ],
+      "total": 709,
+      "banpoang": 1
+     },
+     {
+      "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
+      "serier": [
+       150,
+       174,
+       169,
+       189
+      ],
+      "total": 682,
+      "banpoang": 1
+     },
+     {
+      "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
+      "serier": [
+       164,
+       170,
+       137,
+       201
+      ],
+      "total": 672,
+      "banpoang": 1
+     }
+    ]
+   }
+  },
+  {
+   "id": 3304420,
+   "omgang": 6,
+   "datum": "2026-10-18",
+   "tid": "10:00",
+   "hemma": "Junsele BK",
+   "borta": "BK Loet",
+   "hemmaKlubbId": 45724,
+   "bortaKlubbId": 6723,
+   "hall": "Junsele Bowlinghall",
+   "oljeprofil": "EA 38 B 2025",
+   "spelad": true,
+   "hemmaPoang": 10,
+   "bortaPoang": 10,
+   "hemmaKaglor": 6116,
+   "bortaKaglor": 6358,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1524,
+     "bortaKaglor": 1665,
+     "hemmaPoang": 2,
+     "bortaPoang": 3
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1584,
+     "bortaKaglor": 1531,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1472,
+     "bortaKaglor": 1540,
+     "hemmaPoang": 2,
+     "bortaPoang": 3
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1536,
+     "bortaKaglor": 1622,
+     "hemmaPoang": 2,
+     "bortaPoang": 3
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Jessica Ström",
+      "licens": "K110975JES01",
+      "serier": [
+       237,
+       178,
+       172,
+       268
+      ],
+      "total": 855,
+      "banpoang": 3
+     },
+     {
+      "namn": "John Åberg",
+      "licens": "M120172JOH03",
+      "serier": [
+       180,
+       222,
+       182,
+       202
+      ],
+      "total": 786,
+      "banpoang": 3
+     },
+     {
+      "namn": "Urban Norman",
+      "licens": "M060764URB01",
+      "serier": [
+       183,
+       169,
+       234,
+       198
+      ],
+      "total": 784,
+      "banpoang": 3
+     },
+     {
+      "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
+      "serier": [
+       187,
+       151,
+       226,
+       205
+      ],
+      "total": 769,
+      "banpoang": 2
+     },
+     {
+      "namn": "Louice Hellström",
+      "licens": "K051294LOU02",
+      "serier": [
+       157,
+       184,
+       188,
+       229
+      ],
+      "total": 758,
+      "banpoang": 2
+     },
+     {
+      "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
+      "serier": [
+       203,
+       185,
+       162,
+       193
+      ],
+      "total": 743,
+      "banpoang": 3
+     },
+     {
+      "namn": "Peter Hellström",
+      "licens": "M240570PET76",
+      "serier": [
+       191,
+       155,
+       153,
+       213
+      ],
+      "total": 712,
+      "banpoang": 1
+     },
+     {
+      "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
+      "serier": [
+       179,
+       171,
+       162,
+       197
+      ],
+      "total": 709,
+      "banpoang": 1
+     },
+     {
+      "namn": "Urban Johansson",
+      "licens": "M200361URB01",
+      "serier": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "total": 0,
+      "banpoang": 0
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
+      "serier": [
+       224,
+       205,
+       266,
+       229
+      ],
+      "total": 924,
+      "banpoang": 3
+     },
+     {
+      "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
+      "serier": [
+       204,
+       259,
+       233,
+       200
+      ],
+      "total": 896,
+      "banpoang": 2
+     },
+     {
+      "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
+      "serier": [
+       238,
+       212,
+       200,
+       212
+      ],
+      "total": 862,
+      "banpoang": 3
+     },
+     {
+      "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
+      "serier": [
+       263,
+       190,
+       163,
+       181
+      ],
+      "total": 797,
+      "banpoang": 2
+     },
+     {
+      "namn": "Rickard Ekman",
+      "licens": "M251200RIC01",
+      "serier": [
+       205,
+       178,
+       196,
+       212
+      ],
+      "total": 791,
+      "banpoang": 2
+     },
+     {
+      "namn": "Stefan Eklund",
+      "licens": "M161080STE01",
+      "serier": [
+       181,
+       157,
+       158,
+       256
+      ],
+      "total": 752,
+      "banpoang": 0
+     },
+     {
+      "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
+      "serier": [
+       162,
+       184,
+       149,
+       204
+      ],
+      "total": 699,
+      "banpoang": 2
+     },
+     {
+      "namn": "Erik Aitomäki",
+      "licens": "M130365ERI01",
+      "serier": [
+       188,
+       146,
+       175,
+       128
+      ],
+      "total": 637,
+      "banpoang": 0
+     }
+    ]
+   }
+  },
   {
    "id": 3304417,
    "omgang": 6,
@@ -267,263 +1038,6 @@
        0
       ],
       "total": 134,
-      "banpoang": 0
-     }
-    ]
-   }
-  },
-  {
-   "id": 3304420,
-   "omgang": 6,
-   "datum": "2026-10-18",
-   "tid": "10:00",
-   "hemma": "Junsele BK",
-   "borta": "BK Loet",
-   "hemmaKlubbId": 45724,
-   "bortaKlubbId": 6723,
-   "hall": "Junsele Bowlinghall",
-   "oljeprofil": "EA 38 B 2025",
-   "spelad": true,
-   "hemmaPoang": 10,
-   "bortaPoang": 10,
-   "hemmaKaglor": 6116,
-   "bortaKaglor": 6358,
-   "serier": [
-    {
-     "serie": 1,
-     "hemmaKaglor": 1524,
-     "bortaKaglor": 1665,
-     "hemmaPoang": 2,
-     "bortaPoang": 3
-    },
-    {
-     "serie": 2,
-     "hemmaKaglor": 1584,
-     "bortaKaglor": 1531,
-     "hemmaPoang": 4,
-     "bortaPoang": 1
-    },
-    {
-     "serie": 3,
-     "hemmaKaglor": 1472,
-     "bortaKaglor": 1540,
-     "hemmaPoang": 2,
-     "bortaPoang": 3
-    },
-    {
-     "serie": 4,
-     "hemmaKaglor": 1536,
-     "bortaKaglor": 1622,
-     "hemmaPoang": 2,
-     "bortaPoang": 3
-    }
-   ],
-   "spelare": {
-    "hemma": [
-     {
-      "namn": "Jessica Ström",
-      "licens": "K110975JES01",
-      "serier": [
-       237,
-       178,
-       172,
-       268
-      ],
-      "total": 855,
-      "banpoang": 3
-     },
-     {
-      "namn": "John Åberg",
-      "licens": "M120172JOH03",
-      "serier": [
-       180,
-       222,
-       182,
-       202
-      ],
-      "total": 786,
-      "banpoang": 3
-     },
-     {
-      "namn": "Urban Norman",
-      "licens": "M060764URB01",
-      "serier": [
-       183,
-       169,
-       234,
-       198
-      ],
-      "total": 784,
-      "banpoang": 3
-     },
-     {
-      "namn": "Jojje Ström",
-      "licens": "M010602JOJ01",
-      "serier": [
-       187,
-       151,
-       226,
-       205
-      ],
-      "total": 769,
-      "banpoang": 2
-     },
-     {
-      "namn": "Louice Hellström",
-      "licens": "K051294LOU02",
-      "serier": [
-       157,
-       184,
-       188,
-       229
-      ],
-      "total": 758,
-      "banpoang": 2
-     },
-     {
-      "namn": "Magnus Nilsson",
-      "licens": "M030866MAG01",
-      "serier": [
-       203,
-       185,
-       162,
-       193
-      ],
-      "total": 743,
-      "banpoang": 3
-     },
-     {
-      "namn": "Peter Hellström",
-      "licens": "M240570PET76",
-      "serier": [
-       191,
-       155,
-       153,
-       213
-      ],
-      "total": 712,
-      "banpoang": 1
-     },
-     {
-      "namn": "L-E. Hellström",
-      "licens": "M280763LAR03",
-      "serier": [
-       179,
-       171,
-       162,
-       197
-      ],
-      "total": 709,
-      "banpoang": 1
-     },
-     {
-      "namn": "Urban Johansson",
-      "licens": "M200361URB01",
-      "serier": [
-       0,
-       0,
-       0,
-       0
-      ],
-      "total": 0,
-      "banpoang": 0
-     }
-    ],
-    "borta": [
-     {
-      "namn": "Magnus Fagerqvist",
-      "licens": "M311274MAG01",
-      "serier": [
-       224,
-       205,
-       266,
-       229
-      ],
-      "total": 924,
-      "banpoang": 3
-     },
-     {
-      "namn": "Anton Sandberg",
-      "licens": "M250799ANT01",
-      "serier": [
-       204,
-       259,
-       233,
-       200
-      ],
-      "total": 896,
-      "banpoang": 2
-     },
-     {
-      "namn": "Daniel Tserni",
-      "licens": "M060493DAN02",
-      "serier": [
-       238,
-       212,
-       200,
-       212
-      ],
-      "total": 862,
-      "banpoang": 3
-     },
-     {
-      "namn": "Arto Kuusela",
-      "licens": "M210877ART01",
-      "serier": [
-       263,
-       190,
-       163,
-       181
-      ],
-      "total": 797,
-      "banpoang": 2
-     },
-     {
-      "namn": "Rickard Ekman",
-      "licens": "M251200RIC01",
-      "serier": [
-       205,
-       178,
-       196,
-       212
-      ],
-      "total": 791,
-      "banpoang": 2
-     },
-     {
-      "namn": "Stefan Eklund",
-      "licens": "M161080STE01",
-      "serier": [
-       181,
-       157,
-       158,
-       256
-      ],
-      "total": 752,
-      "banpoang": 0
-     },
-     {
-      "namn": "Åke Tserni",
-      "licens": "M130662ÅKE01",
-      "serier": [
-       162,
-       184,
-       149,
-       204
-      ],
-      "total": 699,
-      "banpoang": 2
-     },
-     {
-      "namn": "Erik Aitomäki",
-      "licens": "M130365ERI01",
-      "serier": [
-       188,
-       146,
-       175,
-       128
-      ],
-      "total": 637,
       "banpoang": 0
      }
     ]
@@ -7673,40 +8187,6 @@
    }
   },
   {
-   "id": 3304421,
-   "omgang": 7,
-   "datum": "2026-10-25",
-   "tid": "11:40",
-   "hemma": "Piteå BK",
-   "borta": "Junsele BK",
-   "hemmaKlubbId": 6730,
-   "bortaKlubbId": 45724,
-   "hall": "Piteå Bowlinghall",
-   "oljeprofil": "Ingen OljeProfil",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
-   "id": 3304422,
-   "omgang": 7,
-   "datum": "2026-10-25",
-   "tid": "16:00",
-   "hemma": "BK Prana",
-   "borta": "Junsele BK",
-   "hemmaKlubbId": 7351,
-   "bortaKlubbId": 45724,
-   "hall": "Skellefteå Bowlingkompaniet",
-   "oljeprofil": "Ingen OljeProfil",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
    "id": 3304401,
    "omgang": 8,
    "datum": "2026-11-14",
@@ -7716,23 +8196,6 @@
    "hemmaKlubbId": 6733,
    "bortaKlubbId": 7347,
    "hall": "Kiruna Bowlinghall",
-   "oljeprofil": "Ingen OljeProfil",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
-   "id": 3304427,
-   "omgang": 8,
-   "datum": "2026-11-14",
-   "tid": "11:00",
-   "hemma": "BK Flash",
-   "borta": "Junsele BK",
-   "hemmaKlubbId": 7478,
-   "bortaKlubbId": 45724,
-   "hall": "Härnösand Parkaden",
    "oljeprofil": "Ingen OljeProfil",
    "spelad": false,
    "hemmaPoang": null,
@@ -7758,6 +8221,23 @@
    "bortaKaglor": null
   },
   {
+   "id": 3304427,
+   "omgang": 8,
+   "datum": "2026-11-14",
+   "tid": "11:00",
+   "hemma": "BK Flash",
+   "borta": "Junsele BK",
+   "hemmaKlubbId": 7478,
+   "bortaKlubbId": 45724,
+   "hall": "Härnösand Parkaden",
+   "oljeprofil": "Ingen OljeProfil",
+   "spelad": false,
+   "hemmaPoang": null,
+   "bortaPoang": null,
+   "hemmaKaglor": null,
+   "bortaKaglor": null
+  },
+  {
    "id": 3304425,
    "omgang": 8,
    "datum": "2026-11-14",
@@ -7767,7 +8247,7 @@
    "hemmaKlubbId": 6730,
    "bortaKlubbId": 7351,
    "hall": "Piteå Bowlinghall",
-   "oljeprofil": "Ingen OljeProfil",
+   "oljeprofil": "EA 38 B 2025",
    "spelad": false,
    "hemmaPoang": null,
    "bortaPoang": null,

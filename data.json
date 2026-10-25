@@ -57,14 +57,14 @@
       "bild_zoom": 1.08,
       "alder": "27",
       "spelarstil": "1-hands H",
-      "snitt": "214,42",
-      "spelstyrka": "221,77",
+      "snitt": "214,84",
+      "spelstyrka": "221,95",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
         "favoritklot": "Hammer Tour Effect",
         "favoritklot_bild": "images/bowlingklot/Hammer_Effect_Tour_1600x1600__92408.webp",
-        "spelstyrka": "221,77"
+        "spelstyrka": "221,95"
       }
     },
     {
@@ -73,8 +73,8 @@
       "bild": "images/spelare/Daniel_Tserni.webp",
       "alder": "33",
       "spelarstil": "1-hands H",
-      "snitt": "209,75",
-      "spelstyrka": "218,26",
+      "snitt": "209,85",
+      "spelstyrka": "217,77",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 964,
@@ -88,8 +88,8 @@
       "bild": "images/spelare/Magnus_Fagerqvist.webp",
       "alder": "51",
       "spelarstil": "1-hands H",
-      "snitt": "205,35",
-      "spelstyrka": "214,03",
+      "snitt": "206,66",
+      "spelstyrka": "215,14",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1003,
@@ -103,8 +103,8 @@
       "bild": "images/spelare/Rickard_Ekman.webp",
       "alder": "25",
       "spelarstil": "1-hands H",
-      "snitt": "205,44",
-      "spelstyrka": "211,59",
+      "snitt": "205,55",
+      "spelstyrka": "211,75",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1025,
@@ -118,8 +118,8 @@
       "bild": "images/spelare/Arto_Kuusela.webp",
       "alder": "49",
       "spelarstil": "1-hands H",
-      "snitt": "202,22",
-      "spelstyrka": "210,67",
+      "snitt": "203,05",
+      "spelstyrka": "211,15",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 989,
@@ -131,10 +131,10 @@
       "namn": "Rasmus Roos",
       "licens": "M201004RAS01",
       "bild": "images/spelare/Rasmus_Roos.webp",
-      "alder": "21",
+      "alder": "22",
       "spelarstil": "2-hands H",
       "snitt": "197,57",
-      "spelstyrka": "208,07",
+      "spelstyrka": "208,10",
       "profil": {
         "hogsta_slagning_serie": 290,
         "hogsta_slagning_match": 925,
@@ -149,7 +149,7 @@
       "alder": "64",
       "spelarstil": "1-hands H",
       "snitt": "199,09",
-      "spelstyrka": "207,84",
+      "spelstyrka": "207,87",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -164,7 +164,7 @@
       "alder": "26",
       "spelarstil": "2-hands H",
       "snitt": "190,68",
-      "spelstyrka": "199,53",
+      "spelstyrka": "199,56",
       "profil": {
         "hogsta_slagning_serie": 279,
         "hogsta_slagning_match": 881,
@@ -179,7 +179,7 @@
       "alder": "41",
       "spelarstil": "1-hands H",
       "snitt": "195,04",
-      "spelstyrka": "196,98",
+      "spelstyrka": "197,00",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1029,
@@ -193,8 +193,8 @@
       "bild": "images/spelare/stefan-eklund.webp",
       "alder": "46",
       "spelarstil": "1-hands H",
-      "snitt": "187,47",
-      "spelstyrka": "191,73",
+      "snitt": "186,21",
+      "spelstyrka": "190,19",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -209,7 +209,7 @@
       "alder": "17",
       "spelarstil": "2-hands H",
       "snitt": "180,98",
-      "spelstyrka": "182,36",
+      "spelstyrka": "182,38",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -222,8 +222,8 @@
       "licens": "M130365ERI01",
       "bild": "images/spelare/Erik_Aitomäki.webp",
       "alder": "61",
-      "snitt": "175,39",
-      "spelstyrka": "172,61",
+      "snitt": "173,00",
+      "spelstyrka": "169,05",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -238,7 +238,7 @@
       "alder": "28",
       "spelarstil": "2-hands H",
       "snitt": "174,38",
-      "spelstyrka": "160,69",
+      "spelstyrka": "160,72",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": 787,
@@ -267,8 +267,8 @@
       "bild": "images/spelare/Jonatan_Nilsson.webp",
       "alder": "35",
       "spelarstil": "1-hands V",
-      "snitt": "165,21",
-      "spelstyrka": "150,76",
+      "snitt": "166,40",
+      "spelstyrka": "150,79",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -283,7 +283,7 @@
       "alder": "38",
       "spelarstil": "1-hands H",
       "snitt": "161,24",
-      "spelstyrka": "125,23",
+      "spelstyrka": "125,26",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -356,7 +356,7 @@
   "tabell": {
     "titel": "Nordallsvenskan",
     "saesong": "Säsong 2026/27",
-    "uppdaterad": "2026-10-18",
+    "uppdaterad": "2026-10-25",
     "kvalplatser": 2,
     "lag": [
       {
@@ -396,6 +396,15 @@
         "poang": 8
       },
       {
+        "namn": "Piteå BK",
+        "matcher": 5,
+        "vinster": 3,
+        "oavgjorda": 0,
+        "forluster": 2,
+        "skillnad": "+4",
+        "poang": 6
+      },
+      {
         "namn": "BK Fjällräven",
         "matcher": 9,
         "vinster": 3,
@@ -403,15 +412,6 @@
         "forluster": 6,
         "skillnad": "-26",
         "poang": 6
-      },
-      {
-        "namn": "Piteå BK",
-        "matcher": 4,
-        "vinster": 2,
-        "oavgjorda": 0,
-        "forluster": 2,
-        "skillnad": "-2",
-        "poang": 4
       },
       {
         "namn": "Jonsta BK",
@@ -423,22 +423,22 @@
         "poang": 4
       },
       {
-        "namn": "Junsele BK",
-        "matcher": 8,
-        "vinster": 1,
-        "oavgjorda": 1,
-        "forluster": 6,
-        "skillnad": "-46",
-        "poang": 3
-      },
-      {
         "namn": "BK Prana",
-        "matcher": 4,
-        "vinster": 1,
+        "matcher": 5,
+        "vinster": 2,
         "oavgjorda": 0,
         "forluster": 3,
-        "skillnad": "-27",
-        "poang": 2
+        "skillnad": "-15",
+        "poang": 4
+      },
+      {
+        "namn": "Junsele BK",
+        "matcher": 10,
+        "vinster": 1,
+        "oavgjorda": 1,
+        "forluster": 8,
+        "skillnad": "-64",
+        "poang": 3
       }
     ]
   },
