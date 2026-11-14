@@ -1,8 +1,803 @@
 {
- "uppdaterad": "2026-11-08",
+ "uppdaterad": "2026-11-15",
  "saesong": "Säsong 2026/27",
  "saesongId": 2026,
  "matcher": [
+  {
+   "id": 3304425,
+   "omgang": 8,
+   "datum": "2026-11-14",
+   "tid": "12:00",
+   "hemma": "Piteå BK",
+   "borta": "BK Prana",
+   "hemmaKlubbId": 6730,
+   "bortaKlubbId": 7351,
+   "hall": "Piteå Bowlinghall",
+   "oljeprofil": "EA 38 B 2025",
+   "spelad": true,
+   "hemmaPoang": 18,
+   "bortaPoang": 1,
+   "hemmaKaglor": 6452,
+   "bortaKaglor": 5785,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1578,
+     "bortaKaglor": 1388,
+     "hemmaPoang": 4,
+     "bortaPoang": 0
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1725,
+     "bortaKaglor": 1458,
+     "hemmaPoang": 5,
+     "bortaPoang": 0
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1617,
+     "bortaKaglor": 1432,
+     "hemmaPoang": 5,
+     "bortaPoang": 0
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1532,
+     "bortaKaglor": 1507,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Carl Wikhede",
+      "licens": "M250368CAR01",
+      "serier": [
+       231,
+       279,
+       193,
+       166
+      ],
+      "total": 869,
+      "banpoang": 3
+     },
+     {
+      "namn": "Filip Axheim",
+      "licens": "M060997FIL01",
+      "serier": [
+       195,
+       234,
+       213,
+       223
+      ],
+      "total": 865,
+      "banpoang": 3
+     },
+     {
+      "namn": "Jörgen Iversen",
+      "licens": "M060771JÖR01",
+      "serier": [
+       171,
+       225,
+       218,
+       230
+      ],
+      "total": 844,
+      "banpoang": 3
+     },
+     {
+      "namn": "Mikael Trydvall",
+      "licens": "M081088MIK01",
+      "serier": [
+       234,
+       172,
+       201,
+       212
+      ],
+      "total": 819,
+      "banpoang": 4
+     },
+     {
+      "namn": "Linus Aldrin",
+      "licens": "M091202LIN01",
+      "serier": [
+       215,
+       222,
+       172,
+       192
+      ],
+      "total": 801,
+      "banpoang": 4
+     },
+     {
+      "namn": "Mattias Johansson",
+      "licens": "M210698MAT01",
+      "serier": [
+       189,
+       192,
+       204,
+       190
+      ],
+      "total": 775,
+      "banpoang": 4
+     },
+     {
+      "namn": "Andreas Wikström",
+      "licens": "M221091AND01",
+      "serier": [
+       170,
+       181,
+       230,
+       181
+      ],
+      "total": 762,
+      "banpoang": 3
+     },
+     {
+      "namn": "Sebastian Gabrielsson",
+      "licens": "M110994SEB01",
+      "serier": [
+       173,
+       220,
+       186,
+       138
+      ],
+      "total": 717,
+      "banpoang": 4
+     },
+     {
+      "namn": "Michael Thuresson",
+      "licens": "M310578MIC01",
+      "serier": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "total": 0,
+      "banpoang": 0
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Mikael Lundström",
+      "licens": "M230470MIK01",
+      "serier": [
+       181,
+       209,
+       198,
+       197
+      ],
+      "total": 785,
+      "banpoang": 0
+     },
+     {
+      "namn": "Peter Forsgren",
+      "licens": "M190291PET02",
+      "serier": [
+       193,
+       156,
+       185,
+       246
+      ],
+      "total": 780,
+      "banpoang": 1
+     },
+     {
+      "namn": "Niklas Fjellström",
+      "licens": "M241084NIK01",
+      "serier": [
+       153,
+       205,
+       188,
+       192
+      ],
+      "total": 738,
+      "banpoang": 0
+     },
+     {
+      "namn": "Mattias Ladås",
+      "licens": "M220670MAT01",
+      "serier": [
+       209,
+       155,
+       154,
+       212
+      ],
+      "total": 730,
+      "banpoang": 1
+     },
+     {
+      "namn": "Joakim Boström",
+      "licens": "M220590JOA01",
+      "serier": [
+       163,
+       204,
+       193,
+       150
+      ],
+      "total": 710,
+      "banpoang": 0
+     },
+     {
+      "namn": "Anders Wiklund",
+      "licens": "M280564AND01",
+      "serier": [
+       150,
+       182,
+       182,
+       162
+      ],
+      "total": 676,
+      "banpoang": 0
+     },
+     {
+      "namn": "Daniel Nyman",
+      "licens": "M230186DAN01",
+      "serier": [
+       181,
+       198,
+       145,
+       0
+      ],
+      "total": 524,
+      "banpoang": 0
+     },
+     {
+      "namn": "Sara Almqvist",
+      "licens": "K070994SAR01",
+      "serier": [
+       158,
+       149,
+       149,
+       0
+      ],
+      "total": 456,
+      "banpoang": 0
+     },
+     {
+      "namn": "Gunnar Johansson",
+      "licens": "M291153GUN01",
+      "serier": [
+       187,
+       199,
+       0,
+       0
+      ],
+      "total": 386,
+      "banpoang": 0
+     }
+    ]
+   }
+  },
+  {
+   "id": 3304427,
+   "omgang": 8,
+   "datum": "2026-11-14",
+   "tid": "11:00",
+   "hemma": "BK Flash",
+   "borta": "Junsele BK",
+   "hemmaKlubbId": 7478,
+   "bortaKlubbId": 45724,
+   "hall": "Härnösand Parkaden",
+   "oljeprofil": "EA 42 2026",
+   "spelad": true,
+   "hemmaPoang": 11,
+   "bortaPoang": 9,
+   "hemmaKaglor": 6403,
+   "bortaKaglor": 6117,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1674,
+     "bortaKaglor": 1546,
+     "hemmaPoang": 3,
+     "bortaPoang": 2
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1577,
+     "bortaKaglor": 1434,
+     "hemmaPoang": 3,
+     "bortaPoang": 2
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1551,
+     "bortaKaglor": 1563,
+     "hemmaPoang": 1,
+     "bortaPoang": 4
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1601,
+     "bortaKaglor": 1574,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Tobias Sagvold",
+      "licens": "M240690TOB01",
+      "serier": [
+       185,
+       208,
+       248,
+       269
+      ],
+      "total": 910,
+      "banpoang": 3
+     },
+     {
+      "namn": "Björn Wedin",
+      "licens": "M250372BJÖ01",
+      "serier": [
+       217,
+       221,
+       214,
+       209
+      ],
+      "total": 861,
+      "banpoang": 2
+     },
+     {
+      "namn": "Linus Vedin",
+      "licens": "M070794LIN01",
+      "serier": [
+       207,
+       234,
+       221,
+       172
+      ],
+      "total": 834,
+      "banpoang": 3
+     },
+     {
+      "namn": "Magnus Melander",
+      "licens": "M020180MAG01",
+      "serier": [
+       223,
+       192,
+       177,
+       237
+      ],
+      "total": 829,
+      "banpoang": 2
+     },
+     {
+      "namn": "Lars Backlund",
+      "licens": "M170163LAR01",
+      "serier": [
+       190,
+       208,
+       176,
+       192
+      ],
+      "total": 766,
+      "banpoang": 2
+     },
+     {
+      "namn": "Daniel Wallanger",
+      "licens": "M050282DAN01",
+      "serier": [
+       243,
+       171,
+       190,
+       135
+      ],
+      "total": 739,
+      "banpoang": 1
+     },
+     {
+      "namn": "Mattias Jonsson",
+      "licens": "M040182MAT01",
+      "serier": [
+       217,
+       158,
+       174,
+       163
+      ],
+      "total": 712,
+      "banpoang": 1
+     },
+     {
+      "namn": "Mikael Olsson",
+      "licens": "M130965MIK01",
+      "serier": [
+       192,
+       185,
+       151,
+       0
+      ],
+      "total": 528,
+      "banpoang": 1
+     },
+     {
+      "namn": "Stefan Borgström",
+      "licens": "M270463STE01",
+      "serier": [
+       224,
+       0,
+       0,
+       0
+      ],
+      "total": 224,
+      "banpoang": 1
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Caroline Olofsson",
+      "licens": "K300494CAR02",
+      "serier": [
+       257,
+       206,
+       225,
+       169
+      ],
+      "total": 857,
+      "banpoang": 3
+     },
+     {
+      "namn": "Jessica Ström",
+      "licens": "K110975JES01",
+      "serier": [
+       227,
+       211,
+       205,
+       199
+      ],
+      "total": 842,
+      "banpoang": 3
+     },
+     {
+      "namn": "Magnus Nilsson",
+      "licens": "M030866MAG01",
+      "serier": [
+       173,
+       203,
+       180,
+       248
+      ],
+      "total": 804,
+      "banpoang": 1
+     },
+     {
+      "namn": "Jojje Ström",
+      "licens": "M010602JOJ01",
+      "serier": [
+       184,
+       155,
+       202,
+       232
+      ],
+      "total": 773,
+      "banpoang": 1
+     },
+     {
+      "namn": "Peter Hellström",
+      "licens": "M240570PET76",
+      "serier": [
+       192,
+       197,
+       182,
+       201
+      ],
+      "total": 772,
+      "banpoang": 3
+     },
+     {
+      "namn": "Urban Norman",
+      "licens": "M060764URB01",
+      "serier": [
+       194,
+       154,
+       200,
+       187
+      ],
+      "total": 735,
+      "banpoang": 1
+     },
+     {
+      "namn": "Joakim Wingstedt",
+      "licens": "M020563JOA01",
+      "serier": [
+       156,
+       163,
+       196,
+       157
+      ],
+      "total": 672,
+      "banpoang": 1
+     },
+     {
+      "namn": "L-E. Hellström",
+      "licens": "M280763LAR03",
+      "serier": [
+       163,
+       145,
+       173,
+       181
+      ],
+      "total": 662,
+      "banpoang": 3
+     }
+    ]
+   }
+  },
+  {
+   "id": 3304424,
+   "omgang": 8,
+   "datum": "2026-11-14",
+   "tid": "11:00",
+   "hemma": "Bodens BS",
+   "borta": "BK Loet",
+   "hemmaKlubbId": 6717,
+   "bortaKlubbId": 6723,
+   "hall": "Boden Strajk Alley",
+   "oljeprofil": "EA 38 B 2025",
+   "spelad": true,
+   "hemmaPoang": 11,
+   "bortaPoang": 8,
+   "hemmaKaglor": 6609,
+   "bortaKaglor": 6284,
+   "serier": [
+    {
+     "serie": 1,
+     "hemmaKaglor": 1657,
+     "bortaKaglor": 1509,
+     "hemmaPoang": 3,
+     "bortaPoang": 2
+    },
+    {
+     "serie": 2,
+     "hemmaKaglor": 1651,
+     "bortaKaglor": 1668,
+     "hemmaPoang": 2,
+     "bortaPoang": 3
+    },
+    {
+     "serie": 3,
+     "hemmaKaglor": 1506,
+     "bortaKaglor": 1506,
+     "hemmaPoang": 2,
+     "bortaPoang": 2
+    },
+    {
+     "serie": 4,
+     "hemmaKaglor": 1795,
+     "bortaKaglor": 1601,
+     "hemmaPoang": 4,
+     "bortaPoang": 1
+    }
+   ],
+   "spelare": {
+    "hemma": [
+     {
+      "namn": "Kim Lindström",
+      "licens": "M170689KIM01",
+      "serier": [
+       205,
+       255,
+       181,
+       268
+      ],
+      "total": 909,
+      "banpoang": 2
+     },
+     {
+      "namn": "O-P. Pajari",
+      "licens": "M240196OLL01",
+      "serier": [
+       267,
+       258,
+       170,
+       213
+      ],
+      "total": 908,
+      "banpoang": 4
+     },
+     {
+      "namn": "Ludwig Ingerskog",
+      "licens": "M110396LUD01",
+      "serier": [
+       210,
+       197,
+       211,
+       216
+      ],
+      "total": 834,
+      "banpoang": 2
+     },
+     {
+      "namn": "Henrik Sundqvist",
+      "licens": "M010375HEN01",
+      "serier": [
+       212,
+       214,
+       182,
+       225
+      ],
+      "total": 833,
+      "banpoang": 2
+     },
+     {
+      "namn": "Andreas Lindgren",
+      "licens": "M060493AND10",
+      "serier": [
+       197,
+       186,
+       171,
+       266
+      ],
+      "total": 820,
+      "banpoang": 1
+     },
+     {
+      "namn": "Teemu Putkisto",
+      "licens": "M260797TEE01",
+      "serier": [
+       212,
+       173,
+       212,
+       219
+      ],
+      "total": 816,
+      "banpoang": 4
+     },
+     {
+      "namn": "Per Sundqvist",
+      "licens": "M060181PER01",
+      "serier": [
+       173,
+       188,
+       178,
+       238
+      ],
+      "total": 777,
+      "banpoang": 2
+     },
+     {
+      "namn": "Rickard Ryding",
+      "licens": "M120989RIC01",
+      "serier": [
+       181,
+       180,
+       201,
+       150
+      ],
+      "total": 712,
+      "banpoang": 1
+     },
+     {
+      "namn": "Johan Bergman",
+      "licens": "M010185JOH01",
+      "serier": [
+       0,
+       0,
+       0,
+       0
+      ],
+      "total": 0,
+      "banpoang": 0
+     }
+    ],
+    "borta": [
+     {
+      "namn": "Rasmus Roos",
+      "licens": "M201004RAS01",
+      "serier": [
+       233,
+       242,
+       212,
+       211
+      ],
+      "total": 898,
+      "banpoang": 2
+     },
+     {
+      "namn": "Arto Kuusela",
+      "licens": "M210877ART01",
+      "serier": [
+       183,
+       267,
+       167,
+       204
+      ],
+      "total": 821,
+      "banpoang": 3
+     },
+     {
+      "namn": "Anton Sandberg",
+      "licens": "M250799ANT01",
+      "serier": [
+       203,
+       220,
+       166,
+       219
+      ],
+      "total": 808,
+      "banpoang": 3
+     },
+     {
+      "namn": "Daniel Tserni",
+      "licens": "M060493DAN02",
+      "serier": [
+       168,
+       214,
+       200,
+       221
+      ],
+      "total": 803,
+      "banpoang": 2
+     },
+     {
+      "namn": "Nils Lättman",
+      "licens": "M030604NIL01",
+      "serier": [
+       193,
+       187,
+       233,
+       171
+      ],
+      "total": 784,
+      "banpoang": 2
+     },
+     {
+      "namn": "Magnus Fagerqvist",
+      "licens": "M311274MAG01",
+      "serier": [
+       184,
+       210,
+       192,
+       197
+      ],
+      "total": 783,
+      "banpoang": 2
+     },
+     {
+      "namn": "Åke Tserni",
+      "licens": "M130662ÅKE01",
+      "serier": [
+       159,
+       177,
+       179,
+       180
+      ],
+      "total": 695,
+      "banpoang": 0
+     },
+     {
+      "namn": "Janne Norrblom",
+      "licens": "M170568JAN01",
+      "serier": [
+       186,
+       151,
+       157,
+       0
+      ],
+      "total": 494,
+      "banpoang": 0
+     },
+     {
+      "namn": "Stefan Eklund",
+      "licens": "M161080STE01",
+      "serier": [
+       198,
+       0,
+       0,
+       0
+      ],
+      "total": 198,
+      "banpoang": 0
+     }
+    ]
+   }
+  },
   {
    "id": 3304422,
    "omgang": 7,
@@ -8187,57 +8982,6 @@
    }
   },
   {
-   "id": 3304427,
-   "omgang": 8,
-   "datum": "2026-11-14",
-   "tid": "11:00",
-   "hemma": "BK Flash",
-   "borta": "Junsele BK",
-   "hemmaKlubbId": 7478,
-   "bortaKlubbId": 45724,
-   "hall": "Härnösand Parkaden",
-   "oljeprofil": "Ingen OljeProfil",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
-   "id": 3304424,
-   "omgang": 8,
-   "datum": "2026-11-14",
-   "tid": "11:00",
-   "hemma": "Bodens BS",
-   "borta": "BK Loet",
-   "hemmaKlubbId": 6717,
-   "bortaKlubbId": 6723,
-   "hall": "Boden Strajk Alley",
-   "oljeprofil": "EA 38 B 2025",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
-   "id": 3304425,
-   "omgang": 8,
-   "datum": "2026-11-14",
-   "tid": "12:00",
-   "hemma": "Piteå BK",
-   "borta": "BK Prana",
-   "hemmaKlubbId": 6730,
-   "bortaKlubbId": 7351,
-   "hall": "Piteå Bowlinghall",
-   "oljeprofil": "EA 38 B 2025",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
    "id": 3304428,
    "omgang": 9,
    "datum": "2026-11-21",
@@ -8476,6 +9220,23 @@
    "bortaKaglor": null
   },
   {
+   "id": 3304448,
+   "omgang": 15,
+   "datum": "2027-02-13",
+   "tid": "10:00",
+   "hemma": "BK Loet",
+   "borta": "Jonsta BK",
+   "hemmaKlubbId": 6723,
+   "bortaKlubbId": 7347,
+   "hall": "Luleå O´Learys Bowling",
+   "oljeprofil": "Ingen OljeProfil",
+   "spelad": false,
+   "hemmaPoang": null,
+   "bortaPoang": null,
+   "hemmaKaglor": null,
+   "bortaKaglor": null
+  },
+  {
    "id": 3304447,
    "omgang": 15,
    "datum": "2027-02-13",
@@ -8527,15 +9288,15 @@
    "bortaKaglor": null
   },
   {
-   "id": 3304448,
+   "id": 3304449,
    "omgang": 15,
-   "datum": "2027-02-13",
-   "tid": "15:00",
-   "hemma": "BK Loet",
-   "borta": "Jonsta BK",
-   "hemmaKlubbId": 6723,
-   "bortaKlubbId": 7347,
-   "hall": "Luleå O´Learys Bowling",
+   "datum": "2027-02-14",
+   "tid": "10:00",
+   "hemma": "BK Flash",
+   "borta": "Piteå BK",
+   "hemmaKlubbId": 7478,
+   "bortaKlubbId": 6730,
+   "hall": "Härnösand Parkaden",
    "oljeprofil": "Ingen OljeProfil",
    "spelad": false,
    "hemmaPoang": null,
@@ -8553,23 +9314,6 @@
    "hemmaKlubbId": 6733,
    "bortaKlubbId": 7347,
    "hall": "Kiruna Bowlinghall",
-   "oljeprofil": "Ingen OljeProfil",
-   "spelad": false,
-   "hemmaPoang": null,
-   "bortaPoang": null,
-   "hemmaKaglor": null,
-   "bortaKaglor": null
-  },
-  {
-   "id": 3304449,
-   "omgang": 15,
-   "datum": "2027-02-14",
-   "tid": "10:00",
-   "hemma": "BK Flash",
-   "borta": "Piteå BK",
-   "hemmaKlubbId": 7478,
-   "bortaKlubbId": 6730,
-   "hall": "Härnösand Parkaden",
    "oljeprofil": "Ingen OljeProfil",
    "spelad": false,
    "hemmaPoang": null,
