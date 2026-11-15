@@ -26,7 +26,7 @@ The site itself is a zero-dependency static site (no build step, no framework, n
 
 The "Bli stödmedlem" button opens a modal (`renderMedlemModal` / `attachMembershipModal` in `index.html`): förnamn, efternamn, e-post, stad + a consent checkbox → "Swisha" (enabled only when all filled and e-post valid) posts to the backend → QR step.
 
-Payment can't be verified automatically, so a sign-up is saved **unconfirmed** (`betald IS NULL`) and only becomes a member when someone presses **Bekräfta** on `/admin` after matching the name against the payer in the club's Swish. (There is deliberately no payment reference — the payer's name in Swish is enough; the modal asks people paying from someone else's phone to write their name in the message.) The `medlemsnummer` is handed out at that moment (`MAX(medlemsnummer) + 1` in a single `UPDATE`), so abandoned or fake sign-ups never take a number. `nummer` (AUTOINCREMENT) is only an internal row id.
+Payment can't be verified automatically, so a sign-up is saved **unconfirmed** (`betald IS NULL`) and only becomes a member when someone presses **Bekräfta** on `/admin` after matching the name against the payer in the club's Swish. (There is deliberately no payment reference — the payer's name in Swish is enough.) The `medlemsnummer` is handed out at that moment (`MAX(medlemsnummer) + 1` in a single `UPDATE`), so abandoned or fake sign-ups never take a number. `nummer` (AUTOINCREMENT) is only an internal row id.
 
 - **`worker/index.js`** — the whole Worker. Routes:
   - `POST /api/medlem` — validates (fornamn, efternamn, epost, **stad** all required), inserts an unconfirmed row, returns `{ fornamn }`.
