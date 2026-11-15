@@ -399,25 +399,54 @@
 
   /* ============ STÖDMEDLEMMAR ============ */
   #stodmedlemmar { background: #f8fafc; }
+  .stodmedlem-antal {
+    display: flex; justify-content: center; margin: -1.5rem 0 2rem;
+  }
+  .stodmedlem-antal span {
+    background: var(--navy); color: var(--white);
+    border-radius: 999px; padding: 0.45rem 1.1rem;
+    font-size: 0.85rem; font-weight: 600;
+  }
+  .stodmedlem-antal b { color: var(--gold); font-size: 1rem; margin-right: 0.2rem; }
   .stodmedlem-lista {
-    max-width: 640px; margin: 0 auto; list-style: none; padding: 0.5rem;
-    background: var(--white); border: 1px solid var(--gray-100);
-    border-radius: 16px; max-height: 460px; overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(10, 31, 77, 0.05);
+    max-width: 1000px; margin: 0 auto; list-style: none; padding: 0;
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
-  .stodmedlem-rad {
+  .stodmedlem-kort {
     display: flex; align-items: center; gap: 1rem;
-    padding: 0.85rem 1rem; border-bottom: 1px solid #f1f5f9;
+    background: var(--white); border: 1px solid var(--gray-100);
+    border-radius: 14px; padding: 0.9rem 1rem;
+    box-shadow: 0 4px 16px rgba(10, 31, 77, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .stodmedlem-rad:last-child { border-bottom: none; }
+  .stodmedlem-kort:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(10, 31, 77, 0.1); }
+  .stodmedlem-kort[hidden] { display: none; }
   .stodmedlem-nr {
-    flex-shrink: 0; min-width: 3.2rem; text-align: center;
-    background: var(--navy); color: var(--gold);
-    font-weight: 700; font-variant-numeric: tabular-nums;
-    padding: 0.35rem 0.5rem; border-radius: 8px; font-size: 0.9rem;
+    flex-shrink: 0; width: 3.4rem; height: 3.4rem; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: var(--gold); font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.04em; font-variant-numeric: tabular-nums;
   }
-  .stodmedlem-namn { font-weight: 600; color: var(--navy); flex: 1; }
-  .stodmedlem-stad { color: var(--gray-500); font-size: 0.9rem; white-space: nowrap; }
+  .stodmedlem-info { min-width: 0; }
+  .stodmedlem-namn {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem;
+    color: var(--navy); letter-spacing: 0.02em; line-height: 1.1;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .stodmedlem-stad {
+    color: var(--gray-500); font-size: 0.85rem; margin-top: 0.15rem;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .stodmedlem-stad::before { content: '📍 '; font-size: 0.75rem; }
+  .stodmedlem-visa-alla {
+    display: block; margin: 1.5rem auto 0;
+    background: none; border: 1.5px solid var(--navy); color: var(--navy);
+    border-radius: 999px; padding: 0.6rem 1.4rem;
+    font-family: inherit; font-weight: 600; font-size: 0.9rem; cursor: pointer;
+  }
+  .stodmedlem-visa-alla:hover { background: var(--navy); color: var(--white); }
   .stodmedlem-tom {
     max-width: 640px; margin: 0 auto; text-align: center; color: var(--gray-500);
     background: var(--white); border: 1px dashed #d1d5db;
@@ -504,14 +533,22 @@
   }
 
   function renderStodmedlemmar(medlemmar) {
-    const rader = medlemmar.map(m => `
-      <li class="stodmedlem-rad">
+    // Visar de första VISA_FORST korten; resten fälls ut med "Visa alla".
+    const VISA_FORST = 12;
+    const kort = medlemmar.map((m, i) => `
+      <li class="stodmedlem-kort"${i >= VISA_FORST ? ' hidden' : ''}>
         <span class="stodmedlem-nr">${escapeHtml(m.medlemsnummer || String(m.nummer))}</span>
-        <span class="stodmedlem-namn">${escapeHtml(m.fornamn)} ${escapeHtml(m.efternamn)}</span>
-        <span class="stodmedlem-stad">${escapeHtml(m.stad || '')}</span>
+        <div class="stodmedlem-info">
+          <div class="stodmedlem-namn">${escapeHtml(m.fornamn)} ${escapeHtml(m.efternamn)}</div>
+          ${m.stad ? `<div class="stodmedlem-stad">${escapeHtml(m.stad)}</div>` : ''}
+        </div>
       </li>`).join('');
+    const visaAlla = medlemmar.length > VISA_FORST
+      ? `<button class="stodmedlem-visa-alla" type="button" onclick="this.previousElementSibling.querySelectorAll('[hidden]').forEach(el => el.hidden = false); this.remove();">Visa alla ${medlemmar.length}</button>`
+      : '';
     const innehall = medlemmar.length
-      ? `<ul class="stodmedlem-lista">${rader}</ul>`
+      ? `<div class="stodmedlem-antal"><span><b>${medlemmar.length}</b> ${medlemmar.length === 1 ? 'stödmedlem' : 'stödmedlemmar'} — tack!</span></div>
+         <ul class="stodmedlem-lista">${kort}</ul>${visaAlla}`
       : `<p class="stodmedlem-tom">Var först att stödja bowlingen i Luleå — <a href="index.html#medlem">bli stödmedlem här</a>.</p>`;
     return `
       <section id="stodmedlemmar">
