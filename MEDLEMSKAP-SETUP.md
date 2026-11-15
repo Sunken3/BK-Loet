@@ -1,7 +1,10 @@
 # Stödmedlem-flödet — engångsuppsättning i Cloudflare
 
-Formuläret "Bli stödmedlem" på startsidan sparar varje ny medlem i en
-Cloudflare **D1**-databas och delar ut löpande medlemsnummer (001, 002, …).
+Formuläret "Bli stödmedlem" på startsidan sparar varje anmälan i en
+Cloudflare **D1**-databas. Besökaren får en referens (t.ex. `L-4827`) att skriva
+i Swish-meddelandet. Anmälan är obekräftad tills någon trycker **Bekräfta** på
+`/admin` — först då delas ett löpande medlemsnummer ut (001, 002, …) och
+personen syns på Sponsorer-sidan.
 
 Din sajt körs som en **Cloudflare Worker med statiska filer** (adressen slutar
 på `.workers.dev`). Koden finns redan i repot:
@@ -23,8 +26,10 @@ Gör stegen nedan i tur och ordning.
 > ```sql
 > ALTER TABLE medlemmar ADD COLUMN stad TEXT NOT NULL DEFAULT '';
 > ```
-> (Samma sak finns i filen `migration-add-stad.sql`.) Hoppa över detta om du
-> skapar databasen först nu — `schema.sql` innehåller redan `stad`.
+> (Samma sak finns i filen `migration-add-stad.sql`.) Kör sedan även hela
+> `migration-betalning.sql` (kolumnerna för referens, betalning och
+> medlemsnummer). Hoppa över båda om du skapar databasen först nu —
+> `schema.sql` innehåller redan allt.
 
 ## 1. Skapa databasen och kopiera dess ID
 
@@ -85,18 +90,27 @@ Webbläsaren frågar efter inloggning:
 - Användarnamn: valfritt (t.ex. `admin`)
 - Lösenord: det du satte i `ADMIN_PASSWORD`
 
-Du får en tabell med nummer, namn, e-post, om personen vill synas på webben
-och datum — plus knappen **Exportera CSV** (öppnas i Excel).
+Sidan har två tabeller:
+
+- **Väntar på betalning** — anmälningar med referens, äldst överst. Leta upp
+  referensen i Swish-meddelandena och tryck **Bekräfta**. Har ingen betalning
+  kommit: **Ta bort** (eller låt bli — obekräftade anmälningar rensas
+  automatiskt efter 30 dagar).
+- **Stödmedlemmar** — de bekräftade, med medlemsnummer och betaldatum, plus
+  knappen **Exportera CSV** (öppnas i Excel).
 
 ## Bra att veta
 
-- **Betalning verifieras inte.** Sajten kan inte se om en Swish-betalning
-  faktiskt gick igenom — en person sparas när de klickar "Jag har swishat".
-  Stäm av mot dina riktiga Swish-transaktioner. Numret delas ut i det ögonblicket.
-- **Numren återanvänds aldrig.** Tar du bort en rad hoppar nästa medlem ändå
-  till nästa lediga nummer.
-- **Ta bort en felregistrering:** D1 → Console →
-  `DELETE FROM medlemmar WHERE nummer = 3;` (byt ut numret).
+- **Sajten ser inte själv om en Swish gick igenom.** Det är avstämningen på
+  `/admin` som gör någon till medlem — ingen syns på webben eller får nummer
+  innan dess.
+- **Medlemsnummer delas ut i den ordning ni bekräftar.** Vill ni att numren
+  följer betalningsordningen: bekräfta i samma ordning som i Swish-historiken.
+- **En bekräftad medlem kan inte tas bort från `/admin`** (så att ingen råkar
+  klicka bort en betalande medlem). Behövs det: D1 → Console →
+  `DELETE FROM medlemmar WHERE medlemsnummer = 3;` (byt ut numret). Nästa
+  medlem får alltid högsta befintliga nummer + 1 — tar du bort den med högst
+  nummer får alltså nästa medlem samma nummer igen.
 
 ## Köra/testa lokalt (valfritt, för utvecklare)
 

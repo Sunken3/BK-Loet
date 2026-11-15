@@ -24,17 +24,20 @@ The site itself is a zero-dependency static site (no build step, no framework, n
 
 ## Stödmedlem sign-up (backend)
 
-The "Bli stödmedlem" button opens a modal (`renderMedlemModal` / `attachMembershipModal` in `index.html`): förnamn, efternamn, e-post + a consent checkbox → "Swisha" (enabled only when name + valid e-post filled) → QR step → "Jag har swishat" posts to the backend.
+The "Bli stödmedlem" button opens a modal (`renderMedlemModal` / `attachMembershipModal` in `index.html`): förnamn, efternamn, e-post, stad + a consent checkbox → "Swisha" (enabled only when all filled and e-post valid) posts to the backend → QR step showing the Swish **referens** (e.g. `L-4827`) to write in the Swish message.
+
+Payment can't be verified automatically, so a sign-up is saved **unconfirmed** (`betald IS NULL`) and only becomes a member when someone presses **Bekräfta** on `/admin` after matching the referens against the club's Swish. The `medlemsnummer` is handed out at that moment (`MAX(medlemsnummer) + 1` in a single `UPDATE`), so abandoned or fake sign-ups never take a number. `nummer` (AUTOINCREMENT) is only an internal row id.
 
 - **`worker/index.js`** — the whole Worker. Routes:
-  - `POST /api/medlem` — validates (fornamn, efternamn, epost, **stad** all required), inserts into D1, returns a sequential `medlemsnummer` (D1 `AUTOINCREMENT`; first member = 1, shown zero-padded as "001"). Payment is **not** verified — a row is saved when the user clicks "Jag har swishat".
-  - `GET /api/medlemmar` — **public** list used by the Sponsorer page. Returns only members who consented (`visa_pa_webben = 1`), and only `nummer`/`fornamn`/`efternamn`/`stad` — never e-post. `Cache-Control: no-store` so new members appear immediately.
-  - `GET /admin` — HTTP Basic Auth via the `ADMIN_PASSWORD` secret. Renders the member table (incl. Stad); `?export=csv` downloads a CSV.
+  - `POST /api/medlem` — validates (fornamn, efternamn, epost, **stad** all required), inserts an unconfirmed row with a random unique `referens` (`L-` + 4 digits), returns `{ referens, fornamn }`.
+  - `GET /api/medlemmar` — **public** list used by the Sponsorer page. Returns only **confirmed** members who consented (`visa_pa_webben = 1`), and only `medlemsnummer`/`fornamn`/`efternamn`/`stad` — never e-post. `Cache-Control: no-store`. Returns 500 (not an empty list) on DB errors.
+  - `GET /admin` — HTTP Basic Auth via the `ADMIN_PASSWORD` secret (any username). Two tables: "Väntar på betalning" (oldest first, Bekräfta / Ta bort buttons) and "Stödmedlemmar". `?export=csv` downloads both. Unconfirmed rows older than 30 days (`RENSA_EFTER_DAGAR`) are deleted on each visit. DB errors are shown as text, not a crash.
+  - `POST /admin/bekrafta`, `POST /admin/ta-bort` — form posts from `/admin` (field `id` = `nummer`), Basic Auth **plus** a same-origin check (`Origin` / `Sec-Fetch-Site`), since the browser resends Basic Auth on cross-site posts. Ta bort only deletes unconfirmed rows.
   - everything else → `env.ASSETS.fetch(request)` (the static site).
 - **`sponsorer.html`** fetches `/api/medlemmar` on load and renders the "Våra stödmedlemmar" list (`renderStodmedlemmar`); tolerates the endpoint being absent (empty state).
 - **`wrangler.jsonc`** — Worker name (`bkloet`, must match the live subdomain), `main`, the `ASSETS` binding (`directory: "."`), and the `DB` D1 binding (paste the real `database_id`).
 - **`.assetsignore`** — keeps source/docs/`.git` out of the uploaded static assets.
-- **`schema.sql`** — the `medlemmar` table (incl. `stad`). Run once in the D1 console. **`migration-add-stad.sql`** adds `stad` to a database created before that column existed — run it once on the live DB.
+- **`schema.sql`** — the `medlemmar` table (incl. `stad`, `referens`, `betald`, `medlemsnummer`). Run once in the D1 console. The live DB was created earlier and is upgraded by hand in the D1 console with **`migration-add-stad.sql`** (done 2026-11-15) and then **`migration-betalning.sql`**. The Worker can't run migrations itself — a missing column makes `/admin` show the SQL error.
 - **`swish`** key in `data.json` — `belopp`, `nummer` (optional Swish number shown in the modal), `qr_bild` (path to the QR image, default `images/swish-qr.png`).
 - One-time Cloudflare setup (create D1, paste `database_id`, set `ADMIN_PASSWORD` secret) is documented in **`MEDLEMSKAP-SETUP.md`**.
 

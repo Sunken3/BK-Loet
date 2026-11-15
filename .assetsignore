@@ -13,5 +13,5 @@ worker
 wrangler.jsonc
 .assetsignore
 .gitignore
-schema.sql
+*.sql
 *.md

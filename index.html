@@ -514,12 +514,6 @@
     background: var(--gray-100); color: var(--gray-500);
     box-shadow: none; cursor: not-allowed;
   }
-  .medlem-back {
-    width: 100%; margin-top: 0.75rem; padding: 0.6rem;
-    background: none; border: none; color: var(--gray-500);
-    font-family: inherit; font-size: 0.9rem; cursor: pointer;
-  }
-  .medlem-back:hover { color: var(--navy); }
   .medlem-qr {
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
@@ -533,18 +527,10 @@
     font-weight: 700; color: var(--navy); font-size: 1rem;
     margin-bottom: 1rem; text-align: center;
   }
-  .medlem-step[data-step="klar"] { text-align: center; }
-  .medlem-klar-icon {
-    width: 56px; height: 56px; margin: 0 auto 1rem;
-    background: var(--gold); color: var(--navy-deep);
-    border-radius: 50%; display: flex;
-    align-items: center; justify-content: center;
-    font-size: 1.8rem; font-weight: 700;
-  }
   .medlem-nummer {
-    display: flex; flex-direction: column; gap: 0.25rem;
+    display: flex; flex-direction: column; gap: 0.25rem; text-align: center;
     background: var(--gray-50); border: 1px solid var(--gray-100);
-    border-radius: 12px; padding: 1.25rem; margin: 1.25rem 0;
+    border-radius: 12px; padding: 1rem; margin: 0 0 1.25rem;
     color: var(--gray-700); font-size: 0.8rem;
     text-transform: uppercase; letter-spacing: 0.1em;
   }
@@ -1015,21 +1001,12 @@
           </div>
 
           <div class="medlem-step" data-step="qr" hidden>
-            <h3>Swisha ${belopp} kr</h3>
-            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app för att betala.</p>
+            <h3 id="mTack">Swisha ${belopp} kr</h3>
+            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app och skriv referensen nedan i meddelandet.</p>
+            <div class="medlem-nummer"><span>Skriv i Swish-meddelandet</span><strong id="mReferens">—</strong></div>
             ${nummerRad}
             <div class="medlem-qr">${qrInner}</div>
-            <!-- TILLFÄLLIGT BORTTAGEN för att förhindra abuse. Återställ genom att ta bort
-                 raden nedan och lägga tillbaka: <button class="medlem-swish-btn" type="button" id="mHarSwishat">Jag har swishat</button> -->
-            <p class="medlem-modal-sub" style="margin-top:1rem;">När du swishat är du klar — du behöver inte göra något mer här. Vi registrerar ditt stödmedlemskap manuellt.</p>
-            <button class="medlem-back" type="button" data-back>← Tillbaka</button>
-          </div>
-
-          <div class="medlem-step" data-step="klar" hidden>
-            <div class="medlem-klar-icon">✓</div>
-            <h3 id="mTack">Tack för ditt stöd!</h3>
-            <p class="medlem-modal-sub">Du är nu registrerad som stödmedlem.</p>
-            <div class="medlem-nummer"><span>Ditt medlemsnummer</span><strong id="mNummer">—</strong></div>
+            <p class="medlem-modal-sub">När vi sett din betalning bekräftar vi ditt stödmedlemskap och du får ditt medlemsnummer.</p>
             <button class="medlem-swish-btn" type="button" data-close>Stäng</button>
           </div>
 
@@ -1186,8 +1163,7 @@
 
     const steps = {
       form: modal.querySelector('[data-step="form"]'),
-      qr: modal.querySelector('[data-step="qr"]'),
-      klar: modal.querySelector('[data-step="klar"]')
+      qr: modal.querySelector('[data-step="qr"]')
     };
     const fornamn = modal.querySelector('#mFornamn');
     const efternamn = modal.querySelector('#mEfternamn');
@@ -1195,10 +1171,12 @@
     const stad = modal.querySelector('#mStad');
     const visa = modal.querySelector('#mVisa');
     const swishaBtn = modal.querySelector('#mSwisha');
-    const harSwishatBtn = modal.querySelector('#mHarSwishat');
+    const swishaText = swishaBtn.textContent;
     const errorBox = modal.querySelector('#mError');
-    const nummerEl = modal.querySelector('#mNummer');
+    const referensEl = modal.querySelector('#mReferens');
     const tackEl = modal.querySelector('#mTack');
+    const tackText = tackEl.textContent;
+    let sparar = false;
 
     function showStep(name) {
       Object.entries(steps).forEach(([k, el]) => { if (el) el.hidden = k !== name; });
@@ -1207,16 +1185,14 @@
     function emailValid(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
     function validate() {
       const ok = fornamn.value.trim() && efternamn.value.trim() && emailValid(epost.value.trim()) && stad.value.trim();
-      swishaBtn.disabled = !ok;
+      swishaBtn.disabled = !ok || sparar;
     }
     function resetForm() {
       fornamn.value = ''; efternamn.value = ''; epost.value = ''; stad.value = '';
       visa.checked = false;
+      swishaBtn.textContent = swishaText;
+      tackEl.textContent = tackText;
       validate();
-      if (harSwishatBtn) {
-        harSwishatBtn.disabled = false;
-        harSwishatBtn.textContent = 'Jag har swishat';
-      }
     }
     function open() {
       resetForm();
@@ -1235,17 +1211,19 @@
     [fornamn, efternamn, epost, stad].forEach(el => el.addEventListener('input', validate));
     document.querySelectorAll('.js-bli-stodmedlem').forEach(b => b.addEventListener('click', open));
     modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
-    modal.querySelectorAll('[data-back]').forEach(el => el.addEventListener('click', () => showStep('form')));
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && modal.classList.contains('open')) close();
     });
 
-    swishaBtn.addEventListener('click', () => { if (!swishaBtn.disabled) showStep('qr'); });
-
-    if (harSwishatBtn) harSwishatBtn.addEventListener('click', async () => {
+    // Anmälan sparas som obekräftad redan här; servern svarar med en referens
+    // att skriva i Swish-meddelandet. Medlemsnummer delas ut när betalningen
+    // bekräftas på /admin.
+    swishaBtn.addEventListener('click', async () => {
+      if (swishaBtn.disabled) return;
       errorBox.hidden = true;
-      harSwishatBtn.disabled = true;
-      harSwishatBtn.textContent = 'Sparar…';
+      sparar = true;
+      swishaBtn.disabled = true;
+      swishaBtn.textContent = 'Sparar…';
       try {
         const res = await fetch('/api/medlem', {
           method: 'POST',
@@ -1260,16 +1238,19 @@
         });
         const out = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(out.error || ('HTTP ' + res.status));
-        nummerEl.textContent = out.medlemsnummer || String(out.nummer);
+        if (!out.referens) throw new Error('Inget svar från servern.');
+        referensEl.textContent = out.referens;
         // Visa namnet som servern sparade; faller tillbaka på det inmatade värdet.
         const visatNamn = (out.fornamn || fornamn.value.trim());
-        tackEl.textContent = 'Tack ' + visatNamn + ', för ditt stöd till BK Loet!';
-        showStep('klar');
+        tackEl.textContent = 'Tack ' + visatNamn + '! Swisha ' + tackText.replace(/^Swisha /, '');
+        showStep('qr');
       } catch (err) {
         errorBox.textContent = 'Något gick fel: ' + err.message + ' Försök igen eller kontakta klubben.';
         errorBox.hidden = false;
-        harSwishatBtn.disabled = false;
-        harSwishatBtn.textContent = 'Jag har swishat';
+      } finally {
+        sparar = false;
+        swishaBtn.textContent = swishaText;
+        validate();
       }
     });
   }
