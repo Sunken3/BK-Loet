@@ -57,14 +57,14 @@
       "bild_zoom": 1.08,
       "alder": "27",
       "spelarstil": "1-hands H",
-      "snitt": "214,84",
-      "spelstyrka": "221,97",
+      "snitt": "214,49",
+      "spelstyrka": "221,71",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1020,
         "favoritklot": "Hammer Tour Effect",
         "favoritklot_bild": "images/bowlingklot/Hammer_Effect_Tour_1600x1600__92408.webp",
-        "spelstyrka": "221,97"
+        "spelstyrka": "221,71"
       }
     },
     {
@@ -74,7 +74,7 @@
       "alder": "33",
       "spelarstil": "1-hands H",
       "snitt": "209,85",
-      "spelstyrka": "217,79",
+      "spelstyrka": "217,88",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 964,
@@ -89,7 +89,7 @@
       "alder": "51",
       "spelarstil": "1-hands H",
       "snitt": "206,66",
-      "spelstyrka": "215,16",
+      "spelstyrka": "215,25",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1003,
@@ -104,7 +104,7 @@
       "alder": "25",
       "spelarstil": "1-hands H",
       "snitt": "205,55",
-      "spelstyrka": "211,77",
+      "spelstyrka": "211,86",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1025,
@@ -118,8 +118,8 @@
       "bild": "images/spelare/Arto_Kuusela.webp",
       "alder": "49",
       "spelarstil": "1-hands H",
-      "snitt": "203,05",
-      "spelstyrka": "211,17",
+      "snitt": "203,48",
+      "spelstyrka": "211,62",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 989,
@@ -132,7 +132,7 @@
       "licens": "M030604NIL01",
       "alder": "22",
       "snitt": "211,41",
-      "spelstyrka": "210,15",
+      "spelstyrka": "210,24",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -144,8 +144,8 @@
       "namn": "Janne Norrblom",
       "licens": "M170568JAN01",
       "alder": "58",
-      "snitt": "195,37",
-      "spelstyrka": "209,40",
+      "snitt": "195,53",
+      "spelstyrka": "209,45",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -159,8 +159,8 @@
       "bild": "images/spelare/Rasmus_Roos.webp",
       "alder": "22",
       "spelarstil": "2-hands H",
-      "snitt": "197,57",
-      "spelstyrka": "208,12",
+      "snitt": "199,18",
+      "spelstyrka": "209,12",
       "profil": {
         "hogsta_slagning_serie": 290,
         "hogsta_slagning_match": 925,
@@ -175,7 +175,7 @@
       "alder": "64",
       "spelarstil": "1-hands H",
       "snitt": "199,09",
-      "spelstyrka": "207,89",
+      "spelstyrka": "207,97",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -190,7 +190,7 @@
       "alder": "26",
       "spelarstil": "2-hands H",
       "snitt": "190,68",
-      "spelstyrka": "199,57",
+      "spelstyrka": "199,65",
       "profil": {
         "hogsta_slagning_serie": 279,
         "hogsta_slagning_match": 881,
@@ -205,7 +205,7 @@
       "alder": "41",
       "spelarstil": "1-hands H",
       "snitt": "195,04",
-      "spelstyrka": "197,02",
+      "spelstyrka": "197,09",
       "profil": {
         "hogsta_slagning_serie": 300,
         "hogsta_slagning_match": 1029,
@@ -219,8 +219,8 @@
       "bild": "images/spelare/stefan-eklund.webp",
       "alder": "46",
       "spelarstil": "1-hands H",
-      "snitt": "186,21",
-      "spelstyrka": "190,21",
+      "snitt": "185,97",
+      "spelstyrka": "189,74",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -235,7 +235,7 @@
       "alder": "17",
       "spelarstil": "2-hands H",
       "snitt": "180,98",
-      "spelstyrka": "182,40",
+      "spelstyrka": "182,46",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -249,7 +249,7 @@
       "bild": "images/spelare/Erik_Aitomäki.webp",
       "alder": "61",
       "snitt": "173,00",
-      "spelstyrka": "169,06",
+      "spelstyrka": "169,11",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
@@ -264,7 +264,7 @@
       "alder": "28",
       "spelarstil": "2-hands H",
       "snitt": "174,38",
-      "spelstyrka": "160,73",
+      "spelstyrka": "160,77",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": 787,
@@ -294,7 +294,7 @@
       "alder": "35",
       "spelarstil": "1-hands V",
       "snitt": "166,71",
-      "spelstyrka": "150,43",
+      "spelstyrka": "150,46",
       "profil": {
         "hogsta_slagning_serie": null,
         "hogsta_slagning_match": null,
