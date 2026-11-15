@@ -1,7 +1,7 @@
 // Cloudflare Worker för BK Loet.
 // Serverar de statiska filerna (index.html, data.json, images/ ...) via ASSETS
 // och hanterar några dynamiska rutter:
-//   POST /api/medlem        → sparar en obekräftad anmälan och ger en Swish-referens
+//   POST /api/medlem        → sparar en obekräftad anmälan
 //   GET  /api/medlemmar     → publik lista över bekräftade stödmedlemmar
 //   GET  /admin             → lösenordsskyddad lista över anmälningar och medlemmar (+ CSV)
 //   POST /admin/bekrafta    → markerar en anmälan som betald och delar ut medlemsnummer
@@ -43,9 +43,8 @@ export default {
 };
 
 /* ============ POST /api/medlem ============ */
-// Sparar anmälan som obekräftad (betald IS NULL) och returnerar en referens
-// som besökaren skriver i Swish-meddelandet. Medlemsnummer delas ut först när
-// betalningen bekräftas på /admin.
+// Sparar anmälan som obekräftad (betald IS NULL). Klubben ser betalarens namn
+// i Swish och bekräftar på /admin — först då delas medlemsnummer ut.
 
 async function handleMedlem(request, env) {
   if (!env.DB) {
@@ -75,32 +74,21 @@ async function handleMedlem(request, env) {
     return json({ error: 'Ett fält är för långt.' }, 400);
   }
 
-  // Referensen är slumpad; krockar den med en befintlig (unikt index) provar vi igen.
-  for (let forsok = 0; forsok < 5; forsok++) {
-    const referens = nyReferens();
-    try {
-      await env.DB
-        .prepare(
-          'INSERT INTO medlemmar (fornamn, efternamn, epost, stad, visa_pa_webben, skapad, referens) ' +
-          'VALUES (?, ?, ?, ?, ?, ?, ?)'
-        )
-        .bind(fornamn, efternamn, epost, stad, visa, new Date().toISOString(), referens)
-        .run();
-      // Skicka tillbaka det sparade förnamnet så att rutan visar exakt
-      // det namn som lagrats (inte något som kunde ha ändrats i webbläsaren).
-      return json({ referens, fornamn });
-    } catch (err) {
-      if (String(err && err.message).includes('UNIQUE')) continue;
-      console.error('POST /api/medlem:', err);
-      return json({ error: 'Kunde inte spara just nu. Försök igen.' }, 500);
-    }
+  try {
+    await env.DB
+      .prepare(
+        'INSERT INTO medlemmar (fornamn, efternamn, epost, stad, visa_pa_webben, skapad) ' +
+        'VALUES (?, ?, ?, ?, ?, ?)'
+      )
+      .bind(fornamn, efternamn, epost, stad, visa, new Date().toISOString())
+      .run();
+    // Skicka tillbaka det sparade förnamnet så att rutan visar exakt
+    // det namn som lagrats (inte något som kunde ha ändrats i webbläsaren).
+    return json({ fornamn });
+  } catch (err) {
+    console.error('POST /api/medlem:', err);
+    return json({ error: 'Kunde inte spara just nu. Försök igen.' }, 500);
   }
-  return json({ error: 'Kunde inte spara just nu. Försök igen.' }, 500);
-}
-
-function nyReferens() {
-  const [n] = crypto.getRandomValues(new Uint32Array(1));
-  return 'L-' + String(1000 + (n % 9000));
 }
 
 /* ============ GET /api/medlemmar (publik) ============ */
@@ -151,7 +139,7 @@ async function handleAdmin(request, env, url) {
     const { results } = await env.DB
       .prepare(
         'SELECT nummer, fornamn, efternamn, epost, stad, visa_pa_webben, skapad, ' +
-        'referens, betald, medlemsnummer FROM medlemmar'
+        'betald, medlemsnummer FROM medlemmar'
       )
       .all();
     const rows = results || [];
@@ -288,13 +276,12 @@ function redirect(location) {
 }
 
 function csvResponse(medlemmar, vantar) {
-  const head = ['Medlemsnummer', 'Status', 'Referens', 'Förnamn', 'Efternamn', 'Stad', 'E-post', 'Visa på webben', 'Anmäld', 'Betald'];
+  const head = ['Medlemsnummer', 'Status', 'Förnamn', 'Efternamn', 'Stad', 'E-post', 'Visa på webben', 'Anmäld', 'Betald'];
   const lines = [head.join(',')];
   for (const r of [...medlemmar, ...vantar]) {
     lines.push([
       r.betald ? nr(r.medlemsnummer) : '',
       r.betald ? 'Betald' : 'Väntar på betalning',
-      r.referens,
       r.fornamn,
       r.efternamn,
       r.stad,
@@ -340,8 +327,7 @@ function htmlResponse(medlemmar, vantar, meddelande) {
 
   const vantarRader = vantar.map(r => `
         <tr>
-          <td class="ref">${esc(r.referens)}</td>
-          <td>${esc(r.fornamn)} ${esc(r.efternamn)}</td>
+          <td class="namn">${esc(r.fornamn)} ${esc(r.efternamn)}</td>
           <td>${esc(r.stad)}</td>
           <td><a href="mailto:${esc(r.epost)}">${esc(r.epost)}</a></td>
           <td class="mitt">${visa(r)}</td>
@@ -351,7 +337,7 @@ function htmlResponse(medlemmar, vantar, meddelande) {
               <input type="hidden" name="id" value="${esc(r.nummer)}">
               <button class="btn-ok" type="submit">Bekräfta</button>
             </form>
-            <form method="post" action="/admin/ta-bort" data-fraga="Ta bort anmälan ${esc(r.referens)} från ${esc(r.fornamn)} ${esc(r.efternamn)}?" onsubmit="return confirm(this.dataset.fraga)">
+            <form method="post" action="/admin/ta-bort" data-fraga="Ta bort anmälan från ${esc(r.fornamn)} ${esc(r.efternamn)}?" onsubmit="return confirm(this.dataset.fraga)">
               <input type="hidden" name="id" value="${esc(r.nummer)}">
               <button class="btn-ta-bort" type="submit">Ta bort</button>
             </form>
@@ -365,7 +351,6 @@ function htmlResponse(medlemmar, vantar, meddelande) {
           <td>${esc(r.stad)}</td>
           <td><a href="mailto:${esc(r.epost)}">${esc(r.epost)}</a></td>
           <td class="mitt">${visa(r)}</td>
-          <td class="ref">${esc(r.referens)}</td>
           <td class="mitt">${esc(datum(r.betald))}</td>
         </tr>`).join('');
 
@@ -405,7 +390,7 @@ function htmlResponse(medlemmar, vantar, meddelande) {
   .vantar-tabell th { background:#b45309; }
   tr:last-child td { border-bottom:none; }
   td.nr { font-variant-numeric:tabular-nums; font-weight:700; }
-  td.ref { font-family:ui-monospace,Consolas,monospace; font-weight:700; white-space:nowrap; }
+  td.namn { font-weight:700; }
   td.mitt { text-align:center; }
   td.knappar { white-space:nowrap; }
   td.knappar form { display:inline; }
@@ -433,13 +418,13 @@ function htmlResponse(medlemmar, vantar, meddelande) {
     </div>
 
     <h2>Väntar på betalning</h2>
-    <p class="hjalp">Hitta referensen i Swish-meddelandet och tryck Bekräfta. Äldst överst. Obekräftade anmälningar rensas efter ${RENSA_EFTER_DAGAR} dagar.</p>
+    <p class="hjalp">Jämför namnen med betalningarna i Swish och tryck Bekräfta. Äldst överst. Obekräftade anmälningar rensas efter ${RENSA_EFTER_DAGAR} dagar.</p>
     <div class="table-scroll">
       <table class="vantar-tabell">
         <thead>
-          <tr><th>Referens</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Anmäld</th><th></th></tr>
+          <tr><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Anmäld</th><th></th></tr>
         </thead>
-        <tbody>${vantar.length ? vantarRader : '<tr><td colspan="7" class="tomt">Inga anmälningar väntar.</td></tr>'}</tbody>
+        <tbody>${vantar.length ? vantarRader : '<tr><td colspan="6" class="tomt">Inga anmälningar väntar.</td></tr>'}</tbody>
       </table>
     </div>
 
@@ -451,9 +436,9 @@ function htmlResponse(medlemmar, vantar, meddelande) {
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Nr</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Referens</th><th>Betald</th></tr>
+          <tr><th>Nr</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Betald</th></tr>
         </thead>
-        <tbody>${medlemmar.length ? medlemRader : '<tr><td colspan="7" class="tomt">Inga stödmedlemmar ännu.</td></tr>'}</tbody>
+        <tbody>${medlemmar.length ? medlemRader : '<tr><td colspan="6" class="tomt">Inga stödmedlemmar ännu.</td></tr>'}</tbody>
       </table>
     </div>
   </div>

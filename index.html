@@ -527,14 +527,6 @@
     font-weight: 700; color: var(--navy); font-size: 1rem;
     margin-bottom: 1rem; text-align: center;
   }
-  .medlem-nummer {
-    display: flex; flex-direction: column; gap: 0.25rem; text-align: center;
-    background: var(--gray-50); border: 1px solid var(--gray-100);
-    border-radius: 12px; padding: 1rem; margin: 0 0 1.25rem;
-    color: var(--gray-700); font-size: 0.8rem;
-    text-transform: uppercase; letter-spacing: 0.1em;
-  }
-  .medlem-nummer strong { font-size: 2.5rem; color: var(--navy); letter-spacing: 0.05em; }
   .medlem-error {
     background: #fef2f2; color: #b91c1c;
     border: 1px solid #fecaca; border-radius: 8px;
@@ -1002,8 +994,7 @@
 
           <div class="medlem-step" data-step="qr" hidden>
             <h3 id="mTack">Swisha ${belopp} kr</h3>
-            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app och skriv referensen nedan i meddelandet.</p>
-            <div class="medlem-nummer"><span>Skriv i Swish-meddelandet</span><strong id="mReferens">—</strong></div>
+            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app för att betala. Swishar du från någon annans telefon — skriv ditt namn i meddelandet.</p>
             ${nummerRad}
             <div class="medlem-qr">${qrInner}</div>
             <p class="medlem-modal-sub">När vi sett din betalning bekräftar vi ditt stödmedlemskap och du får ditt medlemsnummer.</p>
@@ -1173,7 +1164,6 @@
     const swishaBtn = modal.querySelector('#mSwisha');
     const swishaText = swishaBtn.textContent;
     const errorBox = modal.querySelector('#mError');
-    const referensEl = modal.querySelector('#mReferens');
     const tackEl = modal.querySelector('#mTack');
     const tackText = tackEl.textContent;
     let sparar = false;
@@ -1215,9 +1205,8 @@
       if (e.key === 'Escape' && modal.classList.contains('open')) close();
     });
 
-    // Anmälan sparas som obekräftad redan här; servern svarar med en referens
-    // att skriva i Swish-meddelandet. Medlemsnummer delas ut när betalningen
-    // bekräftas på /admin.
+    // Anmälan sparas som obekräftad redan här. Medlemsnummer delas ut när
+    // betalningen bekräftats på /admin (mot betalarens namn i Swish).
     swishaBtn.addEventListener('click', async () => {
       if (swishaBtn.disabled) return;
       errorBox.hidden = true;
@@ -1238,8 +1227,6 @@
         });
         const out = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(out.error || ('HTTP ' + res.status));
-        if (!out.referens) throw new Error('Inget svar från servern.');
-        referensEl.textContent = out.referens;
         // Visa namnet som servern sparade; faller tillbaka på det inmatade värdet.
         const visatNamn = (out.fornamn || fornamn.value.trim());
         tackEl.textContent = 'Tack ' + visatNamn + '! Swisha ' + tackText.replace(/^Swisha /, '');

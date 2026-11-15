@@ -1,8 +1,7 @@
 # Stödmedlem-flödet — engångsuppsättning i Cloudflare
 
 Formuläret "Bli stödmedlem" på startsidan sparar varje anmälan i en
-Cloudflare **D1**-databas. Besökaren får en referens (t.ex. `L-4827`) att skriva
-i Swish-meddelandet. Anmälan är obekräftad tills någon trycker **Bekräfta** på
+Cloudflare **D1**-databas. Anmälan är obekräftad tills någon trycker **Bekräfta** på
 `/admin` — först då delas ett löpande medlemsnummer ut (001, 002, …) och
 personen syns på Sponsorer-sidan.
 
@@ -27,7 +26,7 @@ Gör stegen nedan i tur och ordning.
 > ALTER TABLE medlemmar ADD COLUMN stad TEXT NOT NULL DEFAULT '';
 > ```
 > (Samma sak finns i filen `migration-add-stad.sql`.) Kör sedan även hela
-> `migration-betalning.sql` (kolumnerna för referens, betalning och
+> `migration-betalning.sql` (kolumnerna för betalning och
 > medlemsnummer). Hoppa över båda om du skapar databasen först nu —
 > `schema.sql` innehåller redan allt.
 
@@ -92,8 +91,9 @@ Webbläsaren frågar efter inloggning:
 
 Sidan har två tabeller:
 
-- **Väntar på betalning** — anmälningar med referens, äldst överst. Leta upp
-  referensen i Swish-meddelandena och tryck **Bekräfta**. Har ingen betalning
+- **Väntar på betalning** — anmälningar, äldst överst. Jämför namnen med
+  betalningarna i Swish (står det ett annat namn — kolla meddelandet) och
+  tryck **Bekräfta**. Har ingen betalning
   kommit: **Ta bort** (eller låt bli — obekräftade anmälningar rensas
   automatiskt efter 30 dagar).
 - **Stödmedlemmar** — de bekräftade, med medlemsnummer och betaldatum, plus
