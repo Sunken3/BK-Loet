@@ -411,7 +411,7 @@
   .stodmedlem-lista {
     max-width: 1000px; margin: 0 auto; list-style: none; padding: 0;
     display: grid; gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
   }
   .stodmedlem-kort {
     display: flex; align-items: center; gap: 1rem;
@@ -433,7 +433,7 @@
   .stodmedlem-namn {
     font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem;
     color: var(--navy); letter-spacing: 0.02em; line-height: 1.1;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    overflow-wrap: anywhere; /* långa namn bryts till en ny rad i stället för att klippas */
   }
   .stodmedlem-stad {
     color: var(--gray-500); font-size: 0.85rem; margin-top: 0.15rem;
