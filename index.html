@@ -369,6 +369,33 @@
     justify-content: center; align-items: stretch;
     flex-wrap: wrap; margin-bottom: 3rem;
   }
+  /* Rullande lista över stödmedlemmar under korten */
+  .stod-ticker { max-width: 1040px; margin: 0 auto; text-align: center; }
+  .stod-ticker-label {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 0.9rem;
+  }
+  .stod-ticker-band {
+    overflow: hidden; background: var(--white);
+    border: 1px solid var(--gray-100); border-radius: 999px; padding: 0.85rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+  .stod-ticker-track {
+    display: flex; width: max-content;
+    animation: stodRulla var(--stod-tid, 40s) linear infinite;
+  }
+  .stod-ticker-band:hover .stod-ticker-track { animation-play-state: paused; }
+  .stod-ticker-item {
+    display: inline-flex; align-items: baseline; gap: 0.45rem;
+    padding: 0 1.75rem; white-space: nowrap; color: var(--navy); font-weight: 600;
+    border-right: 1px solid var(--gray-100);
+  }
+  .stod-ticker-item .nr { color: var(--blue); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .stod-ticker-item .stad { color: var(--gray-500); font-weight: 400; font-size: 0.9em; }
+  @keyframes stodRulla { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .stod-ticker-stilla { border-radius: 16px; -webkit-mask-image: none; mask-image: none; }
+  .stod-ticker-stilla .stod-ticker-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; row-gap: 0.5rem; }
   .membership-card {
     background: var(--white); border: 2px solid var(--gray-100);
     border-radius: 20px; padding: 3rem 2.75rem;
@@ -957,6 +984,7 @@
             <p class="section-subtitle">Stöd en klubb med historia — och få något tillbaka. Ditt bidrag håller bowlingen levande i Luleå.</p>
           </div>
           <div class="membership-grid">${cards}${sponsorCard}</div>
+          <div class="stod-ticker" id="stodTicker" hidden></div>
         </div>
       </section>`;
   }
@@ -1278,6 +1306,41 @@
       </div>`;
   }
 
+  // Fyller den rullande listan under korten. Visar bara bekräftade stödmedlemmar
+  // som godkänt att synas (samma lista som Sponsorer-sidan). Inga medlemmar
+  // eller ett fel → listan förblir dold.
+  async function loadStodTicker() {
+    const el = document.getElementById('stodTicker');
+    if (!el) return;
+    let lista = [];
+    try {
+      const res = await fetch('/api/medlemmar?v=' + Date.now());
+      if (res.ok) lista = await res.json();
+    } catch (e) { return; }
+    if (!Array.isArray(lista) || !lista.length) return;
+
+    const item = m => `<span class="stod-ticker-item"><span class="nr">${escapeHtml(m.medlemsnummer)}</span>${escapeHtml(m.fornamn)} ${escapeHtml(m.efternamn)}${m.stad ? ` <span class="stad">${escapeHtml(m.stad)}</span>` : ''}</span>`;
+    // Upprepa listan så att bandet alltid är bredare än skärmen, och lägg sedan
+    // en dold kopia efter så att animeringen (−50 %) går runt utan skarv.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Ingen rörelse: visa listan en gång, stilla och radbruten.
+      el.innerHTML = `<div class="stod-ticker-label">Tack till våra stödmedlemmar</div>
+        <div class="stod-ticker-band stod-ticker-stilla"><div class="stod-ticker-track">${lista.map(item).join('')}</div></div>`;
+      el.hidden = false;
+      return;
+    }
+    let varv = lista.map(item).join('');
+    let antal = lista.length;
+    while (antal < 12) { varv += lista.map(item).join(''); antal += lista.length; }
+    el.style.setProperty('--stod-tid', Math.max(20, antal * 3.5) + 's');
+    el.innerHTML = `
+      <div class="stod-ticker-label">Tack till våra stödmedlemmar</div>
+      <div class="stod-ticker-band">
+        <div class="stod-ticker-track"><div style="display:flex">${varv}</div><div style="display:flex" aria-hidden="true">${varv}</div></div>
+      </div>`;
+    el.hidden = false;
+  }
+
   async function init() {
     try {
       const res = await fetch('data.json?v=' + Date.now()); // ?v=... förhindrar cache
@@ -1297,6 +1360,7 @@
 
       attachInteractivity();
       attachMembershipModal();
+      loadStodTicker();
 
       if (window.location.hash) {
         const target = document.querySelector(window.location.hash);
