@@ -391,7 +391,7 @@
     padding: 0 1.75rem; white-space: nowrap; color: var(--navy); font-weight: 600;
     border-right: 1px solid var(--gray-100);
   }
-  .stod-ticker-item .nr { color: var(--blue); font-weight: 800; font-variant-numeric: tabular-nums; }
+  .stod-ticker-item .nr { color: #d4a20c; font-weight: 800; font-variant-numeric: tabular-nums; }
   .stod-ticker-item .stad { color: var(--gray-500); font-weight: 400; font-size: 0.9em; }
   @keyframes stodRulla { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .stod-ticker-stilla { border-radius: 16px; -webkit-mask-image: none; mask-image: none; }
@@ -1332,7 +1332,7 @@
     let varv = lista.map(item).join('');
     let antal = lista.length;
     while (antal < 12) { varv += lista.map(item).join(''); antal += lista.length; }
-    el.style.setProperty('--stod-tid', Math.max(20, antal * 3.5) + 's');
+    el.style.setProperty('--stod-tid', Math.max(30, antal * 5.5) + 's');
     el.innerHTML = `
       <div class="stod-ticker-label">Tack till våra stödmedlemmar</div>
       <div class="stod-ticker-band">
