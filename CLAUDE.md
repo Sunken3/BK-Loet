@@ -13,7 +13,7 @@ python3 -m http.server 8000
 
 ## Architecture
 
-The site itself is a zero-dependency static site (no build step, no framework, no package manager). The one exception is the stödmedlem sign-up flow, which is served by a Cloudflare **Worker** (`worker/index.js`, config in `wrangler.jsonc`) with a **D1** database. The Worker serves the static files via its `ASSETS` binding and adds two dynamic routes (see below). Note: this is deployed as a **Worker with static assets** (URL ends in `.workers.dev`), NOT Cloudflare Pages — so `functions/`-style Pages Functions do **not** apply here.
+The site itself is a zero-dependency static site (no build step, no framework, no package manager). The one exception is the stödmedlem sign-up flow, which is served by a Cloudflare **Worker** (`worker/index.js`, config in `wrangler.jsonc`) with a **D1** database. The Worker serves the static files via its `ASSETS` binding and adds two dynamic routes (see below). Note: this is deployed as a **Worker with static assets** (custom domain `bkloet.com`, also reachable at `.workers.dev`), NOT Cloudflare Pages — so `functions/`-style Pages Functions do **not** apply here.
 
 - **`data.json`** is the single source of truth for all content. Every text, number, and list on the page is read from here.
 - **`index.html`** fetches `data.json` at runtime and renders the entire page via plain JavaScript (`init()` → `render*()` functions). The HTML body contains only `<div id="app">` — everything else is injected by JS.
@@ -163,7 +163,7 @@ above the score link to the club's page (`club-detail?seasonId=…&clubId=…&ac
 ## Deployment
 
 The site is published via **Cloudflare Pages** connected to the GitHub repo **Sunken3/BK-Loet**.  
-Live URL: `bkloet.anton-sandberg99.workers.dev`
+Live URL: **`bkloet.com`** (also `www.bkloet.com`; same Worker as `bkloet.anton-sandberg99.workers.dev`). Printed material must use `bkloet.com` — e.g. the poster QR `images/stodmedlem-qr.{svg,png}` points to `https://bkloet.com/?stodmedlem`, which opens the stödmedlem form directly.
 
 Workflow: push/merge to `main` on GitHub → Cloudflare Pages redeploys automatically within ~30 seconds. No manual deploy step needed.
 
