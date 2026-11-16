@@ -514,6 +514,13 @@
     background: var(--gray-100); color: var(--gray-500);
     box-shadow: none; cursor: not-allowed;
   }
+  .medlem-swish-app { display: none; text-decoration: none; text-align: center; margin-bottom: 1.25rem; }
+  .medlem-mobil { display: none; }
+  @media (hover: none) and (pointer: coarse) {
+    .medlem-swish-app { display: block; }
+    .medlem-mobil { display: block; }
+    .medlem-dator, .medlem-step .medlem-qr { display: none; }
+  }
   .medlem-qr {
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
@@ -956,6 +963,9 @@
     const qrBild = swish.qr_bild ? escapeHtml(swish.qr_bild) : '';
     const nummerRad = swish.nummer
       ? `<div class="medlem-swish-nummer">Swish: ${escapeHtml(swish.nummer)}</div>` : '';
+    const swishNr = String(swish.nummer || '').replace(/D/g, '');
+    const swishApp = swishNr
+      ? `<a class="medlem-swish-btn medlem-swish-app" id="mSwishApp" data-nr="${swishNr}" data-belopp="${belopp}" href="https://app.swish.nu/1/p/sw/?sw=${swishNr}&amp;amt=${belopp}&amp;cur=SEK&amp;msg=&amp;src=qr">Swisha</a>` : '';
     const qrInner = qrBild
       ? `<img src="${qrBild}" alt="Swish QR-kod" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'QR-koden läggs till inom kort.'}))">`
       : `<span>QR-koden läggs till inom kort.</span>`;
@@ -994,7 +1004,9 @@
 
           <div class="medlem-step" data-step="qr" hidden>
             <h3 id="mTack">Tack!</h3>
-            <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app för att betala.</p>
+            <p class="medlem-modal-sub medlem-dator">Skanna QR-koden med din Swish-app för att betala.</p>
+            <p class="medlem-modal-sub medlem-mobil">Tryck på Swisha för att betala ${belopp} kr i Swish-appen.</p>
+            ${swishApp}
             ${nummerRad}
             <div class="medlem-qr">${qrInner}</div>
             <p class="medlem-modal-sub">När vi sett din betalning bekräftar vi ditt stödmedlemskap och du får ditt medlemsnummer.</p>
@@ -1230,6 +1242,12 @@
         // Visa namnet som servern sparade; faller tillbaka på det inmatade värdet.
         const visatNamn = (out.fornamn || fornamn.value.trim());
         tackEl.textContent = 'Tack ' + visatNamn + '!';
+        const appBtn = modal.querySelector('#mSwishApp');
+        if (appBtn) {
+          const msg = ('Stödmedlem ' + fornamn.value.trim() + ' ' + efternamn.value.trim()).slice(0, 50);
+          appBtn.href = 'https://app.swish.nu/1/p/sw/?sw=' + appBtn.dataset.nr + '&amt=' + encodeURIComponent(appBtn.dataset.belopp)
+            + '&cur=SEK&msg=' + encodeURIComponent(msg) + '&src=qr';
+        }
         showStep('qr');
       } catch (err) {
         errorBox.textContent = 'Något gick fel: ' + err.message + ' Försök igen eller kontakta klubben.';
