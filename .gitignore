@@ -8,3 +8,6 @@ images/_original/
 .wrangler/
 .dev.vars
 node_modules/
+
+# Originalet till diplommallen (worker/diplom/mall.pdf) — repot är publikt
+BK_LOET_Diplom.pdf

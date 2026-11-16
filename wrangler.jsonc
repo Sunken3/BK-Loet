@@ -12,6 +12,12 @@
     "binding": "ASSETS"
   },
 
+  // Diplommallen och typsnittet (worker/diplom/) buntas in i Workern som binärdata,
+  // så att de inte behöver ligga bland de publika statiska filerna.
+  "rules": [
+    { "type": "Data", "globs": ["**/*.pdf", "**/*.ttf"], "fallthrough": true }
+  ],
+
   // Databasen för stödmedlemmar. Klistra in din Database ID här efter att du
   // skapat D1-databasen (se MEDLEMSKAP-SETUP.md, steg 1).
   "d1_databases": [

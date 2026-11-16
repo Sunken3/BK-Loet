@@ -6,9 +6,12 @@
 //   GET  /admin             → lösenordsskyddad lista över anmälningar och medlemmar (+ CSV)
 //   POST /admin/bekrafta    → markerar en anmälan som betald och delar ut medlemsnummer
 //   POST /admin/ta-bort     → tar bort en obekräftad anmälan
+//   GET  /admin/diplom?id=  → laddar ner en bekräftad medlems ifyllda diplom (PDF)
 //
 // Statiska filer matchas automatiskt först; bara rutter utan matchande fil
 // (som /api/medlem och /admin) når koden nedan.
+
+import { skapaDiplom } from './diplom.js';
 
 // Obekräftade anmälningar äldre än så här rensas bort när /admin öppnas.
 const RENSA_EFTER_DAGAR = 30;
@@ -30,6 +33,11 @@ export default {
     if (url.pathname === '/admin') {
       if (request.method !== 'GET') return textResponse('Method Not Allowed', 405);
       return handleAdmin(request, env, url);
+    }
+
+    if (url.pathname === '/admin/diplom') {
+      if (request.method !== 'GET') return textResponse('Method Not Allowed', 405);
+      return handleDiplom(request, env, url);
     }
 
     if (url.pathname === '/admin/bekrafta' || url.pathname === '/admin/ta-bort') {
@@ -149,7 +157,9 @@ async function handleAdmin(request, env, url) {
     if (url.searchParams.get('export') === 'csv') {
       return csvResponse(medlemmar, vantar);
     }
-    return htmlResponse(medlemmar, vantar, url.searchParams.get('meddelande'));
+    const diplomId = parseInt(url.searchParams.get('diplom'), 10);
+    const diplomFor = Number.isInteger(diplomId) ? medlemmar.find(r => r.nummer === diplomId) : null;
+    return htmlResponse(medlemmar, vantar, url.searchParams.get('meddelande'), diplomFor);
   } catch (err) {
     console.error('GET /admin:', err);
     return textResponse(
@@ -190,7 +200,8 @@ async function handleAdminAction(request, env, url) {
         )
         .bind(new Date().toISOString(), id)
         .run();
-      return redirect('/admin?meddelande=' + (res.meta.changes ? 'bekraftad' : 'fel'));
+      // Efter en lyckad bekräftelse laddar /admin ner diplomet direkt.
+      return redirect(res.meta.changes ? '/admin?meddelande=bekraftad&diplom=' + id : '/admin?meddelande=fel');
     }
 
     const res = await env.DB
@@ -202,6 +213,51 @@ async function handleAdminAction(request, env, url) {
     console.error(url.pathname + ':', err);
     return redirect('/admin?meddelande=fel');
   }
+}
+
+/* ============ GET /admin/diplom ============ */
+
+async function handleDiplom(request, env, url) {
+  if (!authOk(request, env)) return authRequired();
+  if (!env.DB) return textResponse('Databasen är inte konfigurerad ännu.', 500);
+
+  const id = parseInt(url.searchParams.get('id'), 10);
+  if (!Number.isInteger(id)) return textResponse('Ogiltigt id.', 400);
+
+  try {
+    const r = await env.DB
+      .prepare('SELECT fornamn, efternamn, medlemsnummer, betald FROM medlemmar WHERE nummer = ? AND betald IS NOT NULL')
+      .bind(id)
+      .first();
+    if (!r) return textResponse('Ingen bekräftad stödmedlem med det id:t.', 404);
+
+    const pdf = await skapaDiplom({
+      fornamn: r.fornamn,
+      efternamn: r.efternamn,
+      medlemsnummer: r.medlemsnummer,
+      ar: arIStockholm(r.betald)
+    });
+    const filnamn = `Diplom ${nr(r.medlemsnummer)} ${r.fornamn} ${r.efternamn}.pdf`.replace(/[\\/:*?"<>|\r\n]+/g, '');
+    // Reservnamn utan åäö för äldre webbläsare (filename* används annars).
+    const ascii = filnamn.normalize('NFD').replace(/[^\x20-\x7e]/g, '');
+    return new Response(pdf, {
+      headers: {
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename="${ascii}"; filename*=UTF-8''${encodeURIComponent(filnamn)}`,
+        'Cache-Control': 'no-store'
+      }
+    });
+  } catch (err) {
+    console.error('GET /admin/diplom:', err);
+    return textResponse('Kunde inte skapa diplomet: ' + (err && err.message), 500);
+  }
+}
+
+// Medlemsåret är året betalningen bekräftades, i svensk tid.
+function arIStockholm(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return new Date().getFullYear();
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm', year: 'numeric' }).format(d);
 }
 
 function sammaUrsprung(request, url) {
@@ -321,7 +377,7 @@ const MEDDELANDEN = {
   fel: { klass: 'fel', text: 'Det gick inte — anmälan kan redan vara bekräftad eller borttagen. Ladda om sidan.' }
 };
 
-function htmlResponse(medlemmar, vantar, meddelande) {
+function htmlResponse(medlemmar, vantar, meddelande, diplomFor) {
   const visaAntal = medlemmar.filter(r => r.visa_pa_webben).length;
   const visa = r => r.visa_pa_webben ? '<span class="ja">Ja</span>' : '<span class="nej">Nej</span>';
 
@@ -352,10 +408,20 @@ function htmlResponse(medlemmar, vantar, meddelande) {
           <td><a href="mailto:${esc(r.epost)}">${esc(r.epost)}</a></td>
           <td class="mitt">${visa(r)}</td>
           <td class="mitt">${esc(datum(r.betald))}</td>
+          <td class="mitt"><a class="diplom" href="/admin/diplom?id=${esc(r.nummer)}">Diplom</a></td>
         </tr>`).join('');
 
   const m = MEDDELANDEN[meddelande];
   const banner = m ? `<div class="banner ${m.klass}">${esc(m.text)}</div>` : '';
+  // Direkt efter Bekräfta: ladda ner diplomet och ta bort parametrarna ur
+  // adressen, så att en omladdning inte laddar ner det igen.
+  const diplomLank = diplomFor ? '/admin/diplom?id=' + diplomFor.nummer : '';
+  const diplomBanner = diplomFor
+    ? `<div class="banner ok">Diplomet för ${esc(diplomFor.fornamn)} ${esc(diplomFor.efternamn)} laddas ner. Kom det inte? <a href="${diplomLank}">Ladda ner diplomet</a>.</div>`
+    : '';
+  const diplomSkript = diplomFor
+    ? `<script>history.replaceState(null, '', '/admin'); location.href = '${diplomLank}';</script>`
+    : '';
 
   const html = `<!DOCTYPE html>
 <html lang="sv">
@@ -404,6 +470,7 @@ function htmlResponse(medlemmar, vantar, meddelande) {
   .tomt { text-align:center; color:var(--muted); padding:2rem; }
   a { color:var(--navy); }
   .table-scroll { overflow-x:auto; }
+  a.diplom { font-weight:600; font-size:0.85rem; }
 </style>
 </head>
 <body>
@@ -411,6 +478,7 @@ function htmlResponse(medlemmar, vantar, meddelande) {
     <h1>Stödmedlemmar</h1>
     <p class="sub">BK Loet — anmälningar via webben. Stäm av mot Swish och bekräfta de som betalat.</p>
     ${banner}
+    ${diplomBanner}
     <div class="stats">
       <div class="stat vantar"><b>${vantar.length}</b><span>Väntar på betalning</span></div>
       <div class="stat"><b>${medlemmar.length}</b><span>Stödmedlemmar</span></div>
@@ -436,12 +504,13 @@ function htmlResponse(medlemmar, vantar, meddelande) {
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Nr</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Betald</th></tr>
+          <tr><th>Nr</th><th>Namn</th><th>Stad</th><th>E-post</th><th>Visa på webben</th><th>Betald</th><th>Diplom</th></tr>
         </thead>
-        <tbody>${medlemmar.length ? medlemRader : '<tr><td colspan="6" class="tomt">Inga stödmedlemmar ännu.</td></tr>'}</tbody>
+        <tbody>${medlemmar.length ? medlemRader : '<tr><td colspan="7" class="tomt">Inga stödmedlemmar ännu.</td></tr>'}</tbody>
       </table>
     </div>
   </div>
+  ${diplomSkript}
 </body>
 </html>`;
 
