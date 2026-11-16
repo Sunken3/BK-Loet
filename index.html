@@ -928,7 +928,7 @@
         <div class="membership-card${m.featured ? ' featured' : ''}">
           <div class="membership-title">${escapeHtml(m.titel)}</div>
           <div class="membership-price">${escapeHtml(m.pris)}<span> kr</span></div>
-          <div class="membership-period">${escapeHtml(m.period)}</div>
+          ${m.period ? `<div class="membership-period">${escapeHtml(m.period)}</div>` : ''}
           ${ingress}
           <ul class="membership-features">${features}</ul>
           <button type="button" class="${btnClass}">${btnLabel}</button>
