@@ -371,6 +371,13 @@ function esc(str) {
     .replace(/'/g, '&#39;');
 }
 
+// Text att klistra in i mejlet när diplomet skickas ut (visas med Kopiera-knapp på /admin).
+const DIPLOM_MEJL =
+  'BK Loet vill personligen tacka dig för ditt stöd till vår bowlingförening. ' +
+  'Bifogat ser du ditt diplom som du med stolthet kan hänga upp i hemmet eller på jobbet!\n\n' +
+  'Stödmedlemskapet med tillhörande medlemsnummer gäller för säsongen 26/27 och kommer ' +
+  'synas på hemsidan 1 år från och med betalningsdagen.';
+
 const MEDDELANDEN = {
   bekraftad: { klass: 'ok', text: 'Betalningen är bekräftad och medlemmen har fått sitt nummer.' },
   borttagen: { klass: 'ok', text: 'Anmälan är borttagen.' },
@@ -470,6 +477,11 @@ function htmlResponse(medlemmar, vantar, meddelande, diplomFor) {
   .tomt { text-align:center; color:var(--muted); padding:2rem; }
   a { color:var(--navy); }
   .table-scroll { overflow-x:auto; }
+  .mejltext { background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem 1.25rem; margin-bottom:1rem; }
+  .mejltext-head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:0.5rem; }
+  .mejltext p { margin:0; white-space:pre-line; font-size:0.9rem; line-height:1.5; }
+  .btn-kopiera { border:0; border-radius:6px; padding:0.4rem 0.9rem; font-weight:600; font-size:0.8rem; cursor:pointer; font-family:inherit; background:var(--navy); color:#fff; }
+  .btn-kopiera:hover { background:#12306e; }
   a.diplom { font-weight:600; font-size:0.85rem; }
 </style>
 </head>
@@ -501,6 +513,13 @@ function htmlResponse(medlemmar, vantar, meddelande, diplomFor) {
     <div class="toolbar">
       <a class="btn" href="/admin?export=csv">⬇ Exportera CSV</a>
     </div>
+    <div class="mejltext">
+      <div class="mejltext-head">
+        <b>Text till mejlet med diplomet</b>
+        <button type="button" class="btn-kopiera" id="kopiera">Kopiera</button>
+      </div>
+      <p id="mejltext">${esc(DIPLOM_MEJL)}</p>
+    </div>
     <div class="table-scroll">
       <table>
         <thead>
@@ -511,6 +530,21 @@ function htmlResponse(medlemmar, vantar, meddelande, diplomFor) {
     </div>
   </div>
   ${diplomSkript}
+  <script>
+    document.getElementById('kopiera').addEventListener('click', async function () {
+      const text = document.getElementById('mejltext').innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        this.textContent = 'Kopierat!';
+      } catch {
+        const r = document.createRange();
+        r.selectNodeContents(document.getElementById('mejltext'));
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        this.textContent = 'Markerat – tryck Ctrl+C';
+      }
+      setTimeout(() => { this.textContent = 'Kopiera'; }, 2000);
+    });
+  </script>
 </body>
 </html>`;
 
