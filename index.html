@@ -1245,6 +1245,12 @@
 
     [fornamn, efternamn, epost, stad].forEach(el => el.addEventListener('input', validate));
     document.querySelectorAll('.js-bli-stodmedlem').forEach(b => b.addEventListener('click', open));
+
+    // Direktlänk (QR-koden på affischen): /?stodmedlem öppnar formuläret direkt.
+    if (new URLSearchParams(location.search).has('stodmedlem')) {
+      document.getElementById('medlem')?.scrollIntoView();
+      open();
+    }
     modal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', close));
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && modal.classList.contains('open')) close();
