@@ -993,7 +993,7 @@
           </div>
 
           <div class="medlem-step" data-step="qr" hidden>
-            <h3 id="mTack">Swisha ${belopp} kr</h3>
+            <h3 id="mTack">Tack!</h3>
             <p class="medlem-modal-sub">Skanna QR-koden med din Swish-app för att betala.</p>
             ${nummerRad}
             <div class="medlem-qr">${qrInner}</div>
@@ -1229,7 +1229,7 @@
         if (!res.ok) throw new Error(out.error || ('HTTP ' + res.status));
         // Visa namnet som servern sparade; faller tillbaka på det inmatade värdet.
         const visatNamn = (out.fornamn || fornamn.value.trim());
-        tackEl.textContent = 'Tack ' + visatNamn + '! Swisha ' + tackText.replace(/^Swisha /, '');
+        tackEl.textContent = 'Tack ' + visatNamn + '!';
         showStep('qr');
       } catch (err) {
         errorBox.textContent = 'Något gick fel: ' + err.message + ' Försök igen eller kontakta klubben.';
