@@ -413,8 +413,7 @@
     display: grid; gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr));
   }
-  /* Sprakande guldram: en roterande guldgradient (::before) maskad till en ram,
-     med glitterprickar (::after) som blinkar ovanpå. */
+  /* Sprakande guldram: en roterande guldgradient (::before) maskad till en ram. */
   @property --guld-vinkel { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
   .stodmedlem-kort {
     position: relative; isolation: isolate;
@@ -425,8 +424,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
     animation: guld-glod 3s ease-in-out infinite;
   }
-  .stodmedlem-kort::before,
-  .stodmedlem-kort::after {
+  .stodmedlem-kort::before {
     content: ''; position: absolute; inset: 0; border-radius: inherit;
     padding: 2px; pointer-events: none;
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -439,31 +437,9 @@
       #8a6212, #d4a017, #ffe9a0, #fffdf3, #ffe9a0, #b8860b, #8a6212);
     animation: guld-snurr 4s linear infinite;
   }
-  .stodmedlem-kort::after {
-    padding: 3px; inset: -1px;
-    background:
-      radial-gradient(circle, #fff 0 1px, transparent 1.6px) 0 0 / 23px 17px,
-      radial-gradient(circle, #fff7cc 0 1px, transparent 1.6px) 9px 5px / 31px 13px,
-      radial-gradient(circle, #fff 0 0.8px, transparent 1.4px) 4px 11px / 17px 29px;
-    filter: drop-shadow(0 0 2px #ffe680);
-    animation: guld-glitter 1.6s steps(1) infinite, guld-glitter-flytt 7s linear infinite;
-  }
   .stodmedlem-kort:nth-child(3n+2)::before { animation-delay: -1.3s; }
   .stodmedlem-kort:nth-child(3n)::before   { animation-delay: -2.7s; }
-  .stodmedlem-kort:nth-child(2n)::after    { animation-delay: -0.5s, -3s; }
-  .stodmedlem-kort:nth-child(3n)::after    { animation-delay: -1.1s, -5s; }
   @keyframes guld-snurr { to { --guld-vinkel: 360deg; } }
-  @keyframes guld-glitter {
-    0%   { opacity: 1; }
-    20%  { opacity: 0.35; }
-    35%  { opacity: 0.9; }
-    55%  { opacity: 0.15; }
-    70%  { opacity: 1; }
-    85%  { opacity: 0.5; }
-  }
-  @keyframes guld-glitter-flytt {
-    to { background-position: 46px 34px, 71px 31px, 38px 69px; }
-  }
   @keyframes guld-glod {
     50% { box-shadow: 0 4px 16px rgba(10, 31, 77, 0.05), 0 0 18px rgba(232, 184, 48, 0.45); }
   }
@@ -472,7 +448,7 @@
     box-shadow: 0 10px 24px rgba(10, 31, 77, 0.1), 0 0 22px rgba(232, 184, 48, 0.55);
   }
   @media (prefers-reduced-motion: reduce) {
-    .stodmedlem-kort, .stodmedlem-kort::before, .stodmedlem-kort::after { animation: none; }
+    .stodmedlem-kort, .stodmedlem-kort::before { animation: none; }
   }
   .stodmedlem-kort[hidden] { display: none; }
   .stodmedlem-nr {
