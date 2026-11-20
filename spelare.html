@@ -69,6 +69,9 @@
     font-weight: 500; font-size: 0.9rem; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--blue); }
+  .nav-links a { white-space: nowrap; }
+  /* Mindre luft mellan länkarna precis ovanför mobilmenyn, så att allt ryms på en rad. */
+  @media (max-width: 1200px) { .nav-links { gap: 1.25rem; } }
   .nav-links a.active { color: var(--blue); }
   .nav-cta {
     background: var(--navy); color: var(--white) !important;
@@ -358,6 +361,7 @@
             <li><a href="index.html">Startsida</a></li>
             <li><a href="spelare.html" class="active">Våra spelare</a></li>
             <li><a href="sponsorer.html">Sponsorer</a></li>
+            <li><a href="sponsorer.html#stodmedlemmar">Stödmedlemmar</a></li>
             <li><a href="tabell.html">Tabell</a></li>
             <li><a href="index.html#medlem" class="nav-cta-gold">Bli stödmedlem</a></li>
             <li><a href="index.html#kontakt" class="nav-cta">Kontakta oss</a></li>
