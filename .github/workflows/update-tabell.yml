@@ -70,12 +70,12 @@ jobs:
       - name: Committa om något ändrats
         if: steps.tid.outputs.kor == 'ja'
         run: |
-          if git diff --quiet data.json matcher.json; then
+          if git diff --quiet data.json matcher.json tabeller.json; then
             echo "Inget nytt från BITS — ingen commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json matcher.json
+          git add data.json matcher.json tabeller.json
           git commit -m "Uppdatera tabell, matcher och spelarsiffror från BITS"
           git push

@@ -1,0 +1,1090 @@
+{
+  "titel": "Nordallsvenskan",
+  "saesonger": [
+    {
+      "saesongId": 2025,
+      "saesong": "Säsong 2025/26",
+      "streck": [
+        1,
+        6,
+        8
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 16,
+          "vinster": 11,
+          "oavgjorda": 2,
+          "forluster": 3,
+          "skillnad": "+104",
+          "poang": 24
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 16,
+          "vinster": 8,
+          "oavgjorda": 2,
+          "forluster": 6,
+          "skillnad": "+2",
+          "poang": 18
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 16,
+          "vinster": 7,
+          "oavgjorda": 4,
+          "forluster": 5,
+          "skillnad": "-5",
+          "poang": 18
+        },
+        {
+          "namn": "BK Saiwa",
+          "matcher": 16,
+          "vinster": 7,
+          "oavgjorda": 3,
+          "forluster": 6,
+          "skillnad": "+21",
+          "poang": 17
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 16,
+          "vinster": 7,
+          "oavgjorda": 2,
+          "forluster": 7,
+          "skillnad": "-7",
+          "poang": 16
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 16,
+          "vinster": 8,
+          "oavgjorda": 0,
+          "forluster": 8,
+          "skillnad": "-43",
+          "poang": 16
+        },
+        {
+          "namn": "Jonsta BK",
+          "matcher": 16,
+          "vinster": 5,
+          "oavgjorda": 5,
+          "forluster": 6,
+          "skillnad": "-11",
+          "poang": 15
+        },
+        {
+          "namn": "BK Loet",
+          "matcher": 16,
+          "vinster": 5,
+          "oavgjorda": 3,
+          "forluster": 8,
+          "skillnad": "-5",
+          "poang": 13
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 16,
+          "vinster": 3,
+          "oavgjorda": 1,
+          "forluster": 12,
+          "skillnad": "-56",
+          "poang": 7
+        }
+      ]
+    },
+    {
+      "saesongId": 2024,
+      "saesong": "Säsong 2024/25",
+      "streck": [
+        1,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 21,
+          "vinster": 15,
+          "oavgjorda": 0,
+          "forluster": 6,
+          "skillnad": "+102",
+          "poang": 30
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 21,
+          "vinster": 14,
+          "oavgjorda": 1,
+          "forluster": 6,
+          "skillnad": "+45",
+          "poang": 29
+        },
+        {
+          "namn": "BK Loet",
+          "matcher": 21,
+          "vinster": 12,
+          "oavgjorda": 0,
+          "forluster": 9,
+          "skillnad": "+20",
+          "poang": 24
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 21,
+          "vinster": 9,
+          "oavgjorda": 3,
+          "forluster": 9,
+          "skillnad": "+8",
+          "poang": 21
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 21,
+          "vinster": 8,
+          "oavgjorda": 3,
+          "forluster": 10,
+          "skillnad": "-17",
+          "poang": 19
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 21,
+          "vinster": 8,
+          "oavgjorda": 2,
+          "forluster": 11,
+          "skillnad": "-9",
+          "poang": 18
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 21,
+          "vinster": 7,
+          "oavgjorda": 1,
+          "forluster": 13,
+          "skillnad": "-68",
+          "poang": 15
+        },
+        {
+          "namn": "Junsele BK",
+          "matcher": 21,
+          "vinster": 5,
+          "oavgjorda": 2,
+          "forluster": 14,
+          "skillnad": "-81",
+          "poang": 12
+        }
+      ]
+    },
+    {
+      "saesongId": 2023,
+      "saesong": "Säsong 2023/24",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS",
+          "matcher": 21,
+          "vinster": 19,
+          "oavgjorda": 0,
+          "forluster": 2,
+          "skillnad": "+144",
+          "poang": 38
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 21,
+          "vinster": 16,
+          "oavgjorda": 2,
+          "forluster": 3,
+          "skillnad": "+107",
+          "poang": 34
+        },
+        {
+          "namn": "BK Loet",
+          "matcher": 21,
+          "vinster": 11,
+          "oavgjorda": 2,
+          "forluster": 8,
+          "skillnad": "+23",
+          "poang": 24
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 21,
+          "vinster": 12,
+          "oavgjorda": 0,
+          "forluster": 9,
+          "skillnad": "+18",
+          "poang": 24
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 21,
+          "vinster": 8,
+          "oavgjorda": 1,
+          "forluster": 12,
+          "skillnad": "-38",
+          "poang": 17
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 21,
+          "vinster": 6,
+          "oavgjorda": 1,
+          "forluster": 14,
+          "skillnad": "-90",
+          "poang": 13
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 21,
+          "vinster": 5,
+          "oavgjorda": 2,
+          "forluster": 14,
+          "skillnad": "-54",
+          "poang": 12
+        },
+        {
+          "namn": "Junsele BK",
+          "matcher": 21,
+          "vinster": 2,
+          "oavgjorda": 2,
+          "forluster": 17,
+          "skillnad": "-110",
+          "poang": 6
+        }
+      ]
+    },
+    {
+      "saesongId": 2022,
+      "saesong": "Säsong 2022/23",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS",
+          "matcher": 18,
+          "vinster": 16,
+          "oavgjorda": 1,
+          "forluster": 1,
+          "skillnad": "+154",
+          "poang": 33
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 18,
+          "vinster": 14,
+          "oavgjorda": 1,
+          "forluster": 3,
+          "skillnad": "+76",
+          "poang": 29
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 18,
+          "vinster": 8,
+          "oavgjorda": 1,
+          "forluster": 9,
+          "skillnad": "+4",
+          "poang": 17
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 18,
+          "vinster": 8,
+          "oavgjorda": 0,
+          "forluster": 10,
+          "skillnad": "-46",
+          "poang": 16
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 18,
+          "vinster": 6,
+          "oavgjorda": 1,
+          "forluster": 11,
+          "skillnad": "-33",
+          "poang": 13
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 18,
+          "vinster": 3,
+          "oavgjorda": 3,
+          "forluster": 12,
+          "skillnad": "-77",
+          "poang": 9
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 18,
+          "vinster": 4,
+          "oavgjorda": 1,
+          "forluster": 13,
+          "skillnad": "-78",
+          "poang": 9
+        }
+      ]
+    },
+    {
+      "saesongId": 2021,
+      "saesong": "Säsong 2021/22",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 21,
+          "vinster": 13,
+          "oavgjorda": 2,
+          "forluster": 6,
+          "skillnad": "+79",
+          "poang": 28
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 21,
+          "vinster": 11,
+          "oavgjorda": 3,
+          "forluster": 7,
+          "skillnad": "+34",
+          "poang": 25
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 21,
+          "vinster": 10,
+          "oavgjorda": 2,
+          "forluster": 9,
+          "skillnad": "0",
+          "poang": 22
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 21,
+          "vinster": 11,
+          "oavgjorda": 0,
+          "forluster": 10,
+          "skillnad": "-15",
+          "poang": 22
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 21,
+          "vinster": 8,
+          "oavgjorda": 5,
+          "forluster": 8,
+          "skillnad": "+7",
+          "poang": 21
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 21,
+          "vinster": 9,
+          "oavgjorda": 1,
+          "forluster": 11,
+          "skillnad": "-32",
+          "poang": 19
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 21,
+          "vinster": 7,
+          "oavgjorda": 3,
+          "forluster": 11,
+          "skillnad": "-14",
+          "poang": 17
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 21,
+          "vinster": 7,
+          "oavgjorda": 0,
+          "forluster": 14,
+          "skillnad": "-59",
+          "poang": 14
+        }
+      ]
+    },
+    {
+      "saesongId": 2020,
+      "saesong": "Säsong 2020/21",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS F",
+          "matcher": 4,
+          "vinster": 4,
+          "oavgjorda": 0,
+          "forluster": 0,
+          "skillnad": "+21",
+          "poang": 8
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 3,
+          "vinster": 3,
+          "oavgjorda": 0,
+          "forluster": 0,
+          "skillnad": "+30",
+          "poang": 6
+        },
+        {
+          "namn": "BK Fjällräven",
+          "matcher": 7,
+          "vinster": 3,
+          "oavgjorda": 0,
+          "forluster": 4,
+          "skillnad": "-22",
+          "poang": 6
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 3,
+          "vinster": 2,
+          "oavgjorda": 0,
+          "forluster": 1,
+          "skillnad": "+18",
+          "poang": 4
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 3,
+          "vinster": 2,
+          "oavgjorda": 0,
+          "forluster": 1,
+          "skillnad": "+16",
+          "poang": 4
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 4,
+          "vinster": 2,
+          "oavgjorda": 0,
+          "forluster": 2,
+          "skillnad": "+6",
+          "poang": 4
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 5,
+          "vinster": 1,
+          "oavgjorda": 0,
+          "forluster": 4,
+          "skillnad": "-22",
+          "poang": 2
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 5,
+          "vinster": 0,
+          "oavgjorda": 0,
+          "forluster": 5,
+          "skillnad": "-47",
+          "poang": 0
+        }
+      ]
+    },
+    {
+      "saesongId": 2019,
+      "saesong": "Säsong 2019/20",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 16,
+          "vinster": 15,
+          "oavgjorda": 0,
+          "forluster": 1,
+          "skillnad": "+110",
+          "poang": 30
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 16,
+          "vinster": 9,
+          "oavgjorda": 3,
+          "forluster": 4,
+          "skillnad": "+26",
+          "poang": 21
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 16,
+          "vinster": 8,
+          "oavgjorda": 3,
+          "forluster": 5,
+          "skillnad": "+17",
+          "poang": 19
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 16,
+          "vinster": 7,
+          "oavgjorda": 4,
+          "forluster": 5,
+          "skillnad": "+32",
+          "poang": 18
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 16,
+          "vinster": 8,
+          "oavgjorda": 1,
+          "forluster": 7,
+          "skillnad": "+17",
+          "poang": 17
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 16,
+          "vinster": 5,
+          "oavgjorda": 1,
+          "forluster": 10,
+          "skillnad": "-28",
+          "poang": 11
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 16,
+          "vinster": 3,
+          "oavgjorda": 2,
+          "forluster": 11,
+          "skillnad": "-73",
+          "poang": 8
+        },
+        {
+          "namn": "Jonsta BK",
+          "matcher": 16,
+          "vinster": 1,
+          "oavgjorda": 2,
+          "forluster": 13,
+          "skillnad": "-101",
+          "poang": 4
+        }
+      ]
+    },
+    {
+      "saesongId": 2018,
+      "saesong": "Säsong 2018/19",
+      "streck": [
+        3,
+        5
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS",
+          "matcher": 21,
+          "vinster": 19,
+          "oavgjorda": 0,
+          "forluster": 2,
+          "skillnad": "+227",
+          "poang": 38
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 21,
+          "vinster": 14,
+          "oavgjorda": 2,
+          "forluster": 5,
+          "skillnad": "+98",
+          "poang": 30
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 21,
+          "vinster": 12,
+          "oavgjorda": 0,
+          "forluster": 9,
+          "skillnad": "+3",
+          "poang": 24
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 21,
+          "vinster": 10,
+          "oavgjorda": 2,
+          "forluster": 9,
+          "skillnad": "0",
+          "poang": 22
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 21,
+          "vinster": 8,
+          "oavgjorda": 2,
+          "forluster": 11,
+          "skillnad": "-25",
+          "poang": 18
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 21,
+          "vinster": 7,
+          "oavgjorda": 0,
+          "forluster": 14,
+          "skillnad": "-71",
+          "poang": 14
+        },
+        {
+          "namn": "BK Loet",
+          "matcher": 21,
+          "vinster": 6,
+          "oavgjorda": 0,
+          "forluster": 15,
+          "skillnad": "-102",
+          "poang": 12
+        },
+        {
+          "namn": "Jonsta BK",
+          "matcher": 21,
+          "vinster": 5,
+          "oavgjorda": 0,
+          "forluster": 16,
+          "skillnad": "-130",
+          "poang": 10
+        }
+      ]
+    },
+    {
+      "saesongId": 2017,
+      "saesong": "Säsong 2017/18",
+      "streck": [
+        3,
+        6,
+        9
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 20,
+          "vinster": 13,
+          "oavgjorda": 2,
+          "forluster": 5,
+          "skillnad": "+134",
+          "poang": 28
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 20,
+          "vinster": 12,
+          "oavgjorda": 2,
+          "forluster": 6,
+          "skillnad": "+34",
+          "poang": 26
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 20,
+          "vinster": 12,
+          "oavgjorda": 1,
+          "forluster": 7,
+          "skillnad": "+51",
+          "poang": 25
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 20,
+          "vinster": 11,
+          "oavgjorda": 3,
+          "forluster": 6,
+          "skillnad": "+36",
+          "poang": 25
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 20,
+          "vinster": 11,
+          "oavgjorda": 1,
+          "forluster": 8,
+          "skillnad": "+36",
+          "poang": 23
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 20,
+          "vinster": 9,
+          "oavgjorda": 3,
+          "forluster": 8,
+          "skillnad": "-2",
+          "poang": 21
+        },
+        {
+          "namn": "Jonsta BK",
+          "matcher": 20,
+          "vinster": 10,
+          "oavgjorda": 0,
+          "forluster": 10,
+          "skillnad": "-18",
+          "poang": 20
+        },
+        {
+          "namn": "BK Loet",
+          "matcher": 20,
+          "vinster": 8,
+          "oavgjorda": 0,
+          "forluster": 12,
+          "skillnad": "-49",
+          "poang": 16
+        },
+        {
+          "namn": "BK Ripan",
+          "matcher": 20,
+          "vinster": 6,
+          "oavgjorda": 1,
+          "forluster": 13,
+          "skillnad": "-51",
+          "poang": 13
+        },
+        {
+          "namn": "Domsjö IF BK",
+          "matcher": 20,
+          "vinster": 6,
+          "oavgjorda": 0,
+          "forluster": 14,
+          "skillnad": "-69",
+          "poang": 12
+        },
+        {
+          "namn": "Kiruna AIF",
+          "matcher": 20,
+          "vinster": 4,
+          "oavgjorda": 3,
+          "forluster": 13,
+          "skillnad": "-102",
+          "poang": 11
+        }
+      ]
+    },
+    {
+      "saesongId": 2016,
+      "saesong": "Säsong 2016/17",
+      "streck": [
+        3
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 15,
+          "vinster": 12,
+          "oavgjorda": 2,
+          "forluster": 1,
+          "skillnad": "+118",
+          "poang": 26
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 15,
+          "vinster": 7,
+          "oavgjorda": 3,
+          "forluster": 5,
+          "skillnad": "+39",
+          "poang": 17
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 15,
+          "vinster": 8,
+          "oavgjorda": 1,
+          "forluster": 6,
+          "skillnad": "-8",
+          "poang": 17
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 15,
+          "vinster": 6,
+          "oavgjorda": 3,
+          "forluster": 6,
+          "skillnad": "-3",
+          "poang": 15
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 15,
+          "vinster": 3,
+          "oavgjorda": 2,
+          "forluster": 10,
+          "skillnad": "-76",
+          "poang": 8
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 15,
+          "vinster": 3,
+          "oavgjorda": 1,
+          "forluster": 11,
+          "skillnad": "-70",
+          "poang": 7
+        }
+      ]
+    },
+    {
+      "saesongId": 2015,
+      "saesong": "Säsong 2015/16",
+      "streck": [
+        3
+      ],
+      "lag": [
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 15,
+          "vinster": 11,
+          "oavgjorda": 1,
+          "forluster": 3,
+          "skillnad": "+77",
+          "poang": 23
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 15,
+          "vinster": 9,
+          "oavgjorda": 3,
+          "forluster": 3,
+          "skillnad": "+74",
+          "poang": 21
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 15,
+          "vinster": 8,
+          "oavgjorda": 3,
+          "forluster": 4,
+          "skillnad": "+42",
+          "poang": 19
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 15,
+          "vinster": 6,
+          "oavgjorda": 2,
+          "forluster": 7,
+          "skillnad": "-10",
+          "poang": 14
+        },
+        {
+          "namn": "BK 65",
+          "matcher": 15,
+          "vinster": 2,
+          "oavgjorda": 3,
+          "forluster": 10,
+          "skillnad": "-94",
+          "poang": 7
+        },
+        {
+          "namn": "Jonsta BK",
+          "matcher": 15,
+          "vinster": 2,
+          "oavgjorda": 2,
+          "forluster": 11,
+          "skillnad": "-89",
+          "poang": 6
+        }
+      ]
+    },
+    {
+      "saesongId": 2014,
+      "saesong": "Säsong 2014/15",
+      "streck": [
+        1,
+        3
+      ],
+      "lag": [
+        {
+          "namn": "BK Flash",
+          "matcher": 15,
+          "vinster": 13,
+          "oavgjorda": 1,
+          "forluster": 1,
+          "skillnad": "+92",
+          "poang": 27
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 15,
+          "vinster": 11,
+          "oavgjorda": 1,
+          "forluster": 3,
+          "skillnad": "+89",
+          "poang": 23
+        },
+        {
+          "namn": "Bodens BS F",
+          "matcher": 15,
+          "vinster": 8,
+          "oavgjorda": 2,
+          "forluster": 5,
+          "skillnad": "+2",
+          "poang": 18
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 15,
+          "vinster": 5,
+          "oavgjorda": 1,
+          "forluster": 9,
+          "skillnad": "-29",
+          "poang": 11
+        },
+        {
+          "namn": "Piteå BK",
+          "matcher": 15,
+          "vinster": 3,
+          "oavgjorda": 2,
+          "forluster": 10,
+          "skillnad": "-67",
+          "poang": 8
+        },
+        {
+          "namn": "Vilhelmina IK",
+          "matcher": 15,
+          "vinster": 1,
+          "oavgjorda": 1,
+          "forluster": 13,
+          "skillnad": "-87",
+          "poang": 3
+        }
+      ]
+    },
+    {
+      "saesongId": 2013,
+      "saesong": "Säsong 2013/14",
+      "streck": [
+        1,
+        3
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS",
+          "matcher": 15,
+          "vinster": 12,
+          "oavgjorda": 1,
+          "forluster": 2,
+          "skillnad": "+101",
+          "poang": 25
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 15,
+          "vinster": 11,
+          "oavgjorda": 2,
+          "forluster": 2,
+          "skillnad": "+72",
+          "poang": 24
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 15,
+          "vinster": 6,
+          "oavgjorda": 1,
+          "forluster": 8,
+          "skillnad": "-33",
+          "poang": 13
+        },
+        {
+          "namn": "BK Prana",
+          "matcher": 15,
+          "vinster": 4,
+          "oavgjorda": 2,
+          "forluster": 9,
+          "skillnad": "-47",
+          "poang": 10
+        },
+        {
+          "namn": "BK 65",
+          "matcher": 15,
+          "vinster": 5,
+          "oavgjorda": 0,
+          "forluster": 10,
+          "skillnad": "-50",
+          "poang": 10
+        },
+        {
+          "namn": "Team Thorengruppen",
+          "matcher": 15,
+          "vinster": 3,
+          "oavgjorda": 2,
+          "forluster": 10,
+          "skillnad": "-43",
+          "poang": 8
+        }
+      ]
+    },
+    {
+      "saesongId": 2012,
+      "saesong": "Säsong 2012/13",
+      "streck": [
+        1,
+        3
+      ],
+      "lag": [
+        {
+          "namn": "Bodens BS",
+          "matcher": 15,
+          "vinster": 12,
+          "oavgjorda": 2,
+          "forluster": 1,
+          "skillnad": "+68",
+          "poang": 26
+        },
+        {
+          "namn": "BK Flash",
+          "matcher": 15,
+          "vinster": 9,
+          "oavgjorda": 2,
+          "forluster": 4,
+          "skillnad": "+59",
+          "poang": 20
+        },
+        {
+          "namn": "Kiruna AIF",
+          "matcher": 15,
+          "vinster": 8,
+          "oavgjorda": 0,
+          "forluster": 7,
+          "skillnad": "-12",
+          "poang": 16
+        },
+        {
+          "namn": "Umeå IK BF",
+          "matcher": 15,
+          "vinster": 6,
+          "oavgjorda": 2,
+          "forluster": 7,
+          "skillnad": "+6",
+          "poang": 14
+        },
+        {
+          "namn": "Team Thorengruppen",
+          "matcher": 15,
+          "vinster": 5,
+          "oavgjorda": 0,
+          "forluster": 10,
+          "skillnad": "-25",
+          "poang": 10
+        },
+        {
+          "namn": "Grand Hotel Lapland BK",
+          "matcher": 15,
+          "vinster": 2,
+          "oavgjorda": 0,
+          "forluster": 13,
+          "skillnad": "-96",
+          "poang": 4
+        }
+      ]
+    }
+  ]
+}

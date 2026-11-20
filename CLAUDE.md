@@ -75,6 +75,21 @@ through a real browser.
   season). The script refuses to write if BITS returns an empty table. `kvalplatser` is set by hand —
   BITS says nothing about it.
 
+**Earlier seasons — `tabeller.json`.** The same script also maintains `tabeller.json`: the final
+tables of Nordallsvenskan from `FIRST_ARCHIVE_SEASON` (2012 — BITS has division 2 back to 2010, but
+2010/11 and 2011/12 hold 15–18 teams and look like a merged league) up to `SEASON_ID − 1`, newest
+first, each with `saesongId`, `saesong`, `streck` (positions BITS draws a line under) and `lag`. A
+finished season never changes, so only missing seasons are fetched — after a `SEASON_ID` bump the
+season that just ended is added automatically. Don't hand-edit it.
+
+`tabell.html` fetches `tabeller.json` next to `data.json` and shows a season picker
+(`renderSaesongVal` / `attachSaesongVal`): a column left of the table on desktop, a grid of buttons
+under the table on mobile (≤ 968 px). The current season (`data.json` → `tabell`) is listed first
+and is the only one with clickable teams (match modal — `matcher.json` covers only this season) and
+the coloured kval lines; older seasons get grey lines at `streck`. A gold dot marks seasons BK Loet
+played in. The choice is linkable as `tabell.html?saesong=2017`. If `tabeller.json` is missing the
+page shows just the current table, without a picker.
+
 **`.github/workflows/update-tabell.yml`** runs the script every Sunday at 18:00 Swedish time and
 commits the result. GitHub crons run in UTC, so two schedules (16:00 and 17:00 UTC) are registered and
 the workflow skips any run that starts before 18:00 in Sweden — that keeps the time right across the DST
@@ -84,7 +99,7 @@ are harmless: the scripts write nothing when nothing changed. Can also be run by
 *Settings → Actions → General → Workflow permissions* to be set to **Read and write permissions**.
 
 The same workflow also runs **`scripts/update-matcher.js`** and **`scripts/update-spelare.js`** (both
-below) and commits `data.json` and `matcher.json` together.
+below) and commits `data.json`, `matcher.json` and `tabeller.json` together.
 
 ## Player stats update themselves
 

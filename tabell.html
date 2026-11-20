@@ -149,9 +149,11 @@
     color: #111827;
   }
   .league-table td:not(:first-child):not(:nth-child(2)) { text-align: center; }
-  .league-table tbody tr:nth-child(1) td { border-bottom: 3px solid #16a34a; }
-  .league-table tbody tr:nth-child(6) td { border-bottom: 3px solid #f59e0b; }
-  .league-table tbody tr:nth-child(8) td { border-bottom: 3px solid #dc2626; }
+  .league-table.aktuell tbody tr:nth-child(1) td { border-bottom: 3px solid #16a34a; }
+  .league-table.aktuell tbody tr:nth-child(6) td { border-bottom: 3px solid #f59e0b; }
+  .league-table.aktuell tbody tr:nth-child(8) td { border-bottom: 3px solid #dc2626; }
+  /* Äldre säsonger: strecken där BITS drar dem, i neutral färg. */
+  .league-table tbody tr.streck td { border-bottom: 3px solid #9ca3af; }
   .league-table tbody tr:nth-child(even) { background: #f9fafb; }
   .league-table tbody tr:hover { background: #f3f4f6; }
   .league-table tbody tr.our-team { background: rgba(245, 197, 24, 0.12); }
@@ -174,6 +176,53 @@
     text-align: center; margin-top: 1.5rem;
     color: #6b7280; font-size: 0.85rem;
   }
+
+  /* ============ SÄSONGSVAL ============ */
+  /* Dator: säsongerna i en kolumn till vänster om tabellen.
+     Mobil: under tabellen (se @media nedan). */
+  .tabell-layout {
+    display: grid; grid-template-columns: 200px minmax(0, 900px);
+    gap: 2rem; justify-content: center; align-items: start;
+  }
+  .tabell-layout.utan-val { grid-template-columns: minmax(0, 900px); }
+  .tabell-huvud { min-width: 0; scroll-margin-top: 90px; }
+  .tabell-huvud .table-wrapper { max-width: none; }
+  .saesong-val {
+    position: sticky; top: 97px;
+    background: #ffffff; border: 1px solid #d1d5db; border-radius: 8px;
+    overflow: hidden;
+  }
+  .saesong-val-titel {
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.05em;
+    color: #111827; padding: 1rem 1.25rem 0.85rem;
+    background: #f9fafb; border-bottom: 2px solid #d1d5db;
+  }
+  .saesong-lista { list-style: none; padding: 0.4rem; display: flex; flex-direction: column; gap: 2px; }
+  .saesong-knapp {
+    width: 100%; display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.55rem 0.85rem; border: 0; border-radius: 6px;
+    background: none; font: inherit; font-size: 0.9rem; color: #374151;
+    text-align: left; cursor: pointer;
+  }
+  .saesong-knapp:hover { background: #f3f4f6; color: #111827; }
+  .saesong-knapp:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .saesong-knapp.vald { background: var(--navy); color: var(--white); font-weight: 600; }
+  .saesong-knapp .pagaende {
+    font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #16a34a; font-weight: 700;
+  }
+  .saesong-knapp.vald .pagaende { color: var(--gold-soft); }
+  /* Guldprick = BK Loet spelade i serien den säsongen. */
+  .loet-prick {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--gold);
+    margin-left: auto; flex-shrink: 0;
+  }
+  .saesong-val-not {
+    display: flex; align-items: center; gap: 0.45rem;
+    padding: 0.7rem 1.25rem; border-top: 1px solid #e5e7eb;
+    font-size: 0.75rem; color: #6b7280;
+  }
+  .saesong-val-not .loet-prick { margin-left: 0; }
 
   /* ============ MATCHER (modal) ============ */
   .team-btn {
@@ -361,6 +410,17 @@
     }
     .nav-links.open { transform: translateY(0); }
     .nav-toggle { display: block; }
+
+    /* Säsongsvalet hamnar under tabellen, som rutnät av knappar. */
+    .tabell-layout, .tabell-layout.utan-val { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .saesong-val { position: static; order: 2; }
+    .saesong-lista {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
+      gap: 0.35rem; padding: 0.6rem;
+    }
+    .saesong-knapp { border: 1px solid #e5e7eb; justify-content: center; padding: 0.6rem 0.5rem; flex-wrap: wrap; gap: 0.3rem; }
+    .saesong-knapp.vald { border-color: var(--navy); }
+    .loet-prick { margin-left: 0; }
   }
   .table-scroll-wrapper {
     overflow-x: auto;
@@ -464,17 +524,34 @@
       </footer>`;
   }
 
-  function renderTable(data) {
-    const rows = data.tabell.lag.map((lag, i) => {
+  // "Säsong 2025/26" -> "2025/26"
+  function kortSaesong(s) { return String(s || '').replace(/^Säsong\s*/i, ''); }
+
+  // Säsongerna som går att välja: den pågående (data.json) först, sedan
+  // sluttabellerna i tabeller.json, nyast först.
+  function byggSaesonger(data, arkiv) {
+    const aktuell = { ...data.tabell, nyckel: 'aktuell', aktuell: true };
+    const gamla = (arkiv && Array.isArray(arkiv.saesonger) ? arkiv.saesonger : [])
+      .map(s => ({ ...s, titel: arkiv.titel || data.tabell.titel, nyckel: String(s.saesongId), aktuell: false }));
+    return [aktuell, ...gamla];
+  }
+
+  // En tabell. Den pågående säsongen har klickbara lag (matcher.json gäller bara
+  // den), kvalplatsfärger och uppdateringsdatum; äldre säsonger är sluttabeller.
+  function renderTabellInnehall(t, klubbNamn) {
+    const streck = new Set(t.streck || []);
+    const rows = t.lag.map((lag, i) => {
       const pos = i + 1;
-      const isOurs = lag.namn === data.klubb.namn;
-      const inPromotion = pos <= data.tabell.kvalplatser;
-      const indicator = inPromotion ? '<span class="promotion-indicator"></span>' : '';
+      const isOurs = lag.namn === klubbNamn;
+      const klasser = [isOurs && 'our-team', !t.aktuell && streck.has(pos) && 'streck'].filter(Boolean).join(' ');
+      const namn = t.aktuell
+        ? `<button type="button" class="team-btn js-lag" data-lag="${escapeHtml(lag.namn)}"
+                aria-label="Visa matcher för ${escapeHtml(lag.namn)}">${escapeHtml(lag.namn)}</button>`
+        : escapeHtml(lag.namn);
       return `
-        <tr class="${isOurs ? 'our-team' : ''}">
-          <td class="position-cell">${indicator}${pos}</td>
-          <td><button type="button" class="team-btn js-lag" data-lag="${escapeHtml(lag.namn)}"
-                aria-label="Visa matcher för ${escapeHtml(lag.namn)}">${escapeHtml(lag.namn)}</button></td>
+        <tr class="${klasser}">
+          <td class="position-cell">${pos}</td>
+          <td>${namn}</td>
           <td>${lag.matcher}</td>
           <td>${lag.vinster}</td>
           <td>${lag.oavgjorda}</td>
@@ -484,27 +561,90 @@
         </tr>`;
     }).join('');
 
+    const forklaring = 'M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng';
+    const legend = t.aktuell
+      ? `<div class="legend-item"><span class="legend-dot"></span> Kvalplats till Elitserien</div>
+         <div class="legend-item">${forklaring}</div>
+         <div class="legend-item">Klicka på ett lag för att se deras matcher</div>`
+      : `<div class="legend-item">${forklaring}</div>`;
+    const bitsLank = `<a href="https://bits.swebowl.se/seriespel" target="_blank" rel="noopener" style="color:#6b7280;text-decoration:underline;">bits.swebowl.se</a>`;
+    const kalla = t.aktuell
+      ? `Tabellen uppdaterad: ${escapeHtml(t.uppdaterad)} · ${bitsLank}`
+      : `Sluttabell · källa: ${bitsLank}`;
+
+    return `
+      <div class="table-scroll-wrapper"><div class="table-wrapper">
+        <div class="table-header">
+          <div class="table-title">${escapeHtml(t.titel)}</div>
+          <div class="table-season">${escapeHtml(t.saesong)}${t.aktuell ? '' : ' · Sluttabell'}</div>
+        </div>
+        <table class="league-table${t.aktuell ? ' aktuell' : ''}">
+          <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <div class="table-legend">${legend}</div>
+      </div></div>
+      <div class="table-disclaimer">${kalla}</div>`;
+  }
+
+  function renderSaesongVal(saesonger, valdNyckel, klubbNamn) {
+    const knappar = saesonger.map(s => {
+      const loet = s.lag.some(l => l.namn === klubbNamn);
+      const vald = s.nyckel === valdNyckel;
+      return `
+        <li><button type="button" class="saesong-knapp js-saesong${vald ? ' vald' : ''}" data-saesong="${escapeHtml(s.nyckel)}"
+              ${vald ? 'aria-current="true"' : ''}>
+          <span>${escapeHtml(kortSaesong(s.saesong))}</span>
+          ${s.aktuell ? '<span class="pagaende">Pågår</span>' : ''}
+          ${loet ? `<span class="loet-prick" title="${escapeHtml(klubbNamn)} spelade i serien"></span>` : ''}
+        </button></li>`;
+    }).join('');
+    return `
+      <nav class="saesong-val" aria-label="Välj säsong">
+        <div class="saesong-val-titel">${escapeHtml(saesonger[0].titel)}</div>
+        <ul class="saesong-lista">${knappar}</ul>
+        <div class="saesong-val-not"><span class="loet-prick"></span> ${escapeHtml(klubbNamn)} med i serien</div>
+      </nav>`;
+  }
+
+  function renderTable(data, saesonger, valdNyckel) {
+    const vald = saesonger.find(s => s.nyckel === valdNyckel) || saesonger[0];
+    const medVal = saesonger.length > 1;
     return `
       <section id="tabell">
         <div class="container">
-          <div class="table-scroll-wrapper"><div class="table-wrapper">
-            <div class="table-header">
-              <div class="table-title">${escapeHtml(data.tabell.titel)}</div>
-              <div class="table-season">${escapeHtml(data.tabell.saesong)}</div>
-            </div>
-            <table class="league-table">
-              <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
-              <tbody>${rows}</tbody>
-            </table>
-            <div class="table-legend">
-              <div class="legend-item"><span class="legend-dot"></span> Kvalplats till Elitserien</div>
-              <div class="legend-item">M = Matcher · V = Vunna · O = Oavgjorda · F = Förlorade · P = Poäng</div>
-              <div class="legend-item">Klicka på ett lag för att se deras matcher</div>
-            </div>
-          </div></div>
-          <div class="table-disclaimer">Tabellen uppdaterad: ${escapeHtml(data.tabell.uppdaterad)} · <a href="https://bits.swebowl.se/seriespel" target="_blank" rel="noopener" style="color:#6b7280;text-decoration:underline;">bits.swebowl.se</a></div>
+          <div class="tabell-layout${medVal ? '' : ' utan-val'}">
+            ${medVal ? renderSaesongVal(saesonger, vald.nyckel, data.klubb.namn) : ''}
+            <div class="tabell-huvud" id="tabellHuvud">${renderTabellInnehall(vald, data.klubb.namn)}</div>
+          </div>
         </div>
       </section>`;
+  }
+
+  function attachSaesongVal(data, saesonger) {
+    const huvud = document.getElementById('tabellHuvud');
+    document.querySelectorAll('.js-saesong').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const s = saesonger.find(x => x.nyckel === btn.dataset.saesong);
+        if (!s) return;
+        huvud.innerHTML = renderTabellInnehall(s, data.klubb.namn);
+        document.querySelectorAll('.js-saesong').forEach(b => {
+          const ar = b === btn;
+          b.classList.toggle('vald', ar);
+          if (ar) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+        });
+        // Länkbar säsong: ?saesong=2025. Den pågående har ren URL.
+        const url = new URL(location.href);
+        if (s.aktuell) url.searchParams.delete('saesong'); else url.searchParams.set('saesong', s.nyckel);
+        history.replaceState(null, '', url);
+        // På mobil ligger valet under tabellen — visa den nya tabellen.
+        // Nästa frame: annars avbryter scroll-ankringen (tabellen byter höjd)
+        // den mjuka scrollningen innan den hunnit börja.
+        if (window.matchMedia('(max-width: 968px)').matches) {
+          requestAnimationFrame(() => huvud.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+        }
+      });
+    });
   }
 
   function renderMatchModal() {
@@ -706,11 +846,12 @@
     // Vilket lag modalen öppnades från — används av "tillbaka".
     let aktivtLag = null;
 
-    document.querySelectorAll('.js-lag').forEach(btn => {
-      btn.addEventListener('click', () => {
-        aktivtLag = btn.dataset.lag;
-        visaLag(aktivtLag);
-      });
+    // Delegerat, eftersom tabellen byggs om när man byter säsong.
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.js-lag');
+      if (!btn) return;
+      aktivtLag = btn.dataset.lag;
+      visaLag(aktivtLag);
     });
 
     bodyEl.addEventListener('click', (e) => {
@@ -739,9 +880,16 @@
 
   async function init() {
     try {
+      // tabeller.json (äldre säsonger) hämtas parallellt. Saknas den visas bara
+      // den pågående säsongen, utan säsongsval.
+      const arkivLaddning = fetch('tabeller.json?v=' + Date.now())
+        .then(r => (r.ok ? r.json() : null))
+        .catch(() => null);
       const res = await fetch('data.json?v=' + Date.now());
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
+      const saesonger = byggSaesonger(data, await arkivLaddning);
+      const valdNyckel = new URLSearchParams(location.search).get('saesong') || 'aktuell';
 
       document.title = `Tabell — ${data.klubb.namn}`;
 
@@ -751,11 +899,12 @@
           <span class="section-eyebrow">${escapeHtml(data.klubb.serie)}</span>
           <h1>Tabellen</h1>
         </div>` +
-        renderTable(data) +
+        renderTable(data, saesonger, valdNyckel) +
         renderFooter(data) +
         renderMatchModal();
 
       attachMatchModal();
+      attachSaesongVal(data, saesonger);
 
       const toggle = document.getElementById('navToggle');
       const links = document.getElementById('navLinks');
