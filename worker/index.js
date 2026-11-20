@@ -102,16 +102,20 @@ async function handleMedlem(request, env) {
 /* ============ GET /api/medlemmar (publik) ============ */
 // Öppen lista som sponsorsidan hämtar. Returnerar ENDAST bekräftade medlemmar
 // som kryssat i att de vill synas — och bara namn, stad och nummer (aldrig e-post).
+// `antal` är det totala antalet bekräftade medlemmar, även de som inte vill synas.
 
 async function handleMedlemmar(request, env) {
-  if (!env.DB) return jsonNoStore([]);
+  if (!env.DB) return jsonNoStore({ antal: 0, medlemmar: [] });
   try {
-    const { results } = await env.DB
-      .prepare(
+    const [lista, total] = await env.DB.batch([
+      env.DB.prepare(
         'SELECT medlemsnummer, fornamn, efternamn, stad FROM medlemmar ' +
         'WHERE betald IS NOT NULL AND visa_pa_webben = 1 ORDER BY medlemsnummer ASC'
-      )
-      .all();
+      ),
+      env.DB.prepare('SELECT COUNT(*) AS antal FROM medlemmar WHERE betald IS NOT NULL')
+    ]);
+    const results = lista.results;
+    const antal = Number(total.results?.[0]?.antal) || 0;
     const list = (results || []).map(r => ({
       nummer: r.medlemsnummer,
       medlemsnummer: nr(r.medlemsnummer),
@@ -119,7 +123,7 @@ async function handleMedlemmar(request, env) {
       efternamn: r.efternamn,
       stad: r.stad || ''
     }));
-    return jsonNoStore(list);
+    return jsonNoStore({ antal: Math.max(antal, list.length), medlemmar: list });
   } catch (err) {
     // Sponsorsidan visar en tom lista vid fel, men felet ska synas i loggen
     // och som 500 — inte döljas som en tom lista.

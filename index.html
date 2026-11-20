@@ -1321,7 +1321,10 @@
     let lista = [];
     try {
       const res = await fetch('/api/medlemmar?v=' + Date.now());
-      if (res.ok) lista = await res.json();
+      if (res.ok) {
+        const svar = await res.json();
+        lista = Array.isArray(svar) ? svar : (svar.medlemmar || []);
+      }
     } catch (e) { return; }
     if (!Array.isArray(lista) || !lista.length) return;
 
