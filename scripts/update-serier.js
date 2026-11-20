@@ -18,7 +18,7 @@
  * Files:
  *   tabeller/index.json   { saesonger: [{ saesongId, saesong, pagaende, antal }] }, newest first
  *   tabeller/2025.json    { saesongId, saesong, pagaende, uppdaterad, serier: [
- *                            { divisionId, namn, grupp, streck, lag: [...] } ] }
+ *                            { divisionId, namn, grupp, streck, lag: [{ namn, lagId, klubbId, … }] } ] }
  */
 
 const fs = require('fs');
@@ -78,6 +78,9 @@ async function fetchStandings(divisionId, seasonId) {
     const diff = Number(r.standingsDiff) || 0;
     return {
       namn: r.standingsTeamName,
+      // For the team's page on BITS (seriespel?…&clubId=…&teamId=…).
+      lagId: r.standingsTeamId,
+      klubbId: r.clubTeamClubId,
       matcher: r.standingsMatches,
       vinster: r.standingsWin,
       oavgjorda: r.standingsDraw,
@@ -136,7 +139,9 @@ async function main() {
     const existing = readJson(fileFor(id));
     // A finished season is fetched once. One stored while it was still running
     // is fetched one last time, so the file ends up holding the final table.
-    if (existing && !isCurrent && !existing.pagaende) continue;
+    // Files saved before lagId/klubbId were stored are refetched once.
+    const harIds = existing && existing.serier.every((s) => s.lag.every((l) => 'lagId' in l));
+    if (existing && !isCurrent && !existing.pagaende && harIds) continue;
 
     const season = await fetchSeason(id, isCurrent);
     console.log(`${season.saesong}: ${season.serier.length} serier`);

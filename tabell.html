@@ -594,10 +594,19 @@
       const pos = i + 1;
       const isOurs = lag.namn === klubbNamn;
       const klasser = [isOurs && 'our-team', !t.aktuell && streck.has(pos) && 'streck'].filter(Boolean).join(' ');
+      // Övriga serier: lagnamnet länkar till lagets sida på BITS.
+      const bitsLag = t.divisionId && lag.lagId && lag.klubbId
+        ? 'https://bits.swebowl.se/seriespel?seasonId=' + encodeURIComponent(t.saesongId) +
+          '&clubId=' + encodeURIComponent(lag.klubbId) + '&teamId=' + encodeURIComponent(lag.lagId) +
+          '&divisionId=' + encodeURIComponent(t.divisionId) + '&showTeamDivisionTable=true&showTeamDetails=true'
+        : null;
       const namn = t.aktuell
         ? `<button type="button" class="team-btn js-lag" data-lag="${escapeHtml(lag.namn)}"
                 aria-label="Visa matcher för ${escapeHtml(lag.namn)}">${escapeHtml(lag.namn)}</button>`
-        : escapeHtml(lag.namn);
+        : bitsLag
+          ? `<a class="team-btn" href="${escapeHtml(bitsLag)}" target="_blank" rel="noopener"
+                title="${escapeHtml(lag.namn)} på BITS">${escapeHtml(lag.namn)}</a>`
+          : escapeHtml(lag.namn);
       return `
         <tr class="${klasser}">
           <td class="position-cell">${pos}</td>
@@ -791,6 +800,8 @@
         pagaende: saesong.pagaende,
         streck: serie.streck,
         lag: serie.lag,
+        saesongId: saesong.saesongId,
+        divisionId: serie.divisionId,
         aktuell: false
       }, klubb);
       renderVal(saesong, serie);

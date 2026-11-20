@@ -111,6 +111,9 @@ every Div 2, from 2012/13 on. They come from **`scripts/update-serier.js`** — 
 - In the page (`attachOvriga`): a season `<select>` and the leagues grouped by level, left of the
   table on desktop (scrolls on its own) and under it on mobile. A gold dot marks leagues BK Loet
   played in. Linkable as `tabell.html?flik=ovriga&saesong=2025&serie=1`.
+- Each team carries `lagId` (`standingsTeamId`) and `klubbId` (`clubTeamClubId`); the team name links
+  to `bits.swebowl.se/seriespel?seasonId=…&clubId=…&teamId=…&divisionId=…&showTeamDivisionTable=true&showTeamDetails=true`
+  (new tab). Season files without `lagId` are refetched once.
 
 **`.github/workflows/update-tabell.yml`** runs the script every Sunday at 18:00 Swedish time and
 commits the result. GitHub crons run in UTC, so two schedules (16:00 and 17:00 UTC) are registered and
