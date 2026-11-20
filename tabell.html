@@ -224,6 +224,46 @@
   }
   .saesong-val-not .loet-prick { margin-left: 0; }
 
+  /* ============ FLIKAR: Nordallsvenskan / Övriga serier ============ */
+  .flikar {
+    display: flex; justify-content: center; gap: 0.35rem;
+    width: fit-content; margin: 0 auto 2rem; padding: 0.3rem;
+    background: #ffffff; border: 1px solid #d1d5db; border-radius: 999px;
+  }
+  .flik {
+    border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: 0.92rem; font-weight: 600; color: #374151;
+    padding: 0.6rem 1.4rem; border-radius: 999px; white-space: nowrap;
+  }
+  .flik:hover { color: var(--navy); background: #f3f4f6; }
+  .flik[aria-selected="true"] { background: var(--navy); color: var(--white); }
+  .flik:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  /* Övriga serier: säsongsväljare + serier grupperade efter nivå. Listan är
+     lång, så på dator rullar den för sig själv bredvid tabellen. */
+  .serie-val { display: flex; flex-direction: column; max-height: calc(100vh - 120px); }
+  .serie-listor { overflow-y: auto; padding-bottom: 0.3rem; }
+  .serie-saesong {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb;
+    font-size: 0.8rem; color: #6b7280;
+  }
+  .serie-saesong select {
+    flex: 1; min-width: 0; font: inherit; font-size: 0.9rem; color: #111827;
+    padding: 0.45rem 0.5rem; border: 1px solid #d1d5db; border-radius: 6px; background: #fff;
+  }
+  .serie-grupp {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: #6b7280; padding: 0.85rem 1.25rem 0.15rem;
+  }
+  .serie-val .saesong-knapp { font-size: 0.84rem; padding: 0.45rem 0.85rem; }
+  .ovriga-tom {
+    background: #fff; border: 1px solid #d1d5db; border-radius: 8px;
+    padding: 3rem 1.5rem; text-align: center; color: #6b7280;
+  }
+  /* Panelen ritas med 260 px för den längre serielistan. */
+  #panel-ovriga .tabell-layout { grid-template-columns: 260px minmax(0, 900px); }
+
   /* ============ MATCHER (modal) ============ */
   .team-btn {
     background: none; border: 0; padding: 0; margin: 0;
@@ -421,6 +461,16 @@
     .saesong-knapp { border: 1px solid #e5e7eb; justify-content: center; padding: 0.6rem 0.5rem; flex-wrap: wrap; gap: 0.3rem; }
     .saesong-knapp.vald { border-color: var(--navy); }
     .loet-prick { margin-left: 0; }
+
+    #panel-ovriga .tabell-layout { grid-template-columns: minmax(0, 1fr); }
+    .serie-val { max-height: none; }
+    .serie-listor { overflow: visible; }
+    .serie-val .saesong-lista { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .serie-val .saesong-knapp { padding: 0.55rem 0.5rem; font-size: 0.8rem; line-height: 1.25; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .flikar { width: 100%; }
+    .flik { flex: 1; padding: 0.6rem 0.75rem; }
   }
   .table-scroll-wrapper {
     overflow-x: auto;
@@ -568,15 +618,19 @@
          <div class="legend-item">Klicka på ett lag för att se deras matcher</div>`
       : `<div class="legend-item">${forklaring}</div>`;
     const bitsLank = `<a href="https://bits.swebowl.se/seriespel" target="_blank" rel="noopener" style="color:#6b7280;text-decoration:underline;">bits.swebowl.se</a>`;
-    const kalla = t.aktuell
+    // t.aktuell = Nordallsvenskan just nu; t.pagaende = en annan serie som
+    // fortfarande spelas; annars en avslutad säsong.
+    const pagar = t.aktuell || t.pagaende;
+    const kalla = pagar
       ? `Tabellen uppdaterad: ${escapeHtml(t.uppdaterad)} · ${bitsLank}`
       : `Sluttabell · källa: ${bitsLank}`;
+    const etikett = t.aktuell ? '' : t.pagaende ? ' · Pågår' : ' · Sluttabell';
 
     return `
       <div class="table-scroll-wrapper"><div class="table-wrapper">
         <div class="table-header">
           <div class="table-title">${escapeHtml(t.titel)}</div>
-          <div class="table-season">${escapeHtml(t.saesong)}${t.aktuell ? '' : ' · Sluttabell'}</div>
+          <div class="table-season">${escapeHtml(t.saesong)}${etikett}</div>
         </div>
         <table class="league-table${t.aktuell ? ' aktuell' : ''}">
           <thead><tr><th>#</th><th>Lag</th><th>M</th><th>V</th><th>O</th><th>F</th><th>+/−</th><th>P</th></tr></thead>
@@ -607,21 +661,55 @@
       </nav>`;
   }
 
-  function renderTable(data, saesonger, valdNyckel) {
+  function renderTable(data, saesonger, valdNyckel, startFlik) {
     const vald = saesonger.find(s => s.nyckel === valdNyckel) || saesonger[0];
     const medVal = saesonger.length > 1;
+    const ovriga = startFlik === 'ovriga';
     return `
       <section id="tabell">
         <div class="container">
-          <div class="tabell-layout${medVal ? '' : ' utan-val'}">
-            ${medVal ? renderSaesongVal(saesonger, vald.nyckel, data.klubb.namn) : ''}
-            <div class="tabell-huvud" id="tabellHuvud">${renderTabellInnehall(vald, data.klubb.namn)}</div>
+          <div class="flikar" role="tablist" aria-label="Serier">
+            <button type="button" role="tab" class="flik js-flik" id="flik-nordall" data-flik="nordall"
+                    aria-controls="panel-nordall" aria-selected="${!ovriga}">${escapeHtml(data.tabell.titel)}</button>
+            <button type="button" role="tab" class="flik js-flik" id="flik-ovriga" data-flik="ovriga"
+                    aria-controls="panel-ovriga" aria-selected="${ovriga}">Övriga serier</button>
+          </div>
+          <div id="panel-nordall" role="tabpanel" aria-labelledby="flik-nordall"${ovriga ? ' hidden' : ''}>
+            <div class="tabell-layout${medVal ? '' : ' utan-val'}">
+              ${medVal ? renderSaesongVal(saesonger, vald.nyckel, data.klubb.namn) : ''}
+              <div class="tabell-huvud" id="tabellHuvud">${renderTabellInnehall(vald, data.klubb.namn)}</div>
+            </div>
+          </div>
+          <div id="panel-ovriga" role="tabpanel" aria-labelledby="flik-ovriga"${ovriga ? '' : ' hidden'}>
+            <div class="tabell-layout">
+              <nav class="saesong-val serie-val" id="serieVal" aria-label="Välj säsong och serie"></nav>
+              <div class="tabell-huvud" id="ovrigaHuvud"><div class="ovriga-tom">Laddar serier…</div></div>
+            </div>
           </div>
         </div>
       </section>`;
   }
 
-  function attachSaesongVal(data, saesonger) {
+  // På mobil ligger valet under tabellen — visa den nya tabellen.
+  // Nästa frame: annars avbryter scroll-ankringen (tabellen byter höjd)
+  // den mjuka scrollningen innan den hunnit börja.
+  function visaTabellPaMobil(el) {
+    if (window.matchMedia('(max-width: 968px)').matches) {
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+  }
+
+  // URL:en speglar valet så att det går att länka:
+  //   tabell.html?saesong=2017                     Nordallsvenskan 2017/18
+  //   tabell.html?flik=ovriga&saesong=2025&serie=1 Övriga serier
+  function satUrl(params) {
+    const url = new URL(location.href);
+    ['flik', 'saesong', 'serie'].forEach(k => url.searchParams.delete(k));
+    Object.entries(params).forEach(([k, v]) => { if (v != null) url.searchParams.set(k, v); });
+    history.replaceState(null, '', url);
+  }
+
+  function attachSaesongVal(data, saesonger, tillstand) {
     const huvud = document.getElementById('tabellHuvud');
     document.querySelectorAll('.js-saesong').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -633,18 +721,135 @@
           b.classList.toggle('vald', ar);
           if (ar) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
         });
-        // Länkbar säsong: ?saesong=2025. Den pågående har ren URL.
-        const url = new URL(location.href);
-        if (s.aktuell) url.searchParams.delete('saesong'); else url.searchParams.set('saesong', s.nyckel);
-        history.replaceState(null, '', url);
-        // På mobil ligger valet under tabellen — visa den nya tabellen.
-        // Nästa frame: annars avbryter scroll-ankringen (tabellen byter höjd)
-        // den mjuka scrollningen innan den hunnit börja.
-        if (window.matchMedia('(max-width: 968px)').matches) {
-          requestAnimationFrame(() => huvud.scrollIntoView({ behavior: 'smooth', block: 'start' }));
-        }
+        tillstand.nordall = s.aktuell ? null : s.nyckel;
+        satUrl({ saesong: tillstand.nordall });
+        visaTabellPaMobil(huvud);
       });
     });
+  }
+
+  /* ---------- Övriga serier (tabeller/index.json + tabeller/<säsong>.json) ---------- */
+
+  function attachOvriga(data, tillstand, start) {
+    const val = document.getElementById('serieVal');
+    const huvud = document.getElementById('ovrigaHuvud');
+    const klubb = data.klubb.namn;
+    const cache = {};          // säsongId -> hämtad säsongsfil (eller pågående hämtning)
+    let index = null;          // tabeller/index.json
+    let laddat = false;
+
+    const hamta = (url) => fetch(url + '?v=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    const hamtaSaesong = (id) => {
+      if (!cache[id]) cache[id] = hamta(`tabeller/${id}.json`).catch(err => { delete cache[id]; throw err; });
+      return cache[id];
+    };
+    const fel = () => {
+      huvud.innerHTML = '<div class="ovriga-tom">Kunde inte ladda serierna just nu. Försök igen senare.</div>';
+    };
+
+    function renderVal(saesong, valdSerie) {
+      const alternativ = index.saesonger.map(s => `
+        <option value="${s.saesongId}"${s.saesongId === saesong.saesongId ? ' selected' : ''}>
+          ${escapeHtml(kortSaesong(s.saesong))}${s.pagaende ? ' (pågår)' : ''}
+        </option>`).join('');
+      // Grupperna i den ordning de kommer i filen (Elitserien → Division 2).
+      const grupper = [];
+      saesong.serier.forEach(s => {
+        let g = grupper.find(x => x.namn === s.grupp);
+        if (!g) grupper.push(g = { namn: s.grupp, serier: [] });
+        g.serier.push(s);
+      });
+      const listor = grupper.map(g => `
+        <div class="serie-grupp">${escapeHtml(g.namn)}</div>
+        <ul class="saesong-lista">${g.serier.map(s => {
+          const vald = s.divisionId === valdSerie.divisionId;
+          const loet = s.lag.some(l => l.namn === klubb);
+          return `
+            <li><button type="button" class="saesong-knapp js-serie${vald ? ' vald' : ''}" data-serie="${s.divisionId}"
+                  ${vald ? 'aria-current="true"' : ''}>
+              <span>${escapeHtml(s.namn)}</span>
+              ${loet ? `<span class="loet-prick" title="${escapeHtml(klubb)} spelade i serien"></span>` : ''}
+            </button></li>`;
+        }).join('')}</ul>`).join('');
+      val.innerHTML = `
+        <div class="saesong-val-titel">Övriga serier</div>
+        <label class="serie-saesong">
+          <span>Säsong</span>
+          <select class="js-serie-saesong">${alternativ}</select>
+        </label>
+        <div class="serie-listor">${listor}</div>
+        <div class="saesong-val-not"><span class="loet-prick"></span> ${escapeHtml(klubb)} med i serien</div>`;
+    }
+
+    function visa(saesong, serie) {
+      tillstand.ovriga = { saesong: saesong.saesongId, serie: serie.divisionId };
+      huvud.innerHTML = renderTabellInnehall({
+        titel: serie.namn,
+        saesong: saesong.saesong,
+        uppdaterad: saesong.uppdaterad,
+        pagaende: saesong.pagaende,
+        streck: serie.streck,
+        lag: serie.lag,
+        aktuell: false
+      }, klubb);
+      renderVal(saesong, serie);
+      satUrl({ flik: 'ovriga', saesong: saesong.saesongId, serie: serie.divisionId });
+    }
+
+    // Byt säsong och behåll samma serie om den fanns då, annars den första.
+    function valjSaesong(id, serieId) {
+      huvud.innerHTML = '<div class="ovriga-tom">Laddar…</div>';
+      return hamtaSaesong(id).then(s => {
+        if (!s.serier.length) { huvud.innerHTML = '<div class="ovriga-tom">Inga tabeller för den här säsongen.</div>'; return; }
+        const serie = s.serier.find(x => x.divisionId === Number(serieId)) || s.serier[0];
+        visa(s, serie);
+      }).catch(fel);
+    }
+
+    function ladda() {
+      if (laddat) return;
+      laddat = true;
+      hamta('tabeller/index.json').then(idx => {
+        index = idx;
+        if (!index.saesonger || !index.saesonger.length) throw new Error('tomt index');
+        const startId = index.saesonger.some(s => String(s.saesongId) === String(start.saesong))
+          ? Number(start.saesong) : index.saesonger[0].saesongId;
+        return valjSaesong(startId, start.serie);
+      }).catch(() => { laddat = false; fel(); });
+    }
+
+    val.addEventListener('change', e => {
+      if (!e.target.matches('.js-serie-saesong')) return;
+      valjSaesong(Number(e.target.value), tillstand.ovriga && tillstand.ovriga.serie);
+    });
+    val.addEventListener('click', e => {
+      const btn = e.target.closest('.js-serie');
+      if (!btn || !tillstand.ovriga) return;
+      hamtaSaesong(tillstand.ovriga.saesong).then(s => {
+        const serie = s.serier.find(x => x.divisionId === Number(btn.dataset.serie));
+        if (serie) { visa(s, serie); visaTabellPaMobil(huvud); }
+      }).catch(fel);
+    });
+
+    return { ladda };
+  }
+
+  function attachFlikar(tillstand, ovriga) {
+    const flikar = document.querySelectorAll('.js-flik');
+    flikar.forEach(btn => btn.addEventListener('click', () => {
+      const flik = btn.dataset.flik;
+      flikar.forEach(b => b.setAttribute('aria-selected', String(b === btn)));
+      document.getElementById('panel-nordall').hidden = flik !== 'nordall';
+      document.getElementById('panel-ovriga').hidden = flik !== 'ovriga';
+      if (flik === 'ovriga') {
+        ovriga.ladda();
+        const o = tillstand.ovriga;
+        satUrl(o ? { flik: 'ovriga', saesong: o.saesong, serie: o.serie } : { flik: 'ovriga' });
+      } else {
+        satUrl({ saesong: tillstand.nordall });
+      }
+    }));
   }
 
   function renderMatchModal() {
@@ -889,7 +1094,11 @@
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const data = await res.json();
       const saesonger = byggSaesonger(data, await arkivLaddning);
-      const valdNyckel = new URLSearchParams(location.search).get('saesong') || 'aktuell';
+      const params = new URLSearchParams(location.search);
+      const startFlik = params.get('flik') === 'ovriga' ? 'ovriga' : 'nordall';
+      const valdNyckel = (startFlik === 'nordall' && params.get('saesong')) || 'aktuell';
+      // Vad som är valt i respektive flik, så att URL:en blir rätt vid flikbyte.
+      const tillstand = { nordall: valdNyckel === 'aktuell' ? null : valdNyckel, ovriga: null };
 
       document.title = `Tabell — ${data.klubb.namn}`;
 
@@ -899,12 +1108,18 @@
           <span class="section-eyebrow">${escapeHtml(data.klubb.serie)}</span>
           <h1>Tabellen</h1>
         </div>` +
-        renderTable(data, saesonger, valdNyckel) +
+        renderTable(data, saesonger, valdNyckel, startFlik) +
         renderFooter(data) +
         renderMatchModal();
 
       attachMatchModal();
-      attachSaesongVal(data, saesonger);
+      attachSaesongVal(data, saesonger, tillstand);
+      const ovriga = attachOvriga(data, tillstand, {
+        saesong: startFlik === 'ovriga' ? params.get('saesong') : null,
+        serie: params.get('serie')
+      });
+      attachFlikar(tillstand, ovriga);
+      if (startFlik === 'ovriga') ovriga.ladda();
 
       const toggle = document.getElementById('navToggle');
       const links = document.getElementById('navLinks');

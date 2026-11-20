@@ -67,15 +67,23 @@ jobs:
         continue-on-error: true
         run: node scripts/update-spelare.js
 
+      # Övriga serier (Elitserien, allsvenskorna, Div 1, Div 2). Ett 40-tal
+      # anrop för den pågående säsongen; ett fel får inte stoppa tabellen ovan.
+      - name: Hämta övriga serier
+        if: steps.tid.outputs.kor == 'ja'
+        continue-on-error: true
+        run: node scripts/update-serier.js
+
       - name: Committa om något ändrats
         if: steps.tid.outputs.kor == 'ja'
         run: |
-          if git diff --quiet data.json matcher.json tabeller.json; then
+          # status --porcelain ser även nya filer (t.ex. tabeller/2027.json).
+          if [ -z "$(git status --porcelain -- data.json matcher.json tabeller.json tabeller)" ]; then
             echo "Inget nytt från BITS — ingen commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data.json matcher.json tabeller.json
+          git add data.json matcher.json tabeller.json tabeller
           git commit -m "Uppdatera tabell, matcher och spelarsiffror från BITS"
           git push

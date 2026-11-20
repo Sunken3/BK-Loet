@@ -90,6 +90,28 @@ the coloured kval lines; older seasons get grey lines at `streck`. A gold dot ma
 played in. The choice is linkable as `tabell.html?saesong=2017`. If `tabeller.json` is missing the
 page shows just the current table, without a picker.
 
+**Other leagues — `tabeller/`.** `tabell.html` has two tabs: Nordallsvenskan (above) and **Övriga
+serier**: Elitserien (men and women), every Allsvenskan, every Div 1 (incl. women's `D Div 1 …`) and
+every Div 2, from 2012/13 on. They come from **`scripts/update-serier.js`** — don't hand-edit them.
+
+- `tabeller/index.json` lists the seasons (newest first, `pagaende` on the current one);
+  `tabeller/<seasonId>.json` holds one season: `serier: [{ divisionId, namn, grupp, streck, lag }]`,
+  sorted by group (Elitserien → Allsvenskan → Division 1 → Division 1 Damer → Division 2), then in the
+  order BITS lists them. Each file is ~25–35 KB and is fetched only when that season is picked.
+- Which leagues are included is decided by `groupOf()` on the BITS division name. Nordallsvenskan
+  (id 2) is left out — it has its own tab. Leagues BITS lists but has no table for are skipped.
+- The league list per season comes from `GET MiscFrontApiConnector/Division?seasonId=…` (same
+  unprotected host), then one `GetStandings` per league, 300 ms apart.
+- The current season is worked out from today's date (season = 1 July – 30 June) — **no
+  `SEASON_ID` to bump**. Finished seasons are fetched once; the current one is refetched every run and
+  written only if a table changed. A file saved while its season was running is refetched once more
+  after the season ends, so it ends up with the final table.
+- A cold run (all seasons) takes ~8 minutes; the weekly run is ~25 requests. The workflow step is
+  `continue-on-error`, so a failure doesn't block the Nordallsvenskan table.
+- In the page (`attachOvriga`): a season `<select>` and the leagues grouped by level, left of the
+  table on desktop (scrolls on its own) and under it on mobile. A gold dot marks leagues BK Loet
+  played in. Linkable as `tabell.html?flik=ovriga&saesong=2025&serie=1`.
+
 **`.github/workflows/update-tabell.yml`** runs the script every Sunday at 18:00 Swedish time and
 commits the result. GitHub crons run in UTC, so two schedules (16:00 and 17:00 UTC) are registered and
 the workflow skips any run that starts before 18:00 in Sweden — that keeps the time right across the DST
@@ -99,7 +121,8 @@ are harmless: the scripts write nothing when nothing changed. Can also be run by
 *Settings → Actions → General → Workflow permissions* to be set to **Read and write permissions**.
 
 The same workflow also runs **`scripts/update-matcher.js`** and **`scripts/update-spelare.js`** (both
-below) and commits `data.json`, `matcher.json` and `tabeller.json` together.
+below) and commits `data.json`, `matcher.json`, `tabeller.json` and `tabeller/` together. It also runs
+**`scripts/update-serier.js`** (see "Other leagues" above).
 
 ## Player stats update themselves
 

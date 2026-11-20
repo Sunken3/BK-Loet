@@ -1,0 +1,94 @@
+{
+  "saesonger": [
+    {
+      "saesongId": 2026,
+      "saesong": "Säsong 2026/27",
+      "pagaende": true,
+      "antal": 24
+    },
+    {
+      "saesongId": 2025,
+      "saesong": "Säsong 2025/26",
+      "pagaende": false,
+      "antal": 24
+    },
+    {
+      "saesongId": 2024,
+      "saesong": "Säsong 2024/25",
+      "pagaende": false,
+      "antal": 22
+    },
+    {
+      "saesongId": 2023,
+      "saesong": "Säsong 2023/24",
+      "pagaende": false,
+      "antal": 22
+    },
+    {
+      "saesongId": 2022,
+      "saesong": "Säsong 2022/23",
+      "pagaende": false,
+      "antal": 23
+    },
+    {
+      "saesongId": 2021,
+      "saesong": "Säsong 2021/22",
+      "pagaende": false,
+      "antal": 22
+    },
+    {
+      "saesongId": 2020,
+      "saesong": "Säsong 2020/21",
+      "pagaende": false,
+      "antal": 24
+    },
+    {
+      "saesongId": 2019,
+      "saesong": "Säsong 2019/20",
+      "pagaende": false,
+      "antal": 24
+    },
+    {
+      "saesongId": 2018,
+      "saesong": "Säsong 2018/19",
+      "pagaende": false,
+      "antal": 24
+    },
+    {
+      "saesongId": 2017,
+      "saesong": "Säsong 2017/18",
+      "pagaende": false,
+      "antal": 24
+    },
+    {
+      "saesongId": 2016,
+      "saesong": "Säsong 2016/17",
+      "pagaende": false,
+      "antal": 33
+    },
+    {
+      "saesongId": 2015,
+      "saesong": "Säsong 2015/16",
+      "pagaende": false,
+      "antal": 33
+    },
+    {
+      "saesongId": 2014,
+      "saesong": "Säsong 2014/15",
+      "pagaende": false,
+      "antal": 37
+    },
+    {
+      "saesongId": 2013,
+      "saesong": "Säsong 2013/14",
+      "pagaende": false,
+      "antal": 40
+    },
+    {
+      "saesongId": 2012,
+      "saesong": "Säsong 2012/13",
+      "pagaende": false,
+      "antal": 42
+    }
+  ]
+}
