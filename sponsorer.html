@@ -474,13 +474,6 @@
     overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .stodmedlem-stad::before { content: '📍 '; font-size: 0.75rem; }
-  .stodmedlem-visa-alla {
-    display: block; margin: 1.5rem auto 0;
-    background: none; border: 1.5px solid var(--navy); color: var(--navy);
-    border-radius: 999px; padding: 0.6rem 1.4rem;
-    font-family: inherit; font-weight: 600; font-size: 0.9rem; cursor: pointer;
-  }
-  .stodmedlem-visa-alla:hover { background: var(--navy); color: var(--white); }
   .stodmedlem-tom {
     max-width: 640px; margin: 0 auto; text-align: center; color: var(--gray-500);
     background: var(--white); border: 1px dashed #d1d5db;
@@ -570,22 +563,17 @@
   function renderStodmedlemmar(medlemmar, antal) {
     // antal = alla bekräftade medlemmar, även de som inte vill synas på webben.
     antal = Math.max(antal || 0, medlemmar.length);
-    // Visar de första VISA_FORST korten; resten fälls ut med "Visa alla".
-    const VISA_FORST = 12;
-    const kort = medlemmar.map((m, i) => `
-      <li class="stodmedlem-kort"${i >= VISA_FORST ? ' hidden' : ''}>
+    const kort = medlemmar.map(m => `
+      <li class="stodmedlem-kort">
         <span class="stodmedlem-nr">${escapeHtml(m.medlemsnummer || String(m.nummer))}</span>
         <div class="stodmedlem-info">
           <div class="stodmedlem-namn">${escapeHtml(m.fornamn)} ${escapeHtml(m.efternamn)}</div>
           ${m.stad ? `<div class="stodmedlem-stad">${escapeHtml(m.stad)}</div>` : ''}
         </div>
       </li>`).join('');
-    const visaAlla = medlemmar.length > VISA_FORST
-      ? `<button class="stodmedlem-visa-alla" type="button" onclick="this.previousElementSibling.querySelectorAll('[hidden]').forEach(el => el.hidden = false); this.remove();">Visa alla ${medlemmar.length}</button>`
-      : '';
     const innehall = antal
       ? `<div class="stodmedlem-antal"><span><b>${antal}</b> ${antal === 1 ? 'stödmedlem' : 'stödmedlemmar'} — tack!</span></div>
-         ${medlemmar.length ? `<ul class="stodmedlem-lista">${kort}</ul>${visaAlla}` : ''}`
+         ${medlemmar.length ? `<ul class="stodmedlem-lista">${kort}</ul>` : ''}`
       : `<p class="stodmedlem-tom">Var först att stödja bowlingen i Luleå — <a href="index.html#medlem">bli stödmedlem här</a>.</p>`;
     return `
       <section id="stodmedlemmar">
